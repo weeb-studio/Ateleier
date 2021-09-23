@@ -1,0 +1,37 @@
+.body{
+    position: absolute;
+}
+.contain{
+    border: 1px solid #FF3E79E5;
+    width: 35vw;
+    height: 50vh;
+    position: relative;
+    top: 5vh;
+    left: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.input{
+    border: 1px solid #F9357CE5;
+    border-radius: 5%;
+    font-family: helvetica;
+    color: #333E57E5;
+    opacity: 90%;
+}
+.btn{
+    background-color: #FF3E79E5;
+    width: 120px;
+    height: 40px;
+    font-family: helvetica;
+    color: #fff;
+}
+.link{
+    text-decoration: underline;
+}
