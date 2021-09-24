@@ -1,0 +1,82 @@
+.h1{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+}
+.containeur{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contain{
+    border: 1px solid #FF3E79;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+.p{
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+.formulaire{
+    border: 1px solid #FF3E79;
+    width: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 350px;
+    border-radius: 10px;
+}
+.legend{
+    color: #FF3E79;
+    font-weight: bolder;
+    text-align: center;
+}
+.form{
+    width: 260px;
+}
+.icon{
+    position: relative;
+}
+.icon img{
+    position: absolute;
+    left: 5px;
+    // top: 4px;
+    width: 12px;
+}
+.input{
+    border: 1px solid #FF3E79;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 10px;
+    height: 20px;
+    font-weight: bold;
+}
+.boutton{
+    background-color: #FF3E79;
+    color: #fff;
+    width: 180px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    float: right;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+}
