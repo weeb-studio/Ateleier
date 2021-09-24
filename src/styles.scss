@@ -3,3 +3,13 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.carousel-dot {
+  background-color: #ffcedd !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.carousel-dot-active {
+  background-color: #ff3e79 !important;
+}
