@@ -8,10 +8,8 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: '**',
-    component: NotFoundComponent,
-  },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '404' },
 ];
 
 @NgModule({
