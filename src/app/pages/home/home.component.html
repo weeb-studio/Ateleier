@@ -1,12 +1,682 @@
-<div class="w-full h-screen flex justify-center items-center">
-  <h1 class="text-5xl text-blue-600 text-bold">Hello Tailwind CSS</h1>
-  <p class="font-sans md:Roboto">
-    The quick brown fox jumped over the lazy dog.
-  </p>
+<div class="hidden py-7 w-full h-1">
+  <img class="w-full h-1 px-2" src="assets/Rectangle.svg" alt="" srcset="" />
+</div>
+<div class="md:px-32">
+  <div
+    class="w-full flex justify-center md:mt-10 items-center px-5"
+    style="color: #4c566c"
+  >
+    <div class="section_1 relative mt-20">
+      <div class="absolute bottom-0 md:bottom-0 w-full">
+        <img src="assets/phone.svg" alt="" srcset="" />
+      </div>
+      <div class="md:grid md:grid-flow-col md:grid-cols-2 md:gap-4">
+        <div></div>
+        <div
+          class="
+            pl-10
+            pb-10
+            ml-5
+            mb-5
+            sm:mb-24 sm:ml-20
+            grid
+            bg-white
+            md:ml-0 md:pl-0 md:text-lg
+          "
+        >
+          Avec Bigoodee, obtenir des conseils personnalisées pour l’entretien de
+          vos cheveux, acheter les meilleurs soins adapter à votre type de
+          cheveux et réserver une coiffeuse proche de chez vous, n’auront jamais
+          été aussi simple !
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="bg-purple-600 bg-opacity-25 h-48 ...">
-  <div class="bg-purple-600 bg-opacity-100 h-24 min-h-full ...">
-    .min-h-full
+<div class="py-7 w-full">
+  <img class="w-full px-2" src="assets/Rectangle.svg" alt="" srcset="" />
+</div>
+
+<div class="xl:px-32">
+  <div
+    class="w-full flex justify-center relative items-center px-5 my-20"
+    style="color: #fff"
+  >
+    <div
+      class="w-11/12 px-5 py-5 rounded-lg md:px-20 md:py-20 md:text-lg"
+      style="background-color: #ff3e79"
+    >
+      Bigoodee révolutionne le rapport à la beauté des femmes aux cheveux
+      bouclés, frisés et crépus (cheveux dit texturés), grâce à des ateliers
+      capillaires qui vont permettre d’obtenir des conseils personnalisés pour
+      l’entretien des cheveux, à une plateforme qui met à disposition des
+      conseils pratiques et astuces pour l’entretien des cheveux, à une boutique
+      pour acheter les meilleurs soins adaptés à votre type de cheveux et grâce
+      à une application mobile pour réserver des coiffeusesà domicile proche de
+      chez toi.
+    </div>
   </div>
+  <div class="block sm:hidden mt-10">
+    <carousel
+      [objectFit]="'cover'"
+      [cellsToShow]="1"
+      [cellsToScroll]="1"
+      [height]="400"
+      [dots]="true"
+      [arrows]="false"
+      class=""
+    >
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/marker.svg" />
+          </div>
+          <div class="text-center h-40">
+            Assister à des ateliers capillaires organisés Par des conseillères
+            Capillaires pour bénéficier de conseils personnalisés pour
+            l’entretien de vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/file.svg" />
+          </div>
+          <div class="text-center h-40">
+            Profiter de conseils Pratiques et astuces, de recettes à faire soi
+            Même, pour entretenir vos cheveux.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/cart.svg" />
+          </div>
+          <div class="text-center h-40">
+            Acheter les meilleurs soins adapter à vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/tools.svg" />
+          </div>
+          <div class="text-center h-40">
+            Réserver votre coiffeuse à domicile parmi de nombreuses coiffeuses
+            qualifiées et expérimentées.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+    </carousel>
+  </div>
+
+  <div class="hidden md:block lg:hidden mt-10">
+    <carousel
+      [objectFit]="'cover'"
+      [cellsToShow]="2"
+      [cellsToScroll]="1"
+      [height]="400"
+      [dots]="true"
+      [arrows]="false"
+      class=""
+    >
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/marker.svg" />
+          </div>
+          <div class="text-center h-40">
+            Assister à des ateliers capillaires organisés Par des conseillères
+            Capillaires pour bénéficier de conseils personnalisés pour
+            l’entretien de vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/file.svg" />
+          </div>
+          <div class="text-center h-40">
+            Profiter de conseils Pratiques et astuces, de recettes à faire soi
+            Même, pour entretenir vos cheveux.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/cart.svg" />
+          </div>
+          <div class="text-center h-40">
+            Acheter les meilleurs soins adapter à vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/tools.svg" />
+          </div>
+          <div class="text-center h-40">
+            Réserver votre coiffeuse à domicile parmi de nombreuses coiffeuses
+            qualifiées et expérimentées.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+    </carousel>
+  </div>
+
+  <!-- <div class="hidden lg:block xl:hidden mt-10">
+    <carousel
+      [objectFit]="'cover'"
+      [cellsToShow]="3"
+      [cellsToScroll]="1"
+      [height]="400"
+      [dots]="true"
+      [arrows]="false"
+      class=""
+    >
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/marker.svg" />
+          </div>
+          <div class="text-center h-40">
+            Assister à des ateliers capillaires organisés Par des conseillères
+            Capillaires pour bénéficier de conseils personnalisés pour
+            l’entretien de vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/file.svg" />
+          </div>
+          <div class="text-center h-40">
+            Profiter de conseils Pratiques et astuces, de recettes à faire soi
+            Même, pour entretenir vos cheveux.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/cart.svg" />
+          </div>
+          <div class="text-center h-40">
+            Acheter les meilleurs soins adapter à vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="
+            flex flex-col
+            items-center
+            justify-center
+            rounded-lg
+            px-5
+            mx-auto
+            w-8/12
+            py-5
+            space-y-5
+          "
+          style="border: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/tools.svg" />
+          </div>
+          <div class="text-center h-40">
+            Réserver votre coiffeuse à domicile parmi de nombreuses coiffeuses
+            qualifiées et expérimentées.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+    </carousel>
+  </div> -->
+
+  <div class="hidden lg:block xl:hidden mt-10">
+    <carousel
+      [objectFit]="'cover'"
+      [cellsToShow]="3"
+      [cellsToScroll]="1"
+      [height]="400"
+      [dots]="true"
+      [arrows]="false"
+      class=""
+    >
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+        >
+          <div class="flex justify-center">
+            <img src="assets/marker.svg" />
+          </div>
+          <div class="text-center h-40">
+            Assister à des ateliers capillaires organisés Par des conseillères
+            Capillaires pour bénéficier de conseils personnalisés pour
+            l’entretien de vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+          style="border-left: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/file.svg" />
+          </div>
+          <div class="text-center h-40">
+            Profiter de conseils Pratiques et astuces, de recettes à faire soi
+            Même, pour entretenir vos cheveux.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+          style="border-left: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/cart.svg" />
+          </div>
+          <div class="text-center h-40">
+            Acheter les meilleurs soins adapter à vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+          style="border-left: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/tools.svg" />
+          </div>
+          <div class="text-center h-40">
+            Réserver votre coiffeuse à domicile parmi de nombreuses coiffeuses
+            qualifiées et expérimentées.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+    </carousel>
+  </div>
+
+  <div class="hidden xl:block mt-10">
+    <carousel
+      [objectFit]="'cover'"
+      [cellsToShow]="4"
+      [cellsToScroll]="1"
+      [height]="400"
+      [dots]="false"
+      [arrows]="false"
+      class=""
+    >
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+        >
+          <div class="flex justify-center">
+            <img src="assets/marker.svg" />
+          </div>
+          <div class="text-center h-40">
+            Assister à des ateliers capillaires organisés Par des conseillères
+            Capillaires pour bénéficier de conseils personnalisés pour
+            l’entretien de vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+          style="border-left: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/file.svg" />
+          </div>
+          <div class="text-center h-40">
+            Profiter de conseils Pratiques et astuces, de recettes à faire soi
+            Même, pour entretenir vos cheveux.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+          style="border-left: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/cart.svg" />
+          </div>
+          <div class="text-center h-40">
+            Acheter les meilleurs soins adapter à vos cheveux
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+
+      <div class="carousel-cell">
+        <div
+          class="flex flex-col items-center justify-center px-8 py-5 space-y-5"
+          style="border-left: 1px solid; border-color: #ff3e79"
+        >
+          <div class="flex justify-center">
+            <img src="assets/tools.svg" />
+          </div>
+          <div class="text-center h-40">
+            Réserver votre coiffeuse à domicile parmi de nombreuses coiffeuses
+            qualifiées et expérimentées.
+          </div>
+
+          <button
+            class="text-white w-40 py-2 rounded-md"
+            style="background-color: #ff3e79"
+          >
+            {{ "découvrir" | uppercase }}
+          </button>
+        </div>
+      </div>
+    </carousel>
+  </div>
+  <div class="py-1 mb-10 w-full">
+    <img class="w-full px-2" src="assets/Rectangle.svg" alt="" srcset="" />
+  </div>
+
+  <app-testimonie></app-testimonie>
 </div>
