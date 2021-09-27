@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TestimonieComponent } from './components/testimonie/testimonie.component';
+import { AtelierComponent } from './pages/ateliers/atelier/atelier.component';
+import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TestimonieComponent } from './components/testimonie/testimonie.componen
     FooterComponent,
     NotFoundComponent,
     TestimonieComponent,
+    AtelierComponent,
+    DevenirHotesseComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
   providers: [],
