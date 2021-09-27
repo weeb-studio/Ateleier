@@ -5,12 +5,15 @@
 }
 .containeur{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
 }
 .contain{
     border: 1px solid #FF3E79;
     width: 250px;
+}
+.contain-infos{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +23,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+}
+.text .img{
+    display: none;
 }
 .infos{
     display: flex;
@@ -31,6 +38,7 @@
     text-align: center;
     font-size: 10px;
     font-weight: bold;
+    color: #97A2BB;
 }
 .formulaire{
     border: 1px solid #FF3E79;
@@ -79,4 +87,52 @@
 .link{
     display: flex;
     flex-direction: column;
+}
+@media screen and (min-width:780px) {
+    .contain{
+        width: 50%;
+        height: 40vh;
+        position: relative;
+    }
+    .text{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0 !important;
+        left: 25% !important;
+    }
+    .text .img{
+        display: flex;
+        height: 30px;
+    }
+    .text .h1{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        width: 310px;
+    }
+    .P{
+        text-align: center;
+    }
+    .contain-infos{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .infos{
+        margin: 0 !important;
+    }
+    .img{
+        height: 50px;
+    }
+    .formulaire{
+        width: 400px;
+    }
 }
