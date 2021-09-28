@@ -36,12 +36,15 @@
         class="border-b-2"
         style="color: #ff3e79; border-color: #ff3e79"
         routerLink="/"
+        class="cursor-pointer"
       >
         Accueil
       </div>
-      <div style="color: #ff3e79">Programmes</div>
-      <div style="color: #ff3e79" routerLink="/atelier">Ateliers</div>
-      <div style="color: #ff3e79">Boutique</div>
+      <div class="cursor-pointer" style="color: #ff3e79">Programmes</div>
+      <div class="cursor-pointer" style="color: #ff3e79" routerLink="/atelier">
+        Ateliers
+      </div>
+      <div class="cursor-pointer" style="color: #ff3e79">Boutique</div>
     </div>
   </div>
 </header>
@@ -90,7 +93,11 @@
     <div class="px-5 py-4">
       <img src="assets/ateliers.svg" alt="" srcset="" />
     </div>
-    <div class="text-xl" style="color: #475168" routerLink="/atelier">
+    <div
+      class="text-xl cursor-pointer"
+      style="color: #475168"
+      routerLink="/atelier"
+    >
       {{ "ateliers" | uppercase }}
     </div>
   </div>
