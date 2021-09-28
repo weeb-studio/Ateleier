@@ -1,3 +1,14 @@
+<div class="hidden sm:block">
+  <app-atelier-header></app-atelier-header>
+</div>
+<div class="sm:block hidden py-7 w-full h-0.5 overflow-hidden">
+  <img
+    class="px-2 overflow-hidde w-screen"
+    src="assets/line.svg"
+    alt=""
+    srcset=""
+  />
+</div>
 <div class="w-screen overflow-hidden px-5 py-5 md:px-20">
   <div
     class="md:border- py-10 rounded-2xl space-y-10"
@@ -61,18 +72,7 @@
         Les atouts des ateliers capillaires
       </div>
 
-      <div
-        class="
-          flex
-          grid-cols-1
-          space-y-10
-          md:grid-cols-4
-          my-10
-          items-start
-          justify-center
-          gap-4
-        "
-      >
+      <div class="grid grid-cols-1 space-y-10 md:grid-cols-4 my-10 gap-4">
         <div
           class="
             flex flex-col
@@ -124,51 +124,118 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-20">
-        <div class="md:px-10">
-          <img src="assets/bigoodee1.svg" alt="" srcset="" />
+      <div
+        class="border-2 py-10 px-10 rounded-2xl space-y-10"
+        style="border-color: #ff3e79"
+      >
+        <div>
+          <div class="text-xl text-center font-semibold" style="color: #ff3e79">
+            Vos cadeaux VIP
+          </div>
+          <div class="text-center text-lg font-semibold px5">
+            Pour vous remercier de votre accueil, votre conseillère vous gâte !
+          </div>
         </div>
-        <div class="space-y-8 px-10 flex flex-col">
+        <div class="flex justify-center">
+          <img class="w-7/12" src="assets/cadeaux.svg" alt="" srcset="" />
+        </div>
+        <div class="flex justify-center">
+          <button
+            class="px-5 py-3 rounded text-white"
+            style="background-color: #ff3e79"
+            routerLink="/atelier/inscription/hotesse"
+          >
+            Devenir hôtesse
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="py-7 w-full">
+  <img class="w-full px-2" src="assets/Rectangle.svg" alt="" srcset="" />
+</div>
+
+<div class="w-screen overflow-hidden px-5 py--5 md:px-20">
+  <div
+    class="border-2 p-10 rounded-2xl space-y-10"
+    style="border-color: #ff3e79"
+  >
+    <div class="space-y-5">
+      <div class="text-2xl text-center font-semibold" style="color: #ff3e79">
+        La checklist de l’atelier capillaire
+      </div>
+      <div class="text-center text-xl font-semibold">
+        Pour préparer un atelier à domicile c’est simple, votre conseillère
+        capillaire vous accompagne à chaque étape :
+      </div>
+    </div>
+
+    <div>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mt-20">
+        <div class="-10 md:col-span-3">
+          <img class="" src="assets/peparation.svg" alt="" srcset="" />
+        </div>
+        <div class="space-y-8 px0 flex flex-col md:col-span-2">
           <div class="flex flex-row space-x-5">
             <img class="w-10" src="assets/check.svg" alt="" srcset="" />
             <div class="md:text-lg">
-              Produits de démonstrations pour démarrer
+              Choissisez une date : en soirée ou en journée, le week-end ou en
+              semaine, quelques heures suffisent et c’est vous qui choississez
             </div>
           </div>
 
           <div class="flex flex-row space-x-5">
             <img class="w-10" src="assets/check.svg" alt="" srcset="" />
             <div class="md:text-lg">
-              Documentation, lookbook, outils de vente, guide de démarrage...
+              Contactez et invitez vos amis, la famille, les voisines, les
+              collègues
             </div>
           </div>
 
           <div class="flex flex-row space-x-5">
             <img class="w-10" src="assets/check.svg" alt="" srcset="" />
-            <div class="md:text-lg">
-              Votre application pro pour planifier vos ateliers capillaires,
-              consulter vos résultats, recevoir les paiements par carte
-              bancaire...
-            </div>
+            <div class="md:text-lg">Préparez la pièce le jour J</div>
           </div>
 
           <div class="flex flex-row space-x-5">
             <img class="w-10" src="assets/check.svg" alt="" srcset="" />
-            <div class="md:text-lg">
-              Vos outils en ligne : vidéos, tutoriels, fiches mémos, guide de
-              pratique et support de communication
-            </div>
+            <div class="md:text-lg">S’amusez !</div>
           </div>
           <div class="flex items-center justify-center">
             <button
               class="rounded px-5 py-3 text-white"
-              style="background-color: #907972"
+              style="background-color: #ff3e79"
             >
-              Devenir conseillère
+              Organisez un atelier capillaire
             </button>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="py-7 w-full">
+  <img class="w-full px-2" src="assets/Rectangle.svg" alt="" srcset="" />
+</div>
+
+<div class="w-screen overflow-hidden px-5 py--5 md:px-20">
+  <div
+    class="border- py-10 rounded-2xl space-y-10"
+    style="border-color: #ff3e79"
+  >
+    <app-testimonie></app-testimonie>
+
+    <div class="flex justify-center">
+      <button
+        class="rounded px-5 py-3 text-white"
+        style="background-color: #ff3e79"
+        routerLink="/atelier/inscription/hotesse"
+      >
+        Rejoignez-les
+      </button>
     </div>
   </div>
 </div>

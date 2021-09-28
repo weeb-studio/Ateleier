@@ -11,9 +11,12 @@ export class DevenirHotesseComponent implements OnInit {
 
   constructor(private _sanitizer: DomSanitizer) {
     this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(
-      'https://www.youtube.com/embed/1ozGKlOzEVc'
+      'https://youtu.be/X7wWVvr-eXU'
     );
   }
+
+  conseiller = 'https://youtu.be/B28nD5qM7eQ';
+  hotesse = 'https://youtu.be/X7wWVvr-eXU';
 
   ngOnInit(): void {}
 }

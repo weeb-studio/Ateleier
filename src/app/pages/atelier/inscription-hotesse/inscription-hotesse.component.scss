@@ -1,0 +1,138 @@
+.h1 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+.containeur {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+.contain {
+  border: 1px solid #ff3e79;
+  width: 250px;
+}
+.contain-infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+}
+.text .img {
+  display: none;
+}
+.infos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+.p {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #97a2bb;
+}
+.formulaire {
+  border: 1px solid #ff3e79;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  border-radius: 10px;
+}
+.legend {
+  color: #ff3e79;
+  font-weight: bolder;
+  text-align: center;
+}
+.form {
+  width: 260px;
+}
+.icon {
+  position: relative;
+}
+.icon img {
+  position: absolute;
+  left: 5px;
+  // top: 4px;
+  width: 12px;
+}
+.input {
+  border: 1px solid #ff3e79;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 10px;
+  height: 20px;
+  font-weight: bold;
+}
+.boutton {
+  background-color: #ff3e79;
+  color: #fff;
+  width: 180px;
+  height: 30px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  float: right;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 780px) {
+  .contain {
+    width: 50%;
+    height: 40vh;
+    position: relative;
+  }
+  .text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0 !important;
+    left: 25% !important;
+  }
+  .text .img {
+    display: flex;
+    height: 30px;
+  }
+  .text .h1 {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 310px;
+  }
+  .P {
+    text-align: center;
+  }
+  .contain-infos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .infos {
+    margin: 0 !important;
+  }
+  .img {
+    height: 50px;
+  }
+  .formulaire {
+    width: 400px;
+  }
+}
