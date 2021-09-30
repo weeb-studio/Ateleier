@@ -1,0 +1,79 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav{
+    display: none;
+}
+.header .titre{
+    color: #FF3E79;
+    font-weight: bold;
+}
+.hr{
+    border: 1px solid #FF3E79E5;
+}
+.containeur{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.entete .h1{
+    color: #FF3E79;
+    font-weight: bold;
+    text-align: center;
+}
+.choix{
+    width: 100%;
+    background-color: #F2F2F2;
+    text-align: center;
+    height: 30px;
+}
+.cadeau{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 20%;
+    box-shadow: 5px 5px 5px 5px #F2F2F2;
+}
+.nom{
+    background-color: #333E57E5;
+    width: 100%;
+}
+.cadeau .img{
+    height: 80px;
+}
+.ajout{
+    background-color: #F9357CE5;
+    width: 100%;
+}
+.h4{
+    color: #fff;
+    text-align: center;
+}
+@media screen and (min-width:760px) {
+    .header{
+        position: relative;
+    }
+    .nav{
+        display: block;
+        position: absolute;
+        left: 100px;
+    }
+    .nav-link{
+        color: #FF3E79;
+        font-weight: bold;
+    }
+    .nav-link:active{
+        text-decoration: underline;
+    }
+    .fleche{
+        display: none;
+    }
+    .header .titre{
+        display: none;
+    }
+    .choix{
+        width: 90%;
+    }
+}
