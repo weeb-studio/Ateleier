@@ -9,6 +9,9 @@ import { DevenirConseillereComponent } from './pages/ateliers/devenir-conseiller
 import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { RecetteComponent } from './pages/programmes/recette/recette.component';
+import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 
 const routes: Routes = [
   {
@@ -16,6 +19,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: '404', component: NotFoundComponent },
+
+  //Atelier
   { path: 'atelier', component: AtelierComponent },
   { path: 'atelier/hotesse', component: DevenirHotesseComponent },
   { path: 'atelier/conseillere', component: DevenirConseillereComponent },
@@ -29,6 +34,17 @@ const routes: Routes = [
     path: 'atelier/inscription/hotesse',
     component: InscriptionHotesseComponent,
   },
+  // Programmes
+  { path: 'programmes/recette', component: RecetteComponent },
+  {
+    path: 'programmes/connaitre-ses-cheveux',
+    component: ConnaitreCheveuxComponent,
+  },
+  {
+    path: 'programmes/routine-capillaire',
+    component: RoutineCapillaireComponent,
+  },
+  { path: 'programme', redirectTo: 'programmes/connaitre-ses-cheveux' },
   // {path: '', component: },
   { path: '**', redirectTo: '404' },
 ];

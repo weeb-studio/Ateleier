@@ -20,6 +20,9 @@ import { InscriptionConseillereComponent } from './pages/atelier/inscription-con
 import { InscriptionHotesseComponent } from './pages/atelier/inscription-hotesse/inscription-hotesse.component';
 import { InscriptionComponent } from './pages/atelier/inscription/inscription.component';
 import { ConnexionComponent } from './pages/atelier/connexion/connexion.component';
+import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { RecetteComponent } from './pages/programmes/recette/recette.component';
+import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { ConnexionComponent } from './pages/atelier/connexion/connexion.componen
     InscriptionHotesseComponent,
     InscriptionComponent,
     ConnexionComponent,
+    ConnaitreCheveuxComponent,
+    RecetteComponent,
+    RoutineCapillaireComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
   providers: [],
