@@ -20,9 +20,10 @@ import { RoutinesCapillairesComponent } from './pages/routines-capillaires/routi
 import { AcceuilHotesseComponent } from './pages/acceuil-hotesse/acceuil-hotesse.component';
 import { CadeauHotesseComponent } from './pages/cadeau-hotesse/cadeau-hotesse.component';
 import { ConnaitreCheveuxComponent } from './pages/connaitre-cheveux/connaitre-cheveux.component';
+import { RecetteComponent } from './pages/recette/recette.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NotFoundComponent, HotesseComponent, ConseillereComponent, CompteClienteComponent, ClienteComponent, ProfitBeauteComponent, BigoodeeComponent, DevenirHotesseComponent, DevenirConseillereComponent, RoutinesCapillairesComponent, AcceuilHotesseComponent, CadeauHotesseComponent, ConnaitreCheveuxComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NotFoundComponent, HotesseComponent, ConseillereComponent, CompteClienteComponent, ClienteComponent, ProfitBeauteComponent, BigoodeeComponent, DevenirHotesseComponent, DevenirConseillereComponent, RoutinesCapillairesComponent, AcceuilHotesseComponent, CadeauHotesseComponent, ConnaitreCheveuxComponent, RecetteComponent],
   imports: [
     BrowserModule, 
     AppRoutingModule,
