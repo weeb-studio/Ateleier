@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccesConseillereComponent } from './pages/atelier/acces-conseillere/acces-conseillere.component';
+import { AccesHotesseComponent } from './pages/atelier/acces-hotesse/acces-hotesse.component';
 import { InscriptionConseillereComponent } from './pages/atelier/inscription-conseillere/inscription-conseillere.component';
 import { InscriptionHotesseComponent } from './pages/atelier/inscription-hotesse/inscription-hotesse.component';
 import { AtelierComponent } from './pages/ateliers/atelier/atelier.component';
@@ -21,6 +23,8 @@ const routes: Routes = [
     path: 'atelier/inscription/conseillere',
     component: InscriptionConseillereComponent,
   },
+  { path: 'acces-conseillere', component: AccesConseillereComponent },
+  { path: 'acces-hotesse', component: AccesHotesseComponent },
   {
     path: 'atelier/inscription/hotesse',
     component: InscriptionHotesseComponent,

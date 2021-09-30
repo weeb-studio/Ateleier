@@ -8,7 +8,8 @@
         <img src="assets/calendar.svg" alt="" srcset="" />
       </div>
       <div
-        class="cursor-pointer text-lg font-semibold border-b-2"
+        class="cursor-pointer text-lg font-semibold"
+        [ngClass]="{ 'border-b-2': head === 'atelier' }"
         style="border-color: #ff3e79; color: #ff3e79"
       >
         Nos ateliers
@@ -23,7 +24,8 @@
         <img src="assets/userc.svg" alt="" srcset="" />
       </div>
       <div
-        class="cursor-pointer text-lg font-semibold border-b-2"
+        class="cursor-pointer text-lg font-semibold"
+        [ngClass]="{ 'border-b-2': head === 'hotesse' }"
         style="border-color: #ff3e79; color: #ff3e79"
       >
         Dévenir hôtesse
@@ -35,7 +37,8 @@
         <img src="assets/userc.svg" alt="" srcset="" />
       </div>
       <div
-        class="cursor-pointer text-lg font-semibold border-b-2"
+        class="cursor-pointer text-lg font-semibold"
+        [ngClass]="{ 'border-b-2': head === 'conseillere' }"
         style="border-color: #ff3e79; color: #ff3e79"
       >
         Dévenir Conseillère
