@@ -9,6 +9,7 @@ import { DevenirConseillereComponent } from './pages/ateliers/devenir-conseiller
 import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
@@ -45,6 +46,7 @@ const routes: Routes = [
     component: RoutineCapillaireComponent,
   },
   { path: 'programme', redirectTo: 'programmes/connaitre-ses-cheveux' },
+  { path: 'programmes/concept', component: ConceptComponent },
   // {path: '', component: },
   { path: '**', redirectTo: '404' },
 ];

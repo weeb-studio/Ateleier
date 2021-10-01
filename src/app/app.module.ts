@@ -23,6 +23,7 @@ import { ConnexionComponent } from './pages/atelier/connexion/connexion.componen
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
+import { ConceptComponent } from './pages/programmes/concept/concept.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { RoutineCapillaireComponent } from './pages/programmes/routine-capillair
     ConnaitreCheveuxComponent,
     RecetteComponent,
     RoutineCapillaireComponent,
+    ConceptComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
   providers: [],
