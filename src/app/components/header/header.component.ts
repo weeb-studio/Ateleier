@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   show: Boolean = false;
   user: Boolean = false;
   subMenu: Boolean = false;
+  subMenu1: Boolean = false;
   ngOnInit(): void {}
 
   go(navigate: String) {
@@ -19,7 +20,13 @@ export class HeaderComponent implements OnInit {
     this.subMenu = false;
     this.router.navigate([`${navigate}`], { relativeTo: this.route });
   }
+  goTo(navigate: String) {
+    this.user = false;
+    this.router.navigate([`${navigate}`], { relativeTo: this.route });
+  }
   showDialog() {
+    this.subMenu1 = false;
+    this.subMenu = false;
     this.show = !this.show;
   }
 
@@ -30,6 +37,11 @@ export class HeaderComponent implements OnInit {
   }
 
   showSubMenu() {
+    this.subMenu1 = false;
     this.subMenu = !this.subMenu;
+  }
+  showSubMenu1() {
+    this.subMenu = false;
+    this.subMenu1 = !this.subMenu1;
   }
 }

@@ -25,3 +25,18 @@
 .border-primary {
   border-color: #ff3e79 !important;
 }
+
+*:focus {
+  // outline: #ff680c;
+  outline: none !important;
+}
+
+input:focus,
+textarea:focus {
+  outline: none !important;
+  border: 2px solid #ff680c !important;
+}
+
+.hoverlink:hover {
+  color: #ff680c !important;
+}

@@ -36,31 +36,68 @@
         srcset=""
       />
     </div>
+    <div
+      class="
+        border border-primary
+        p-3
+        absolute
+        right-0
+        bg-white
+        top-14
+        flex flex-col
+        space-y-2
+        z-50
+      "
+      *ngIf="user"
+    >
+      <div
+        class="flex flex-row text-gray-600 space-x-3 cursor-pointer"
+        (click)="goTo('')"
+      >
+        <div><img src="assets/logout.svg" alt="" srcset="" /></div>
+        <div class="uppercase">Se connecter</div>
+      </div>
+      <div
+        class="flex flex-row text-gray-600 space-x-3 ml-2 cursor-pointer"
+        (click)="goTo('/acces-conseillere')"
+      >
+        <div><img src="assets/user.svg" alt="" srcset="" /></div>
+        <div class="uppercase">Accès conseillère</div>
+      </div>
+      <div
+        class="flex flex-row text-gray-600 space-x-3 ml-2 cursor-pointer"
+        (click)="goTo('/acces-hotesse')"
+      >
+        <div><img src="assets/user.svg" alt="" srcset="" /></div>
+        <div class="uppercase">Accès hôtesse</div>
+      </div>
+    </div>
     <div class="w-7/12 lg:w-9/12 flex items-end justify-between space-x-20">
       <div
-        class="border-b-2"
+        class="border-b- cursor-pointer hoverlink"
         style="color: #ff3e79; border-color: #ff3e79"
         routerLink="/"
-        class="cursor-pointer"
         (click)="active()"
       >
         Accueil
       </div>
       <div
-        class="cursor-pointer"
+        class="cursor-pointer hoverlink"
         style="color: #ff3e79"
         routerLink="/programme"
       >
         Programmes
       </div>
       <div
-        class="cursor-pointer"
+        class="cursor-pointer hoverlink"
         style="color: #ff3e79"
         routerLink="/atelier/conseillere"
       >
         Ateliers
       </div>
-      <div class="cursor-pointer" style="color: #ff3e79">Boutique</div>
+      <div class="cursor-pointer hoverlink" style="color: #ff3e79">
+        Boutique
+      </div>
     </div>
   </div>
 </header>
@@ -96,12 +133,33 @@
   <div class="w-full">
     <img class="w-full" src="assets/line.svg" alt="" srcset="" />
   </div>
-  <div class="flex flex-row items-center" (click)="go('/programme')">
+  <div class="flex flex-row items-center" (click)="showSubMenu1()">
     <div class="px-5 py-4">
       <img src="assets/programme.svg" alt="" srcset="" />
     </div>
     <div class="text-xl" style="color: #475168">
       {{ "programmes" | uppercase }}
+    </div>
+    <div class="px-5 py-4" *ngIf="subMenu1">
+      <img src="assets/Polygon.svg" alt="" srcset="" />
+    </div>
+  </div>
+
+  <div class="flex flex-col space-y-3 py-5 pl-20" *ngIf="subMenu1">
+    <div
+      class="text-primary uppercase"
+      (click)="go('/programmes/connaitre-ses-cheveux')"
+    >
+      connaitre ses cheveux
+    </div>
+    <div
+      class="text-primary uppercase"
+      (click)="go('/programmes/routine-capillaire')"
+    >
+      routines capillaires
+    </div>
+    <div class="text-primary uppercase" (click)="go('/programmes/recette')">
+      recettes
     </div>
   </div>
 
