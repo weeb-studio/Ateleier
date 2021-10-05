@@ -40,3 +40,20 @@ textarea:focus {
 .hoverlink:hover {
   color: #ff680c !important;
 }
+
+.btn {
+  color: #ffffff !important;
+  background-color: #ff3e79 !important;
+}
+
+.btn:hover {
+  background-color: #ff680c !important;
+  color: #ffffff !important;
+}
+
+.btn:disabled,
+.btn[disabled] {
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  cursor: initial !important;
+}

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +26,14 @@ import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
+import { SideBarComponent } from './pages/admin/components/side-bar/side-bar.component';
+import { DashboardComponent } from './pages/admin/pages/dashboard/dashboard.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
+import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
+import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.component';
+import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
+import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +57,25 @@ import { ConceptComponent } from './pages/programmes/concept/concept.component';
     RecetteComponent,
     RoutineCapillaireComponent,
     ConceptComponent,
+    SideBarComponent,
+    DashboardComponent,
+    FaqHotesseComponent,
+    FaqConseillereComponent,
+    MentionLegaleComponent,
+    NousContacterComponent,
+    QuiSommesNousComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, IvyCarouselModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    IvyCarouselModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
