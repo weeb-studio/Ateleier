@@ -17,6 +17,7 @@ export class ConnexionComponent implements OnInit {
     email: '',
     pwd: '',
   };
+  message = '';
   mail: String = '';
   loginForm: FormGroup;
   constructor(
@@ -58,6 +59,7 @@ export class ConnexionComponent implements OnInit {
       },
       (err: any) => {
         console.log(err);
+        this.message = err.error.message;
       }
     );
   }
