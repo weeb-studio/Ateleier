@@ -21,9 +21,17 @@ import { AcceuilHotesseComponent } from './pages/acceuil-hotesse/acceuil-hotesse
 import { CadeauHotesseComponent } from './pages/cadeau-hotesse/cadeau-hotesse.component';
 import { ConnaitreCheveuxComponent } from './pages/connaitre-cheveux/connaitre-cheveux.component';
 import { RecetteComponent } from './pages/recette/recette.component';
+import { LuttePelliculeComponent } from './pages/lutte-pellicule/lutte-pellicule.component';
+import { ConceptComponent } from './pages/concept/concept.component';
+import { CheveuxSecComponent } from './pages/cheveux-sec/cheveux-sec.component';
+import { FAQHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
+import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
+import { ContactezNousComponent } from './pages/contactez-nous/contactez-nous.component';
+import { MentionsLegalesComponent } from './pages/mentions-legales/mentions-legales.component';
+import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NotFoundComponent, HotesseComponent, ConseillereComponent, CompteClienteComponent, ClienteComponent, ProfitBeauteComponent, BigoodeeComponent, DevenirHotesseComponent, DevenirConseillereComponent, RoutinesCapillairesComponent, AcceuilHotesseComponent, CadeauHotesseComponent, ConnaitreCheveuxComponent, RecetteComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NotFoundComponent, HotesseComponent, ConseillereComponent, CompteClienteComponent, ClienteComponent, ProfitBeauteComponent, BigoodeeComponent, DevenirHotesseComponent, DevenirConseillereComponent, RoutinesCapillairesComponent, AcceuilHotesseComponent, CadeauHotesseComponent, ConnaitreCheveuxComponent, RecetteComponent, LuttePelliculeComponent, ConceptComponent, CheveuxSecComponent, FAQHotesseComponent, FaqConseillereComponent, ContactezNousComponent, MentionsLegalesComponent, QuiSommesNousComponent],
   imports: [
     BrowserModule, 
     AppRoutingModule,
