@@ -52,9 +52,9 @@ export class ConnexionComponent implements OnInit {
         // console.warn(test.status);
         console.log(test.role.nom);
         if (test.role.nom == 'admin') {
+          this.localStorage.set('x-access-token', test.accessToken);
           this.router.navigate(['/admin/dashboard']);
         }
-        this.localStorage.set('x-access-token', test.accessToken);
       },
       (err: any) => {
         console.log(err);
@@ -81,5 +81,8 @@ export class ConnexionComponent implements OnInit {
     this.UserService.getUser().subscribe((res) => {
       console.log(res);
     });
+  }
+  isAuth() {
+    console.log('is Auth ' + this.jwt.isAuthenticated());
   }
 }

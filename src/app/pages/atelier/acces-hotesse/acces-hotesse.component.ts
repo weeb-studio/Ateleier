@@ -25,6 +25,14 @@ export class AccesHotesseComponent implements OnInit {
     private localStorage: LocalStorageService,
     private jwt: JWTokenService
   ) {
+    this.UserService.getUser().subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
     this.loginForm = this.formBuilder.group({
       email: formBuilder.control('', [
         // Validators.required,

@@ -6,28 +6,20 @@ import {
   CanDeactivate,
   CanLoad,
   Route,
-  Router,
   RouterStateSnapshot,
   UrlSegment,
   UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { JWTokenService } from '../services/jwtoken.service';
-import { LocalStorageService } from '../services/local-storage.service';
-import { UserService } from '../services/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AdminGuard
+export class AuthGuard
   implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad
 {
-  constructor(
-    private UserService: UserService,
-    private localStorage: LocalStorageService,
-    private router: Router,
-    private jwt: JWTokenService
-  ) {}
+  constructor(private jwt: JWTokenService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -36,7 +28,7 @@ export class AdminGuard
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.checkUserLogin(route, '/acces-hotesse');
+    return this.check();
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
@@ -71,18 +63,7 @@ export class AdminGuard
     return true;
   }
 
-  checkUserLogin(route: ActivatedRouteSnapshot, url: any): boolean {
-    const decode = this.jwt.GetTokenDecoded();
-    const date = this.jwt.getTokenExpirationDate();
-    const obj = JSON.parse(decode);
-    console.log(decode);
-    console.log(obj);
-
-    if (obj.role == 'admin' && date > Date.now()) {
-      return true;
-    }
-    this.router.navigate([url]);
-
-    return false;
+  check() {
+    return !this.jwt.isAuthenticated();
   }
 }

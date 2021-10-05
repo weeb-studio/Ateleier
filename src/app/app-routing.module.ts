@@ -21,6 +21,7 @@ import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {
@@ -28,7 +29,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   { path: '404', component: NotFoundComponent },
-  { path: 'connexion', component: ConnexionComponent },
+  {
+    path: 'connexion',
+    canActivate: [AuthGuard],
+    component: ConnexionComponent,
+  },
   { path: 'faq-hotesse', component: FaqHotesseComponent },
   { path: 'faq-conseillere', component: FaqConseillereComponent },
   { path: 'mention-legale', component: MentionLegaleComponent },

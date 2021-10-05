@@ -13,11 +13,15 @@ export class JWTokenService {
   constructor(
     private jwtHelper: JwtHelperService,
     private localStorage: LocalStorageService
-  ) {
+  ) {}
+
+  getToken() {
+    this.expToken = '';
     this.expToken = this.localStorage.get('x-access-token');
   }
 
   GetTokenDecoded() {
+    this.getToken();
     this.tokenPayload = JSON.stringify(
       this.jwtHelper.decodeToken(this.expToken)
     );
@@ -25,10 +29,12 @@ export class JWTokenService {
   }
 
   getTokenExpirationDate() {
+    this.getToken();
     this.expirationDate = this.jwtHelper.getTokenExpirationDate(this.expToken);
     return this.expirationDate;
   }
   isAuthenticated(): boolean {
+    this.getToken();
     return !this.jwtHelper.isTokenExpired(this.expToken);
   }
 }
