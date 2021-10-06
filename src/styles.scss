@@ -57,3 +57,22 @@ textarea:focus {
   color: #666666 !important;
   cursor: initial !important;
 }
+
+.link:focus {
+  background-color: transparent;
+  outline: none;
+  border-right: 1px solid #ff3e79;
+} //focus:bg-gray-200 focus:outline-none focus:shadow-outline
+
+.menu:hover {
+  color: #ff680c;
+  cursor: pointer;
+}
+
+.svgt:hover {
+  background-color: #eee;
+}
+
+.hover:hover {
+  color: #ff680c !important;
+}
