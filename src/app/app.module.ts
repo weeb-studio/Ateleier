@@ -34,6 +34,7 @@ import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere
 import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.component';
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
+import { UtilisateursComponent } from './pages/admin/pages/utilisateurs/utilisateurs.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.
     MentionLegaleComponent,
     NousContacterComponent,
     QuiSommesNousComponent,
+    UtilisateursComponent,
   ],
   imports: [
     BrowserModule,

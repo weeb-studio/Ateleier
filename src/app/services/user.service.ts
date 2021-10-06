@@ -32,4 +32,26 @@ export class UserService {
     });
     return this.httpClient.get(API_URL, { headers: headers });
   }
+
+  getUnvaldUser() {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/unvalid';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    return this.httpClient.get(API_URL, { headers: headers });
+  }
+  validate(id: string) {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/user/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    const body = {
+      status: true,
+    };
+    return this.httpClient.put(API_URL, body, { headers: headers });
+  }
 }

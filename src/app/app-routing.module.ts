@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/admin/pages/dashboard/dashboard.component';
+import { UtilisateursComponent } from './pages/admin/pages/utilisateurs/utilisateurs.component';
 import { AccesConseillereComponent } from './pages/atelier/acces-conseillere/acces-conseillere.component';
 import { AccesHotesseComponent } from './pages/atelier/acces-hotesse/acces-hotesse.component';
 import { ConnexionComponent } from './pages/atelier/connexion/connexion.component';
@@ -73,6 +74,11 @@ const routes: Routes = [
     path: 'admin/dashboard',
     canActivate: [AdminGuard],
     component: DashboardComponent,
+  },
+  {
+    path: 'admin/utilisateur',
+    canActivate: [AdminGuard],
+    component: UtilisateursComponent,
   },
   // {path: '', component: },
   { path: '**', redirectTo: '404' },
