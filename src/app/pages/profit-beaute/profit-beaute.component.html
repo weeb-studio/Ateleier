@@ -1,74 +1,74 @@
-<div class="flex mobile">
-    <div class="flex-1 flex flex-col space-y-5 part1">
-      <div class="profil">
-          <img src="assets/profil.png" alt="">
-      </div>
-      <div class="link">
-          <a href="#">Mon compte</a>
-      </div>
-      <div class="link">
-        <a href="#">Mon profil beauté</a>
-      </div>
-      <div class="link">
-        <a href="#">Mes produits</a>
-      </div>
-    </div>
-    <div class="flex-none contain space-y-5">
-        <div class="space-y-0 text">
-            <p>  
-                Pour recevoir des recommandations de produits adaptés, 
-            </p>
-            <p>
-                pour vous aider à réaliser vos programmes capillaires, 
-            </p>
-            <p>
-                nous avons besoin des informations suivantes :
-            </p>
+<div class="flex flex-col items-center px-10 space-y-10 md:grid md:grid-cols-6 md:space-x-0">
+    <div class="flex flex-col items-center space-y-5 md:col-span-2">
+        <div>
+            <img src="assets/profil.svg" alt="">
         </div>
-        <div class="space-y-5">
-            <div class="flex space-x-4">
-                <div class="flex flex-col">
-                    <label for="">Nature des cheveux</label>
-                    <select name="pays" id="pays" class="input">
-                        
-                    </select>
-                </div>
-                <div class="flex flex-col">
-                    <label for="">Problématique de cheveux</label>
-                    <select name="pays" id="pays" class="input">
-                        
-                    </select>
-                </div>
-            </div>
-            <div class="flex space-x-4">
-                <div class="flex flex-col">
-                    <label for="">Texture de cheveux</label>
-                    <select name="pays" id="pays" class="input">
-                        
-                    </select>
-                </div>
-                <div class="flex flex-col">
-                   <label for="">Type de cheveux</label>
-                    <select name="pays" id="pays" class="input">
-                         
-                    </select>
-                </div>
-            </div>
-            <div class="flex flex-col">
-                <label for="">Longueur des cheveux</label>
-                    <select name="pays" id="pays" class="input">
-                         
-                    </select>
-            </div>
-            <div class="boutton">
-                <button type="submit" class="btn">Enregistrer</button>
-            </div>
-        </div>
+        <div class="cursor-pointer text-center w-full md:w-1/2 rounded-md" style="background-color: #FF3E79; color: #fff;">Mon compte</div>
+        <div class="cursor-pointer text-center w-full md:w-1/2 rounded-md" style="background-color: #FF3E79; color: #fff;">Mon profil beauté</div>
+        <div class="cursor-pointer  text-center w-full md:w-1/2 rounded-md" style="background-color: #FF3E79; color: #fff;">Mes produits</div>
     </div>
-    <div class="flex-1 part1">
-        <div class="link flex space-x-2">
-            <img src="assets/deconnecter.svg" alt="">
-            <a href="#">se déconnecter</a>
+    <div class="flex flex-col items-center md:w-full md:col-span-3 space-y-10" style="border-color: #FF3E79;">
+       <div class="text-center">
+           <p>Pour recevoir des recommandations de produits adaptés,</p>
+           <p>pour vous aider à réaliser vos programmes capillaires,</p>
+           <p>nous avons besoin des informations suivantes :</p>
+       </div>
+       <div class="grid grid-cols-2 gap-4 text-xs items-center">
+           <div class="w-full">
+               <label for="" class="w-full">Nature des cheveux</label>
+               <select name="" id="" class="w-full border-2 rounded-md" style="color: #FF3E79; background-color: #fff; border-color: #475168;">
+                   <optgroup>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                   </optgroup>
+               </select>
+           </div>
+           <div class="w-full">
+                <label for="" class="w-full h-10">Problématique de cheveux</label>
+                <select name="" id="" class="w-full border-2 rounded-md" style="color: #FF3E79; background-color: #fff; border-color: #475168;">
+                    <optgroup>
+                         <option value=""></option>
+                         <option value=""></option>
+                         <option value=""></option>
+                    </optgroup>
+                </select>
+           </div>
+           <div class="">
+                <label for="" class="w-full">Texture de cheveux</label>
+                <select name="" id="" class="w-full border-2 rounded-md" style="color: #FF3E79; background-color: #fff; border-color: #475168;">
+                    <optgroup>
+                         <option value=""></option>
+                         <option value=""></option>
+                         <option value=""></option>
+                    </optgroup>
+                </select>
+           </div>
+           <div class="">
+                <label for="" class="w-full">Type de cheveux</label>
+                <select name="" id="" class="w-full border-2 rounded-md" style="color: #FF3E79; background-color: #fff; border-color: #475168;">
+                    <optgroup>
+                         <option value=""></option>
+                         <option value=""></option>
+                         <option value=""></option>
+                    </optgroup>
+                </select>
+           </div>
+           <div class="">
+                <label for="" class="w-full">Longueur des cheveux</label>
+                <select name="" id="" class="w-full border-2 rounded-md" style="color: #FF3E79; background-color: #fff; border-color: #475168;">
+                    <optgroup>
+                         <option value=""></option>
+                         <option value=""></option>
+                         <option value=""></option>
+                    </optgroup>
+                </select>
+           </div>
         </div>
+        <button type="submit" class="rounded-md w-40" style="background-color: #FF3E79; color: #fff;">Enregistrer</button>
     </div>
-  </div>
+    <div class="flex flex-row cursor-pointer rounded-md md:items-center space-x-2 top-0 md:absolute md:right-5" style="background-color: #FF3E79; color: #fff;">
+        <img src="assets/deconnect.svg" alt="" class="pl-2">
+        <h1 class="pl-2">se déconnecter</h1>
+    </div>
+</div>

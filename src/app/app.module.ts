@@ -29,9 +29,15 @@ import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere
 import { ContactezNousComponent } from './pages/contactez-nous/contactez-nous.component';
 import { MentionsLegalesComponent } from './pages/mentions-legales/mentions-legales.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
+import { ShampoingSecComponent } from './pages/shampoing-sec/shampoing-sec.component';
+import { ShampoingClarifiantComponent } from './pages/shampoing-clarifiant/shampoing-clarifiant.component';
+import { MasqueNourissantComponent } from './pages/masque-nourissant/masque-nourissant.component';
+import { MasqueCafeComponent } from './pages/masque-cafe/masque-cafe.component';
+import { TraitementChimiqueComponent } from './pages/traitement-chimique/traitement-chimique.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NotFoundComponent, HotesseComponent, ConseillereComponent, CompteClienteComponent, ClienteComponent, ProfitBeauteComponent, BigoodeeComponent, DevenirHotesseComponent, DevenirConseillereComponent, RoutinesCapillairesComponent, AcceuilHotesseComponent, CadeauHotesseComponent, ConnaitreCheveuxComponent, RecetteComponent, LuttePelliculeComponent, ConceptComponent, CheveuxSecComponent, FAQHotesseComponent, FaqConseillereComponent, ContactezNousComponent, MentionsLegalesComponent, QuiSommesNousComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent, NotFoundComponent, HotesseComponent, ConseillereComponent, CompteClienteComponent, ClienteComponent, ProfitBeauteComponent, BigoodeeComponent, DevenirHotesseComponent, DevenirConseillereComponent, RoutinesCapillairesComponent, AcceuilHotesseComponent, CadeauHotesseComponent, ConnaitreCheveuxComponent, RecetteComponent, LuttePelliculeComponent, ConceptComponent, CheveuxSecComponent, FAQHotesseComponent, FaqConseillereComponent, ContactezNousComponent, MentionsLegalesComponent, QuiSommesNousComponent, ShampoingSecComponent, ShampoingClarifiantComponent, MasqueNourissantComponent, MasqueCafeComponent, TraitementChimiqueComponent],
   imports: [
     BrowserModule, 
     AppRoutingModule,
