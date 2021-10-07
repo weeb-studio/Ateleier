@@ -1,0 +1,172 @@
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
+  <app-side-bar></app-side-bar>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full">
+    <h1 class="text-xl font-bold text-gray-600">Utilisateurs</h1>
+    <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-20 mb-20">
+      <div
+        class="py-2 cursor-pointer"
+        routerLink="/admin/utilisateur/conseillere"
+        (click)="voir = false; user = null"
+      >
+        Conseillères
+      </div>
+      <div
+        class="py-2 hover cursor-pointer"
+        routerLink="/admin/utilisateur/hotesse"
+      >
+        Hôtesses
+      </div>
+      <div
+        class="
+          py-2
+          hover
+          cursor-pointer
+          border-b-2 border-primary
+          text-gray-400
+        "
+        routerLink="/admin/utilisateur/cliente"
+      >
+        Clientes
+      </div>
+      <div class="py-2 hover cursor-pointer" routerLink="/admin/utilisateur">
+        En cours de validation
+      </div>
+    </div>
+    <div class="pl-5 text-lg mb-5 font-bold">Rechercher</div>
+    <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-20 mb-10" *ngIf="voir">
+      <div
+        class="
+          py-2
+          cursor-pointer
+          border-b-2 border-primary
+          text-gray-400
+          uppercase
+        "
+      >
+        Informations
+      </div>
+      <div class="py-2 hover cursor-pointer uppercase">Agenda ateliers</div>
+      <div class="py-2 hover cursor-pointer uppercase">porte monnaie</div>
+    </div>
+    <div class="w-full overflow-x-scroll">
+      <table class="min-w-full table-auto" *ngIf="!voir">
+        <thead class="justify-between">
+          <tr class="bg-white text-primary text-center border-2 border-primary">
+            <th class="px16 py-2">
+              <span class="text-primary text-center">Nom et prenom</span>
+            </th>
+            <th class="px16 py-2">
+              <span class="text-primary">Mail</span>
+            </th>
+
+            <th class="px16 py-2">
+              <span class="text-primary">Ville</span>
+            </th>
+
+            <th class="px16 py-2">
+              <span class="text-primary">Téléphone</span>
+            </th>
+            <th class="px16 py-2">
+              <span class="text-primary">&nbsp;</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-200 text-center">
+          <tr *ngFor="let item of items" class="bg-white border border-primary">
+            <td class="">
+              <span
+                class="
+                  text-center
+                  ml-2
+                  font-semibold
+                  flex flex-row
+                  gap-2
+                  items-center
+                  justify-center
+                "
+                ><img
+                  src="assets/user.png"
+                  class="w-7 rounded-full"
+                  alt=""
+                  srcset=""
+                />{{ item.prenom }} {{ item.nom }}</span
+              >
+            </td>
+            <td>
+              <span class="text-center ml-2 font-semibold">{{
+                item.email
+              }}</span>
+            </td>
+            <td class="px16 py-2">{{ item.ville }}</td>
+
+            <td class="px16 py-2">
+              <span>{{ item.numero }}</span>
+            </td>
+
+            <td class="px16 py-2">
+              <button
+                class="text-white px-2 py-2 border rounded-md btn"
+                (click)="usersDetails(item._id)"
+              >
+                voir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <table class="min-w-full table-auto px-36" *ngIf="voir">
+        <tbody class="justify-star">
+          <tr class="bg-white text-left border-2 border-primary">
+            <th class="pl-16 py-2">
+              <span class="text-primary text-left">Mail</span>
+            </th>
+            <th class="py-2">
+              <span class="text-center">{{ user.email }}</span>
+            </th>
+          </tr>
+          <tr class="bg-white text-left border-2 border-primary">
+            <th class="pl-16 py-2">
+              <span class="text-primary text-left">Téléphone</span>
+            </th>
+            <th class="py-2">
+              <span class="text-center">{{ user.numero }}</span>
+            </th>
+          </tr>
+          <tr class="bg-white text-left border-2 border-primary">
+            <th class="pl-16 py-2">
+              <span class="text-primary text-left">Nom</span>
+            </th>
+            <th class="py-2">
+              <span class="text-center">{{ user.nom }}</span>
+            </th>
+          </tr>
+          <tr class="bg-white text-left border-2 border-primary">
+            <th class="pl-16 py-2">
+              <span class="text-primary text-left">Prénom</span>
+            </th>
+            <th class="py-2">
+              <span class="text-center">{{ user.prenom }}</span>
+            </th>
+          </tr>
+          <tr class="bg-white text-left border-2 border-primary">
+            <th class="pl-16 py-2">
+              <span class="text-primary text-left">Code postal</span>
+            </th>
+            <th class="py-2">
+              <span class="text-center">{{ user.postal }}</span>
+            </th>
+          </tr>
+          <tr class="bg-white text-left border-2 border-primary">
+            <th class="pl-16 py-2">
+              <span class="text-primary text-left">Ville</span>
+            </th>
+            <th class="py-2">
+              <span class="text-center">{{ user.ville }}</span>
+            </th>
+          </tr>
+        </tbody>
+
+      </table> -->
+    </div>
+  </div>
+</div>

@@ -275,92 +275,119 @@
     "
     style="border-color: #ff3e79"
   >
-    <legend style="color: #ff3e79" class="text-center font-bold px-5">
-      Devenir Hôtesse
-    </legend>
-    <h1 class="text-center font-bold m-0">JE M’INFORME !</h1>
-    <div class="grid grid-cols-2 gap-4 px-5 md:px-20 md:w-full space-y-4">
-      <div class="relative mt-4">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Nom"
-          class="border-2 pl-6 w-full py-1 rounded"
-          style="border-color: #ff3e79"
-        />
-        <img src="assets/input-user.svg" alt="" class="absolute top-1.5 pl-1" />
+    <form
+      class="flex flex-col items-center space-y-5 w-full"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <legend style="color: #ff3e79" class="text-center font-bold px-5">
+        Devenir Hôtesse
+      </legend>
+      <h1 class="text-center font-bold m-0">JE M’INFORME !</h1>
+      <div *ngIf="message != ''">
+        {{ message }}
       </div>
-      <div class="relative">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Prénom"
-          class="border-2 pl-6 w-full py-1 rounded"
-          style="border-color: #ff3e79"
-        />
-        <img src="assets/input-user.svg" alt="" class="absolute top-1.5 pl-1" />
+      <div class="grid grid-cols-2 gap-4 px-5 md:px-20 md:w-full space-y-4">
+        <div class="relative mt-4">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Nom"
+            formControlName="nom"
+            class="border-2 pl-6 w-full py-1 rounded"
+            style="border-color: #ff3e79"
+          />
+          <img
+            src="assets/input-user.svg"
+            alt=""
+            class="absolute top-1.5 pl-1"
+          />
+        </div>
+        <div class="relative">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Prénom"
+            formControlName="prenom"
+            class="border-2 pl-6 w-full py-1 rounded"
+            style="border-color: #ff3e79"
+          />
+          <img
+            src="assets/input-user.svg"
+            alt=""
+            class="absolute top-1.5 pl-1"
+          />
+        </div>
+        <div class="col-span-2 w-full relative">
+          <input
+            type="email"
+            name=""
+            id=""
+            placeholder="Email"
+            formControlName="email"
+            class="border-2 w-full pl-6 py-1 rounded"
+            style="border-color: #ff3e79"
+          />
+          <img src="assets/@.svg" alt="" class="absolute top-2 pl-1" />
+        </div>
+        <div class="w-24 md:w-9/12">
+          <input
+            type="number"
+            name=""
+            id=""
+            placeholder="Code postal"
+            formControlName="postal"
+            class="border-2 w-full md:pl-3 py-1 rounded"
+            style="border-color: #ff3e79"
+          />
+        </div>
+        <div class="relative w-36 md:w-11/12 -left-6 md:-left-4">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Ville"
+            formControlName="ville"
+            class="border-2 pl-8 py-1 rounded w-full"
+            style="border-color: #ff3e79"
+          />
+          <img src="assets/XMLID.svg" alt="" class="absolute top-1 pl-1" />
+        </div>
+        <div class="relative">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Téléphone"
+            formControlName="telephone"
+            class="border-2 pl-6 w-full py-1 rounded"
+            style="border-color: #ff3e79"
+          />
+          <img
+            src="assets/mdi_phone.svg"
+            alt=""
+            class="absolute top-1.5 pl-1"
+          />
+        </div>
       </div>
-      <div class="col-span-2 w-full relative">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Email"
-          class="border-2 w-full pl-6 py-1 rounded"
-          style="border-color: #ff3e79"
-        />
-        <img src="assets/@.svg" alt="" class="absolute top-2 pl-1" />
+      <div class="space-y-2">
+        <button type="submit" class="text-center px-2 rounded-md h-10 btn">
+          Être contacter par une Conseillère
+        </button>
+        <div class="flex flex-col space-y-0 mb-5">
+          <a href="" class="text-sm underline text-gray-600"
+            >Mot de passe oublié</a
+          >
+          <a
+            href=""
+            class="text-sm pb-5 underline text-gray-600"
+            routerLink="/acces-hotesse"
+            >Se connecter</a
+          >
+        </div>
       </div>
-      <div class="w-24 md:w-9/12">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Code postal"
-          class="border-2 w-full md:pl-3 py-1 rounded"
-          style="border-color: #ff3e79"
-        />
-      </div>
-      <div class="relative w-36 md:w-11/12 -left-6 md:-left-4">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Ville"
-          class="border-2 pl-8 py-1 rounded w-full"
-          style="border-color: #ff3e79"
-        />
-        <img src="assets/XMLID.svg" alt="" class="absolute top-1 pl-1" />
-      </div>
-      <div class="relative">
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="Téléphone"
-          class="border-2 pl-6 w-full py-1 rounded"
-          style="border-color: #ff3e79"
-        />
-        <img src="assets/mdi_phone.svg" alt="" class="absolute top-1.5 pl-1" />
-      </div>
-    </div>
-    <div class="space-y-2">
-      <button type="submit" class="text-center px-2 rounded-md h-10 btn">
-        Être contacter par une Conseillère
-      </button>
-      <div class="flex flex-col space-y-0 mb-5">
-        <a href="" class="text-sm underline text-gray-600"
-          >Mot de passe oublié</a
-        >
-        <a
-          href=""
-          class="text-sm pb-5 underline text-gray-600"
-          routerLink="/acces-hotesse"
-          >Se connecter</a
-        >
-      </div>
-    </div>
+    </form>
   </fieldset>
 </div>

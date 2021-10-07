@@ -3,10 +3,28 @@
   <div class="my-10 px-4 md:px-10 text-gray-600 w-full">
     <h1 class="text-xl font-bold text-gray-600">Utilisateurs</h1>
     <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-20 mb-20">
-      <div class="py-2">Conseillères</div>
-      <div class="py-2">Hôtesses</div>
-      <div class="py-2">Clientes</div>
-      <div class="py-2 border-b-2 border-primary text-gray-400">
+      <div
+        class="py-2 hover cursor-pointer"
+        routerLink="/admin/utilisateur/conseillere"
+      >
+        Conseillères
+      </div>
+      <div
+        class="py-2 hover cursor-pointer"
+        routerLink="/admin/utilisateur/hotesse"
+      >
+        Hôtesses
+      </div>
+      <div
+        class="py-2 hover cursor-pointer"
+        routerLink="/admin/utilisateur/cliente"
+      >
+        Clientes
+      </div>
+      <div
+        class="py-2 border-b-2 border-primary text-gray-400 cursor-pointer"
+        routerLink="/admin/utilisateur"
+      >
         En cours de validation
       </div>
     </div>
@@ -14,7 +32,7 @@
     <div class="w-full overflow-x-scroll">
       <table class="min-w-full table-auto">
         <thead class="justify-between">
-          <tr class="bg-white text-primary text-center border border-primary">
+          <tr class="bg-white text-primary text-center border-2 border-primary">
             <th class="px16 py-2">
               <span class="text-primary text-center">Nom et prenom</span>
             </th>

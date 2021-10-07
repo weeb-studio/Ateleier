@@ -35,6 +35,9 @@ import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.co
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { UtilisateursComponent } from './pages/admin/pages/utilisateurs/utilisateurs.component';
+import { ConseillereComponent } from './pages/admin/pages/utilisateurs/conseillere/conseillere.component';
+import { HotesseComponent } from './pages/admin/pages/utilisateurs/hotesse/hotesse.component';
+import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,9 @@ import { UtilisateursComponent } from './pages/admin/pages/utilisateurs/utilisat
     NousContacterComponent,
     QuiSommesNousComponent,
     UtilisateursComponent,
+    ConseillereComponent,
+    HotesseComponent,
+    ClienteComponent,
   ],
   imports: [
     BrowserModule,
