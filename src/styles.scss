@@ -36,9 +36,14 @@ textarea:focus {
   outline: none !important;
   border: 2px solid #ff680c !important;
 }
+.hoverlink {
+  color: #ff3e79;
+  transition: transform 0.2s;
+}
 
 .hoverlink:hover {
   color: #ff680c !important;
+  transform: scale(1.1);
 }
 
 .btn {

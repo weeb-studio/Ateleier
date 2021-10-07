@@ -1,0 +1,18 @@
+.btn1 {
+  color: #ffffff !important;
+  background-color: #ff3e79 !important;
+  transition: transform 0.2s;
+}
+
+.btn1:hover {
+  background-color: #ff680c !important;
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+.btn1:disabled,
+.btn1[disabled] {
+  background-color: #cccccc !important;
+  color: #666666 !important;
+  cursor: initial !important;
+}

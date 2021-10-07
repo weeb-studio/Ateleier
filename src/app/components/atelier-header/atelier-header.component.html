@@ -1,14 +1,14 @@
 <div class="md:px-32 py-10 hidden md:block">
   <div class="flex flex-row justify-around items-center">
     <div
-      class="flex flex-row items-center space-x-2 hover"
+      class="flex flex-row items-center space-x-2 hoverlink"
       routerLink="/atelier/conseillere"
     >
       <div class="hidden md:block">
         <img src="assets/calendar.svg" alt="" srcset="" />
       </div>
       <div
-        class="cursor-pointer text-primary hover text-lg font-semibold"
+        class="cursor-pointer text-primar text-lg font-semibold"
         [ngClass]="{ 'border-b-2': head === 'atelier' }"
         style="border-color: #ff3e79"
       >
@@ -17,14 +17,14 @@
     </div>
 
     <div
-      class="flex flex-row items-center space-x-2"
+      class="flex flex-row items-center space-x-2 hoverlink"
       routerLink="/atelier/hotesse"
     >
       <div class="hidden md:block">
         <img src="assets/userc.svg" alt="" srcset="" />
       </div>
       <div
-        class="cursor-pointer text-lg font-semibold text-primary hover"
+        class="cursor-pointer text-lg font-semibold text-primar over"
         [ngClass]="{ 'border-b-2': head === 'hotesse' }"
         style="border-color: #ff3e79"
       >
@@ -32,12 +32,15 @@
       </div>
     </div>
 
-    <div class="flex flex-row items-center space-x-2" routerLink="/atelier">
+    <div
+      class="flex flex-row items-center space-x-2 hoverlink"
+      routerLink="/atelier"
+    >
       <div class="hidden md:block">
         <img src="assets/userc.svg" alt="" srcset="" />
       </div>
       <div
-        class="cursor-pointer text-lg font-semibold text-primary hover"
+        class="cursor-pointer text-lg font-semibold text-primar over"
         [ngClass]="{ 'border-b-2': head === 'conseillere' }"
         style="border-color: #ff3e79"
       >
