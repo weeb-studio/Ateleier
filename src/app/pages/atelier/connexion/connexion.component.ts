@@ -20,6 +20,7 @@ export class ConnexionComponent implements OnInit {
   message = '';
   mail: String = '';
   loginForm: FormGroup;
+  pass: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private UserService: UserService,
@@ -41,6 +42,9 @@ export class ConnexionComponent implements OnInit {
     });
   }
 
+  showPass() {
+    this.pass = !this.pass;
+  }
   ngOnInit(): void {}
 
   async onSubmit() {

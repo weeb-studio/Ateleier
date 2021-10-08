@@ -1,0 +1,76 @@
+<header class="w-full md:hidden flex flex-cols shadow-lg pt-3 relative fixed">
+  <div class="flex justify-center w-full py-4 cursor-pointer" routerLink="/">
+    <img class="h-12" src="assets/logo.svg" alt="" srcset="" />
+  </div>
+  <div
+    class="absolute bottom-0 right-0 h-20 flex items-center px-5"
+    (click)="showDialog()"
+  >
+    <img src="assets/menu.svg" alt="" srcset="" />
+  </div>
+</header>
+
+<header
+  class="
+    w-full
+    hidden
+    md:flex
+    justify-between
+    items-center
+    bg-ping-400
+    shadow-lg
+    md:px-5
+    lg:px-10
+    relative
+    fixe
+  "
+>
+  <div class="flex flex-row">
+    <div class="flex justify-start py-5 cursor-pointer" routerLink="/">
+      <img class="h-12" src="assets/logo.svg" alt="" srcset="" />
+    </div>
+  </div>
+  <div class="flex flex-row gap-6">
+    <div class="cursor-pointer hoverlink">
+      <img src="assets/Bell.svg" class="w-5" alt="" srcset="" />
+    </div>
+    <div
+      class="flex flex-row gap-2 cursor-pointer items-center hoverlink"
+      (click)="removeToken()"
+    >
+      <img src="assets/log-out.svg" class="w-5" alt="" srcset="" />
+      <div class="uppercase text-primar text-sm font-semibold">
+        se déconnecter
+      </div>
+    </div>
+  </div>
+</header>
+
+<div
+  *ngIf="show"
+  class="
+    flex flex-col
+    w-11/12
+    bg-white
+    shadow-lg
+    rounded-lg
+    absolute
+    top-2
+    ml-4
+    md:hidden
+    grid-cols-2
+  "
+  style="z-index: 10000"
+>
+  <div class="w-full relative">
+    <div class="flex justify-center w-full py-4">
+      <img class="h-12" src="assets/userHeader.svg" alt="" srcset="" />
+    </div>
+    <div
+      class="absolute bottom-0 right-0 h-20 flex items-start px-3 py-3"
+      (click)="showDialog()"
+    >
+      <img src="assets/close.svg" alt="" srcset="" />
+    </div>
+  </div>
+</div>

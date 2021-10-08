@@ -1,4 +1,130 @@
+<app-admin-header></app-admin-header>
 <div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
   <app-side-bar></app-side-bar>
-  <div class="my-10 mx-10"></div>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full space-y-20">
+    <div class="space-y-5">
+      <div class="text-primary font-bold text-2xl">Nombre d'atéliers</div>
+      <div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-20">
+        <div
+          class="
+            shadow-md
+            flex flex-col
+            gap-4
+            justify-center
+            items-center
+            w-auto
+            px-5
+            py-10
+            hover:bg-gray-200
+            rounded-lg
+          "
+        >
+          <div class="font-bold text-4xl text-gray-600">3</div>
+          <div class="text-primary">Atélier du jour</div>
+        </div>
+
+        <div
+          class="
+            shadow-md
+            flex flex-col
+            gap-4
+            justify-center
+            items-center
+            w-auto
+            px-5
+            py-10
+            hover:bg-gray-200
+            rounded-lg
+          "
+        >
+          <div class="font-bold text-4xl text-gray-600">19</div>
+          <div class="text-primary">Atélier de la semaine</div>
+        </div>
+
+        <div
+          class="
+            shadow-md
+            flex flex-col
+            gap-4
+            justify-center
+            items-center
+            w-auto
+            px-5
+            py-10
+            hover:bg-gray-200
+            rounded-lg
+          "
+        >
+          <div class="font-bold text-4xl text-gray-600">75</div>
+          <div class="text-primary">Atélier du mois</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-5">
+      <div class="text-primary font-bold text-2xl">Chiffre d'affaires</div>
+      <div class="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-20">
+        <div
+          class="
+            shadow-md
+            flex flex-col
+            gap-4
+            justify-center
+            items-center
+            w-auto
+            px-5
+            py-10
+            hover:bg-gray-200
+            rounded-lg
+          "
+        >
+          <div class="font-bold text-4xl text-gray-600">
+            {{ "175" | currency: "EUR" }}
+          </div>
+          <div class="text-primary">C. A journalier</div>
+        </div>
+
+        <div
+          class="
+            shadow-md
+            flex flex-col
+            gap-4
+            justify-center
+            items-center
+            w-auto
+            px-5
+            py-10
+            hover:bg-gray-200
+            rounded-lg
+          "
+        >
+          <div class="font-bold text-4xl text-gray-600">
+            {{ "700" | currency: "EUR" }}
+          </div>
+          <div class="text-primary">C. A hebdomadaire</div>
+        </div>
+
+        <div
+          class="
+            shadow-md
+            flex flex-col
+            gap-4
+            justify-center
+            items-center
+            w-auto
+            px-5
+            py-10
+            hover:bg-gray-200
+            rounded-lg
+          "
+        >
+          <div class="font-bold text-4xl text-gray-600">
+            {{ "2500" | currency: "EUR" }}
+          </div>
+          <div class="text-primary">C. A mensuel</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<app-footer></app-footer>

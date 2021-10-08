@@ -38,6 +38,8 @@ import { UtilisateursComponent } from './pages/admin/pages/utilisateurs/utilisat
 import { ConseillereComponent } from './pages/admin/pages/utilisateurs/conseillere/conseillere.component';
 import { HotesseComponent } from './pages/admin/pages/utilisateurs/hotesse/hotesse.component';
 import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/cliente.component';
+import { AdminHeaderComponent } from './pages/admin/components/admin-header/admin-header.component';
+import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/clien
     ConseillereComponent,
     HotesseComponent,
     ClienteComponent,
+    AdminHeaderComponent,
+    ShampoingSecComponent,
   ],
   imports: [
     BrowserModule,

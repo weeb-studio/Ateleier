@@ -22,6 +22,7 @@ import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.co
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
+import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
@@ -70,6 +71,7 @@ const routes: Routes = [
   },
   { path: 'programme', redirectTo: 'programmes/connaitre-ses-cheveux' },
   { path: 'programmes/concept', component: ConceptComponent },
+  { path: 'programmes/shampoing-sec', component: ShampoingSecComponent },
 
   // Admin
 

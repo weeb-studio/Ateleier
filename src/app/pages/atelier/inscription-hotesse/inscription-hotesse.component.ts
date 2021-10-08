@@ -14,6 +14,7 @@ export class InscriptionHotesseComponent implements OnInit {
   message = '';
   mail: String = '';
   registerForm: FormGroup;
+  pass: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,7 +38,12 @@ export class InscriptionHotesseComponent implements OnInit {
         Validators.required,
         Validators.minLength(1),
       ]),
+      pwd: formBuilder.control(''),
     });
+  }
+
+  showPass() {
+    this.pass = !this.pass;
   }
 
   ngOnInit(): void {}
@@ -52,7 +58,8 @@ export class InscriptionHotesseComponent implements OnInit {
       this.registerForm.value.postal,
       this.registerForm.value.ville,
       this.registerForm.value.telephone,
-      false
+      false,
+      this.registerForm.value.pwd
     ).subscribe(
       (test: any) => {
         // console.warn(test.status);

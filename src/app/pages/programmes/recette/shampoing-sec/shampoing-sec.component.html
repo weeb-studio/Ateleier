@@ -1,42 +1,26 @@
-<app-header></app-header>
-<!-- <div class="w-full h-screen flex justify-center items-center">
-  <h1 class="text-5xl text-blue-600 text-bold">404</h1>
-  <p class="font-sans md:Roboto">La page que vous demandez n'existe pas.</p>
-</div> -->
-
-<div
-  class="
-    flex flex-col
-    px-10
-    text-gray-600
-    space-y-10
-    md:items-center md:px-44
-    mb-20
-  "
->
-  <div
-    class="
-      my-5
-      md:grid
-      md:grid-cols-3
-      md:gap-4
-      md:my-10
-      md:px-40
-      md:w-full
-      md:justify-items-center
-    "
-    style="color: #ff3e79"
-  >
-    <div class="hidden font-bold cursor-pointer md:block">
+<div class="flex flex-col items-center px-10 mb-10">
+  <div class="my-5 md:space-x-44 flex flex-row md:my-10" style="color: #ff3e79">
+    <div
+      class="hidden font-bold cursor-pointer md:flex hove hoverlink"
+      routerLink="/programmes/connaitre-ses-cheveux"
+    >
       Connaitre ses cheveux
     </div>
-    <div class="hidden font-bold cursor-pointer md:block">
+    <div
+      class="hidden font-bold cursor-pointer md:flex hove hoverlink"
+      routerLink="/programmes/routine-capillaire"
+    >
       Routines capillaires
     </div>
-    <div class="hidden font-bold cursor-pointer md:block items-center">
+    <div
+      class="font-bold cursor-pointer border-b-2 hove hoverlink"
+      style="border-color: #ff3e79"
+      routerLink="/programmes/recette"
+    >
       Recettes
     </div>
   </div>
+
   <div
     class="flex flex-col items-center text-xl md:text-4xl rounded-xl px-5 py-2"
     style="background-color: #e4e4e4; color: #ff3e79"
@@ -73,4 +57,3 @@
     </p>
   </div>
 </div>
-<app-footer></app-footer>

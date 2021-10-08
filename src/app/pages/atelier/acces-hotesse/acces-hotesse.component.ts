@@ -19,6 +19,7 @@ export class AccesHotesseComponent implements OnInit {
   };
   mail: String = '';
   loginForm: FormGroup;
+  pass: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private UserService: UserService,
@@ -47,6 +48,9 @@ export class AccesHotesseComponent implements OnInit {
     });
   }
 
+  showPass() {
+    this.pass = !this.pass;
+  }
   ngOnInit(): void {}
 
   async onSubmit() {

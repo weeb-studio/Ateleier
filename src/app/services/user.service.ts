@@ -23,7 +23,8 @@ export class UserService {
     code: number,
     ville: string,
     tel: string,
-    status: boolean
+    status: boolean,
+    password: string
   ) {
     const API_URL = this.SERVER_URL + '/auth/signup';
     const headers = new HttpHeaders({
@@ -39,7 +40,7 @@ export class UserService {
         ville: ville,
         postal: code,
         numero: tel,
-        password: '123456',
+        password: password,
         status: status,
       }
       // { headers: headers }

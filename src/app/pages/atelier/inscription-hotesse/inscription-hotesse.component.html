@@ -1,3 +1,4 @@
+<app-header></app-header>
 <!-- <div class="w-screen overflow-hidden px-5 py-5 md:px-20 space-y-10">
   <div class="border-2 py-10 rounded-lg space-y-10 border-primary">
     <div class="flex flex-col items-center space-y-4">
@@ -371,6 +372,27 @@
             class="absolute top-1.5 pl-1"
           />
         </div>
+        <div class="relative">
+          <input
+            [type]="pass ? 'text' : 'password'"
+            name=""
+            id=""
+            placeholder="Mot de passe"
+            formControlName="pwd"
+            class="border-2 pl-3 pr-6 w-full py-1 rounded"
+            style="border-color: #ff3e79"
+          />
+          <a
+            class="cursor-pointer absolute right-2 top-2 pl-1 rounded-full"
+            (click)="showPass()"
+          >
+            <img
+              [src]="pass ? 'assets/eye.svg' : 'assets/eye-off.svg'"
+              alt=""
+              class=""
+            />
+          </a>
+        </div>
       </div>
       <div class="space-y-2">
         <button type="submit" class="text-center px-2 rounded-md h-10 btn1">
@@ -391,3 +413,4 @@
     </form>
   </fieldset>
 </div>
+<app-footer></app-footer>
