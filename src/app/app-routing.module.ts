@@ -21,7 +21,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { MasqueCafeComponent } from './pages/programmes/recette/masque-cafe/masque-cafe.component';
+import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nourissant/masque-nourissant.component';
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
+import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
@@ -72,6 +75,15 @@ const routes: Routes = [
   { path: 'programme', redirectTo: 'programmes/connaitre-ses-cheveux' },
   { path: 'programmes/concept', component: ConceptComponent },
   { path: 'programmes/shampoing-sec', component: ShampoingSecComponent },
+  {
+    path: 'programmes/shampoing-clarifiant',
+    component: ShampoingClarifiantComponent,
+  },
+  { path: 'programmes/masque-cafe', component: MasqueCafeComponent },
+  {
+    path: 'programmes/masque-nourissant',
+    component: MasqueNourissantComponent,
+  },
 
   // Admin
 

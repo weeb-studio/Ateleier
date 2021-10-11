@@ -40,6 +40,9 @@ import { HotesseComponent } from './pages/admin/pages/utilisateurs/hotesse/hotes
 import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/cliente.component';
 import { AdminHeaderComponent } from './pages/admin/components/admin-header/admin-header.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
+import { MasqueCafeComponent } from './pages/programmes/recette/masque-cafe/masque-cafe.component';
+import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nourissant/masque-nourissant.component';
+import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,9 @@ import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/
     ClienteComponent,
     AdminHeaderComponent,
     ShampoingSecComponent,
+    MasqueCafeComponent,
+    MasqueNourissantComponent,
+    ShampoingClarifiantComponent,
   ],
   imports: [
     BrowserModule,

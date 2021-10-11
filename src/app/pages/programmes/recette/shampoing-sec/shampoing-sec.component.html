@@ -1,59 +1,64 @@
+<app-header> </app-header>
+
+<!-- <app-programme-header></app-programme-header> -->
 <div class="flex flex-col items-center px-10 mb-10">
   <div class="my-5 md:space-x-44 flex flex-row md:my-10" style="color: #ff3e79">
     <div
-      class="hidden font-bold cursor-pointer md:flex hove hoverlink"
+      class="hidden font-bold cursor-pointer md:flex hove hoverlinkeffet"
       routerLink="/programmes/connaitre-ses-cheveux"
     >
       Connaitre ses cheveux
     </div>
     <div
-      class="hidden font-bold cursor-pointer md:flex hove hoverlink"
+      class="hidden font-bold cursor-pointer md:flex hove hoverlinkeffet"
       routerLink="/programmes/routine-capillaire"
     >
       Routines capillaires
     </div>
     <div
-      class="font-bold cursor-pointer border-b-2 hove hoverlink"
+      class="font-bold cursor-pointer border-b-2 hove hoverlinkeffet"
       style="border-color: #ff3e79"
       routerLink="/programmes/recette"
     >
       Recettes
     </div>
   </div>
-
-  <div
-    class="flex flex-col items-center text-xl md:text-4xl rounded-xl px-5 py-2"
-    style="background-color: #e4e4e4; color: #ff3e79"
-  >
-    Shampoing sec
-  </div>
-  <div class="grid grid-cols-2 space-x-3 md:space-x-40">
-    <div class="flex flex-col items-center">
-      <img src="assets/horloge.svg" alt="" class="" />
-      <p>10 min</p>
+  <div class="flex flex-col px-10 space-y-10 md:items-center md:px-44">
+    <div
+      class="flex flex-col mt-10 items-center text-3xl font-semibold px-5 py-3"
+      style="background-color: #e4e4e4; color: #ff3e79"
+    >
+      Shampoing sec
     </div>
-    <div class="flex flex-col items-center">
-      <img src="assets/objectif.svg" alt="" class="" />
-      <p>Cheveux gras</p>
+    <div class="grid grid-cols-2 space-x-3 md:space-x-40">
+      <div class="flex flex-col items-center">
+        <img src="assets/horloge.svg" alt="" class="w-20 md:w-32" />
+        <p>10 min</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <img src="assets/objectif.svg" alt="" class="w-20 md:w-32" />
+        <p>Cheveux gras</p>
+      </div>
     </div>
-  </div>
-  <div class="space-y-5 w-full">
-    <h1 class="" style="color: #ff680c">Ingrédients :</h1>
-    <div class="">
-      <P>- 2 C.À.S de fécule de maïs</P>
-      <P>- 1 C.À.S d’orange ou d’hibiscus</P>
-      <P>- 1 C.À.S d’argile blanche ( kaolin) ou de rhassoul</P>
+    <div class="space-y-5 w-full">
+      <h1 class="text-xl" style="color: #ff680c">Ingrédients :</h1>
+      <div class="">
+        <P>- 2 C.À.S de fécule de maïs</P>
+        <P>- 1 C.À.S d’orange ou d’hibiscus</P>
+        <P>- 1 C.À.S d’argile blanche ( kaolin) ou de rhassoul</P>
+      </div>
     </div>
-  </div>
-  <div class="space-y-5 w-full md:-2xl">
-    <h1 class="" style="color: #ff680c">Recette :</h1>
-    <p>
-      - mélanger tous les ingrédients et conserver le mélange dans un pot bocal
-      fermé
-    </p>
-    <p>
-      À conserver dans un bocal en verre/innox avec son couvercle ou dans un
-      flacon vaporisateur de poudre
-    </p>
+    <div class="space-y-5 w-full pb-10">
+      <h1 class="text-xl" style="color: #ff680c">Recette :</h1>
+      <p>
+        - mélanger tous les ingrédients et conserver le mélange dans un pot
+        bocal fermé
+      </p>
+      <p>
+        À conserver dans un bocal en verre/innox avec son couvercle ou dans un
+        flacon vaporisateur de poudre
+      </p>
+    </div>
   </div>
 </div>
+<app-footer></app-footer>
