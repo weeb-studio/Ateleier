@@ -21,6 +21,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
+import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
 import { MasqueCafeComponent } from './pages/programmes/recette/masque-cafe/masque-cafe.component';
 import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nourissant/masque-nourissant.component';
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
@@ -83,6 +85,14 @@ const routes: Routes = [
   {
     path: 'programmes/masque-nourissant',
     component: MasqueNourissantComponent,
+  },
+  {
+    path: 'programmes/perruques-tresses-tissages',
+    component: PerruqueTresseTissageComponent,
+  },
+  {
+    path: 'programmes/traitement-chimique',
+    component: TraitementChimiqueComponent,
   },
 
   // Admin

@@ -43,6 +43,8 @@ import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/
 import { MasqueCafeComponent } from './pages/programmes/recette/masque-cafe/masque-cafe.component';
 import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nourissant/masque-nourissant.component';
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
+import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
+import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoi
     MasqueCafeComponent,
     MasqueNourissantComponent,
     ShampoingClarifiantComponent,
+    TraitementChimiqueComponent,
+    PerruqueTresseTissageComponent,
   ],
   imports: [
     BrowserModule,
