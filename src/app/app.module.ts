@@ -40,6 +40,18 @@ import { HotesseComponent } from './pages/admin/pages/utilisateurs/hotesse/hotes
 import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/cliente.component';
 import { AdminHeaderComponent } from './pages/admin/components/admin-header/admin-header.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
+import { ShampoingClarifiantComponent } from './pages/recette/shampoing-clarifiant/shampoing-clarifiant.component';
+import { MasqueNourissantComponent } from './pages/recette/masque-nourissant/masque-nourissant.component';
+import { MasqueCafeComponent } from './pages/recette/masque-cafe/masque-cafe.component';
+import { TraitementChimiqueComponent } from './pages/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
+import { PerruquesTressesTissagesComponent } from './pages/connaitre-cheveux/perruques-tresses-tissages/perruques-tresses-tissages.component';
+import { ProgrammeHeaderComponent } from './components/programme-header/programme-header.component';
+import { HotesseHeaderComponent } from './components/hotesse-header/hotesse-header.component';
+import { ConseillereHeaderComponent } from './components/conseillere-header/conseillere-header.component';
+import { CheveuxSecComponent } from './pages/routines-capillaires/cheveux-sec/cheveux-sec.component';
+import { ChuteCasseComponent } from './pages/routines-capillaires/chute-casse/chute-casse.component';
+import { CheveuxPoreuxComponent } from './pages/routines-capillaires/cheveux-poreux/cheveux-poreux.component';
+import { LutteContrePelliculeComponent } from './pages/routines-capillaires/lutte-contre-pellicule/lutte-contre-pellicule.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +88,18 @@ import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/
     ClienteComponent,
     AdminHeaderComponent,
     ShampoingSecComponent,
+    ShampoingClarifiantComponent,
+    MasqueNourissantComponent,
+    MasqueCafeComponent,
+    TraitementChimiqueComponent,
+    PerruquesTressesTissagesComponent,
+    ProgrammeHeaderComponent,
+    HotesseHeaderComponent,
+    ConseillereHeaderComponent,
+    CheveuxSecComponent,
+    ChuteCasseComponent,
+    CheveuxPoreuxComponent,
+    LutteContrePelliculeComponent,
   ],
   imports: [
     BrowserModule,
