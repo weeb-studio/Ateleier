@@ -53,6 +53,7 @@ import { CheveuxSecComponent } from './pages/routines-capillaires/cheveux-sec/ch
 import { ChuteCasseComponent } from './pages/routines-capillaires/chute-casse/chute-casse.component';
 import { CheveuxPoreuxComponent } from './pages/routines-capillaires/cheveux-poreux/cheveux-poreux.component';
 import { LutteContrePelliculeComponent } from './pages/routines-capillaires/lutte-contre-pellicule/lutte-contre-pellicule.component';
+<<<<<<< HEAD
 import { RoutineObjectifComponent } from './pages/programmes/routine-objectif/routine-objectif.component';
 import { RoutineHeaderComponent } from './components/routine-header/routine-header.component';
 import { HotesseAcceuilComponent } from './pages/hotesse/hotesse-acceuil/hotesse-acceuil.component';
@@ -67,6 +68,8 @@ import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoi
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 >>>>>>> b91a435fdfaab7783ddfbffbcf987d8f86faaf37
+=======
+>>>>>>> parent of 6090b95 (12/10)
 
 @NgModule({
   declarations: [
@@ -116,6 +119,7 @@ import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-che
     ChuteCasseComponent,
     CheveuxPoreuxComponent,
     LutteContrePelliculeComponent,
+<<<<<<< HEAD
     RoutineObjectifComponent,
     RoutineHeaderComponent,
     HotesseAcceuilComponent,
@@ -130,6 +134,8 @@ import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-che
     TraitementChimiqueComponent,
     PerruqueTresseTissageComponent,
 >>>>>>> b91a435fdfaab7783ddfbffbcf987d8f86faaf37
+=======
+>>>>>>> parent of 6090b95 (12/10)
   ],
   imports: [
     BrowserModule,
