@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="flex flex-col items-center mb-10 md:px-20">
+<div class="flex flex-col items-center mb-10 md:px-20 px-10">
   <div class="my-5 md:space-x-44 flex flex-row md:my-10" style="color: #ff3e79">
     <div
       class="hidden font-bold cursor-pointer md:flex hove hoverlink"
@@ -33,53 +33,103 @@
     <button
       class="btn border-2 w-full rounded-md p-3"
       style="color: #fff; background-color: #ff3e79 !important"
+      (click)="page=true"
     >
       Routine avec objectif à atteindre
     </button>
     <button
       class="btn border-2 w-full rounded-md p-3"
       style="color: #fff; background-color: #ff709c !important"
+      (click)="page=false"
     >
-      Routine spécifique sur 1 mois
+    Quelle type de routine choisir ?
     </button>
   </div>
-  <div
-    class="
-      flex flex-col
-      items-center
-      space-y-5
-      relative
-      mt-12
-      md:grid-cols-2 md:grid md:pl-32
-    "
-  >
-    <div class="space-y-2">
-      <div class="link cursor-pointer">Lutter contre les pellicules</div>
-      <div class="link cursor-pointer">Stimuler la croissance des cheveux</div>
-      <div class="link cursor-pointer">Cheveux sec</div>
-      <div class="link cursor-pointer">Cheveux abîmés ou cassants</div>
-      <div class="link cursor-pointer">Cheveux frisés et crépus</div>
-      <div class="link cursor-pointer">Cheveux bouclés et ondulés</div>
-      <div class="link cursor-pointer">Cheveux gras</div>
-      <div class="link cursor-pointer">Naturel</div>
-      <div class="link cursor-pointer">Cheveux défrisés ou lissés</div>
-      <div class="link cursor-pointer">Cheveux poreux</div>
-      <div class="link cursor-pointer">Cheveux peu poreux</div>
+  <div class="space-y-5" *ngIf="page">
+        <div class="text-center text-2xl font-bold mt-5" style="color: #ff3e79;">Quels sont les bons gestes à adopter ? Quel routine choisir ?</div>
+        <div class="">
+          Les cheveux dit texturés, c’est a dire les cheveux bouclés, frisés et crépus, demandent une attention particulière. Leurs besoins d’hydratation, de protection, de nutrition sont indispensable pour lutter contre la et la sécheresse. Avec le mode de contraintes…
+          Ils faut construire une routine capillaire qui correspond à ses propos contraintes, ses propos exigences.
+        </div>
+        <div class="">
+            Si vous ne pouvez pas y passer trop de temps, si vous souhaiter opter plutôt pour une 
+            routine rapide mais efficace, avec un minimum de produits capillaires, nous conseillons d’opter pour 
+            <span style="color: #ff3e79;">routine capillaire simple</span>. 
+        </div>
+        <div class="relative">
+            <img src="assets/main.svg" alt="" class="absolute">
+            <span class="pl-16 font-semibold">Routine simple</span> : optez pour une routine capillaire simple, 
+            si vous avez une vie plutôt bien remplie ou vous n’avez pas beaucoup de temps à accorder à l’entretien 
+            de vos cheveux. Dans ce cas nous vous conseillons d’opter pour 3 à 5 produits acheter dans le commerce. 
+            Assurez-vous que ceux-ci ont une composition naturelle. 
+            <span class="cursor-pointer underline" style="color: #0000ff;">Découvrir un exemple de routine simple</span> 
+        </div>
+        <div class="">
+          Si par contre vous êtes quelqu’un qui n’a pas peur de mettre la somme nécessaire au besoin, qui recherche 
+          une routine qui va vraiment répondre aux problématiques réelles de vos cheveux, nous vous conseillons 
+          d’opter pour une routine structuré. 
+        </div>
+        <div class="relative">
+          <img src="assets/main.svg" alt="" class="absolute">
+          <span class="pl-16 font-semibold">Routine structuré</span> : Ici, nous vous conseillons de prendre le 
+          temps d’identifier les combinaisons des produits qui fonctionnent le plus sur vous cheveux. 
+          Baissez les vieilles habitudes. Sélectionnez un nombre précis de produits, selon la période, en fonction 
+          des besoins de vos cheveux sur cette période donnée. 
+          <span class="cursor-pointer underline" style="color: #0000ff;">Découvrir des exemples de routines structurées</span> 
+        </div>
+        <div class="">
+          Enfin, si vous ne souhaitez pas y mettre trop d’argent mais que vous souhaiter utiliser les ingrédients de votre cuisine, que vous souhaiter une routine uniquement basée sur les produits naturels, que vous souhaiter réaliser vous même vous soins nous vous conseillons d’opter pour une routine naturelle.
+        </div>
+        <div class="relative">
+          <img src="assets/main.svg" alt="" class="absolute">
+          <span class="pl-16 font-semibold">Routine naturelle</span> : Vous accordez une grande importance aux soins et produits que vous sélectionnez vous même. Vous prenez plaisir à transformer votre salle de bain et votre cuisine en mimi laboratoire, les routines 100% naturelle sont faites pour vous. 
+          Cependant, il est important de vous recentrer sur l’essentiel et de ne pas vous lancer chaque semaine 
+          dans la création de nouvelles recettes car vos cheveux risquent de ne pas toujours apprécier. Utiliser 
+          seulement des produits que vos cheveux apprécient. 
+          <span class="cursor-pointer underline" style="color: #0000ff;">Découvrir des exemples de routines naturelles</span>
+        </div>
+        <div class="">
+          Ça y est, vous avez décidé de vous lancer, démarrez votre routine capillaire, mais vous ne connaissez pas ce dont vous avez besoins pour démarrer 
+          Au minimum il vous faudra :
+        </div>
+        <div class="grid grid-cols-2 gap-4 md:w-8/12 mb-3">
+          <div class="flex flex-row space-x-2 md:space-x-10">
+            <div style="color: #ff3e79;">Des produits de base</div>
+            <img src="assets/flecheBlack.svg" alt="" class="w-8 h-10 pb-2">
+          </div>
+          <div class="">
+            <p>shampoing doux</p>
+            <p>shampoing clarifiant </p>
+            <p>masque hydratant</p>
+            <p>lait ou crème</p>
+            <p>huile capillaire.</p>
+          </div>
+          <div class="flex flex-row space-x-2 md:space-x-10">
+            <div style="color: #ff3e79;">Des accessoires</div>
+            <img src="assets/flecheBlack.svg" alt="" class="w-8 h-10 pb-2">
+          </div>
+          <div class="">
+            <p>vaporisateur d’eau </p>
+            <p>peigne à dents larges</p>
+            <p>pince à cheveux</p>
+            <p>serviette</p>
+            <p>bonnet</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 justify-items-center mt-5">
+          <img src="assets/shampooing1.svg" alt="" class="h-12 w-12 md:h-16 md:w-16">
+          <img src="assets/shampooing2.svg" alt="" class="h-12 w-12 md:h-16 md:w-16">
+          <img src="assets/creme2.svg" alt="" class="md:h-16 md:w-16">
+        </div>
     </div>
-    <div
-      class="
-        border-2
-        w-5/12
-        rounded-full
-        absolute
-        -bottom-5
-        -right-5
-        md:w-full md:static
-      "
-      style="background-color: #c4c4c4; border-color: #c4c4c4"
-    >
-      <img src="assets/routine.svg" alt="" />
+    <div class="flex flex-col mt-10 items-center space-y-5 h-96" *ngIf="!page">
+      <div class="">
+        Il est primordial de de construire une routine capillaire de vous corresponde, car le mode vie, les 
+        besoins et les exigences chacun sont différents. Cette routine doit pouvoir terminer une période 
+        donnée, elle doit être complète et surtout être en phase avec vos besoins réels pour vous aider à 
+        déterminer la routine capillaire qu’il vous faut, nous avons besoin des informations suivantes :
+      </div>
+      <button class="text-center h-10 w-full md:w-4/12" style="background-color: #ff3e79; color: #fff;">Je souhaite déterminer ma routine capillaire</button>
     </div>
-  </div>
 </div>
 <app-footer></app-footer>

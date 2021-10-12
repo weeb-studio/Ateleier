@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class RoutineCapillaireComponent implements OnInit {
 
   constructor() { }
+  page : boolean = true;
+  showPage () {
+    this.page = !this.page;
+  }
 
   ngOnInit(): void {
   }
