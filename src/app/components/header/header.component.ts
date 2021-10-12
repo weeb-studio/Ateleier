@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +10,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   // @Input('master') masterName = '';//
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private UserService: UserService,
+    private localStorage: LocalStorageService
+  ) {
+    this.getUser();
+  }
   show: Boolean = false;
   user: Boolean = false;
   subMenu: Boolean = false;
   subMenu1: Boolean = false;
+  utilisateur: any;
   ngOnInit(): void {}
 
   go(navigate: String) {
@@ -43,5 +53,17 @@ export class HeaderComponent implements OnInit {
   showSubMenu1() {
     this.subMenu = false;
     this.subMenu1 = !this.subMenu1;
+  }
+
+  getUser() {
+    this.UserService.getUser().subscribe((res) => {
+      this.utilisateur = res;
+      console.log(res);
+    });
+  }
+
+  removeToken() {
+    this.localStorage.remove('x-access-token');
+    this.router.navigate(['/acces-conseillere']);
   }
 }

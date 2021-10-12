@@ -19,7 +19,7 @@ import { UserService } from '../services/user.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AdminGuard
+export class ConseillereGuard
   implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad
 {
   constructor(
@@ -36,7 +36,7 @@ export class AdminGuard
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return this.checkUserLogin(route, '/connexion');
+    return this.checkUserLogin(route, '/acces-conseillere');
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
@@ -78,7 +78,7 @@ export class AdminGuard
     console.log(decode);
     console.log(obj);
 
-    if (obj.role == 'admin' && date > Date.now()) {
+    if (obj != null && obj.role == 'conseillere' && date > Date.now()) {
       return true;
     }
     this.router.navigate([url]);

@@ -45,6 +45,9 @@ import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nou
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
+import { SideConseillereComponent } from './pages/conseillere/components/side-conseillere/side-conseillere.component';
+import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
+import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +89,9 @@ import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-che
     ShampoingClarifiantComponent,
     TraitementChimiqueComponent,
     PerruqueTresseTissageComponent,
+    SideConseillereComponent,
+    DashConseillereComponent,
+    AjoutAtelierComponent,
   ],
   imports: [
     BrowserModule,

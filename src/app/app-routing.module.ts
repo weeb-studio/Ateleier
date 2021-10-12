@@ -13,6 +13,8 @@ import { InscriptionHotesseComponent } from './pages/atelier/inscription-hotesse
 import { AtelierComponent } from './pages/ateliers/atelier/atelier.component';
 import { DevenirConseillereComponent } from './pages/ateliers/devenir-conseillere/devenir-conseillere.component';
 import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
+import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
+import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,6 +34,7 @@ import { RoutineCapillaireComponent } from './pages/programmes/routine-capillair
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
 import { AuthGuard } from './shared/auth.guard';
+import { ConseillereGuard } from './shared/conseillere.guard';
 
 const routes: Routes = [
   {
@@ -98,30 +101,54 @@ const routes: Routes = [
   // Admin
 
   {
-    path: 'admin/dashboard',
+    path: 'admin',
     canActivate: [AdminGuard],
-    component: DashboardComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: 'utilisateur',
+
+        children: [
+          {
+            path: '',
+            component: UtilisateursComponent,
+          },
+          {
+            path: 'conseillere',
+            component: ConseillereComponent,
+          },
+          {
+            path: 'cliente',
+            component: ClienteComponent,
+          },
+          {
+            path: 'hotesse',
+            component: HotesseComponent,
+          },
+        ],
+      },
+    ],
   },
+
+  // Conseillere
   {
-    path: 'admin/utilisateur',
-    canActivate: [AdminGuard],
-    component: UtilisateursComponent,
+    path: 'conseillere',
+    canActivate: [ConseillereGuard],
+    children: [
+      {
+        path: '',
+        component: DashConseillereComponent,
+      },
+      {
+        path: 'ajout-atelier',
+        component: AjoutAtelierComponent,
+      },
+    ],
   },
-  {
-    path: 'admin/utilisateur/conseillere',
-    canActivate: [AdminGuard],
-    component: ConseillereComponent,
-  },
-  {
-    path: 'admin/utilisateur/cliente',
-    canActivate: [AdminGuard],
-    component: ClienteComponent,
-  },
-  {
-    path: 'admin/utilisateur/hotesse',
-    canActivate: [AdminGuard],
-    component: HotesseComponent,
-  },
+
   // {path: '', component: },
   { path: '**', redirectTo: '404' },
 ];
