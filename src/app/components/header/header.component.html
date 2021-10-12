@@ -35,15 +35,59 @@
         alt=""
         srcset=""
       />
-      <img
-        class="p-1 rounded cursor-pointer svgt"
-        src="assets/userHeader.svg"
-        alt=""
-        (click)="showUserDialog()"
-        srcset=""
-      />
+      <!-- <div class="p-1 rounded cursor-pointer svgt">
+        <img
+          class=""
+          src="assets/userHeader.svg"
+          alt=""
+          (click)="showUserDialog()"
+          srcset=""
+        />
+      </div> -->
+      <div class="p-1 rounded cursor-pointer svgt relative">
+        <span
+          ><img class="" src="assets/userHeader.svg" alt="" srcset=""
+        /></span>
+        <span class="absolute right-0 top-0 testee space-y-2 shadow-md">
+          <div
+            class="flex flex-row text-gray-600 space-x-3 cursor-pointer hover"
+            (click)="goTo('/connexion')"
+          >
+            <div><img src="assets/logout.svg" alt="" srcset="" /></div>
+            <div class="uppercase">Se connecter</div>
+          </div>
+          <div
+            class="
+              flex flex-row
+              text-gray-600
+              space-x-3
+              ml-2
+              cursor-pointer
+              hover
+            "
+            (click)="goTo('/acces-conseillere')"
+          >
+            <img src="assets/user.svg" alt="" srcset="" />
+            <div class="uppercase">Accès conseillère</div>
+          </div>
+          <div
+            class="
+              flex flex-row
+              text-gray-600
+              space-x-3
+              ml-2
+              cursor-pointer
+              hover
+            "
+            (click)="goTo('/acces-hotesse')"
+          >
+            <div><img src="assets/user.svg" alt="" srcset="" /></div>
+            <div class="uppercase">Accès hôtesse</div>
+          </div></span
+        >
+      </div>
     </div>
-    <div
+    <!-- <div
       class="
         border border-primary
         p-3
@@ -54,6 +98,7 @@
         flex flex-col
         space-y-2
         z-50
+        bullet
       "
       *ngIf="user"
     >
@@ -78,7 +123,7 @@
         <div><img src="assets/user.svg" alt="" srcset="" /></div>
         <div class="uppercase">Accès hôtesse</div>
       </div>
-    </div>
+    </div> -->
     <div class="w-7/12 lg:w-9/12 flex items-end justify-between space-x-20">
       <div
         class="border-b- cursor-pointer hoverlink"

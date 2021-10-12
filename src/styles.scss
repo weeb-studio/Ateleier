@@ -47,6 +47,14 @@ textarea:focus {
   transform: scale(1.1);
 }
 
+.hoverlinkeffet {
+  color: #ff3e79;
+  transition: transform 0.2s;
+}
+.hoverlinkeffet:hover {
+  transform: scale(1.1);
+}
+
 .btn {
   color: #ffffff !important;
   background-color: #ff3e79 !important;
@@ -78,7 +86,11 @@ textarea:focus {
 .svgt:hover {
   background-color: #eee;
 }
+.hover {
+  transition: transform 0.2s;
+}
 
 .hover:hover {
-  color: #ff680c !important;
+  // color: #ff680c !important;
+  transform: scale(1.1);
 }
