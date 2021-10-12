@@ -40,6 +40,7 @@ import { HotesseComponent } from './pages/admin/pages/utilisateurs/hotesse/hotes
 import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/cliente.component';
 import { AdminHeaderComponent } from './pages/admin/components/admin-header/admin-header.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
+<<<<<<< HEAD
 import { ShampoingClarifiantComponent } from './pages/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { MasqueNourissantComponent } from './pages/recette/masque-nourissant/masque-nourissant.component';
 import { MasqueCafeComponent } from './pages/recette/masque-cafe/masque-cafe.component';
@@ -59,6 +60,13 @@ import { HotesseCadeauComponent } from './pages/hotesse/hotesse-cadeau/hotesse-c
 import { HotesseRelevePointComponent } from './pages/hotesse/hotesse-releve-point/hotesse-releve-point.component';
 import { HotesseAtelierComponent } from './pages/hotesse/hotesse-atelier/hotesse-atelier.component';
 import { HotesseCompteComponent } from './pages/hotesse/hotesse-compte/hotesse-compte.component';
+=======
+import { MasqueCafeComponent } from './pages/programmes/recette/masque-cafe/masque-cafe.component';
+import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nourissant/masque-nourissant.component';
+import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
+import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
+import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
+>>>>>>> b91a435fdfaab7783ddfbffbcf987d8f86faaf37
 
 @NgModule({
   declarations: [
@@ -95,6 +103,7 @@ import { HotesseCompteComponent } from './pages/hotesse/hotesse-compte/hotesse-c
     ClienteComponent,
     AdminHeaderComponent,
     ShampoingSecComponent,
+<<<<<<< HEAD
     ShampoingClarifiantComponent,
     MasqueNourissantComponent,
     MasqueCafeComponent,
@@ -114,6 +123,13 @@ import { HotesseCompteComponent } from './pages/hotesse/hotesse-compte/hotesse-c
     HotesseRelevePointComponent,
     HotesseAtelierComponent,
     HotesseCompteComponent,
+=======
+    MasqueCafeComponent,
+    MasqueNourissantComponent,
+    ShampoingClarifiantComponent,
+    TraitementChimiqueComponent,
+    PerruqueTresseTissageComponent,
+>>>>>>> b91a435fdfaab7783ddfbffbcf987d8f86faaf37
   ],
   imports: [
     BrowserModule,
