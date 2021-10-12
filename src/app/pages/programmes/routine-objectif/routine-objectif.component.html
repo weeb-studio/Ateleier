@@ -1,0 +1,44 @@
+<app-header></app-header>
+<app-programme-header></app-programme-header>
+<app-routine-header></app-routine-header>
+<div class="px-5 my-10 md:grid md:grid-cols-2 md:px-32">
+    <div class="">
+        <div class="cursor-pointer">Éviter la casse et renforcer les cheveux</div>
+        <div class="cursor-pointer" (click)="showModal1()">Réparer les cheveux et les pointes abîmés</div>
+        <div class="cursor-pointer">Hydrater, resserrer et renforcer les boucles</div>
+        <div class="cursor-pointer">Assainir le cuir chevelu, eliminer les pellicules</div>
+        <div class="cursor-pointer">Hydrater les cheveux, maintenir l’hydratation</div>
+        <div class="cursor-pointer">Garder ses cheveux en bonne santé</div>
+        <div class="cursor-pointer">Reconstruire sa fibre capillaire et retrouver ses cheveux sains</div>
+        <div class="cursor-pointer">Stimuler son cuir chevelu et éviter la casse et la chute</div>
+        <div class="cursor-pointer">Définir les boucles</div>
+        <div class="cursor-pointer">Stimuler la croissance</div>
+        <div class="cursor-pointer">Lutter contre les pellicles</div>
+    </div>
+    <div class="right-0 relative">
+        <img src="assets/routine2.svg" alt="" class="w-40 md:w-60 absolute right-0">
+    </div>
+    <div class="z-50 border-2" *ngIf = "modal1">
+        <div class="cursor-pointer" (click)="showModal1()">
+            <img src="asssets/close.svg" alt="" class="">
+        </div>
+        <div class="">Voici le nécessaire pour démarrer votre routine capillaire</div>
+        <div class="">
+            <p>Les produits</p>
+            <p>- Shampoing doux</p>
+            <p>- Shampoing clarifiant</p>
+            <p>- Masque hydratant ( pour hydrater, nourrir et/ou fortifier )</p>
+            <p>- Lait ou crème capillaire ( pour hydrater et rafraichir )</p>
+            <p>- Huiles beurres ( pour nourrir le cheveu et/ou sceller l’hydratation )</p>
+        </div>
+        <div class="">
+            <p>Les accessoires :</p>
+            <p>- Vaporisateur d’eau ( pour hydrater le cheveu )</p>
+            <p>- Pinces ( pour faire des sections de cheveux )</p>
+            <p>- Peigne</p>
+            <p>- Bonnet / foulard ( en satin de préférence )</p>
+        </div>
+        <div class="cursor-pointer" style="background-color: #FF3E79; color: #fff;" (click)="showModal1()">J’ai compris</div>
+    </div>
+</div>
+<app-footer></app-footer>

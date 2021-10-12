@@ -52,6 +52,13 @@ import { CheveuxSecComponent } from './pages/routines-capillaires/cheveux-sec/ch
 import { ChuteCasseComponent } from './pages/routines-capillaires/chute-casse/chute-casse.component';
 import { CheveuxPoreuxComponent } from './pages/routines-capillaires/cheveux-poreux/cheveux-poreux.component';
 import { LutteContrePelliculeComponent } from './pages/routines-capillaires/lutte-contre-pellicule/lutte-contre-pellicule.component';
+import { RoutineObjectifComponent } from './pages/programmes/routine-objectif/routine-objectif.component';
+import { RoutineHeaderComponent } from './components/routine-header/routine-header.component';
+import { HotesseAcceuilComponent } from './pages/hotesse/hotesse-acceuil/hotesse-acceuil.component';
+import { HotesseCadeauComponent } from './pages/hotesse/hotesse-cadeau/hotesse-cadeau.component';
+import { HotesseRelevePointComponent } from './pages/hotesse/hotesse-releve-point/hotesse-releve-point.component';
+import { HotesseAtelierComponent } from './pages/hotesse/hotesse-atelier/hotesse-atelier.component';
+import { HotesseCompteComponent } from './pages/hotesse/hotesse-compte/hotesse-compte.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +107,13 @@ import { LutteContrePelliculeComponent } from './pages/routines-capillaires/lutt
     ChuteCasseComponent,
     CheveuxPoreuxComponent,
     LutteContrePelliculeComponent,
+    RoutineObjectifComponent,
+    RoutineHeaderComponent,
+    HotesseAcceuilComponent,
+    HotesseCadeauComponent,
+    HotesseRelevePointComponent,
+    HotesseAtelierComponent,
+    HotesseCompteComponent,
   ],
   imports: [
     BrowserModule,
