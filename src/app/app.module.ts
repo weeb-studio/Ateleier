@@ -45,6 +45,15 @@ import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nou
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
+import { HotesseAcceuilComponent } from './pages/hotesse/hotesse-acceuil/hotesse-acceuil.component';
+import { HotesseAtelierComponent } from './pages/hotesse/hotesse-atelier/hotesse-atelier.component';
+import { HotesseRelevePointComponent } from './pages/hotesse/hotesse-releve-point/hotesse-releve-point.component';
+import { HotesseCadeauComponent } from './pages/hotesse/hotesse-cadeau/hotesse-cadeau.component';
+import { HotesseHeaderComponent } from './components/hotesse-header/hotesse-header.component';
+import { ClienteCompteComponent } from './pages/cliente/cliente-compte/cliente-compte.component';
+import { ClienteMenuComponent } from './components/cliente-menu/cliente-menu.component';
+import { ClienteProduitComponent } from './pages/cliente/cliente-produit/cliente-produit.component';
+import { ClienteProfilBeauteComponent } from './pages/cliente/cliente-profil-beaute/cliente-profil-beaute.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +95,15 @@ import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-che
     ShampoingClarifiantComponent,
     TraitementChimiqueComponent,
     PerruqueTresseTissageComponent,
+    HotesseAcceuilComponent,
+    HotesseAtelierComponent,
+    HotesseRelevePointComponent,
+    HotesseCadeauComponent,
+    HotesseHeaderComponent,
+    ClienteCompteComponent,
+    ClienteMenuComponent,
+    ClienteProduitComponent,
+    ClienteProfilBeauteComponent,
   ],
   imports: [
     BrowserModule,
