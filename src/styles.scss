@@ -32,13 +32,15 @@
 }
 
 input,
-textarea {
+textarea,
+select {
   outline: none !important;
   border: 2px solid #ff3e79 !important;
 }
 
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   outline: none !important;
   border: 2px solid #ff680c !important;
 }

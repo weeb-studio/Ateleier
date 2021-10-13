@@ -22,4 +22,67 @@ export class AtelierService {
     });
     return this.httpClient.get(API_URL, { headers: headers });
   }
+
+  createAtelier(
+    place: Number,
+
+    theme: string,
+
+    hotesse: string,
+
+    nomHotesse: string,
+
+    prenomHotesse: string,
+
+    adresseHotesse: string,
+
+    postal: number,
+
+    villeHotesse: string,
+
+    date: Date,
+
+    time: number,
+
+    status: string,
+
+    ouvert: boolean,
+
+    conseillere: string
+  ) {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/atelier';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    var data = {
+      place: place,
+
+      theme: theme,
+
+      hotesse: hotesse,
+
+      nomHotesse: nomHotesse,
+
+      prenomHotesse: prenomHotesse,
+
+      adresseHotesse: adresseHotesse,
+
+      postal: postal,
+
+      villeHotesse: villeHotesse,
+
+      date: date,
+
+      time: time,
+
+      status: status,
+
+      ouvert: ouvert,
+
+      conseillere: conseillere,
+    };
+    return this.httpClient.post(API_URL, {}, { headers: headers });
+  }
 }

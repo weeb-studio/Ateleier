@@ -47,7 +47,7 @@ export class ConnexionComponent implements OnInit {
   }
   ngOnInit(): void {}
 
-  async onSubmit() {
+  onSubmit() {
     console.log(this.loginForm.value);
     this.UserService.userLogin(
       this.loginForm.value.email,
@@ -62,7 +62,7 @@ export class ConnexionComponent implements OnInit {
         }
       },
       (err: any) => {
-        console.log(err);
+        console.error(err);
         this.message = err.error.message;
       }
     );
