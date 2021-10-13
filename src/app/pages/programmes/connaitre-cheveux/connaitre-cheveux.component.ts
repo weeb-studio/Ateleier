@@ -50,8 +50,8 @@ export class ConnaitreCheveuxComponent implements OnInit {
       to: '',
     },
     {
-      img: 'assets/.svg',
-      title: '',
+      img: 'assets/comprendre_cheveu.svg',
+      title: 'Les diverses influences sur les cheveux',
       to: '',
     },
   ];
