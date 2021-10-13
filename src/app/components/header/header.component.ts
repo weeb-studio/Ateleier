@@ -66,4 +66,18 @@ export class HeaderComponent implements OnInit {
     this.localStorage.remove('x-access-token');
     this.router.navigate(['/acces-conseillere']);
   }
+
+  redirect() {
+    if (this.utilisateur.role.nom == 'conseillere') {
+      this, this.router.navigate(['/conseillere']);
+    }
+
+    if (this.utilisateur.role.nom == 'user') {
+      this, this.router.navigate(['/cliente']);
+    }
+
+    if (this.utilisateur.role.nom == 'hotesse') {
+      this, this.router.navigate(['/hotesse']);
+    }
+  }
 }

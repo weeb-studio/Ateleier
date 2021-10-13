@@ -13,11 +13,13 @@ import { InscriptionHotesseComponent } from './pages/atelier/inscription-hotesse
 import { AtelierComponent } from './pages/ateliers/atelier/atelier.component';
 import { DevenirConseillereComponent } from './pages/ateliers/devenir-conseillere/devenir-conseillere.component';
 import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
+import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.component';
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DashHotesseComponent } from './pages/hotesse/dash-hotesse/dash-hotesse.component';
 import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
@@ -129,6 +131,24 @@ const routes: Routes = [
             component: HotesseComponent,
           },
         ],
+      },
+    ],
+  },
+  {
+    path: 'hotesse',
+    children: [
+      {
+        path: '',
+        component: DashHotesseComponent,
+      },
+    ],
+  },
+  {
+    path: 'cliente',
+    children: [
+      {
+        path: '',
+        component: DashClienteComponent,
       },
     ],
   },

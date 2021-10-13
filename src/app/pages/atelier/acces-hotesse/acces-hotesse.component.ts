@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserLogin } from 'src/app/interfaces/user';
 import { Utilisateur } from 'src/app/interfaces/utilisateur';
@@ -24,7 +25,8 @@ export class AccesHotesseComponent implements OnInit {
     private formBuilder: FormBuilder,
     private UserService: UserService,
     private localStorage: LocalStorageService,
-    private jwt: JWTokenService
+    private jwt: JWTokenService,
+    private router: Router
   ) {
     this.UserService.getUser().subscribe(
       (res) => {
@@ -62,7 +64,10 @@ export class AccesHotesseComponent implements OnInit {
       (test: any) => {
         // console.warn(test.status);
         console.log(test.accessToken);
-        this.localStorage.set('x-access-token', test.accessToken);
+        if (test.role.nom == 'hotesse') {
+          this.localStorage.set('x-access-token', test.accessToken);
+          this.router.navigate(['/hotesse']);
+        }
       },
       (err: any) => {
         console.log(err);
@@ -73,7 +78,6 @@ export class AccesHotesseComponent implements OnInit {
   control(name: string) {
     return this.loginForm.get(name);
   }
-  test = 'faq mention legales contacter nous qui sommes nous cheveux sec ';
 
   // userLogin(loginForm: NgForm) {
   //   console.log(this.user.email + ' mot de passe ' + this.user.password);

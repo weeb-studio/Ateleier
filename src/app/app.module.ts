@@ -48,6 +48,8 @@ import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-che
 import { SideConseillereComponent } from './pages/conseillere/components/side-conseillere/side-conseillere.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
+import { DashHotesseComponent } from './pages/hotesse/dash-hotesse/dash-hotesse.component';
+import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +94,8 @@ import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-a
     SideConseillereComponent,
     DashConseillereComponent,
     AjoutAtelierComponent,
+    DashHotesseComponent,
+    DashClienteComponent,
   ],
   imports: [
     BrowserModule,

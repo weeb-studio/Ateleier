@@ -60,6 +60,10 @@ export class ConnexionComponent implements OnInit {
           this.localStorage.set('x-access-token', test.accessToken);
           this.router.navigate(['/admin/dashboard']);
         }
+        if (test.role.nom == 'user') {
+          this.localStorage.set('x-access-token', test.accessToken);
+          this.router.navigate(['/']);
+        }
       },
       (err: any) => {
         console.error(err);
