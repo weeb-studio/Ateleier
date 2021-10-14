@@ -24,31 +24,18 @@ export class AtelierService {
   }
 
   createAtelier(
-    place: Number,
-
-    theme: string,
-
-    hotesse: string,
-
-    nomHotesse: string,
-
-    prenomHotesse: string,
-
-    adresseHotesse: string,
-
-    postal: number,
-
-    villeHotesse: string,
-
-    date: Date,
-
-    time: number,
-
-    status: string,
-
-    ouvert: boolean,
-
-    conseillere: string
+    // place: String,
+    theme: String,
+    // hotesse: String,
+    // nomHotesse: String,
+    // prenomHotesse: String,
+    // adresseHotesse: String,
+    postal: String //Number,
+    // villeHotesse: String,
+    // date: Date,
+    // time: String, //Number,
+    // status: String,
+    // ouvert: Boolean
   ) {
     const token = this.localStorage.get('x-access-token');
     const API_URL = this.SERVER_URL + '/atelier';
@@ -57,32 +44,28 @@ export class AtelierService {
       'x-access-token': `${token}`,
     });
     var data = {
-      place: place,
-
+      // place: place,
+      // theme: theme,
+      // hotesse: hotesse,
+      // nomHotesse: nomHotesse,
+      // prenomHotesse: prenomHotesse,
+      // adresseHotesse: adresseHotesse,
+      // postal: postal,
+      // villeHotesse: villeHotesse,
+      // date: date,
+      // time: time,
+      // status: status,
+      // ouvert: ouvert,
       theme: theme,
-
-      hotesse: hotesse,
-
-      nomHotesse: nomHotesse,
-
-      prenomHotesse: prenomHotesse,
-
-      adresseHotesse: adresseHotesse,
-
+      status: 'domicile',
+      ouvert: true,
       postal: postal,
-
-      villeHotesse: villeHotesse,
-
-      date: date,
-
-      time: time,
-
-      status: status,
-
-      ouvert: ouvert,
-
-      conseillere: conseillere,
+      hotesse: '615fcef378103d702d8f5a6f',
+      nomHotesse: 'Sandrine',
+      place: 5,
+      date: '2021-12-14',
+      time: 14,
     };
-    return this.httpClient.post(API_URL, {}, { headers: headers });
+    return this.httpClient.post(API_URL, data, { headers: headers });
   }
 }

@@ -50,6 +50,7 @@ import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/d
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
 import { DashHotesseComponent } from './pages/hotesse/dash-hotesse/dash-hotesse.component';
 import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.component';
+import { CatalogueComponent } from './pages/admin/pages/catalogue/catalogue.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +97,7 @@ import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.c
     AjoutAtelierComponent,
     DashHotesseComponent,
     DashClienteComponent,
+    CatalogueComponent,
   ],
   imports: [
     BrowserModule,

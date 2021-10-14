@@ -1,0 +1,133 @@
+<app-admin-header></app-admin-header>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
+  <app-side-bar></app-side-bar>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full">
+    <h1 class="text-xl font-bold text-gray-600">Catalogue</h1>
+    <div class="flex flex-col">
+      <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-10 mb-">
+        <div
+          class="pt-2 hover cursor-pointer"
+          routerLink="/admin/utilisateur/conseillere"
+        >
+          Soins capillaires
+        </div>
+        <div
+          class="pt-2 hover cursor-pointer border-b-2 border-primary"
+          routerLink="/admin/utilisateur/hotesse"
+        >
+          Coiffures
+        </div>
+      </div>
+      <div class="flex flex-row justify-end text-sm font-semibold">
+        <div class="cursor-pointer" (click)="dialog = true">
+          + Ajouter des produits
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+      <div
+        *ngFor="let item of items"
+        class="rounded-lg flex flex-col shadow-lg pb-5"
+      >
+        <div
+          class="
+            whitespace-nowrap
+            bg-primary
+            text-center
+            rounded-t-lg
+            text-white
+            font-semibold
+            py-1
+          "
+        >
+          {{ item.nom }} {{ item.prix | currency: "EUR":true }}
+        </div>
+        <div>
+          <img [src]="item.img" class="w-full" alt="" srcset="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="dialog"
+    class="absolute top-0 bottom-0 left-0 right-0"
+    style="background-color: rgba(0, 0, 0, 0.6)"
+  >
+    <div
+      class="
+        absolute
+        top-40
+        bottom-40
+        right-5
+        left-5
+        md:top-20 md:bottom-20 md:left-20 md:right-20
+        bg-white
+        rounded-lg
+        flex flex-col
+        items-center
+        justify-cente
+        space-y-10
+      "
+    >
+      <div
+        class="absolute top-2 right-2"
+        (click)="dialog = false; product = []"
+      >
+        <img src="assets/close.svg" alt="" srcset="" />
+      </div>
+
+      <div class="whitespace-nowrap font-bold text-lg">Ajoutez un produit</div>
+      <div class="w-3/4 flex flex-col justify-center items-center">
+        <input
+          type="search"
+          class="rounded-full px-5 py-2 w-full bg-gray-50"
+          value=""
+          (keyup)="search($event)"
+        />
+        <div
+          class="
+            border-dashed border-b-2 border-l-2 border-r-2 border-primary
+            py-2
+            px-5
+            flex flex-row
+            justify-between
+            items-center
+            w-11/12
+          "
+          *ngFor="let item of product"
+        >
+          <div class="flex flex-row gap-4 items-center">
+            <img
+              [src]="'http://93.90.207.75:3000/' + item.imageURL"
+              class="w-20 md:w-32 hidden sm:block rounded"
+              alt=""
+              srcset=""
+            />
+            <div class="flex flex-col text-xs font-semibold">
+              <div>{{ item.nom }}</div>
+              <div>{{ item.categorie }}</div>
+              <div>{{ item.capacite }} {{ item.unite }}</div>
+            </div>
+          </div>
+          <div class="flex flex-col text-xs items-center font-semibold">
+            <div>{{ item.prix | currency: "EUR":true }}</div>
+            <div class="flex flex-row gap-4">
+              <div (click)="moins()">
+                <img src="assets/moins.svg" alt="" srcset="" />
+              </div>
+              {{ qte }}
+              <div (click)="plus()">
+                <img src="assets/plus.svg" alt="" srcset="" />
+              </div>
+            </div>
+            <div class="text-primary hover:underline cursor-pointer">
+              ajouter
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
