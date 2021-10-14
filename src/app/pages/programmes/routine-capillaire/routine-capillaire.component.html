@@ -167,32 +167,38 @@
     </div>
   </div>
   <div
-    class="flex flex-col mt-10 items-center space-y-5 h-full md:h-full pb-10"
+    class="flex flex-col md:flex-row-reverse md:justify-around"
     *ngIf="!page"
   >
-    <div class="">
-      Il est primordial de de construire une routine capillaire de vous
-      corresponde, car le mode vie, les besoins et les exigences chacun sont
-      différents. Cette routine doit pouvoir terminer une période donnée, elle
-      doit être complète et surtout être en phase avec vos besoins réels pour
-      vous aider à déterminer la routine capillaire qu’il vous faut, nous avons
-      besoin des informations suivantes :
+    <div class="flex flex-col items-center my-10">
+      <img src="assets/routine-choisie.svg" alt="" class="h-10/12">
     </div>
-    <button
-      class="
-        text-center
-        py-2
-        whitespace-nowrap
-        px-2
-        rounded-lg
-        w-full
-        md:w-4/12
-      "
-      style="background-color: #ff3e79; color: #fff"
-      (click)="show1 = true"
-    >
-      Je souhaite déterminer ma routine capillaire
-    </button>
+    <div class="flex flex-col space-y-12 md:w-1/2 md:justify-items-center md:pt-52">
+      <div class="">
+        Il est primordial de de construire une routine capillaire de vous
+        corresponde, car le mode vie, les besoins et les exigences chacun sont
+        différents. Cette routine doit pouvoir terminer une période donnée, elle
+        doit être complète et surtout être en phase avec vos besoins réels pour
+        vous aider à déterminer la routine capillaire qu’il vous faut, nous avons
+        besoin des informations suivantes :
+      </div>
+      <div class="">
+        <button
+        class="
+          text-center
+          py-2
+          whitespace-nowrap
+          px-2
+          rounded-lg
+          w-full
+        "
+        style="background-color: #ff3e79; color: #fff"
+        (click)="show1 = true"
+      >
+        Je souhaite déterminer ma routine capillaire
+      </button>
+      </div>
+    </div>
   </div>
   <div
     *ngIf="show1"
