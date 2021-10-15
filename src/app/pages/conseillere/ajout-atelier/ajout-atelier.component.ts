@@ -16,15 +16,16 @@ export class AjoutAtelierComponent implements OnInit {
     private atelierService: AtelierService
   ) {
     this.atelierForm = this.formBuilder.group({
-      participants: formBuilder.control('12', [Validators.required]),
-      place: formBuilder.control('1', [Validators.required]),
-      theme: formBuilder.control('qweer'),
-      nomHotesse: formBuilder.control('0jh'),
-      prenomHotesse: formBuilder.control('szdz'),
-      adresse: formBuilder.control('yer'),
-      postal: formBuilder.control('123'),
-      ville: formBuilder.control('ewrt'),
-      heure: formBuilder.control('12'),
+      participants: formBuilder.control('', [Validators.required]),
+      place: formBuilder.control('', [Validators.required]),
+      theme: formBuilder.control(''),
+      nomHotesse: formBuilder.control(''),
+      prenomHotesse: formBuilder.control(''),
+      adresse: formBuilder.control(''),
+      postal: formBuilder.control(''),
+      ville: formBuilder.control(''),
+      heure: formBuilder.control(''),
+      date: formBuilder.control(''),
     });
   }
 
@@ -34,14 +35,15 @@ export class AjoutAtelierComponent implements OnInit {
     console.log(this.atelierForm.value.place);
     this.atelierService
       .createAtelier(
-        // this.atelierForm.value.place,
+        this.atelierForm.value.place,
         this.atelierForm.value.theme,
-        // this.atelierForm.value,
+        this.atelierForm.value.participants,
+        this.atelierForm.value.date,
         // this.atelierForm.value.nomHotesse,
         // this.atelierForm.value.prenomHotesse,
         // this.atelierForm.value.adresse,
-        this.atelierForm.value.postal
-        // this.atelierForm.value.ville,
+        this.atelierForm.value.postal,
+        this.atelierForm.value.ville
         // this.atelierForm.value,
         // this.atelierForm.value.heure,
         // 'ouvert',

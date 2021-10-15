@@ -13,89 +13,95 @@
 <div class="w-screen overflow-hidden p-10 md:px-32 space-y-20">
   <div>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-      <div class="space-y-2">
-        <div
-          class="relative border-2 rounded-2xl flex flex-col pb-2 pt-10"
-          style="border-color: #ff3e79"
-        >
-          <span
-            class="
-              absolute
-              transform
-              rotate-45
-              top-2
-              -right-7
-              rounded
-              px-2
-              text-white
-              uppercase
-            "
-            style="background-color: #ff3e79"
+      <div class="space-y-2" *ngFor="let item of items">
+        <div *ngIf="item.status == 'domicile'">
+          <div
+            class="relative border-2 rounded-2xl flex flex-col pb-2 pt-10"
+            style="border-color: #ff3e79"
           >
-            complet
-          </span>
-          <div class="w-full">
+            <span
+              class="
+                absolute
+                transform
+                rotate-45
+                top-2
+                -right-7
+                rounded
+                px-2
+                text-white
+                uppercase
+              "
+              style="background-color: #ff3e79"
+            >
+              {{ item.place }} places
+            </span>
             <div class="w-full">
-              <img class="w-full" src="assets/domicile.svg" alt="" />
-            </div>
-            <div class="flex flex-row px-5 space-x-5">
-              <div class="flex flex-col">
-                <div class="flex flex-row items-center space-x-2">
-                  <div class=""><img src="assets/mark.svg" alt="" /></div>
-                  <div class="">Nantes</div>
-                </div>
-                <div class="flex flex-row items-center space-x-2">
-                  <div><img src="assets/time.svg" alt="" /></div>
-                  <div class="font-semibold">14h00</div>
-                </div>
+              <div class="w-full">
+                <img class="w-full" src="assets/domicile.svg" alt="" />
               </div>
-              <div>
-                <div class="flex flex-row items-center space-x-2">
-                  <div><img src="assets/calendar.svg" alt="" /></div>
-                  <div>26 Février 2021</div>
+              <div class="flex flex-row px-5 space-x-5">
+                <div class="flex flex-col">
+                  <div class="flex flex-row items-center space-x-2">
+                    <div class=""><img src="assets/mark.svg" alt="" /></div>
+                    <div class="">{{ item.villeHotesse }}</div>
+                  </div>
+                  <div class="flex flex-row items-center space-x-2">
+                    <div><img src="assets/time.svg" alt="" /></div>
+                    <div class="font-semibold">{{ item.time }}h00</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex flex-row items-center space-x-2">
+                    <div><img src="assets/calendar.svg" alt="" /></div>
+                    <div>
+                      {{ item.date | date: "dd" }}
+                      {{ item.date | date: "MMMM" }}
+                      {{ item.date | date: "YYYY" }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="text-center font-bold text-lg">
-          <div class="inline" style="color: #ff3e79">ATELIER À DOMICILE</div>
-          | 26 Février
-        </div>
-      </div>
-      <div class="space-y-2">
-        <div
-          class="relative border-2 rounded-2xl flex flex-col px-5"
-          style="border-color: #ff3e79"
-        >
-          <span
-            class="
-              absolute
-              transform
-              rotate-45
-              top-2
-              -right-7
-              rounded
-              px-2
-              text-white
-              uppercase
-            "
-            style="background-color: #ff3e79"
-          >
-            4 places
-          </span>
-          <div class="w-full">
-            <div class="w-full">
-              <img class="w-full" src="assets/ligne.svg" alt="" />
-            </div>
+          <div class="text-center font-bold text-lg">
+            <div class="inline" style="color: #ff3e79">ATELIER À DOMICILE</div>
+            | {{ item.date | date: "dd" }} {{ item.date | date: "MMMM" }}
           </div>
         </div>
-        <div class="text-center font-bold text-lg">
-          <div class="inline" style="color: #ff3e79">ATELIER EN LIGNE</div>
-          | 28 Février
+        <div *ngIf="item.status == 'ligne'">
+          <div
+            class="relative border-2 rounded-2xl flex flex-col px-5"
+            style="border-color: #ff3e79"
+          >
+            <span
+              class="
+                absolute
+                transform
+                rotate-45
+                top-2
+                -right-7
+                rounded
+                px-2
+                text-white
+                uppercase
+              "
+              style="background-color: #ff3e79"
+            >
+              {{ item.place }} places
+            </span>
+            <div class="w-full">
+              <div class="w-full">
+                <img class="w-full" src="assets/ligne.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="text-center font-bold text-lg">
+            <div class="inline" style="color: #ff3e79">ATELIER EN LIGNE</div>
+            | {{ item.date | date: "dd" }} {{ item.date | date: "MMMM" }}
+          </div>
         </div>
       </div>
-      <div class="space-y-2">
+      <!-- <div class="space-y-2">
         <div
           class="relative border-2 rounded-2xl flex flex-col pb-2 pt-10"
           style="border-color: #ff3e79"
@@ -258,7 +264,7 @@
           <div class="inline" style="color: #ff3e79">ATELIER EN LIGNE</div>
           | 18 Mars
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -298,6 +304,7 @@
           type="search"
           name=""
           id=""
+          (keyup)="searchAtelier($event)"
         />
       </div>
     </div>
@@ -317,96 +324,105 @@
       >
         Nous avons trouver des ateliers proche de vous
       </div>
-      <div class="space-y-2 flex flex-col items-center">
+      <div class="space-y-2" *ngFor="let item of search">
         <div
-          class="relative border-2 rounded-2xl flex flex-col pb-2 pt-10"
-          style="border-color: #ff3e79"
+          class="flex flex-col items-center"
+          *ngIf="item.status == 'domicile'"
         >
-          <span
-            class="
-              absolute
-              transform
-              rotate-45
-              top-2
-              -right-7
-              rounded
-              px-2
-              text-white
-              uppercase
-            "
-            style="background-color: #ff3e79"
+          <div
+            class="relative border-2 rounded-2xl flex flex-col pb-2 pt-10"
+            style="border-color: #ff3e79"
           >
-            complet
-          </span>
-          <div class="w-full">
+            <span
+              class="
+                absolute
+                transform
+                rotate-45
+                top-2
+                -right-7
+                rounded
+                px-2
+                text-white
+                uppercase
+              "
+              style="background-color: #ff3e79"
+            >
+              {{ item.place }} places
+            </span>
             <div class="w-full">
-              <img class="w-full" src="assets/domicile.svg" alt="" />
-            </div>
-            <div class="flex flex-row px-5 space-x-5">
-              <div class="flex flex-col">
-                <div class="flex flex-row items-center space-x-2">
-                  <div class=""><img src="assets/mark.svg" alt="" /></div>
-                  <div class="">Nantes</div>
-                </div>
-                <div class="flex flex-row items-center space-x-2">
-                  <div><img src="assets/time.svg" alt="" /></div>
-                  <div class="font-semibold">14h00</div>
-                </div>
+              <div class="w-full">
+                <img class="w-full" src="assets/domicile.svg" alt="" />
               </div>
-              <div class="flex flex-col">
-                <div class="flex flex-row items-center space-x-2">
-                  <div><img src="assets/calendar.svg" alt="" /></div>
-                  <div>26 Février 2021</div>
+              <div class="flex flex-row px-5 space-x-5">
+                <div class="flex flex-col">
+                  <div class="flex flex-row items-center space-x-2">
+                    <div class=""><img src="assets/mark.svg" alt="" /></div>
+                    <div class="">{{ item.villeHotesse }}</div>
+                  </div>
+                  <div class="flex flex-row items-center space-x-2">
+                    <div><img src="assets/time.svg" alt="" /></div>
+                    <div class="font-semibold">{{ item.time }}h00</div>
+                  </div>
                 </div>
-                <div class="text-primary text-xs md:text-base">
-                  Atelier capillaire | Chez julianne
+                <div class="flex flex-col">
+                  <div class="flex flex-row items-center space-x-2">
+                    <div><img src="assets/calendar.svg" alt="" /></div>
+                    <div>
+                      {{ item.date | date: "dd" }}
+                      {{ item.date | date: "MMMM" }}
+                      {{ item.date | date: "YYYY" }}
+                    </div>
+                  </div>
+                  <div class="text-primary text-xs md:text-base">
+                    Atelier capillaire | Chez julianne
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="text-center font-bold text-lg">
+            <div class="inline" style="color: #ff3e79">ATELIER À DOMICILE</div>
+            | {{ item.date | date: "dd" }} {{ item.date | date: "MMMM" }}
+          </div>
+          <button class="px-10 my-10 py-2 btn text-white rounded-lg">
+            Je reserve ma place
+          </button>
         </div>
-        <div class="text-center font-bold text-lg">
-          <div class="inline" style="color: #ff3e79">ATELIER À DOMICILE</div>
-          | 26 Février
-        </div>
-        <button class="px-10 my-10 py-2 btn text-white rounded-lg">
-          Je reserve ma place
-        </button>
-      </div>
-      <div class="space-y-2 flex flex-col items-center">
-        <div
-          class="relative border-2 rounded-2xl flex flex-col my-"
-          style="border-color: #ff3e79"
-        >
-          <span
-            class="
-              absolute
-              transform
-              rotate-45
-              top-2
-              -right-7
-              rounded
-              px-2
-              text-white
-              uppercase
-            "
-            style="background-color: #ff3e79"
+        <div class="flex flex-col items-center" *ngIf="item.status == 'ligne'">
+          <div
+            class="relative border-2 rounded-2xl flex flex-col my-"
+            style="border-color: #ff3e79"
           >
-            4 places
-          </span>
-          <div class="w-full">
+            <span
+              class="
+                absolute
+                transform
+                rotate-45
+                top-2
+                -right-7
+                rounded
+                px-2
+                text-white
+                uppercase
+              "
+              style="background-color: #ff3e79"
+            >
+              {{ item.place }} places
+            </span>
             <div class="w-full">
-              <img class="w-full" src="assets/ligne.svg" alt="" />
+              <div class="w-full">
+                <img class="w-full" src="assets/ligne.svg" alt="" />
+              </div>
             </div>
           </div>
+          <div class="text-center font-bold text-lg">
+            <div class="inline" style="color: #ff3e79">ATELIER EN LIGNE</div>
+            | {{ item.date | date: "dd" }} {{ item.date | date: "MMMM" }}
+          </div>
+          <button class="px-10 my-10 py-2 btn text-white rounded-lg">
+            Je reserve ma place
+          </button>
         </div>
-        <div class="text-center font-bold text-lg">
-          <div class="inline" style="color: #ff3e79">ATELIER EN LIGNE</div>
-          | 28 Février
-        </div>
-        <button class="px-10 my-10 py-2 btn text-white rounded-lg">
-          Je reserve ma place
-        </button>
       </div>
     </div>
   </div>
