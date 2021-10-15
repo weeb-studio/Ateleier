@@ -6,14 +6,24 @@
     <div class="flex flex-col">
       <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-10 mb-">
         <div
-          class="pt-2 hover cursor-pointer"
-          routerLink="/admin/utilisateur/conseillere"
+          class=""
+          [ngClass]="
+            tab
+              ? 'pt-2 hover cursor-pointer border-b-2 border-primary'
+              : 'pt-2 hover cursor-pointer'
+          "
+          (click)="changeTab(true)"
         >
           Soins capillaires
         </div>
         <div
-          class="pt-2 hover cursor-pointer border-b-2 border-primary"
-          routerLink="/admin/utilisateur/hotesse"
+          class=""
+          [ngClass]="
+            tab
+              ? 'pt-2 hover cursor-pointer'
+              : 'pt-2 hover cursor-pointer border-b-2 border-primary'
+          "
+          (click)="changeTab(false)"
         >
           Coiffures
         </div>
@@ -36,15 +46,20 @@
             bg-primary
             text-center
             rounded-t-lg
-            text-white
+            text-white text-sm
             font-semibold
             py-1
           "
         >
-          {{ item.nom }} {{ item.prix | currency: "EUR":true }}
+          {{ item.produit.nom }} {{ item.produit.prix | currency: "EUR":true }}
         </div>
-        <div>
-          <img [src]="item.img" class="w-full" alt="" srcset="" />
+        <div class="h-28 flex justify-center">
+          <img
+            [src]="'http://93.90.207.75:3000/' + item.produit.imageURL"
+            class="w-auto h-full"
+            alt=""
+            srcset=""
+          />
         </div>
       </div>
     </div>
@@ -85,47 +100,51 @@
           value=""
           (keyup)="search($event)"
         />
-        <div
-          class="
-            border-dashed border-b-2 border-l-2 border-r-2 border-primary
-            py-2
-            px-5
-            flex flex-row
-            justify-between
-            items-center
-            w-11/12
-          "
-          *ngFor="let item of product"
-        >
-          <div class="flex flex-row gap-4 items-center">
-            <img
-              [src]="'http://93.90.207.75:3000/' + item.imageURL"
-              class="w-20 md:w-32 hidden sm:block rounded"
-              alt=""
-              srcset=""
-            />
-            <div class="flex flex-col text-xs font-semibold">
-              <div>{{ item.nom }}</div>
-              <div>{{ item.categorie }}</div>
-              <div>{{ item.capacite }} {{ item.unite }}</div>
-            </div>
-          </div>
-          <div class="flex flex-col text-xs items-center font-semibold">
-            <div>{{ item.prix | currency: "EUR":true }}</div>
-            <div class="flex flex-row gap-4">
-              <div (click)="moins()">
-                <img src="assets/moins.svg" alt="" srcset="" />
+        <div class="h-80 md:h-96 w-11/12 overflow-hidden overflow-y-scroll">
+          <div
+            class="
+              border-dashed border-b-2 border-l-2 border-r-2 border-primary
+              py-2
+              px-5
+              flex flex-row
+              justify-between
+              items-center
+              w-full
+            "
+            *ngFor="let item of product"
+          >
+            <div class="flex flex-row gap-4 items-center">
+              <div class="w-32 h-20 hidden sm:flex justify-center rounded">
+                <img
+                  [src]="'http://93.90.207.75:3000/' + item.imageURL"
+                  class="h-full w-auto"
+                  alt=""
+                  srcset=""
+                />
               </div>
-              {{ qte }}
-              <div (click)="plus()">
-                <img src="assets/plus.svg" alt="" srcset="" />
+              <div class="flex flex-col text-xs font-semibold">
+                <div>{{ item.nom }}</div>
+                <div>{{ item.categorie }}</div>
+                <div>{{ item.capacite }} {{ item.unite }}</div>
               </div>
             </div>
-            <div
-              class="text-primary hover:underline cursor-pointer"
-              (click)="addToCatalogue(item._id)"
-            >
-              ajouter
+            <div class="flex flex-col text-xs items-center font-semibold">
+              <div>{{ item.prix | currency: "EUR":true }}</div>
+              <div class="flex flex-row gap-4">
+                <div (click)="moins()">
+                  <img src="assets/moins.svg" alt="" srcset="" />
+                </div>
+                {{ qte }}
+                <div (click)="plus()">
+                  <img src="assets/plus.svg" alt="" srcset="" />
+                </div>
+              </div>
+              <div
+                class="text-primary hover:underline cursor-pointer"
+                (click)="addToCatalogue(item._id, qte)"
+              >
+                ajouter
+              </div>
             </div>
           </div>
         </div>

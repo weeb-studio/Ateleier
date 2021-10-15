@@ -32,4 +32,18 @@ export class CatalogueService {
     });
     return this.httpClient.get(API_URL, { headers: headers });
   }
+
+  addProductToCatalogue(productId: String, qte: Number) {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/catalogue';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    const data = {
+      produit: productId,
+      qte: qte,
+    };
+    return this.httpClient.post(API_URL, data, { headers: headers });
+  }
 }

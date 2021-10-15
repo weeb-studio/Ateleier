@@ -8,54 +8,79 @@ import { CatalogueService } from 'src/app/services/catalogue.service';
 })
 export class CatalogueComponent implements OnInit {
   constructor(private catalogueService: CatalogueService) {
+    this.getCatalogueProduct('CAPILLAIRES');
+  }
+  items: any = [];
+  dialog: boolean = false;
+  tab: boolean = true;
+
+  //CAPILLAIRES - COIFFURES
+  getCatalogueProduct(value?: string) {
     this.catalogueService.getCatalogueProduct().subscribe((res) => {
-      console.log(res);
+      let test: any = [];
+      test = res;
+      this.items = [];
+      test.forEach((element: any) => {
+        if (element.produit.categorie == value) {
+          this.items.push(element);
+        }
+      });
+      // this.items = res;
+      console.log(this.items);
     });
   }
-  dialog: boolean = false;
 
-  items = [
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-    {
-      nom: 'Perruques',
-      prix: 12,
-      img: 'assets/peruque.png',
-    },
-  ];
+  changeTab(tab: boolean) {
+    this.tab = tab;
+    if (tab) {
+      this.getCatalogueProduct('CAPILLAIRES');
+    } else {
+      this.getCatalogueProduct('COIFFURES');
+    }
+  }
+
+  // items = [
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  //   {
+  //     nom: 'Perruques',
+  //     prix: 12,
+  //     img: 'assets/peruque.png',
+  //   },
+  // ];
 
   product: any = [];
   qte: any = 1;
@@ -77,5 +102,13 @@ export class CatalogueComponent implements OnInit {
       console.log(this.product);
     });
   }
-  addToCatalogue(productId: String) {}
+  addToCatalogue(productId: String, qte: number) {
+    this.catalogueService
+      .addProductToCatalogue(productId, qte)
+      .subscribe((res) => {
+        console.log(res);
+        this.getCatalogueProduct();
+        this.dialog = false;
+      });
+  }
 }
