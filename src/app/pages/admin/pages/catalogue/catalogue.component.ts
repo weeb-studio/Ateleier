@@ -107,7 +107,7 @@ export class CatalogueComponent implements OnInit {
       .addProductToCatalogue(productId, qte)
       .subscribe((res) => {
         console.log(res);
-        if (categorie == 'CAPILLAIRE') {
+        if (categorie == 'CAPILLAIRES') {
           this.changeTab(true);
         } else {
           this.changeTab(false);
