@@ -16,5 +16,6 @@ export class RoutineCapillaireComponent implements OnInit {
     this.page = !this.page;
   }
 
+
   ngOnInit(): void {}
 }

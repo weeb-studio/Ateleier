@@ -54,6 +54,7 @@ import { ShampoingComponent } from './pages/recette/shampoing/shampoing.componen
 import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
 import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
 import { MasquesComponent } from './pages/programmes/recette/masques/masques.component';
+import { ModalComponent } from './pages/programmes/routine-capillaire/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { MasquesComponent } from './pages/programmes/recette/masques/masques.com
     ShampoingsComponent,
     LotionCremeComponent,
     MasquesComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

@@ -35,6 +35,7 @@ import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
 import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
+import { ModalComponent } from './pages/programmes/routine-capillaire/modal/modal.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
@@ -42,6 +43,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { ConseillereGuard } from './shared/conseillere.guard';
 
 const routes: Routes = [
+  { path: 'modal', component : ModalComponent},
   {
     path: '',
     component: HomeComponent,

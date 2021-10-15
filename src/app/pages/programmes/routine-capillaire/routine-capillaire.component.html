@@ -1,5 +1,10 @@
+<style>
+    input[type=checkbox]{
+      border-radius: 50px;
+    }
+</style>
 <app-header></app-header>
-<div class="flex flex-col items-center mb-10 md:px-20 px-10 text-gray-600">
+<div class="flex flex-col items-center md:px-20 px-10 text-gray-600 relative">
   <div class="my-5 md:space-x-44 flex flex-row md:my-10" style="color: #ff3e79">
     <div
       class="hidden font-bold cursor-pointer md:flex hove hoverlinkeffet"
@@ -182,7 +187,7 @@
         vous aider à déterminer la routine capillaire qu’il vous faut, nous avons
         besoin des informations suivantes :
       </div>
-      <div class="">
+      <div class="cursor-pointer" (click)="show1 = true">
         <button
         class="
           text-center
@@ -191,337 +196,189 @@
           px-2
           rounded-lg
           w-full
+          mb-10
         "
         style="background-color: #ff3e79; color: #fff"
-        (click)="show1 = true"
+        
       >
         Je souhaite déterminer ma routine capillaire
       </button>
       </div>
     </div>
   </div>
-  <div
-    *ngIf="show1"
-    class="absolute top-0 bottom-0 right-0 left-0"
-    style="background-color: rgba(0, 0, 0, 0.6)"
-  >
-    <div
-      class="
-        absolute
-        z-50
-        left-64
-        right-64
-        top-40
-        bottom-40
-        bg-white
-        rounded-xl
-        grid grid-cols-4
-        shadow-2xl
-      "
-    >
-      <div class="flex items-center justify-center">
-        <img src="assets/arrow_right.svg" alt="" srcset="" />
-      </div>
-      <div class="col-span-3 flex flex-col py-10 space-y-10">
-        <div>
-          <div class="font-bold text-primary text-center text-xl">
-            Je détermine ma routine capillaire idéale
-          </div>
-          <div class="flex justify-center">
-            <img class="w-4/5" src="assets/1.svg" alt="" srcset="" />
-          </div>
+  <div class="h-full w-screen z-auto absolute flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" *ngIf="show1">
+    <div class="bg-white h-1/3 w-11/12 absolute rounded-lg md:h-1/2 md:w-8/12 md:px-32">
+        <div class="absolute right-0 pr-2 pt-2 cursor-pointer" (click)="show1 = false">
+          <img src="assets/close.svg" alt="" class="">
         </div>
-        <div class="font-bold text-center">
-          à ce jour, combien de produits capillaires possedez-vous ?
+        <div class="text-center pt-10 pb-5 md:pt-16 md:pb-1 text-2xl" style="color: #FF3E79;">Je détermine ma routine capillaire idéale</div>
+        <div class="px-2">
+            <img src="assets/1.svg" alt="" class="">
         </div>
-        <div class="flex flex-col items-center justify-center mr-40">
-          <div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">Moins de 3 produits </label><br />
+        <div class="px-10 md:px-16">
+            <div class="font-bold py-5">à ce jour, combien de produits capillaires possedez-vous ?</div><br>
+            <div class="md:flex flex-col justify-center">
+                <div class="space-x-3">
+                    <input type="radio" id="html" name="fav_language" value="HTML" />
+                    <label for="html">Moins de 3 produits </label><br />
+                </div>
+                <div class="space-x-3">
+                    <input type="radio" id="css" name="fav_language" value="CSS" />
+                    <label for="css">Entre 3 et 5 produits </label><br />
+                </div>
+                <div class="space-x-3 pr-2">
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                    <label for="javascript">Plus de 5 produits</label>
+                </div>
             </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">Entre 3 et 5 produits </label><br />
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript">Plus de 5 produits</label>
-            </div>
-          </div>
         </div>
-        <div
-          class="
-            flex flex-row
-            justify-end
-            items-center
-            gap-4
-            pr-20
-            cursor-pointer
-          "
-          (click)="show2 = true; show1 = false"
-        >
-          <div class="text-primary font-bold">Suivant</div>
-          <img src="assets/arrow_sm.svg" class="h-3/6" alt="" srcset="" />
+        <div class="">
+            <div class="hidden  flex-row justify-end items-center gap-4 cursor-pointer">
+                <img src="assets/precedent.svg" class="h-3/6" alt="" srcset="" />
+                <div class="text-primary font-bold">Précédent</div>
+            </div>
+            <div class="flex flex-row justify-end items-center pr-5 pb-5 gap-4 cursor-pointer right-0 bottom-0 absolute" (click)="show2 = true; show1 = false">
+                <div class="text-primary font-bold">Suivant</div>
+                <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
+            </div>
         </div>
-      </div>
     </div>
   </div>
-
-  <div
-    *ngIf="show2"
-    class="absolute top-0 bottom-0 right-0 left-0"
-    style="background-color: rgba(0, 0, 0, 0.6)"
-  >
-    <div
-      class="
-        absolute
-        z-50
-        left-64
-        right-64
-        top-24
-        bottom-24
-        bg-white
-        rounded-xl
-        grid grid-cols-4
-        shadow-2xl
-      "
-    >
-      <div class="flex items-center justify-center">
-        <img src="assets/arrow_right.svg" alt="" srcset="" />
-      </div>
-      <div class="col-span-3 flex flex-col py-10 space-y-10">
-        <div>
-          <div class="font-bold text-primary text-center text-xl">
-            Je détermine ma routine capillaire idéale
-          </div>
-          <div class="flex justify-center">
-            <img class="w-4/5" src="assets/2.svg" alt="" srcset="" />
-          </div>
+  <div class="h-full w-screen z-auto absolute flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" *ngIf="show2">
+    <div class="bg-white h-1/2 w-11/12 absolute rounded-lg md:h-2/3 md:w-8/12 md:px-32">
+        <div class="absolute right-0 pr-2 pt-2 cursor-pointer" (click)="show2 = false">
+          <img src="assets/close.svg" alt="" class="">
         </div>
-        <div class="font-bold text-center">
-          Comment se répartisse vos produits ?
+        <div class="text-center pt-10 pb-5 md:pt-16 md:pb-1 text-2xl" style="color: #FF3E79;">Je détermine ma routine capillaire idéale</div>
+        <div class="px-2">
+            <img src="assets/2.svg" alt="" class="">
         </div>
-        <div class="flex flex-col items-center justify-center mr-40">
-          <div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">Shampoing</label><br />
+        <div class="px-10 md:px-20">
+            <div class="font-bold py-5">à ce jour, combien de produits capillaires possedez-vous ?</div><br>
+            <div class="md:flex flex-col justify-center">
+                <div class="space-x-3">
+                    <input type="checkbox" id="html" name="fav_language" value="HTML" />
+                    <label for="html">Shampoing</label><br />
+                </div>
+                <div class="space-x-3">
+                    <input type="checkbox" id="css" name="fav_language" value="CSS" />
+                    <label for="css">Masque</label><br />
+                </div>
+                <div class="space-x-3 pr-2">
+                    <input type="checkbox" id="javascript" name="fav_language" value="JavaScript"/>
+                    <label for="javascript">Après-shampoing</label>
+                </div>
+                <div class="space-x-3">
+                  <input type="checkbox" id="html" name="fav_language" value="HTML" />
+                  <label for="html">Huile</label><br />
+              </div>
+              <div class="space-x-3">
+                  <input type="checkbox" id="css" name="fav_language" value="CSS" />
+                  <label for="css">Créme capillaire</label><br />
+              </div>
+              <div class="space-x-3 pr-2">
+                  <input type="checkbox" id="javascript" name="fav_language" value="JavaScript"/>
+                  <label for="javascript">Lait capillaire</label>
+              </div>
+              <div class="space-x-3">
+                <input type="checkbox" id="css" name="fav_language" value="CSS" />
+                <label for="css">Gel coiffant</label><br />
             </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">Masque </label><br />
+            <div class="space-x-3 pr-2">
+                <input type="checkbox" id="javascript" name="fav_language" value="JavaScript"/>
+                <label for="javascript">Sérum pousse cheveux</label>
             </div>
-            <div class="flex flex-row items-center gap-2">
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript">Après-shampoing</label>
             </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">Huile</label><br />
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">Créme capillaire</label><br />
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript">Lait capillaire</label>
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">Gel coiffant</label><br />
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript"> Sérum pousse cheveux</label>
-            </div>
-          </div>
         </div>
-
-        <div
-          class="
-            flex flex-row
-            justify-end
-            items-center
-            gap-4
-            pr-20
-            cursor-pointer
-          "
-          (click)="show3 = true; show2 = false"
-        >
-          <div class="text-primary font-bold">Suivant</div>
-          <img src="assets/arrow_sm.svg" class="h-3/6" alt="" srcset="" />
+        <div class="flex justify-between">
+            <div class="flex flex-row justify-end items-center pl-5 pb-5 gap-4 cursor-pointer left-0 bottom-0 absolute" (click)="show1 = true; show2 = false">
+                <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
+                <div class="text-primary font-bold">Précédent</div>
+            </div>
+            <div class="flex flex-row justify-end items-center pr-5 pb-5 gap-4 cursor-pointer right-0 bottom-0 absolute" (click)="show3 = true; show2 = false">
+                <div class="text-primary font-bold">Suivant</div>
+                <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
+            </div>
         </div>
-      </div>
     </div>
   </div>
-
-  <div
-    *ngIf="show3"
-    class="absolute top-0 bottom-0 right-0 left-0"
-    style="background-color: rgba(0, 0, 0, 0.6)"
-  >
-    <div
-      class="
-        absolute
-        z-50
-        left-64
-        right-64
-        top-40
-        bottom-40
-        bg-white
-        rounded-xl
-        grid grid-cols-4
-        shadow-2xl
-      "
-    >
-      <div class="flex items-center justify-center">
-        <img src="assets/arrow_right.svg" alt="" srcset="" />
-      </div>
-      <div class="col-span-3 flex flex-col py-10 space-y-10">
-        <div>
-          <div class="font-bold text-primary text-center text-xl">
-            Je détermine ma routine capillaire idéale
-          </div>
-          <div class="flex justify-center">
-            <img class="w-4/5" src="assets/3.svg" alt="" srcset="" />
-          </div>
+  <div class="h-full w-screen z-auto absolute flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" *ngIf="show3">
+    <div class="bg-white h-1/3 w-11/12 absolute rounded-lg md:h-1/2 md:w-8/12 md:px-32">
+        <div class="absolute right-0 pr-2 pt-2 cursor-pointer" (click)="show3 = false">
+          <img src="assets/close.svg" alt="" class="">
         </div>
-        <div class="font-bold text-center">
-          Combien de temps avez-vous à accorder à l’entretien de vos cheveux ?
+        <div class="text-center pt-10 pb-5 md:pt-16 md:pb-1 text-2xl" style="color: #FF3E79;">Je détermine ma routine capillaire idéale</div>
+        <div class="px-2">
+            <img src="assets/3.svg" alt="" class="">
         </div>
-        <div class="flex flex-col items-center justify-center mr-40">
-          <div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">Moins d’1H par semaine </label><br />
+        <div class="px-10 md:px-20">
+            <div class="font-bold py-5">à ce jour, combien de produits capillaires possedez-vous ?</div><br>
+            <div class="md:flex flex-col justify-center">
+                <div class="space-x-3">
+                    <input type="radio" id="html" name="fav_language" value="HTML" />
+                    <label for="html">Moins d’1H par semaine</label><br />
+                </div>
+                <div class="space-x-3">
+                    <input type="radio" id="css" name="fav_language" value="CSS" />
+                    <label for="css">Entre 1H et 2H par semaine </label><br />
+                </div>
+                <div class="space-x-3 pr-2">
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                    <label for="javascript">Plus de 2H par semaine </label>
+                </div>
             </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">Entre 1H et 2H par semaine </label><br />
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript">Plus de 2H par semaine</label>
-            </div>
-          </div>
         </div>
-        <div
-          class="
-            flex flex-row
-            justify-end
-            items-center
-            gap-4
-            pr-20
-            cursor-pointer
-          "
-          (click)="show4 = true; show3 = false"
-        >
-          <div class="text-primary font-bold">Suivant</div>
-          <img src="assets/arrow_sm.svg" class="h-3/6" alt="" srcset="" />
+        <div class="flex justify-between">
+            <div class="flex flex-row justify-end items-center pl-5 pb-5 gap-4 cursor-pointer left-0 bottom-0 absolute" (click)="show2 = true; show3 = false">
+                <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
+                <div class="text-primary font-bold">Précédent</div>
+            </div>
+            <div class="flex flex-row justify-end items-center pr-5 pb-5 gap-4 cursor-pointer right-0 bottom-0 absolute" (click)="show4 = true; show3 = false">
+                <div class="text-primary font-bold">Suivant</div>
+                <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
+            </div>
         </div>
-      </div>
     </div>
   </div>
-
-  <div
-    *ngIf="show4"
-    class="absolute top-0 bottom-0 right-0 left-0"
-    style="background-color: rgba(0, 0, 0, 0.6)"
-  >
-    <div
-      class="
-        absolute
-        z-50
-        left-64
-        right-64
-        top-40
-        bottom-40
-        bg-white
-        rounded-xl
-        grid grid-cols-4
-        shadow-2xl
-      "
-    >
-      <div class="flex items-center justify-center">
-        <img src="assets/arrow_right.svg" alt="" srcset="" />
-      </div>
-      <div class="col-span-3 flex flex-col py-10 space-y-10">
-        <div>
-          <div class="font-bold text-primary text-center text-xl">
-            Je détermine ma routine capillaire idéale
-          </div>
-          <div class="flex justify-center">
-            <img class="w-4/5" src="assets/4.svg" alt="" srcset="" />
-          </div>
+  <div class="h-full w-screen z-auto absolute flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" *ngIf="show4">
+    <div class="bg-white h-1/3 w-11/12 absolute rounded-lg md:h-1/2 md:w-8/12 md:px-32">
+        <div class="absolute right-0 pr-2 pt-2 cursor-pointer" (click)="show4 = false">
+          <img src="assets/close.svg" alt="" class="">
         </div>
-        <div class="font-bold text-center">
-          Quel est votre budget pour l’achat de vos produits capillaires ?
+        <div class="text-center pt-10 pb-5 md:pt-16 md:pb-1 text-2xl" style="color: #FF3E79;">Je détermine ma routine capillaire idéale</div>
+        <div class="px-2">
+            <img src="assets/4.svg" alt="" class="">
         </div>
-        <div class="flex flex-col items-center justify-center mr-40">
-          <div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="html" name="fav_language" value="HTML" />
-              <label for="html">Moins de 50€ par mois </label><br />
+        <div class="px-10 md:px-20">
+            <div class="font-bold py-5">Quel est votre budget pour l’achat de vos produits capillaires ?</div><br>
+            <div class="md:flex flex-col justify-center">
+                <div class="space-x-3">
+                    <input type="radio" id="html" name="fav_language" value="HTML" />
+                    <label for="html">Moins de 50€ par mois</label><br />
+                </div>
+                <div class="space-x-3">
+                    <input type="radio" id="css" name="fav_language" value="CSS" />
+                    <label for="css">Entre 50€ et 100€ par mois</label><br />
+                </div>
+                <div class="space-x-3 pr-2">
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                    <label for="javascript">Plus de 100€ par mois</label>
+                </div>
             </div>
-            <div class="flex flex-row items-center gap-2">
-              <input type="radio" id="css" name="fav_language" value="CSS" />
-              <label for="css">Entre 50€ et 100€ par mois </label><br />
-            </div>
-            <div class="flex flex-row items-center gap-2">
-              <input
-                type="radio"
-                id="javascript"
-                name="fav_language"
-                value="JavaScript"
-              />
-              <label for="javascript">Plus de 100€ par mois</label>
-            </div>
-          </div>
         </div>
-        <div
-          class="
-            flex flex-row
-            justify-center
-            items-center
-            gap-4
-            pr-20
-            cursor-pointer
-          "
-          (click)="show4 = false"
-        >
-          <div class="px-10 py-2 font-bold bg-primary rounded-md text-white">
-            Valider
-          </div>
-          <!-- <img src="assets/arrow_sm.svg" class="h-3/6" alt="" srcset="" /> -->
+        <div class="flex justify-center">
+            <div class="flex flex-row justify-end items-center pl-5 pb-5 gap-4 cursor-pointer left-0 bottom-0 absolute"(click)="show3 = true; show4 = false">
+                <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
+                <div class="text-primary font-bold">Précédent</div>
+            </div>
+            <div class="text-center md:py-3 ml-16 md:ml-0 cursor-pointer rounded-lg content-center w-32 md:w-40 md:h-12 bottom-6 absolute" style="background-color: #FF3E79; color: #fff;" (click)= "show4 = false">
+              Valider
+            </div>
+            <div class="hidden flex-row justify-end items-center pr-5 pb-5 gap-4 cursor-pointer right-0 bottom-0 absolute">
+                <div class="text-primary font-bold">Suivant</div>
+                <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
+            </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
