@@ -43,7 +43,6 @@ import { AuthGuard } from './shared/auth.guard';
 import { ConseillereGuard } from './shared/conseillere.guard';
 
 const routes: Routes = [
-  { path: 'modal', component : ModalComponent},
   {
     path: '',
     component: HomeComponent,
