@@ -28,11 +28,14 @@ import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
+import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
 import { MasqueCafeComponent } from './pages/programmes/recette/masque-cafe/masque-cafe.component';
 import { MasqueNourissantComponent } from './pages/programmes/recette/masque-nourissant/masque-nourissant.component';
+import { MasquesComponent } from './pages/programmes/recette/masques/masques.component';
 import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
+import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
@@ -99,6 +102,21 @@ const routes: Routes = [
   {
     path: 'programmes/traitement-chimique',
     component: TraitementChimiqueComponent,
+  },
+
+  {
+    path: 'programmes/recette/shampoings',
+    component: ShampoingsComponent,
+  },
+
+  {
+    path: 'programmes/recette/lotion-creme',
+    component: LotionCremeComponent,
+  },
+
+  {
+    path: 'programmes/recette/masques',
+    component: MasquesComponent,
   },
 
   // Admin

@@ -7,7 +7,11 @@ import { CatalogueService } from 'src/app/services/catalogue.service';
   styleUrls: ['./catalogue.component.scss'],
 })
 export class CatalogueComponent implements OnInit {
-  constructor(private catalogueService: CatalogueService) {}
+  constructor(private catalogueService: CatalogueService) {
+    this.catalogueService.getCatalogueProduct().subscribe((res) => {
+      console.log(res);
+    });
+  }
   dialog: boolean = false;
 
   items = [
@@ -73,4 +77,5 @@ export class CatalogueComponent implements OnInit {
       console.log(this.product);
     });
   }
+  addToCatalogue(productId: String) {}
 }

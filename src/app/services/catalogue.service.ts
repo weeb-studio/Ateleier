@@ -22,4 +22,14 @@ export class CatalogueService {
     });
     return this.httpClient.get(API_URL, { headers: headers });
   }
+
+  getCatalogueProduct() {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/catalogue';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    return this.httpClient.get(API_URL, { headers: headers });
+  }
 }

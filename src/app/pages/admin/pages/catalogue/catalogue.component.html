@@ -121,7 +121,10 @@
                 <img src="assets/plus.svg" alt="" srcset="" />
               </div>
             </div>
-            <div class="text-primary hover:underline cursor-pointer">
+            <div
+              class="text-primary hover:underline cursor-pointer"
+              (click)="addToCatalogue(item._id)"
+            >
               ajouter
             </div>
           </div>

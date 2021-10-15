@@ -51,6 +51,9 @@ import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-a
 import { DashHotesseComponent } from './pages/hotesse/dash-hotesse/dash-hotesse.component';
 import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.component';
 import { CatalogueComponent } from './pages/admin/pages/catalogue/catalogue.component';
+import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
+import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
+import { MasquesComponent } from './pages/programmes/recette/masques/masques.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +101,9 @@ import { CatalogueComponent } from './pages/admin/pages/catalogue/catalogue.comp
     DashHotesseComponent,
     DashClienteComponent,
     CatalogueComponent,
+    ShampoingsComponent,
+    LotionCremeComponent,
+    MasquesComponent,
   ],
   imports: [
     BrowserModule,
