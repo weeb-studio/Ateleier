@@ -48,9 +48,9 @@ export class AtelierService {
     // prenomHotesse: String,
     // adresseHotesse: String,
     postal: String, //Number,
-    villeHotesse: String
+    villeHotesse: String,
     // date: Date,
-    // time: String, //Number,
+    time: Number //Number,
     // status: String,
     // ouvert: Boolean
   ) {
@@ -82,7 +82,7 @@ export class AtelierService {
 
       place: participants,
       date: date,
-      time: 14,
+      time: time,
     };
     return this.httpClient.post(API_URL, data, { headers: headers });
   }

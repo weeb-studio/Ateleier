@@ -43,9 +43,9 @@ export class AjoutAtelierComponent implements OnInit {
         // this.atelierForm.value.prenomHotesse,
         // this.atelierForm.value.adresse,
         this.atelierForm.value.postal,
-        this.atelierForm.value.ville
+        this.atelierForm.value.ville,
         // this.atelierForm.value,
-        // this.atelierForm.value.heure,
+        this.atelierForm.value.heure
         // 'ouvert',
         // true
       )

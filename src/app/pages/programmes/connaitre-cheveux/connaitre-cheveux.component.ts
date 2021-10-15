@@ -22,7 +22,7 @@ export class ConnaitreCheveuxComponent implements OnInit {
     {
       img: 'assets/traitements_chimiques.svg',
       title: 'Les traitements chimiques',
-      to: '',
+      to: '/programmes/traitement-chimique',
     },
     {
       img: 'assets/utilisation_appareils.svg',
@@ -32,7 +32,7 @@ export class ConnaitreCheveuxComponent implements OnInit {
     {
       img: 'assets/perruques_tresses.svg',
       title: 'Les perruques, tresses et tissages',
-      to: '',
+      to: '/programmes/perruques-tresses-tissages',
     },
     {
       img: 'assets/choisis_produits.svg',
