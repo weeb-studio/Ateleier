@@ -15,7 +15,7 @@ export class CatalogueComponent implements OnInit {
   tab: boolean = true;
 
   //CAPILLAIRES - COIFFURES
-  getCatalogueProduct(value?: string) {
+  getCatalogueProduct(value?: String) {
     this.catalogueService.getCatalogueProduct().subscribe((res) => {
       let test: any = [];
       test = res;
@@ -102,13 +102,19 @@ export class CatalogueComponent implements OnInit {
       console.log(this.product);
     });
   }
-  addToCatalogue(productId: String, qte: number) {
+  addToCatalogue(productId: String, qte: number, categorie: String) {
     this.catalogueService
       .addProductToCatalogue(productId, qte)
       .subscribe((res) => {
         console.log(res);
-        this.getCatalogueProduct();
+        if (categorie == 'CAPILLAIRE') {
+          this.changeTab(true);
+        } else {
+          this.changeTab(false);
+        }
+        // this.getCatalogueProduct(categorie);
         this.dialog = false;
+        this.product = [];
       });
   }
 }

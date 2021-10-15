@@ -9,7 +9,7 @@
           class=""
           [ngClass]="
             tab
-              ? 'pt-2 hover cursor-pointer border-b-2 border-primary'
+              ? 'pt-2 hover cursor-pointer border-b-2 text-gray-400 border-primary'
               : 'pt-2 hover cursor-pointer'
           "
           (click)="changeTab(true)"
@@ -21,7 +21,7 @@
           [ngClass]="
             tab
               ? 'pt-2 hover cursor-pointer'
-              : 'pt-2 hover cursor-pointer border-b-2 border-primary'
+              : 'pt-2 hover cursor-pointer text-gray-400 border-b-2 border-primary'
           "
           (click)="changeTab(false)"
         >
@@ -141,7 +141,7 @@
               </div>
               <div
                 class="text-primary hover:underline cursor-pointer"
-                (click)="addToCatalogue(item._id, qte)"
+                (click)="addToCatalogue(item._id, qte, item.categorie)"
               >
                 ajouter
               </div>
