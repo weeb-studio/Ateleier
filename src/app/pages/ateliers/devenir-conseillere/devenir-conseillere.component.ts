@@ -23,6 +23,7 @@ export class DevenirConseillereComponent implements OnInit {
   }
 
   searchAtelier(event: any) {
+    console.log(this.search.length);
     console.log(event.target.value);
     if (event.target.value == '') {
       this.search = [];
