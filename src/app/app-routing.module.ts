@@ -36,6 +36,7 @@ import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
 import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
+import { SoinsCapillaireComponent } from './pages/programmes/recette/soins-capillaire/soins-capillaire.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
@@ -118,6 +119,7 @@ const routes: Routes = [
     path: 'programmes/recette/masques',
     component: MasquesComponent,
   },
+  { path: 'programmes/soins-capillaire', component: SoinsCapillaireComponent },
 
   // Admin
 

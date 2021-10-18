@@ -1,5 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+// the second parameter 'fr' is optional
+registerLocaleData(localeFr, 'fr');
 
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { HttpClientModule } from '@angular/common/http';
@@ -54,6 +59,7 @@ import { CatalogueComponent } from './pages/admin/pages/catalogue/catalogue.comp
 import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
 import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
 import { MasquesComponent } from './pages/programmes/recette/masques/masques.component';
+import { SoinsCapillaireComponent } from './pages/programmes/recette/soins-capillaire/soins-capillaire.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +110,7 @@ import { MasquesComponent } from './pages/programmes/recette/masques/masques.com
     ShampoingsComponent,
     LotionCremeComponent,
     MasquesComponent,
+    SoinsCapillaireComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,6 +121,7 @@ import { MasquesComponent } from './pages/programmes/recette/masques/masques.com
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    { provide: LOCALE_ID, useValue: 'fr' },
     JwtHelperService,
   ],
   bootstrap: [AppComponent],

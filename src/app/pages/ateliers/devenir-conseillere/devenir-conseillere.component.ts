@@ -24,11 +24,17 @@ export class DevenirConseillereComponent implements OnInit {
 
   searchAtelier(event: any) {
     console.log(event.target.value);
-    this.atelierService.getAtelier(event.target.value).subscribe((res: any) => {
-      // console.log(res);
-      var obj: any = res;
-      this.search = obj.data;
-      console.log(this.search);
-    });
+    if (event.target.value == '') {
+      this.search = [];
+    } else {
+      this.atelierService
+        .getAtelier(event.target.value)
+        .subscribe((res: any) => {
+          // console.log(res);
+          var obj: any = res;
+          this.search = obj.data;
+          console.log(this.search);
+        });
+    }
   }
 }
