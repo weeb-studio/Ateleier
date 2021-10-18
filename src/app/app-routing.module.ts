@@ -24,6 +24,7 @@ import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.co
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
+import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
@@ -35,7 +36,11 @@ import { RecetteComponent } from './pages/programmes/recette/recette.component';
 import { ShampoingClarifiantComponent } from './pages/programmes/recette/shampoing-clarifiant/shampoing-clarifiant.component';
 import { ShampoingSecComponent } from './pages/programmes/recette/shampoing-sec/shampoing-sec.component';
 import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shampoings.component';
+import { SoinAntiCapillaireComponent } from './pages/programmes/recette/soin-anti-capillaire/soin-anti-capillaire.component';
 import { SoinsCapillaireComponent } from './pages/programmes/recette/soins-capillaire/soins-capillaire.component';
+import { CheveuxAvecPelliculeComponent } from './pages/programmes/routine-capillaire/cheveux-avec-pellicule/cheveux-avec-pellicule.component';
+import { CheveuxPeuPoreuxComponent } from './pages/programmes/routine-capillaire/cheveux-peu-poreux/cheveux-peu-poreux.component';
+import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheveux-sec/cheveux-sec.component';
 import { ModalComponent } from './pages/programmes/routine-capillaire/modal/modal.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
@@ -108,6 +113,11 @@ const routes: Routes = [
     component: TraitementChimiqueComponent,
   },
   { path: 'programmes/soins-capillaire', component : SoinsCapillaireComponent},
+  { path: 'programmes/cheveux-avec-pellicule', component : CheveuxAvecPelliculeComponent},
+  { path: 'programmes/cheveux-peu-poreux', component: CheveuxPeuPoreuxComponent},
+  { path: 'programmes/cheveux-sec', component: CheveuxSecComponent},
+  { path: 'programmes/chute-casse', component : ChuteCasseComponent},
+  { path: 'programmes/soin-anti-capillaire', component : SoinAntiCapillaireComponent},
 
   // Admin
 

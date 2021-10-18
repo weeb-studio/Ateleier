@@ -17,7 +17,7 @@ export class ConnaitreCheveuxComponent implements OnInit {
     {
       img: 'assets/chute_casse.svg',
       title: 'La chute, la casse',
-      to: '',
+      to: '/programmes/chute-casse',
     },
     {
       img: 'assets/traitements_chimiques.svg',
