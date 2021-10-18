@@ -60,6 +60,11 @@ import { ShampoingsComponent } from './pages/programmes/recette/shampoings/shamp
 import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
 import { MasquesComponent } from './pages/programmes/recette/masques/masques.component';
 import { SoinsCapillaireComponent } from './pages/programmes/recette/soins-capillaire/soins-capillaire.component';
+import { CheveuxAvecPelliculeComponent } from './pages/programmes/routine-capillaire/cheveux-avec-pellicule/cheveux-avec-pellicule.component';
+import { CheveuxPeuPoreuxComponent } from './pages/programmes/routine-capillaire/cheveux-peu-poreux/cheveux-peu-poreux.component';
+import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheveux-sec/cheveux-sec.component';
+import { SoinAntiCapillaireComponent } from './pages/programmes/recette/soin-anti-capillaire/soin-anti-capillaire.component';
+import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
 
 @NgModule({
   declarations: [
@@ -111,6 +116,11 @@ import { SoinsCapillaireComponent } from './pages/programmes/recette/soins-capil
     LotionCremeComponent,
     MasquesComponent,
     SoinsCapillaireComponent,
+    CheveuxAvecPelliculeComponent,
+    CheveuxPeuPoreuxComponent,
+    CheveuxSecComponent,
+    SoinAntiCapillaireComponent,
+    ChuteCasseComponent,
   ],
   imports: [
     BrowserModule,

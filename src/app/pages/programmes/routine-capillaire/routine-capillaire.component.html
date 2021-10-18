@@ -39,21 +39,21 @@
     <button
       class="whitespace-nowrap"
       [ngClass]="
-        !page
-          ? 'border-2 w-full rounded-md p-3 border-primary text-primary bg-white'
-          : 'border-2 w-full rounded-md p-3 text-white bg-primary'
+        page1
+          ? 'border-2 w-full rounded-md p-3 text-white bg-primary'
+          : 'border-2 w-full rounded-md p-3 border-primary text-primary bg-white'
       "
-      (click)="page = true"
+      (click)="page1 = true; page2 = false; page = false"
     >
       Routine avec objectif à atteindre
     </button>
     <button
       class="whitespace-nowrap"
-      (click)="page = false"
+      (click)="page2 = true; page1 = false; page = false"
       [ngClass]="
-        page
-          ? 'border-2 w-full rounded-md p-3 border-primary text-primary bg-white'
-          : 'border-2 w-full rounded-md p-3 text-white bg-primary'
+        page2
+          ? 'border-2 w-full rounded-md p-3 text-white bg-primary'
+          : 'border-2 w-full rounded-md p-3 border-primary text-primary bg-white'
       "
     >
       Quelle type de routine choisir ?
@@ -171,9 +171,125 @@
       <img src="assets/creme2.svg" alt="" class="md:h-16 md:w-16" />
     </div>
   </div>
+  <div class="space-y-10 mb-10" *ngIf="page1">
+    <div
+      class="
+        flex flex-col
+        items-center
+        space-y-5
+        md:space-y-0 md:flex-row md:justify-center
+      "
+    >
+      <div class="">
+        <img src="assets/objectif.svg" alt="" class="" />
+      </div>
+      <div class="text-2xl text-center" style="color: #ff3e79">
+        Routine capillaire avec des objectif à atteindre
+      </div>
+    </div>
+    <div class="grid grid-cols-2 border-separate">
+      <div class="border-2 py-2 pl-5" style="color: #ff3e79">
+        Objectifs de la routine
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5" style="color: #ff3e79">
+        La cible
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Hydrater, resserer et renforcer les boucles
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux bouclés, cheveux ondulés
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Purifier et assainir le cuir chevelu pour l’élimination des pellicules
+      </div>
+      <div
+        class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer"
+        routerLink="/programmes/cheveux-avec-pellicule"
+      >
+        Cheveux avec pellicules
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Reconstruction de la fibre capillaire, assainir ses cheveux
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux abîmés et cheveux cassant
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Refermer les écailles des cheveux et Faire pénétrer l’hydratation
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux très poreux
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Ouvrir les êcailles des cheveux et faire pénétrer l’hydratation
+      </div>
+      <div
+        class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer"
+        routerLink="/programmes/cheveux-peu-poreux"
+      >
+        Cheveux peu poreux
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Stimuler la pousse de cheveux
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Chute de cheveux, casse de cheveux
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Garder ses cheveux hydrater et nourris même avec des coiffures
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux tresser, coiffures longues durée
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Renforcer le cheveu et eviter la casse
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux défrisés, lissés
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">Maintenir l'hydration</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux crépus, frisés
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">Routine 100% naturel</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Nappy
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Hydrater les cheveux, maintenir l’hydratation et les rendre souples
+      </div>
+      <div
+        class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer"
+        routerLink="/programmes/cheveux-sec"
+      >
+        cheveux tres secs
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Protéger les cheveux contre les appareils à chaleur limiter au maximum
+        la chaleur pour ses cheveux
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        L’utilisation régulière de la chaleur
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Réguler la production du sébum
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux gras
+      </div>
+      <div class="border-2 border-t-0 py-2 pl-5">
+        Rendre les cheveux plus malléable, éviter la casse et maintenir
+        l’hydratation
+      </div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">
+        Cheveux en trasition ( retour aux boucles )
+      </div>
+    </div>
+  </div>
   <div
     class="flex flex-col md:flex-row-reverse md:justify-around"
-    *ngIf="!page"
+    *ngIf="page2"
   >
     <div class="flex flex-col items-center my-10">
       <img src="assets/routine-choisie.svg" alt="" class="h-10/12" />
@@ -189,7 +305,7 @@
         vous aider à déterminer la routine capillaire qu’il vous faut, nous
         avons besoin des informations suivantes :
       </div>
-      <div class="cursor-pointer" (click)="show1 = true">
+      <div class="cursor-pointer" (click)="show1 = true; remoter()">
         <button
           class="
             text-center
@@ -210,6 +326,7 @@
   <div
     class="h-full w-screen z-auto absolute flex justify-center items-center"
     style="background-color: rgba(0, 0, 0, 0.5)"
+    id="modal1"
     *ngIf="show1"
   >
     <div
@@ -282,7 +399,7 @@
             bottom-0
             absolute
           "
-          (click)="show2 = true; show1 = false"
+          (click)="show2 = true; show1 = false; remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
@@ -387,7 +504,7 @@
             bottom-0
             absolute
           "
-          (click)="show1 = true; show2 = false"
+          (click)="show1 = true; show2 = false; remoter()"
         >
           <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
           <div class="text-primary font-bold">Précédent</div>
@@ -405,7 +522,7 @@
             bottom-0
             absolute
           "
-          (click)="show3 = true; show2 = false"
+          (click)="show3 = true; show2 = false; remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
@@ -482,7 +599,7 @@
             bottom-0
             absolute
           "
-          (click)="show2 = true; show3 = false"
+          (click)="show2 = true; show3 = false; remoter()"
         >
           <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
           <div class="text-primary font-bold">Précédent</div>
@@ -500,7 +617,7 @@
             bottom-0
             absolute
           "
-          (click)="show4 = true; show3 = false"
+          (click)="show4 = true; show3 = false; remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
@@ -577,7 +694,7 @@
             bottom-0
             absolute
           "
-          (click)="show3 = true; show4 = false"
+          (click)="show3 = true; show4 = false; remoter()"
         >
           <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
           <div class="text-primary font-bold">Précédent</div>

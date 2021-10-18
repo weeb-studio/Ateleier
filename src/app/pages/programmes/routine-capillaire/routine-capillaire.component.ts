@@ -12,8 +12,16 @@ export class RoutineCapillaireComponent implements OnInit {
   show2: boolean = false;
   show3: boolean = false;
   show4: boolean = false;
+  page1: boolean = false;
+  page2: boolean = false;
+
   showPage() {
     this.page = !this.page;
+  }
+  remoter() {
+    window.scrollTo({
+      top: 400,
+    });
   }
 
   ngOnInit(): void {}
