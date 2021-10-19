@@ -1,100 +1,114 @@
 <app-header></app-header>
-<div
-  class="px-10 mt20 h-auto py-10 md:h-screen flex justify-center items-center"
->
-  <fieldset
-    class="
-      border-2
-      flex flex-col
-      px-8
-      md:px-20 md:w-4/12
-      pb-10
-      rounded-md
-      space-y-10
-    "
-    style="border-color: #ff3e79e5"
+<div class="md:grid grid-cols-3 justify-center place-items-center">
+  <div class="hidden md:block">
+    <img src="assets/connectionImg1.svg" alt="" class="" />
+  </div>
+  <div
+    class="px-7 mt20 h-auto py-5 md:h-screen flex justify-center items-center"
   >
-    <legend class="text-center px-10 font-bold text-gray-600">Connexion</legend>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div class="">
-        <ul class="bg-red-700 opacity-70 text-white px-3 rounded-md text-xs">
-          <li>{{ message }}</li>
-        </ul>
-      </div>
-      <div class="flex flex-col items-center space-y-10 mb-3 mt-10">
-        <div class="relative w-full items-center">
-          <input
-            type="email"
-            required
-            id=""
-            placeholder="@Email"
-            class="border-2 pl-2 w-full md:w-full rounded-md"
-            style="border-color: #ff3e79e5"
-            formControlName="email"
-            autocomplete="on"
-          />
-          <!-- <div
+    <fieldset
+      class="
+        border-2
+        flex flex-col
+        px-5
+        md:px-10 md:w-full
+        pb-10
+        rounded-md
+        space-y-10
+      "
+      style="border-color: #ff3e79e5"
+    >
+      <legend class="text-center px-10 font-bold text-gray-600">
+        Connexion
+      </legend>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="">
+          <ul class="bg-red-700 opacity-70 text-white px-3 rounded-md text-xs">
+            <li>{{ message }}</li>
+          </ul>
+        </div>
+        <div class="flex flex-col items-center space-y-10 mb-3 mt-10">
+          <div class="relative w-full items-center">
+            <input
+              type="email"
+              required
+              id=""
+              placeholder="@Email"
+              class="border-2 pl-2 w-full md:w-full rounded-md"
+              style="border-color: #ff3e79e5"
+              formControlName="email"
+              autocomplete="on"
+            />
+            <!-- <div
             *ngIf="control('email')?.errors?.required"
             class="text-sm ml-2 text-red-700"
           >
             Champs requis.
           </div> -->
-          <div
-            *ngIf="control('email')?.errors?.pattern"
-            class="text-sm ml-2 text-red-700"
-          >
-            Format d'email invalide.
+            <div
+              *ngIf="control('email')?.errors?.pattern"
+              class="text-sm ml-2 text-red-700"
+            >
+              Format d'email invalide.
+            </div>
           </div>
-        </div>
-        <div class="relative w-full">
-          <input
-            [type]="pass ? 'text' : 'password'"
-            name=""
-            id=""
-            placeholder="Mot de passe"
-            class="border-2 pl-2 w-full md:w-full rounded-md"
-            style="border-color: #ff3e79e5"
-            formControlName="pwd"
-          />
-          <a
-            class="cursor-pointer absolute right-2 top-1 pl-1 rounded-full"
-            (click)="showPass()"
-          >
-            <img
-              [src]="pass ? 'assets/eye.svg' : 'assets/eye-off.svg'"
-              alt=""
-              class=""
+          <div class="relative w-full">
+            <input
+              [type]="pass ? 'text' : 'password'"
+              name=""
+              id=""
+              placeholder="Mot de passe"
+              class="border-2 pl-2 w-full md:w-full rounded-md"
+              style="border-color: #ff3e79e5"
+              formControlName="pwd"
             />
-          </a>
-          <!-- <div
+            <a
+              class="cursor-pointer absolute right-2 top-1 pl-1 rounded-full"
+              (click)="showPass()"
+            >
+              <img
+                [src]="pass ? 'assets/eye.svg' : 'assets/eye-off.svg'"
+                alt=""
+                class=""
+              />
+            </a>
+            <!-- <div
             *ngIf="control('pwd')?.errors?.required"
             class="text-sm ml-2 text-red-700"
           >
             Champs requis.
           </div> -->
-          <div
-            *ngIf="control('pwd')?.errors?.minlength"
-            class="text-xs ml-2 text-red-700"
-          >
-            Le mot de passe doit avoir au moins 6 caractères.
+            <div
+              *ngIf="control('pwd')?.errors?.minlength"
+              class="text-xs ml-2 text-red-700"
+            >
+              Le mot de passe doit avoir au moins 6 caractères.
+            </div>
           </div>
-        </div>
 
-        <button
-          type="submit"
-          class="text-center rounded-md py-2 px-5 btn"
-          [disabled]="loginForm.invalid"
-        >
-          Se connecter
-        </button>
+          <button
+            type="submit"
+            class="text-center rounded-md py-2 px-5 btn"
+            [disabled]="loginForm.invalid"
+          >
+            Se connecter
+          </button>
+        </div>
+      </form>
+      <div class="text-sm text-gray-600 underline cursor-pointer">
+        Mot de passe oublié
       </div>
-    </form>
-    <div class="text-sm text-gray-600 underline cursor-pointer">
-      Mot de passe oublié
-    </div>
-    <!-- <button (click)="removeToken()">remove</button>
+      <div class="text-sm cursor-pointer">
+        Vous n’avez pas encore de compte ?
+        <span class="" style="color: #ff3e79">s’inscrire</span>
+      </div>
+      <!-- <button (click)="removeToken()">remove</button>
     <button (click)="isAuth()">check</button>
     <button (click)="getUser()">getUser</button> -->
-  </fieldset>
+    </fieldset>
+  </div>
+  <div class="hidden md:block">
+    <img src="assets/connectionImg2.svg" alt="" class="" />
+  </div>
 </div>
 <app-footer></app-footer>

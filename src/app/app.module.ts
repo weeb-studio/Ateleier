@@ -67,6 +67,9 @@ import { SoinAntiCapillaireComponent } from './pages/programmes/recette/soin-ant
 import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
 import { ContactComponent } from './pages/admin/pages/discussions/contact/contact.component';
 import { TchatComponent } from './pages/admin/pages/discussions/tchat/tchat.component';
+import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
+import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveux/diverses-influences/diverses-influences.component';
+import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +128,9 @@ import { TchatComponent } from './pages/admin/pages/discussions/tchat/tchat.comp
     ChuteCasseComponent,
     ContactComponent,
     TchatComponent,
+    RoutineSimpleComponent,
+    DiversesInfluencesComponent,
+    IngredientsAEviterComponent,
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,8 @@ import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.co
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveux/diverses-influences/diverses-influences.component';
+import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
 import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
@@ -45,6 +47,7 @@ import { CheveuxAvecPelliculeComponent } from './pages/programmes/routine-capill
 import { CheveuxPeuPoreuxComponent } from './pages/programmes/routine-capillaire/cheveux-peu-poreux/cheveux-peu-poreux.component';
 import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheveux-sec/cheveux-sec.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
+import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
 import { AuthGuard } from './shared/auth.guard';
@@ -141,6 +144,16 @@ const routes: Routes = [
   {
     path: 'programmes/soin-anti-capillaire',
     component: SoinAntiCapillaireComponent,
+  },
+  { path: 'programmes/routine-simple', component: RoutineSimpleComponent },
+  {
+    path: 'programmes/ingredients-à-éviter',
+    component: IngredientsAEviterComponent,
+  },
+
+  {
+    path: 'programmes/diverses-influences',
+    component: DiversesInfluencesComponent,
   },
 
   // Admin

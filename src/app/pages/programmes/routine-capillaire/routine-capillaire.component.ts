@@ -12,6 +12,7 @@ export class RoutineCapillaireComponent implements OnInit {
   show2: boolean = false;
   show3: boolean = false;
   show4: boolean = false;
+  show5: boolean = false;
   page1: boolean = false;
   page2: boolean = false;
 
