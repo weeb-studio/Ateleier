@@ -39,6 +39,16 @@ export class CatalogueComponent implements OnInit {
     }
   }
 
+  removeFromCatalogue(id: String) {
+    this.catalogueService.removeProductToCatalogue(id).subscribe((res) => {
+      console.log(res);
+      if (this.tab) {
+        this.getCatalogueProduct('CAPILLAIRES');
+      } else {
+        this.getCatalogueProduct('COIFFURES');
+      }
+    });
+  }
   // items = [
   //   {
   //     nom: 'Perruques',

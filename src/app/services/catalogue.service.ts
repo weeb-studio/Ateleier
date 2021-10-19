@@ -46,4 +46,14 @@ export class CatalogueService {
     };
     return this.httpClient.post(API_URL, data, { headers: headers });
   }
+
+  removeProductToCatalogue(id: String) {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/catalogue/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    return this.httpClient.delete(API_URL, { headers: headers });
+  }
 }

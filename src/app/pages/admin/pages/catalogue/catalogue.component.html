@@ -38,7 +38,7 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
       <div
         *ngFor="let item of items"
-        class="rounded-lg flex flex-col shadow-lg pb-5"
+        class="rounded-lg flex flex-col shadow-lg pb-1"
       >
         <div
           class="
@@ -59,6 +59,15 @@
             class="w-auto h-full"
             alt=""
             srcset=""
+          />
+        </div>
+        <div class="flex justify-end">
+          <img
+            src="assets/trash.svg"
+            class="w-6 pr-2"
+            alt=""
+            srcset=""
+            (click)="removeFromCatalogue(item._id)"
           />
         </div>
       </div>
