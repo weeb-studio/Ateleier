@@ -52,7 +52,7 @@ export class ConnaitreCheveuxComponent implements OnInit {
     {
       img: 'assets/comprendre_cheveu.svg',
       title: 'Les diverses influences sur les cheveux',
-      to: '',
+      to: '/programmes/diverses-influences',
     },
   ];
 

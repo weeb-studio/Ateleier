@@ -26,6 +26,7 @@ import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.co
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveux/diverses-influences/diverses-influences.component';
 import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
@@ -122,6 +123,7 @@ const routes: Routes = [
   { path: 'programmes/soin-anti-capillaire', component : SoinAntiCapillaireComponent},
   { path: 'programmes/routine-simple', component : RoutineSimpleComponent},
   { path: 'programmes/ingredients-à-éviter', component : IngredientsAEviterComponent},
+  { path: 'programmes/diverses-influences', component : DiversesInfluencesComponent},
   // Admin
 
   {
