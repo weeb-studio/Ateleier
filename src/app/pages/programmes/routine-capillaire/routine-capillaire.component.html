@@ -88,7 +88,7 @@
       Dans ce cas nous vous conseillons d’opter pour 3 à 5 produits acheter dans
       le commerce. Assurez-vous que ceux-ci ont une composition naturelle.
       <span class="cursor-pointer underline" style="color: #0000ff"
-        >Découvrir un exemple de routine simple</span
+       routerLink="/programmes/routine-simple" >Découvrir un exemple de routine simple</span
       >
     </div>
     <div class="">
@@ -105,7 +105,7 @@
       habitudes. Sélectionnez un nombre précis de produits, selon la période, en
       fonction des besoins de vos cheveux sur cette période donnée.
       <span class="cursor-pointer underline" style="color: #0000ff"
-        >Découvrir des exemples de routines structurées</span
+      (click)="page1 = true; page2 = false; page = false; remoter()" >Découvrir des exemples de routines structurées</span
       >
     </div>
     <div class="">
@@ -182,16 +182,16 @@
     <div class="grid grid-cols-2 border-separate">
       <div class="border-2 py-2 pl-5" style="color: #FF3E79;">Objectifs de la routine</div>
       <div class="border-2 border-l-0 py-2 pl-5" style="color: #FF3E79;">La cible</div>
-      <div class="border-2 border-t-0 py-2 pl-5">Hydrater, resserer et renforcer les boucles</div>
-      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Cheveux bouclés, cheveux ondulés</div>
-      <div class="border-2 border-t-0 py-2 pl-5">Purifier et assainir le cuir chevelu pour l’élimination des pellicules</div>
-      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer" routerLink="/programmes/cheveux-avec-pellicule">Cheveux avec pellicules</div>
+      <div class="border-2 border-t-0 py-2 pl-5 cursor-pointer">Hydrater, resserer et renforcer les boucles</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0">Cheveux bouclés, cheveux ondulés</div>
+      <div class="border-2 border-t-0 py-2 pl-5 cursor-pointer" routerLink="/programmes/cheveux-avec-pellicule">Purifier et assainir le cuir chevelu pour l’élimination des pellicules</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0">Cheveux avec pellicules</div>
       <div class="border-2 border-t-0 py-2 pl-5">Reconstruction de la fibre capillaire, assainir ses cheveux</div>
       <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Cheveux abîmés et cheveux cassant</div>
       <div class="border-2 border-t-0 py-2 pl-5">Refermer les écailles des cheveux et Faire pénétrer l’hydratation</div>
       <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Cheveux très poreux</div>
-      <div class="border-2 border-t-0 py-2 pl-5">Ouvrir les êcailles des cheveux et faire pénétrer l’hydratation</div>
-      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer" routerLink="/programmes/cheveux-peu-poreux">Cheveux peu poreux</div>
+      <div class="border-2 border-t-0 py-2 pl-5 cursor-pointer" routerLink="/programmes/cheveux-peu-poreux">Ouvrir les êcailles des cheveux et faire pénétrer l’hydratation</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0">Cheveux peu poreux</div>
       <div class="border-2 border-t-0 py-2 pl-5">Stimuler la pousse de cheveux</div>
       <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Chute de cheveux, casse de cheveux</div>
       <div class="border-2 border-t-0 py-2 pl-5">Garder ses cheveux hydrater et nourris même avec des coiffures</div>
@@ -202,14 +202,14 @@
       <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Cheveux crépus, frisés</div>
       <div class="border-2 border-t-0 py-2 pl-5">Routine 100% naturel</div>
       <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Nappy</div>
-      <div class="border-2 border-t-0 py-2 pl-5">Hydrater les cheveux, maintenir l’hydratation et les rendre souples</div>
-      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer" routerLink="/programmes/cheveux-sec">cheveux tres secs</div>
+      <div class="border-2 border-t-0 py-2 pl-5 cursor-pointer" routerLink="/programmes/cheveux-sec">Hydrater les cheveux, maintenir l’hydratation et les rendre souples</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0">cheveux tres secs</div>
       <div class="border-2 border-t-0 py-2 pl-5">Protéger les cheveux contre les appareils à chaleur limiter au maximum la chaleur pour ses cheveux</div>
       <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">L’utilisation régulière de la chaleur</div>
-      <div class="border-2 border-t-0 py-2 pl-5">Réguler la production du sébum</div>
-      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Cheveux gras</div>
-      <div class="border-2 border-t-0 py-2 pl-5">Rendre les cheveux plus malléable, éviter la casse et maintenir l’hydratation</div>
-      <div class="border-2 border-l-0 py-2 pl-5 border-t-0 cursor-pointer">Cheveux en trasition ( retour aux boucles )</div>
+      <div class="border-2 border-t-0 py-2 pl-5 cursor-pointer">Réguler la production du sébum</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0">Cheveux gras</div>
+      <div class="border-2 border-t-0 py-2 pl-5 cursor-pointer">Rendre les cheveux plus malléable, éviter la casse et maintenir l’hydratation</div>
+      <div class="border-2 border-l-0 py-2 pl-5 border-t-0">Cheveux en trasition ( retour aux boucles )</div>
     </div>
   </div>
   <div
@@ -248,6 +248,40 @@
     </div>
   </div>
   <div class="h-full w-screen z-auto absolute flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" id="modal1" *ngIf="show1">
+    <div class="bg-white px-8 h-2/5 w-11/12 absolute rounded-lg md:h-2/3 md:w-8/12 md:px-32 space-y-5 md:space-y-10">
+        <div class="text-center text-2xl mt-5" style="color: #FF3E79;">Connexion</div>
+        <div class="space-y-3 relative">
+          <div class="relative h-12 rounded-lg">
+            <input type="email" name="" id="" placeholder="email*" class="w-full h-full pl-6">
+            <img src="assets/@.svg" alt="" class="absolute top-4 left-1">
+          </div>
+          <div class="relative h-12 rounded-lg">
+            <input type="password" name="" id="" placeholder="mot de passe*" class="w-full h-full pl-6">
+            <img src="assets/keys.svg" alt="" class="absolute top-4 left-1">
+            <img src="assets/eye.svg" alt="" class="absolute top-4 right-4">
+          </div>
+          <div class="text-sm text-center flex justify-end cursor-pointer" style="color: #FF3E79;">Mot de passe oublié</div>
+          <div class="text-center text-lg h-12 rounded-lg py-2 cursor-pointer" style="color: #fff; background-color: #FF3E79;">se connecter</div>
+        </div>
+        <div class="">
+          <fieldset class="border-t-2"> <legend class="text-center px-3">Ou</legend></fieldset>
+        </div>
+        <div class="flex flex-col space-y-3">
+          <div class="text-sm text-center">se connecter avec</div>
+          <div class="flex flex-row justify-center h-12 py-2 rounded-lg space-x-3 cursor-pointer" style="background-color: #214F8B;">
+            <div class="">
+              <img src="assets/fb.svg" alt="" class="">
+            </div>
+            <div class="" style="color: #fff;">Facebook</div>
+          </div>
+        </div>
+        <div class="">
+          <div class="cursor-pointer">Vous n’avez pas encore de  compte ?</div>
+          <div class="cursor-pointer" style="color: #FF3E79;">s’inscrire</div>
+        </div>
+    </div>
+  </div>
+  <div class="hidden h-full w-screen z-auto absolute justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" id="modal1">
     <div class="bg-white h-2/5 w-11/12 absolute rounded-lg md:h-1/2 md:w-8/12 md:px-32">
         <div class="absolute right-0 pr-2 pt-2 cursor-pointer" (click)="show1 = false">
           <img src="assets/close.svg" alt="" class="">
@@ -412,7 +446,45 @@
                 <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
                 <div class="text-primary font-bold">Précédent</div>
             </div>
-            <div class="text-center md:py-3 ml-16 md:ml-0 cursor-pointer rounded-lg content-center w-32 md:w-40 md:h-12 bottom-6 absolute" style="background-color: #FF3E79; color: #fff;" (click)= "show4 = false">
+            <div class="flex flex-row justify-end items-center pr-5 pb-5 gap-4 cursor-pointer right-0 bottom-0 absolute" (click)="show5 = true; show4 = false; remoter()">
+                <div class="text-primary font-bold">Suivant</div>
+                <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="h-full w-screen z-auto absolute flex justify-center items-center" style="background-color: rgba(0, 0, 0, 0.5)" *ngIf="show5">
+    <div class="bg-white h-2/5 w-11/12 absolute rounded-lg md:h-1/2 md:w-8/12 md:px-32">
+        <div class="absolute right-0 pr-2 pt-2 cursor-pointer" (click)="show5 = false">
+          <img src="assets/close.svg" alt="" class="">
+        </div>
+        <div class="text-center pt-10 pb-5 md:pt-16 md:pb-1 text-2xl" style="color: #FF3E79;">Je détermine ma routine capillaire idéale</div>
+        <div class="px-2">
+            <img src="assets/5.svg" alt="" class="">
+        </div>
+        <div class="px-10 md:px-20 py-3">
+            <div class="font-bold py-5">Qu’est ce qui caracterise une bonne routine capillaire selon vous ?</div><br>
+            <div class="md:flex flex-col justify-center">
+                <div class="space-x-3">
+                    <input type="radio" id="html" name="fav_language" value="HTML" />
+                    <label for="html">Une bonne routine uniquement à base de produits naturels ?</label><br />
+                </div>
+                <div class="space-x-3">
+                    <input type="radio" id="css" name="fav_language" value="CSS" />
+                    <label for="css">Une bonne routine simplifiée, qui va droit au but ?</label><br />
+                </div>
+                <div class="space-x-3 pr-2">
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript"/>
+                    <label for="javascript">Une routine qui répond à l’ensemble des problématiques capillaire ?</label>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div class="hidden md:flex flex-row justify-end items-center pl-5 pb-5 gap-4 cursor-pointer left-0 bottom-0 absolute"(click)="show4 = true; show5 = false; remoter()">
+                <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
+                <div class="text-primary font-bold">Précédent</div>
+            </div>
+            <div class="text-center md:py-3 ml-16 md:ml-0 cursor-pointer rounded-lg content-center w-32 md:w-40 md:h-12 bottom-6 absolute" style="background-color: #FF3E79; color: #fff;" (click)= "show5 = false">
               Valider
             </div>
             <div class="hidden flex-row justify-end items-center pr-5 pb-5 gap-4 cursor-pointer right-0 bottom-0 absolute">

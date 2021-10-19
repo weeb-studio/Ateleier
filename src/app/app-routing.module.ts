@@ -26,6 +26,7 @@ import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.co
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
 import { ConnaitreCheveuxComponent } from './pages/programmes/connaitre-cheveux/connaitre-cheveux.component';
+import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 import { PerruqueTresseTissageComponent } from './pages/programmes/connaitre-cheveux/perruque-tresse-tissage/perruque-tresse-tissage.component';
 import { TraitementChimiqueComponent } from './pages/programmes/connaitre-cheveux/traitement-chimique/traitement-chimique.component';
 import { LotionCremeComponent } from './pages/programmes/recette/lotion-creme/lotion-creme.component';
@@ -43,6 +44,7 @@ import { CheveuxPeuPoreuxComponent } from './pages/programmes/routine-capillaire
 import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheveux-sec/cheveux-sec.component';
 import { ModalComponent } from './pages/programmes/routine-capillaire/modal/modal.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
+import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { AdminGuard } from './shared/admin.guard';
 import { AuthGuard } from './shared/auth.guard';
@@ -118,7 +120,8 @@ const routes: Routes = [
   { path: 'programmes/cheveux-sec', component: CheveuxSecComponent},
   { path: 'programmes/chute-casse', component : ChuteCasseComponent},
   { path: 'programmes/soin-anti-capillaire', component : SoinAntiCapillaireComponent},
-
+  { path: 'programmes/routine-simple', component : RoutineSimpleComponent},
+  { path: 'programmes/ingredients-à-éviter', component : IngredientsAEviterComponent},
   // Admin
 
   {

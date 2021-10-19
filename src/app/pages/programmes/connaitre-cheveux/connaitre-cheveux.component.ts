@@ -36,8 +36,8 @@ export class ConnaitreCheveuxComponent implements OnInit {
     },
     {
       img: 'assets/choisis_produits.svg',
-      title: 'Bien choisis ses produits 100% naturels',
-      to: '',
+      title: 'Les ingrédients à éviter',
+      to: '/programmes/ingredients-à-éviter',
     },
     {
       img: 'assets/pousser_cheveux.svg',

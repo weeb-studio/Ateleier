@@ -1,13 +1,17 @@
 <app-header></app-header>
-<div
-  class="px-10 mt20 h-auto py-10 md:h-screen flex justify-center items-center"
->
+<div class="md:grid grid-cols-3 justify-center place-items-center">
+  <div class="hidden md:block">
+    <img src="assets/connectionImg1.svg" alt="" class="">
+  </div>
+  <div
+  class="px-7 mt20 h-auto py-5 md:h-screen flex justify-center items-center"
+  >
   <fieldset
     class="
       border-2
       flex flex-col
-      px-8
-      md:px-20 md:w-4/12
+      px-5
+      md:px-10 md:w-full
       pb-10
       rounded-md
       space-y-10
@@ -92,9 +96,14 @@
     <div class="text-sm text-gray-600 underline cursor-pointer">
       Mot de passe oublié
     </div>
+    <div class="text-sm cursor-pointer">Vous n’avez pas encore de  compte ? <span class="" style="color: #FF3E79;">s’inscrire</span></div>
     <!-- <button (click)="removeToken()">remove</button>
     <button (click)="isAuth()">check</button>
     <button (click)="getUser()">getUser</button> -->
   </fieldset>
+  </div>
+  <div class="hidden md:block">
+    <img src="assets/connectionImg2.svg" alt="" class="">
+  </div>
 </div>
 <app-footer></app-footer>
