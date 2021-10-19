@@ -1,26 +1,46 @@
 <app-header></app-header>
-<div class="flex flex-col items-center px-10 py-20 space-y-5 md:px-44">
-  <input
-    type="text"
-    name=""
-    id=""
-    placeholder="Objet"
-    class="border-2 rounded-lg w-full px-5 py-3"
-  />
-  <textarea
-    name=""
-    id=""
-    cols="30"
-    rows="10"
-    class="border-2 rounded-lg w-full px-5 py-5"
-    placeholder="Commentraires"
-  ></textarea>
-  <button
-    type="submit"
-    style="color: #fff; background-color: #ff3e79"
-    class="w-full rounded-lg h-14 md:text-2xl"
-  >
-    Envoyer
-  </button>
-</div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="flex flex-col items-center px-10 py-20 space-y-5 md:px-44">
+    <input
+      type="text"
+      name=""
+      id=""
+      placeholder="Nom"
+      class="border-2 rounded-lg w-full px-5 py-3"
+      formControlName="nom"
+    />
+    <input
+      type="email"
+      name=""
+      id=""
+      placeholder="Email"
+      class="border-2 rounded-lg w-full px-5 py-3"
+      formControlName="email"
+    />
+    <input
+      type="text"
+      name=""
+      id=""
+      placeholder="Objet"
+      class="border-2 rounded-lg w-full px-5 py-3"
+      formControlName="objet"
+    />
+    <textarea
+      name=""
+      id=""
+      cols="30"
+      rows="10"
+      class="border-2 rounded-lg w-full px-5 py-5"
+      placeholder="Commentraires"
+      formControlName="message"
+    ></textarea>
+    <button
+      type="submit"
+      style="color: #fff; background-color: #ff3e79"
+      class="w-full rounded-lg h-14 md:text-2xl"
+    >
+      Envoyer
+    </button>
+  </div>
+</form>
 <app-footer></app-footer>

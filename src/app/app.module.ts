@@ -65,6 +65,8 @@ import { CheveuxPeuPoreuxComponent } from './pages/programmes/routine-capillaire
 import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheveux-sec/cheveux-sec.component';
 import { SoinAntiCapillaireComponent } from './pages/programmes/recette/soin-anti-capillaire/soin-anti-capillaire.component';
 import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-casse/chute-casse.component';
+import { ContactComponent } from './pages/admin/pages/discussions/contact/contact.component';
+import { TchatComponent } from './pages/admin/pages/discussions/tchat/tchat.component';
 
 @NgModule({
   declarations: [
@@ -121,6 +123,8 @@ import { ChuteCasseComponent } from './pages/programmes/connaitre-cheveux/chute-
     CheveuxSecComponent,
     SoinAntiCapillaireComponent,
     ChuteCasseComponent,
+    ContactComponent,
+    TchatComponent,
   ],
   imports: [
     BrowserModule,

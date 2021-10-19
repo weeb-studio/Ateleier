@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CatalogueComponent } from './pages/admin/pages/catalogue/catalogue.component';
 import { DashboardComponent } from './pages/admin/pages/dashboard/dashboard.component';
+import { ContactComponent } from './pages/admin/pages/discussions/contact/contact.component';
+import { TchatComponent } from './pages/admin/pages/discussions/tchat/tchat.component';
 import { ClienteComponent } from './pages/admin/pages/utilisateurs/cliente/cliente.component';
 import { ConseillereComponent } from './pages/admin/pages/utilisateurs/conseillere/conseillere.component';
 import { HotesseComponent } from './pages/admin/pages/utilisateurs/hotesse/hotesse.component';
@@ -179,6 +181,19 @@ const routes: Routes = [
           {
             path: '',
             component: CatalogueComponent,
+          },
+        ],
+      },
+      {
+        path: 'discussions',
+        children: [
+          {
+            path: 'contact',
+            component: ContactComponent,
+          },
+          {
+            path: 'tchat',
+            component: TchatComponent,
           },
         ],
       },
