@@ -13,11 +13,13 @@ import { AccesHotesseComponent } from './pages/atelier/acces-hotesse/acces-hotes
 import { ConnexionComponent } from './pages/atelier/connexion/connexion.component';
 import { InscriptionConseillereComponent } from './pages/atelier/inscription-conseillere/inscription-conseillere.component';
 import { InscriptionHotesseComponent } from './pages/atelier/inscription-hotesse/inscription-hotesse.component';
+import { InscriptionComponent } from './pages/atelier/inscription/inscription.component';
 import { AtelierComponent } from './pages/ateliers/atelier/atelier.component';
 import { DevenirConseillereComponent } from './pages/ateliers/devenir-conseillere/devenir-conseillere.component';
 import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
 import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.component';
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
+import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
@@ -155,6 +157,7 @@ const routes: Routes = [
     path: 'programmes/diverses-influences',
     component: DiversesInfluencesComponent,
   },
+  { path: 'inscription', component: InscriptionComponent },
 
   // Admin
 
@@ -243,6 +246,10 @@ const routes: Routes = [
       {
         path: 'ajout-atelier',
         component: AjoutAtelierComponent,
+      },
+      {
+        path: 'commandes',
+        component: CommandeComponent,
       },
     ],
   },

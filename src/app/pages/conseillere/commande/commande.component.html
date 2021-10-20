@@ -1,0 +1,193 @@
+<app-header></app-header>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
+  <app-side-conseillere></app-side-conseillere>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full space-y-20">
+    <div class="font-semibold text-2xl">Nouveau bon de commande</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div class="flex flex-col gap-4">
+        <input
+          class="px-4 py-1 rounded-md"
+          type="text"
+          name=""
+          placeholder="Nom de la cliente"
+          id=""
+        />
+        <input
+          class="px-4 py-1 rounded-md"
+          type="text"
+          name=""
+          placeholder="Prénom"
+          id=""
+        />
+        <input
+          class="px-4 py-1 rounded-md"
+          type="text"
+          name=""
+          placeholder="Email"
+          id=""
+        />
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <input
+          class="px-4 py-1 rounded-md"
+          type="text"
+          name=""
+          placeholder="Téléphone"
+          id=""
+        />
+        <input
+          class="px-4 py-1 rounded-md"
+          type="text"
+          name=""
+          placeholder="Adresse"
+          id=""
+        />
+        <input
+          class="px-4 py-1 rounded-md"
+          type="date"
+          name=""
+          placeholder=""
+          id=""
+        />
+      </div>
+
+      <div class="flex flex-col gap-8 items-cente justify-center">
+        <select
+          class="rounded h-10 px-2 w-full"
+          name=""
+          id=""
+          value="Conditions règlement"
+          style="background-color: transparent"
+        >
+          <option value="">Espèces</option>
+          <option value="">Conditions règlement</option>
+        </select>
+        <input
+          class="px-4 py-1 rounded-md"
+          type="text"
+          name=""
+          placeholder="Nom de l’hôtesse"
+          id=""
+        />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-5 gap-16">
+      <div class="col-span-3">
+        <div class="px-5 py-10 space-y-2">
+          <div class="font-bold">Mon panier</div>
+
+          <div class="flex justify-end font-bold">+ Ajouter un produit</div>
+          <div class="">
+            <div class="py-2 flex flex-row justify-between items-center w-full">
+              <div class="flex flex-row gap-1 items-center">
+                <div class="w-32 h-20 hidden sm:flex justify-center rounded">
+                  <img
+                    src="assets/peruque.png"
+                    class="h-full w-auto"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="flex flex-col text-xs font-semibold">
+                  <div class="">tefghj</div>
+                  <div class="text-gray-400">tefghj</div>
+                  <div class="text-gray-400">testtt</div>
+                  <div class="text-gray-400">500 ml</div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col gap-1 text-xs items-center font-semibold"
+              >
+                <div>46</div>
+                <div class="flex flex-row gap-2">
+                  <div>
+                    <img src="assets/moins.svg" alt="" srcset="" />
+                  </div>
+                  1
+                  <div>
+                    <img src="assets/plus.svg" alt="" srcset="" />
+                  </div>
+                </div>
+                <div class="text-gray-600 hover:underline cursor-pointer">
+                  Supprimer
+                </div>
+              </div>
+            </div>
+            <div class="py-2 flex flex-row justify-between items-center w-full">
+              <div class="flex flex-row gap-1 items-center">
+                <div class="w-32 h-20 hidden sm:flex justify-center rounded">
+                  <img
+                    src="assets/peruque.png"
+                    class="h-full w-auto"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div class="flex flex-col text-xs font-semibold">
+                  <div class="">tefghj</div>
+                  <div class="text-gray-400">tefghj</div>
+                  <div class="text-gray-400">testtt</div>
+                  <div class="text-gray-400">500 ml</div>
+                </div>
+              </div>
+              <div
+                class="flex flex-col gap-1 text-xs items-center font-semibold"
+              >
+                <div>46</div>
+                <div class="flex flex-row gap-2">
+                  <div>
+                    <img src="assets/moins.svg" alt="" srcset="" />
+                  </div>
+                  1
+                  <div>
+                    <img src="assets/plus.svg" alt="" srcset="" />
+                  </div>
+                </div>
+                <div class="text-gray-600 hover:underline cursor-pointer">
+                  Supprimer
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div
+          class="
+            border border-primary
+            rounded-lg
+            flex flex-col
+            justify-start
+            px-5
+            py-10
+            space-y-2
+          "
+        >
+          <h3 class="font-bold">Récapitulatif Commande</h3>
+          <div class="flex justify-between">
+            <div>Liste des articles</div>
+            <div class="text-gray-400">78,00</div>
+          </div>
+          <div class="flex justify-between">
+            <div>Livraison :</div>
+            <div class="text-gray-400">4,99</div>
+          </div>
+          <div class="flex justify-between border-b border-primary">
+            <div class="pb-4">TVA (20%)</div>
+            <div class="text-gray-400">15,60</div>
+          </div>
+
+          <div class="flex justify-between">
+            <div>Montant Total TTC</div>
+            <div>82,99</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <button class="btn py-2 px-4 rounded-md">VALIDER</button>
+    </div>
+  </div>
+</div>

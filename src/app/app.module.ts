@@ -70,6 +70,7 @@ import { TchatComponent } from './pages/admin/pages/discussions/tchat/tchat.comp
 import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
 import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveux/diverses-influences/diverses-influences.component';
 import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
+import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 
 @NgModule({
   declarations: [
@@ -131,6 +132,7 @@ import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveu
     RoutineSimpleComponent,
     DiversesInfluencesComponent,
     IngredientsAEviterComponent,
+    CommandeComponent,
   ],
   imports: [
     BrowserModule,

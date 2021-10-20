@@ -309,7 +309,7 @@
         vous aider à déterminer la routine capillaire qu’il vous faut, nous
         avons besoin des informations suivantes :
       </div>
-      <div class="cursor-pointer" (click)="show1 = true; remoter()">
+      <div class="cursor-pointer" (click)="connexion = true; remoter()">
         <button
           class="
             text-center
@@ -331,7 +331,7 @@
     class="h-full w-screen z-auto absolute flex justify-center items-center"
     style="background-color: rgba(0, 0, 0, 0.5)"
     id="modal1"
-    *ngIf="show1"
+    *ngIf="connexion"
   >
     <div
       class="
@@ -346,30 +346,80 @@
         md:space-y-10
       "
     >
+      <div
+        class="absolute right-0 pr-2 pt-2 cursor-pointer"
+        (click)="connexion = false"
+      >
+        <img src="assets/close.svg" alt="" class="" />
+      </div>
       <div class="text-center text-2xl mt-5" style="color: #ff3e79">
         Connexion
       </div>
-      <div class="space-y-3 relative">
+      <form
+        class="space-y-3 relative"
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <div class="">
+          <ul
+            class="
+              bg-red-700
+              opacity-70
+              text-white
+              px-2
+              rounded-md
+              text-xs
+              mb-5
+            "
+          >
+            <li>{{ message }}</li>
+          </ul>
+        </div>
         <div class="relative h-12 rounded-lg">
           <input
+            required
             type="email"
             name=""
             id=""
             placeholder="email*"
+            formControlName="email"
+            autocomplete="on"
             class="w-full h-full pl-6"
           />
           <img src="assets/@.svg" alt="" class="absolute top-4 left-1" />
         </div>
+        <div
+          *ngIf="control('email')?.errors?.pattern"
+          class="text-sm ml-2 text-red-700"
+        >
+          Format d'email invalide.
+        </div>
         <div class="relative h-12 rounded-lg">
           <input
-            type="password"
             name=""
             id=""
             placeholder="mot de passe*"
+            formControlName="pwd"
+            [type]="pass ? 'text' : 'password'"
             class="w-full h-full pl-6"
           />
           <img src="assets/keys.svg" alt="" class="absolute top-4 left-1" />
-          <img src="assets/eye.svg" alt="" class="absolute top-4 right-4" />
+          <a
+            class="cursor-pointer absolute right-2 top-1 pl-1 rounded-full"
+            (click)="showPass()"
+          >
+            <img
+              [src]="pass ? 'assets/eye.svg' : 'assets/eye-off.svg'"
+              alt=""
+              class=""
+            />
+          </a>
+        </div>
+        <div
+          *ngIf="control('pwd')?.errors?.minlength"
+          class="text-xs ml-2 text-red-700"
+        >
+          Le mot de passe doit avoir au moins 6 caractères.
         </div>
         <div
           class="text-sm text-center flex justify-end cursor-pointer"
@@ -381,9 +431,15 @@
           class="text-center text-lg h-12 rounded-lg py-2 cursor-pointer"
           style="color: #fff; background-color: #ff3e79"
         >
-          se connecter
+          <button
+            type="submit"
+            [disabled]="loginForm.invalid"
+            (click)="getUser()"
+          >
+            se connecter
+          </button>
         </div>
-      </div>
+      </form>
       <div class="">
         <fieldset class="border-t-2">
           <legend class="text-center px-3">Ou</legend>
@@ -411,7 +467,13 @@
       </div>
       <div class="">
         <div class="cursor-pointer">Vous n’avez pas encore de compte ?</div>
-        <div class="cursor-pointer" style="color: #ff3e79">s’inscrire</div>
+        <div
+          class="cursor-pointer"
+          style="color: #ff3e79"
+          routerLink="/inscription"
+        >
+          s’inscrire
+        </div>
       </div>
     </div>
   </div>
