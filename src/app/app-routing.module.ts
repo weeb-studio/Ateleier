@@ -158,6 +158,7 @@ const routes: Routes = [
     component: DiversesInfluencesComponent,
   },
   { path: 'inscription', component: InscriptionComponent },
+  { path: 'dash/cliente', component: DashClienteComponent },
 
   // Admin
 
