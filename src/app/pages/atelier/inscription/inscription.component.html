@@ -5,25 +5,39 @@
     </div>
     <div class="border-2 py-10 px-10 space-y-10" style="border-color: #FF3E79;">
         <div class="text-center text-2xl" style="color: #FF3E79;">Inscription</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 px-2">
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-5 px-2" [formGroup]="registerForm" (ngSubmit)="onRegister()">
             <div class="flex flex-col">
                 <label for="">Nom</label>
-                <input type="text" name="" id="" class="rounded-lg">
+                <input type="text" name="" id="" class="rounded-lg" formControlName="nom">
             </div>
             <div class="flex flex-col">
                 <label for="">Prénom</label>
-                <input type="text" name="" id="" class="rounded-lg">
+                <input type="text" name="" id="" class="rounded-lg" formControlName="prenom">
             </div>
             <div class="md:col-span-2">
                 <label for="">Email</label>
-                <input type="email" name="" id="" class="w-full rounded-lg">
+                <input type="email" name="" id="" class="w-full rounded-lg" formControlName="email">
+            </div>
+            <div class="flex flex-col">
+                <label for="">Code Postal</label>
+                <input type="text" name="" id="" class="rounded-lg" formControlName="code">
+            </div>
+            <div class="flex flex-col">
+                <label for="">villes</label>
+                <input type="text" name="" id="" class="rounded-lg" formControlName="ville">
+            </div>
+            <div class="flex flex-col">
+                <label for="">Tel</label>
+                <input type="tel" name="" id="" class="rounded-lg" formControlName="tel">
             </div>
             <div class="md:col-span-2">
                 <label for="">Mot de passe</label>
-                <input type="password" name="" id="" class="w-full rounded-lg">
+                <input type="password" name="" id="" class="w-full rounded-lg" formControlName="pwd">
             </div>
-            <div class="md:col-span-2 cursor-pointer text-center rounded-lg h-12 py-2" style="color: #fff; background-color: #FF3E79;">S’inscrire</div>
-        </div>
+            <div class="md:col-span-2 cursor-pointer text-center rounded-lg h-12 py-2" style="color: #fff; background-color: #FF3E79;">
+                <button type="submit">S’inscrire</button>
+            </div>
+        </form>
         <div class="">
             <fieldset class="border-t-2"> <legend class="text-center px-3">Ou</legend></fieldset>
         </div>

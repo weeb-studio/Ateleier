@@ -62,7 +62,7 @@ export class ConnexionComponent implements OnInit {
         }
         if (test.role.nom == 'user') {
           this.localStorage.set('x-access-token', test.accessToken);
-          this.router.navigate(['/']);
+          this.router.navigate(['/dash/cliente']);
         }
       },
       (err: any) => {

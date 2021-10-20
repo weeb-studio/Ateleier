@@ -126,6 +126,7 @@ const routes: Routes = [
   { path: 'programmes/ingredients-à-éviter', component : IngredientsAEviterComponent},
   { path: 'programmes/diverses-influences', component : DiversesInfluencesComponent},
   { path: 'inscription', component : InscriptionComponent},
+  { path: 'dash/cliente', component: DashClienteComponent},
   // Admin
 
   {
