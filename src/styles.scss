@@ -101,4 +101,20 @@ select:focus {
 .hover:hover {
   // color: #ff680c !important;
   transform: scale(1.1);
+  text-align: center;
+}
+
+.box{
+  transition: transform 0.2s;
+}
+
+.titleLink:hover{
+  color: #ff680c !important;
+}
+
+.box:hover{
+  transform: scale(1.1);
+  border-width: 2px;
+  border-color: #ff680c !important;
+  color: #ff680c !important;
 }
