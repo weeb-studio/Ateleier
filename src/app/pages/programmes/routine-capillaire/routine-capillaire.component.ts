@@ -20,6 +20,7 @@ export class RoutineCapillaireComponent implements OnInit {
   show5: boolean = false;
   page1: boolean = false;
   page2: boolean = false;
+  register: boolean = false;
 
   showPage() {
     this.page = !this.page;
