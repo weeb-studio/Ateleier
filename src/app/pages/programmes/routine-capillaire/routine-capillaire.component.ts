@@ -53,7 +53,7 @@ export class RoutineCapillaireComponent implements OnInit {
       ]),
       pwd: formBuilder.control('', [
         Validators.required,
-        Validators.minLength(3),
+        Validators.minLength(6),
       ]),
     });
     this.getUser();

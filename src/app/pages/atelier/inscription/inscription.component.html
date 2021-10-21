@@ -1,101 +1,121 @@
 <app-header></app-header>
-<div class="px-10 md:grid md:grid-cols-3 md:place-items-center my-10">
-  <div class="hidden md:block">
+<div
+  class="px-10 md:grid md:grid-cols-4 md:place-items-cente my-10 items-center"
+>
+  <div class="hidden md:block col-span-1">
     <img src="assets/connectionImg1.svg" alt="" class="" />
   </div>
-  <div class="border-2 py-10 px-10 space-y-10" style="border-color: #ff3e79">
+  <div
+    class="col-span-2 border rounded py-10 px-10 space-y-10"
+    style="border-color: #ff3e79"
+  >
     <div class="text-center text-2xl" style="color: #ff3e79">Inscription</div>
     <form
       class="grid grid-cols-1 md:grid-cols-2 gap-5 px-2"
       [formGroup]="registerForm"
       (ngSubmit)="onRegister()"
     >
-      <div class="flex flex-col">
-        <label for="">Nom</label>
+      <div class="col-span-2 md:col-span-1 relative h-12 rounded-lg">
         <input
-          type="text"
           name=""
           id=""
-          class="rounded-lg"
+          placeholder="Nom *"
           formControlName="nom"
-        />
-      </div>
-      <div class="flex flex-col">
-        <label for="">Prénom</label>
-        <input
           type="text"
+          class="w-full h-full pl-9 rounded-md"
+        />
+        <img src="assets/input-user.svg" alt="" class="absolute top-3 left-4" />
+      </div>
+      <div class="col-span-2 md:col-span-1 relative h-12 rounded-lg">
+        <input
           name=""
           id=""
-          class="rounded-lg"
+          placeholder="Prénom *"
           formControlName="prenom"
+          type="text"
+          class="w-full h-full pl-9 rounded-md"
         />
+        <img src="assets/input-user.svg" alt="" class="absolute top-3 left-4" />
       </div>
-      <div class="md:col-span-2">
-        <label for="">Email</label>
+      <div class="relative h-12 rounded-lg col-span-2">
         <input
-          type="email"
           name=""
           id=""
-          class="w-full rounded-lg"
+          placeholder="Email *"
           formControlName="email"
+          type="email"
+          class="w-full h-full pl-9 rounded-md"
         />
+        <img src="assets/@.svg" alt="" class="absolute top-4 left-4" />
       </div>
-      <div class="flex flex-col">
-        <label for="">Code Postal</label>
+      <div class="col-span-2 md:col-span-1 relative h-12 rounded-lg">
         <input
-          type="text"
           name=""
           id=""
-          class="rounded-lg"
+          placeholder="Code Postal *"
           formControlName="code"
-        />
-      </div>
-      <div class="flex flex-col">
-        <label for="">villes</label>
-        <input
           type="text"
+          class="w-full h-full pl-3 rounded-md"
+        />
+      </div>
+      <div class="col-span-2 md:col-span-1 relative h-12 rounded-lg">
+        <input
           name=""
           id=""
-          class="rounded-lg"
+          placeholder="Ville *"
           formControlName="ville"
+          type="text"
+          class="w-full h-full pl-9 rounded-md"
         />
+        <img src="assets/XMLID.svg" alt="" class="absolute top-3 left-3" />
       </div>
-      <div class="flex flex-col">
-        <label for="">Tel</label>
+      <div class="relative h-12 rounded-lg col-span-2">
         <input
-          type="tel"
           name=""
           id=""
-          class="rounded-lg"
+          placeholder="Téléphone *"
           formControlName="tel"
+          type="text"
+          class="w-full h-full pl-9 rounded-md"
         />
+        <img src="assets/mdi_phone.svg" alt="" class="absolute top-3 left-3" />
       </div>
-      <div class="md:col-span-2">
-        <label for="">Mot de passe</label>
+      <div class="relative h-12 rounded-lg col-span-2">
         <input
-          type="password"
           name=""
           id=""
-          class="w-full rounded-lg"
+          placeholder="Mot de passe*"
           formControlName="pwd"
+          [type]="pass ? 'text' : 'password'"
+          class="w-full h-full pl-9 rounded-md"
         />
+        <img src="assets/keys.svg" alt="" class="absolute top-3 left-4" />
+        <a
+          class="cursor-pointer absolute right-4 top-4 rounded-full"
+          (click)="showPass()"
+        >
+          <img
+            [src]="pass ? 'assets/eye.svg' : 'assets/eye-off.svg'"
+            alt=""
+            class=""
+          />
+        </a>
       </div>
-      <div
-        class="md:col-span-2 cursor-pointer text-center rounded-lg h-12 py-2"
-        style="color: #fff; background-color: #ff3e79"
-      >
-        <button type="submit">S’inscrire</button>
+
+      <button class="btn col-span-2 py-2 px-4 rounded-md" type="submit">
+        S’inscrire
+      </button>
+      <div class="col-span-2">
+        <fieldset class="border-t-2">
+          <legend class="text-center px-3">Ou</legend>
+        </fieldset>
       </div>
-    </form>
-    <div class="">
-      <fieldset class="border-t-2">
-        <legend class="text-center px-3">Ou</legend>
-      </fieldset>
-    </div>
-    <div class="flex flex-col space-y-3">
-      <div class="text-sm text-center">Créez votre compte un seul clic</div>
+      <div class="flex flex-col col-span-2 space-y-3">
+        <div class="text-sm text-center">Créez votre compte un seul clic</div>
+      </div>
       <div
         class="
+          col-span-2
           flex flex-row
           justify-center
           h-12
@@ -111,9 +131,19 @@
         </div>
         <div class="" style="color: #fff">Facebook</div>
       </div>
-    </div>
+      <div class="flex flex-col col-span-2 space-y-3">
+        <div class="text-sm text-center">
+          Vous avez déjà un compte?
+          <span
+            class="text-primary hover:underline cursor-pointer"
+            routerLink="/connexion"
+            >Se Connecter</span
+          >
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="hidden md:block">
+  <div class="hidden md:block col-span-1">
     <img src="assets/connectionImg2.svg" alt="" class="" />
   </div>
 </div>

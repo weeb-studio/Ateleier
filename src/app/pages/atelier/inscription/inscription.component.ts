@@ -12,6 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class InscriptionComponent implements OnInit {
   registerForm: FormGroup;
+  pass: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private UserServices: UserService,
@@ -48,4 +49,8 @@ export class InscriptionComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  showPass() {
+    this.pass = !this.pass;
+  }
 }
