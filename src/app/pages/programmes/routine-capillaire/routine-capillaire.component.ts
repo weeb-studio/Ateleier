@@ -37,6 +37,7 @@ export class RoutineCapillaireComponent implements OnInit {
   message = '';
   mail: String = '';
   loginForm: FormGroup;
+  registerForm: FormGroup;
   pass: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
@@ -45,6 +46,15 @@ export class RoutineCapillaireComponent implements OnInit {
     private jwt: JWTokenService,
     private router: Router
   ) {
+    this.registerForm = this.formBuilder.group({
+      nom: formBuilder.control(''),
+      prenom: formBuilder.control(''),
+      email: formBuilder.control(''),
+      code: formBuilder.control(''),
+      ville: formBuilder.control(''),
+      tel: formBuilder.control(''),
+      pwd: formBuilder.control(''),
+    });
     this.loginForm = this.formBuilder.group({
       email: formBuilder.control('', [
         Validators.required,
@@ -57,13 +67,39 @@ export class RoutineCapillaireComponent implements OnInit {
         Validators.minLength(6),
       ]),
     });
-    this.getUser();
   }
 
   showPass() {
     this.pass = !this.pass;
   }
   ngOnInit(): void {}
+
+  onRegister() {
+    console.log(this.registerForm.value);
+    this.UserService.userRegister(
+      this.registerForm.value.nom,
+      this.registerForm.value.prenom,
+      this.registerForm.value.email,
+      'user',
+      this.registerForm.value.code,
+      this.registerForm.value.ville,
+      this.registerForm.value.tel,
+      true,
+      this.registerForm.value.pwd
+    ).subscribe((test: any) => {
+      console.log(test);
+      this.UserService.userLogin(
+        this.registerForm.value.email,
+        this.registerForm.value.pwd
+      ).subscribe((test: any) => {
+        this.localStorage.set('x-access-token', test.accessToken);
+        this.show2 = true;
+        this.register = false;
+      });
+    });
+  }
+
+  showModal() {}
 
   onSubmit() {
     console.log(this.loginForm.value);
@@ -76,11 +112,13 @@ export class RoutineCapillaireComponent implements OnInit {
         console.log(test.role.nom);
         if (test.role.nom == 'admin') {
           this.localStorage.set('x-access-token', test.accessToken);
-          this.router.navigate(['/admin/dashboard']);
+          this.show2 = true;
+          this.connexion = false;
         }
         if (test.role.nom == 'user') {
           this.localStorage.set('x-access-token', test.accessToken);
-          this.router.navigate(['/']);
+          this.show2 = true;
+          this.connexion = false;
         }
       },
       (err: any) => {
@@ -106,14 +144,20 @@ export class RoutineCapillaireComponent implements OnInit {
     this.localStorage.remove('x-access-token');
   }
   getUser() {
-    this.UserService.getUser().subscribe((res: any) => {
-      console.log(res);
-      if (res != null) {
-        this.show1 = true;
-      } else {
-        this.show1 = false;
+    this.UserService.getUser().subscribe(
+      (res: any) => {
+        console.log(res);
+        if (res != null) {
+          this.show2 = true;
+        } else {
+          this.connexion = true;
+        }
+      },
+      (er) => {
+        console.warn(er);
+        this.connexion = true;
       }
-    });
+    );
   }
   isAuth() {
     console.log('is Auth ' + this.jwt.isAuthenticated());
