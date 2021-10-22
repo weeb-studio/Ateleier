@@ -72,6 +72,9 @@ import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveu
 import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 import { ProfileComponent } from './pages/conseillere/profile/profile.component';
+import { HotesseAtelierComponent } from './pages/client/hotesse-atelier/hotesse-atelier.component';
+import { HotesseCadeauComponent } from './pages/client/hotesse-cadeau/hotesse-cadeau.component';
+import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point/hotesse-releve-point.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +138,9 @@ import { ProfileComponent } from './pages/conseillere/profile/profile.component'
     IngredientsAEviterComponent,
     CommandeComponent,
     ProfileComponent,
+    HotesseAtelierComponent,
+    HotesseCadeauComponent,
+    HotesseRelevePointComponent,
   ],
   imports: [
     BrowserModule,
