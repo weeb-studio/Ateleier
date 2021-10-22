@@ -88,17 +88,23 @@ export class RoutineCapillaireComponent implements OnInit {
       this.registerForm.value.tel,
       true,
       this.registerForm.value.pwd
-    ).subscribe((test: any) => {
-      console.log(test);
-      this.UserService.userLogin(
-        this.registerForm.value.email,
-        this.registerForm.value.pwd
-      ).subscribe((test: any) => {
-        this.localStorage.set('x-access-token', test.accessToken);
-        this.show1 = true;
-        this.register = false;
-      });
-    });
+    ).subscribe(
+      (test: any) => {
+        console.log(test);
+        this.UserService.userLogin(
+          this.registerForm.value.email,
+          this.registerForm.value.pwd
+        ).subscribe((test: any) => {
+          this.localStorage.set('x-access-token', test.accessToken);
+          this.show1 = true;
+          this.register = false;
+        });
+      },
+      (err: any) => {
+        console.error(err);
+        this.message = err.error.message;
+      }
+    );
   }
 
   showModal() {}
