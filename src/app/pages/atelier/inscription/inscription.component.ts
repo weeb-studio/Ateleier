@@ -13,6 +13,8 @@ import { UserService } from 'src/app/services/user.service';
 export class InscriptionComponent implements OnInit {
   registerForm: FormGroup;
   pass: boolean = false;
+  url: String = '';
+  sucess: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private UserServices: UserService,
@@ -24,6 +26,7 @@ export class InscriptionComponent implements OnInit {
       nom: formBuilder.control(''),
       prenom: formBuilder.control(''),
       email: formBuilder.control(''),
+      adresse: formBuilder.control(''),
       code: formBuilder.control(''),
       ville: formBuilder.control(''),
       tel: formBuilder.control(''),
@@ -31,12 +34,17 @@ export class InscriptionComponent implements OnInit {
     });
   }
 
+  goTo() {
+    this.sucess = false;
+    this.route.navigate([this.url]);
+  }
   onRegister() {
     console.log(this.registerForm.value);
     this.UserServices.userRegister(
       this.registerForm.value.nom,
       this.registerForm.value.prenom,
       this.registerForm.value.email,
+      this.registerForm.value.adresse,
       'user',
       this.registerForm.value.code,
       this.registerForm.value.ville,
@@ -44,6 +52,8 @@ export class InscriptionComponent implements OnInit {
       true,
       this.registerForm.value.pwd
     ).subscribe((test: any) => {
+      this.sucess = true;
+      this.url = '/dash/cliente';
       console.log(test);
     });
   }

@@ -32,6 +32,7 @@ export class InscriptionConseillereComponent implements OnInit {
           '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]+$' /*'^[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]{2,4}$'*/
         ),
       ]),
+      adresse: formBuilder.control(''),
       postal: formBuilder.control(''),
       ville: formBuilder.control(''),
       telephone: formBuilder.control('', [
@@ -52,6 +53,7 @@ export class InscriptionConseillereComponent implements OnInit {
       this.registerForm.value.nom,
       this.registerForm.value.prenom,
       this.registerForm.value.email,
+      this.registerForm.value.adresse,
       'conseillere',
       this.registerForm.value.postal,
       this.registerForm.value.ville,

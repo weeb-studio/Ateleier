@@ -50,6 +50,7 @@ export class RoutineCapillaireComponent implements OnInit {
       nom: formBuilder.control(''),
       prenom: formBuilder.control(''),
       email: formBuilder.control(''),
+      adresse: formBuilder.control(''),
       code: formBuilder.control(''),
       ville: formBuilder.control(''),
       tel: formBuilder.control(''),
@@ -80,6 +81,7 @@ export class RoutineCapillaireComponent implements OnInit {
       this.registerForm.value.nom,
       this.registerForm.value.prenom,
       this.registerForm.value.email,
+      this.registerForm.value.adresse,
       'user',
       this.registerForm.value.code,
       this.registerForm.value.ville,
@@ -93,7 +95,7 @@ export class RoutineCapillaireComponent implements OnInit {
         this.registerForm.value.pwd
       ).subscribe((test: any) => {
         this.localStorage.set('x-access-token', test.accessToken);
-        this.show2 = true;
+        this.show1 = true;
         this.register = false;
       });
     });
@@ -112,12 +114,12 @@ export class RoutineCapillaireComponent implements OnInit {
         console.log(test.role.nom);
         if (test.role.nom == 'admin') {
           this.localStorage.set('x-access-token', test.accessToken);
-          this.show2 = true;
+          this.show1 = true;
           this.connexion = false;
         }
         if (test.role.nom == 'user') {
           this.localStorage.set('x-access-token', test.accessToken);
-          this.show2 = true;
+          this.show1 = true;
           this.connexion = false;
         }
       },
@@ -148,7 +150,7 @@ export class RoutineCapillaireComponent implements OnInit {
       (res: any) => {
         console.log(res);
         if (res != null) {
-          this.show2 = true;
+          this.show1 = true;
         } else {
           this.connexion = true;
         }

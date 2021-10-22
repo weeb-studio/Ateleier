@@ -530,12 +530,12 @@
     >
       <div
         class="absolute right-0 pr-2 pt-2 cursor-pointer"
-        (click)="connexion = false"
+        (click)="register = false"
       >
         <img src="assets/close.svg" alt="" class="" />
       </div>
       <div class="text-center text-2xl mt-5" style="color: #ff3e79">
-        Connexion
+        Inscription
       </div>
       <form
         class="grid grid-cols-1 md:grid-cols-2 gap-5 px-2"
@@ -582,6 +582,16 @@
             class="w-full h-full pl-9 rounded-md"
           />
           <img src="assets/@.svg" alt="" class="absolute top-4 left-4" />
+        </div>
+        <div class="relative h-12 rounded-lg col-span-2">
+          <input
+            name=""
+            id=""
+            placeholder="Adresse *"
+            formControlName="adresse"
+            type="text"
+            class="w-full h-full pl-3 rounded-md"
+          />
         </div>
         <div class="col-span-2 md:col-span-1 relative h-12 rounded-lg">
           <input
@@ -685,9 +695,19 @@
   </div>
 
   <div
-    class="hidden h-full w-screen z-auto absolute justify-center items-center"
+    class="
+      h-full
+      w-screen
+      z-auto
+      absolute
+      flex
+      justify-center
+      items-center
+      pb-5
+    "
     style="background-color: rgba(0, 0, 0, 0.5)"
     id="modal1"
+    *ngIf="show1"
   >
     <div
       class="
@@ -1080,10 +1100,142 @@
       </div>
     </div>
   </div>
+
   <div
     class="h-full w-screen z-auto absolute flex justify-center items-center"
     style="background-color: rgba(0, 0, 0, 0.5)"
     *ngIf="show5"
+  >
+    <div
+      class="
+        bg-white
+        h-auto
+        absolute
+        rounded-lg
+        pb-24
+        w-11/12
+        md:w-8/12 md:px-32
+      "
+    >
+      <div
+        class="absolute right-0 pr-2 pt-2 cursor-pointer"
+        (click)="show5 = false"
+      >
+        <img src="assets/close.svg" alt="" class="" />
+      </div>
+      <div
+        class="text-center pt-10 pb-5 md:pt-16 md:pb-1 text-2xl"
+        style="color: #ff3e79"
+      >
+        Je détermine ma routine capillaire idéale
+      </div>
+      <div class="px-2">
+        <img src="assets/5.svg" alt="" class="" />
+      </div>
+      <div class="px-10 md:px-20 py-3">
+        <div class="font-bold py-5">
+          Qu’est ce qui caracterise une bonne routine capillaire selon vous ?
+        </div>
+        <br />
+
+        <div class="md:flex flex-col justify-center">
+          <div class="space-x-3">
+            <input type="radio" id="html" name="fav_language" value="HTML" />
+            <label for="html"
+              >Une bonne routine uniquement à base de produits naturels ?</label
+            ><br />
+          </div>
+          <div class="space-x-3">
+            <input type="radio" id="css" name="fav_language" value="CSS" />
+            <label for="css"
+              >Une bonne routine simplifiée, qui va droit au but ?</label
+            ><br />
+          </div>
+          <div class="space-x-3 pr-2">
+            <input
+              type="radio"
+              id="javascript"
+              name="fav_language"
+              value="JavaScript"
+            />
+            <label for="javascript"
+              >Une bonne routine simplifiée, qui va droit au but ?</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div
+          class="
+            hidden
+            md:flex
+            flex-row
+            justify-end
+            items-center
+            pl-5
+            pb-5
+            gap-4
+            cursor-pointer
+            left-0
+            bottom-0
+            absolute
+          "
+          (click)="show4 = true; show5 = false; remoter()"
+        >
+          <img src="assets/precedent.svg" class="h-10" alt="" srcset="" />
+          <div class="text-primary font-bold">Précédent</div>
+        </div>
+        <div
+          class="
+            text-center
+            py-2
+            ml-16
+            md:ml-0
+            cursor-pointer
+            rounded-lg
+            content-center
+            px-5
+            bottom-6
+            absolute
+          "
+          style="background-color: #ff3e79; color: #fff"
+          (click)="show5 = false"
+        >
+          Valider
+        </div>
+        <div
+          class="
+            hidden
+            flex-row
+            justify-end
+            items-center
+            pr-5
+            pb-5
+            gap-4
+            cursor-pointer
+            right-0
+            bottom-0
+            absolute
+          "
+        >
+          <div class="text-primary font-bold">Suivant</div>
+          <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="
+      min-h-full min-w-screen
+      z-auto
+      absolute
+      flex
+      justify-center
+      items-center
+    "
+    style="background-color: rgba(0, 0, 0, 0.5)"
+    *ngIf="false"
   >
     <div
       class="
