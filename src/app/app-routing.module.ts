@@ -25,6 +25,8 @@ import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DashHotesseComponent } from './pages/hotesse/dash-hotesse/dash-hotesse.component';
+import { HotesseCadeauComponent } from './pages/hotesse/hotesse-cadeau/hotesse-cadeau.component';
+import { HotesseRelevePointComponent } from './pages/hotesse/hotesse-releve-point/hotesse-releve-point.component';
 import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { NousContacterComponent } from './pages/nous-contacter/nous-contacter.component';
@@ -159,6 +161,8 @@ const routes: Routes = [
   },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'dash/cliente', component: DashClienteComponent },
+  { path: 'hotesse-cadeau', component : HotesseCadeauComponent},
+  { path: 'hotesse-releve-point', component : HotesseRelevePointComponent},
 
   // Admin
 

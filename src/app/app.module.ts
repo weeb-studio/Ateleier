@@ -71,6 +71,9 @@ import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/ro
 import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveux/diverses-influences/diverses-influences.component';
 import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
+import { HotesseAtelierComponent } from './pages/hotesse/hotesse-atelier/hotesse-atelier.component';
+import { HotesseCadeauComponent } from './pages/hotesse/hotesse-cadeau/hotesse-cadeau.component';
+import { HotesseRelevePointComponent } from './pages/hotesse/hotesse-releve-point/hotesse-releve-point.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +136,9 @@ import { CommandeComponent } from './pages/conseillere/commande/commande.compone
     DiversesInfluencesComponent,
     IngredientsAEviterComponent,
     CommandeComponent,
+    HotesseAtelierComponent,
+    HotesseCadeauComponent,
+    HotesseRelevePointComponent,
   ],
   imports: [
     BrowserModule,

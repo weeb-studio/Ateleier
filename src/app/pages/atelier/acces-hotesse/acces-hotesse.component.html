@@ -16,6 +16,11 @@
       Accès hôtesse
     </legend>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="">
+        <ul class="bg-red-700 opacity-70 text-white px-3 rounded-md text-xs">
+          <li>{{ message }}</li>
+        </ul>
+      </div>
       <div class="flex flex-col items-center space-y-10 mb-3 mt-10">
         <div class="relative w-full items-center">
           <input
@@ -32,13 +37,13 @@
             class="text-sm ml-2 text-red-700"
           >
             Champs requis.
-          </div>
+          </div> -->
           <div
             *ngIf="control('email')?.errors?.pattern"
             class="text-sm ml-2 text-red-700"
           >
             Format d'email invalide.
-          </div> -->
+          </div>
         </div>
         <div class="relative w-full">
           <input
@@ -65,13 +70,13 @@
             class="text-sm ml-2 text-red-700"
           >
             Champs requis.
-          </div>
+          </div> -->
           <div
             *ngIf="control('pwd')?.errors?.minLength"
             class="text-sm ml-2 text-red-700"
           >
             Le mot de passe doit avoir au moins 6 caractères.
-          </div> -->
+          </div>
         </div>
 
         <button

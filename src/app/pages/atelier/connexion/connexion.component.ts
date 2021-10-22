@@ -37,7 +37,7 @@ export class ConnexionComponent implements OnInit {
       ]),
       pwd: formBuilder.control('', [
         Validators.required,
-        Validators.minLength(1),
+        Validators.minLength(6),
       ]),
     });
   }

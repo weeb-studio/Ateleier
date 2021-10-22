@@ -18,6 +18,7 @@ export class AccesHotesseComponent implements OnInit {
     email: '',
     pwd: '',
   };
+  message ='';
   mail: String = '';
   loginForm: FormGroup;
   pass: boolean = false;
@@ -38,14 +39,14 @@ export class AccesHotesseComponent implements OnInit {
     );
     this.loginForm = this.formBuilder.group({
       email: formBuilder.control('', [
-        // Validators.required,
-        // Validators.pattern(
-        //   '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]+$' /*'^[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]{2,4}$'*/
-        // ),
+        Validators.required,
+        Validators.pattern(
+          '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]+$' /*'^[A-Z0-9._%-]+@[A-Z0-9.-]+.[A-Z]{2,4}$'*/
+        ),
       ]),
       pwd: formBuilder.control('', [
-        // Validators.required,
-        // Validators.minLength(6),
+        Validators.required,
+        Validators.minLength(6),
       ]),
     });
   }
@@ -70,7 +71,8 @@ export class AccesHotesseComponent implements OnInit {
         }
       },
       (err: any) => {
-        console.log(err);
+        console.error(err);
+        this.message = err.error.message;
       }
     );
   }
