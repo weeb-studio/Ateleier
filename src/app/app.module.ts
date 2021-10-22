@@ -71,6 +71,7 @@ import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/ro
 import { DiversesInfluencesComponent } from './pages/programmes/connaitre-cheveux/diverses-influences/diverses-influences.component';
 import { IngredientsAEviterComponent } from './pages/programmes/connaitre-cheveux/ingredients-a-eviter/ingredients-a-eviter.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
+import { ProfileComponent } from './pages/conseillere/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +134,7 @@ import { CommandeComponent } from './pages/conseillere/commande/commande.compone
     DiversesInfluencesComponent,
     IngredientsAEviterComponent,
     CommandeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

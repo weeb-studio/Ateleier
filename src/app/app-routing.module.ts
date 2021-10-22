@@ -21,6 +21,7 @@ import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.c
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
+import { ProfileComponent } from './pages/conseillere/profile/profile.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -251,6 +252,10 @@ const routes: Routes = [
       {
         path: 'commandes',
         component: CommandeComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
       },
     ],
   },
