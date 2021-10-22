@@ -364,6 +364,72 @@
     <div class="w-full">
       <img class="w-full" src="assets/line.svg" alt="" srcset="" />
     </div>
+    <div class="flex flex-row items-center" (click)="showSubMenu1()">
+      <div class="px-5 py-4">
+        <img src="assets/programme.svg" alt="" srcset="" />
+      </div>
+      <div class="text-xl" style="color: #475168">
+        {{ "programmes" | uppercase }}
+      </div>
+      <div class="px-5 py-4" *ngIf="subMenu1">
+        <img src="assets/Polygon.svg" alt="" srcset="" />
+      </div>
+    </div>
+
+    <div class="flex flex-col space-y-3 py-5 pl-20" *ngIf="subMenu1">
+      <div
+        class="text-primary uppercase"
+        (click)="go('/programmes/connaitre-ses-cheveux')"
+      >
+        connaitre ses cheveux
+      </div>
+      <div
+        class="text-primary uppercase"
+        (click)="go('/programmes/routine-capillaire')"
+      >
+        routines capillaires
+      </div>
+      <div class="text-primary uppercase" (click)="go('/programmes/recette')">
+        recettes
+      </div>
+    </div>
+
+    <div class="flex flex-row items-center" (click)="showSubMenu()">
+      <div class="px-5 py-4">
+        <img src="assets/ateliers.svg" alt="" srcset="" />
+      </div>
+      <div class="text-xl cursor-pointer" style="color: #475168">
+        {{ "ateliers" | uppercase }}
+      </div>
+      <div class="px-5 py-4" *ngIf="subMenu">
+        <img src="assets/Polygon.svg" alt="" srcset="" />
+      </div>
+    </div>
+
+    <div class="flex flex-col space-y-3 py-5 pl-20" *ngIf="subMenu">
+      <div class="text-primary uppercase" (click)="go('/atelier/conseillere')">
+        Nos ateliers
+      </div>
+      <div class="text-primary uppercase" (click)="go('/atelier/hotesse')">
+        Devenir hôtesse
+      </div>
+      <div class="text-primary uppercase" (click)="go('/atelier')">
+        Devenir conseillère
+      </div>
+    </div>
+
+    <div class="flex flex-row items-center">
+      <div class="px-5 py-4">
+        <img src="assets/boutique.svg" alt="" srcset="" />
+      </div>
+      <div class="text-xl" style="color: #475168">
+        {{ "boutique" | uppercase }}
+      </div>
+    </div>
+
+    <div class="w-full">
+      <img class="w-full" src="assets/line.svg" alt="" srcset="" />
+    </div>
     <div class="flex flex-row items-center" (click)="removeToken()">
       <div class="px-5 py-4">
         <img src="assets/logout.svg" alt="" srcset="" />
