@@ -45,11 +45,21 @@
         />
       </div> -->
       <div
-        class="p-1 rounded cursor-pointer svgt relative z-50"
+        class="p-1 rounded cursor-pointer svgt relative z-50 test"
         *ngIf="utilisateur == null"
       >
-        <span
-          ><img class="" src="assets/userHeader.svg" alt="" srcset=""
+        <span class="flex flex-row gap-2 items-center justify-center"
+          ><img
+            class="w-12 pb-3"
+            [src]="
+              getImage() ? 'assets/avatar3.png' : 'assets/userDefaultImage.svg'
+            "
+            alt=""
+            srcset="" /><img
+            class="w-3 arrow"
+            src="assets/dropdown.svg"
+            alt=""
+            srcset=""
         /></span>
         <span class="absolute right-0 top-0 testee space-y-2 shadow-md">
           <div
@@ -91,14 +101,26 @@
       </div>
 
       <div
-        class="p-1 rounded cursor-pointer svgt relative z-50"
+        class="p-1 rounded cursor-pointer svgt relative z-50 test"
         *ngIf="utilisateur != null"
       >
-        <span class="flex flex-row items-center gap-2"
+        <span class="flex flex-row items-center gap-2 pb-3"
           ><div class="text-primary text-sm font-semibold">
             {{ utilisateur.prenom }}
           </div>
-          <img class="" src="assets/userHeader.svg" alt="" srcset=""
+          <img
+            class="w-12 h-12 pb- rounded-full"
+            [src]="
+              getImage()
+                ? 'http://93.90.207.75:3000/' + utilisateur.imageURL
+                : 'assets/userDefaultImage.svg'
+            "
+            alt=""
+            srcset="" /><img
+            class="w-3 arrow"
+            src="assets/dropdown.svg"
+            alt=""
+            srcset=""
         /></span>
         <span class="absolute right-0 top-0 testee space-y-2 shadow-md">
           <div

@@ -42,6 +42,18 @@ export class HeaderComponent implements OnInit {
 
   active() {}
 
+  getImage(): Boolean {
+    let result: Boolean = false;
+    if (
+      this.utilisateur != null &&
+      this.utilisateur.imageURL &&
+      this.utilisateur.imageURL != 'default.jpg'
+    ) {
+      result = true;
+    }
+    return result;
+  }
+
   showUserDialog() {
     this.user = !this.user;
   }
