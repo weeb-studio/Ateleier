@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-dash-cliente',
@@ -11,6 +14,9 @@ export class DashClienteComponent implements OnInit {
   page3: boolean = false;
   Mawishlist: boolean = true;
   recommendation: boolean = false;
+  userData: any;
+  
+ 
 
   showMawishlist() {
     this.Mawishlist = true;
@@ -42,7 +48,19 @@ export class DashClienteComponent implements OnInit {
       prix: '8,00€',
     },
   ];
-  constructor() {}
+
+  constructor(
+    private userservices : UserService,
+    private formBuilder : FormBuilder,
+    private route: Router
+  ) 
+  {
+    this.userservices.getUser().subscribe( (res :any) => {
+      // console.log(res);
+      this.userData = res;
+      console.log(this.userData);
+    });
+  }
 
   ngOnInit(): void {}
 }

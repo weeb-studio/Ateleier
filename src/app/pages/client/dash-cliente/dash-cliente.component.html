@@ -40,7 +40,7 @@
       Mes produits
     </div>
   </div>
-  <div
+  <form
     class="
       flex flex-col
       border-2
@@ -53,7 +53,8 @@
     *ngIf="page1"
   >
     <div
-      class="px-2 space-y-5 my-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-4"
+      class="px-2  my-5 md:space-y-0 grid grid-cols-2 gap-4"
+      
     >
       <div class="w-full">
         <label for="">Nom</label>
@@ -61,8 +62,9 @@
           type="text"
           name=""
           id=""
-          class="border-2 w-full opacity-70"
+          class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
+          [value]="userData.nom"
         />
       </div>
       <div>
@@ -71,38 +73,86 @@
           type="text"
           name=""
           id=""
-          class="border-2 w-full opacity-70"
+          class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
+          [value]="userData.prenom"
         />
       </div>
-      <div class="md:col-span-2">
+      <div class="col-span-2">
         <label for="">Email</label>
         <input
           type="text"
           name=""
           id=""
-          class="border-2 w-full opacity-70"
+          class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
+          [value]="userData.email"
         />
       </div>
-      <div class="md:col-span-2">
-        <label for="">mot de passe</label>
+      <div class="col-span-2">
+        <label for="">Adresse</label>
         <input
           type="text"
           name=""
           id=""
-          class="border-2 w-full opacity-70"
+          class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
+          [value]="userData.nom"
+        />
+      </div>
+      <div>
+        <label for="">Ville</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          class="border-2 w-full opacity-70 rounded-md pl-2"
+          style="border-color: #ff3e79"
+          [value]="userData.ville"
+        />
+      </div>
+      <div>
+        <label for="">Code postal</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          class="border-2 w-full opacity-70 rounded-md pl-2"
+          style="border-color: #ff3e79"
+          [value]="userData.postal"
+        />
+      </div>
+      <div class="col-span-2">
+        <label for="">Téléphone</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          class="border-2 w-full opacity-70 rounded-md pl-2"
+          style="border-color: #ff3e79"
+          [value]="userData.numero"
+        />
+      </div>
+      <div class="col-span-2">
+        <label for="">Mot de passe</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          class="border-2 w-full opacity-70 rounded-md pl-2"
+          style="border-color: #ff3e79"
+          [value]="userData.nom"
         />
       </div>
     </div>
-    <div
+    <button
+    type="submit"
       class="cursor-pointer text-center rounded-md mb-5 w-36 h-10 py-2"
       style="background-color: #ff3e79; color: #fff"
     >
       Enregistrer
-    </div>
-  </div>
+    </button>
+  </form>
   <div
     class="
       flex flex-col
@@ -132,9 +182,9 @@
           style="color: #ff3e79; background-color: #fff; border-color: #475168"
         >
           <optgroup>
-            <option value="">long</option>
-            <option value="">blond</option>
-            <option value="">noir</option>
+            <option value="">cheveux normaux</option>
+            <option value="">cheveux secs</option>
+            <option value="">cheveux gras</option>
           </optgroup>
         </select>
       </div>
@@ -146,10 +196,14 @@
           class="w-full border-2 rounded-md"
           style="color: #ff3e79; background-color: #fff; border-color: #475168"
         >
-          <optgroup>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+          <optgroup class="">
+            <option value="">cheveux peu poreux</option>
+            <option value="">cheveux très poreux</option>
+            <option value="">cheveux gras</option>
+            <option value="">cheveux abimés ou cassants</option>
+            <option value="">cheveux en transition</option>
+            <option value="">cheveux défrises ou lissés</option>
+            <option value="">pellicules</option>
           </optgroup>
         </select>
       </div>
@@ -162,9 +216,9 @@
           style="color: #ff3e79; background-color: #fff; border-color: #475168"
         >
           <optgroup>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="">cheveux épais</option>
+            <option value="">cheveux fins</option>
+            <option value="">cheveux soyeux</option>
           </optgroup>
         </select>
       </div>
@@ -177,9 +231,10 @@
           style="color: #ff3e79; background-color: #fff; border-color: #475168"
         >
           <optgroup>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="">cheveux bouclés</option>
+            <option value="">cheveux crépeux</option>
+            <option value="">cheveux frissés</option>
+            <option value="">cheveux lisses</option>
           </optgroup>
         </select>
       </div>
@@ -192,9 +247,9 @@
           style="color: #ff3e79; background-color: #fff; border-color: #475168"
         >
           <optgroup>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+            <option value="">cheveux court</option>
+            <option value="">cheveux secs</option>
+            <option value="">cheveux gras</option>
           </optgroup>
         </select>
       </div>
