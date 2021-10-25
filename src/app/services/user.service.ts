@@ -57,6 +57,48 @@ export class UserService {
     });
   }
 
+  imageSet(file: File, name: string) {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/auth/updateimage';
+    const headers = new HttpHeaders({
+      // 'Content-Type': 'multipart/form-data',
+      'x-access-token': `${token}`,
+    });
+    const fd = new FormData();
+    fd.append('imageURL', <File>file, name);
+    console.log(fd);
+    return this.httpClient.put(API_URL, fd, {
+      headers: headers,
+      reportProgress: true,
+      observe: 'events',
+    });
+  }
+
+  updateUser(
+    nom: string,
+    prenom: string,
+    adresse: String,
+    code: number,
+    ville: string,
+    tel: string
+  ) {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/auth/update';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    const dataUser = {
+      nom: nom,
+      prenom: prenom,
+      adresse: adresse,
+      ville: ville,
+      postal: code,
+      numero: tel,
+    };
+    return this.httpClient.put(API_URL, dataUser, { headers: headers });
+  }
+
   getUser() {
     const token = this.localStorage.get('x-access-token');
     const API_URL = this.SERVER_URL + '/auth/profile';
