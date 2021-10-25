@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Atelier } from 'src/app/interfaces/atelier';
 import { AtelierService } from 'src/app/services/atelier.service';
+import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
+import frLocale from '@fullcalendar/core/locales/fr';
 
 @Component({
   selector: 'app-ajout-atelier',
@@ -11,6 +13,45 @@ import { AtelierService } from 'src/app/services/atelier.service';
 export class AjoutAtelierComponent implements OnInit {
   atelierForm: FormGroup;
   atelier: Atelier | undefined;
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth',
+
+    selectable: true,
+    dateClick: this.handleDateClick.bind(this), // bind is important!
+    events: [
+      { title: 'event 1', date: '2021-10-25', backgroundColor: '#ff3fa2' },
+      { title: 'event 1', date: '2021-10-25' },
+      { title: 'event 1', date: '2021-10-25' },
+      { title: 'event 2', date: '2021-10-26' },
+      {
+        title: 'test',
+        start: '2021-10-28',
+        end: '2021-10-29',
+      },
+    ],
+    eventColor: '#ff3e79',
+    locales: [frLocale],
+
+    headerToolbar: {
+      left: 'today',
+      center: 'title',
+      right: 'prev,next',
+    },
+    // locales: {},
+    locale: 'fr', // the initial locale
+  };
+
+  // toggleWeekends() {
+  //   this.calendarOptions.weekends = !this.calendarOptions.weekends; // toggle the boolean!
+  // }
+  handleDateClick(arg: any) {
+    // alert('La date selectionnée:  ' + arg.dateStr);
+    this.atelierForm = this.formBuilder.group({
+      date: this.formBuilder.control(arg.dateStr),
+      // this.atelierForm.value.date = arg.dateStr;
+    });
+  }
+
   constructor(
     private formBuilder: FormBuilder,
     private atelierService: AtelierService
@@ -27,6 +68,7 @@ export class AjoutAtelierComponent implements OnInit {
       heure: formBuilder.control(''),
       date: formBuilder.control(''),
     });
+    this.atelierForm.controls.date.disable();
   }
 
   ngOnInit(): void {}

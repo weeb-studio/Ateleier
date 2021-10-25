@@ -1,4 +1,9 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
+
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
@@ -76,6 +81,11 @@ import { HotesseAtelierComponent } from './pages/client/hotesse-atelier/hotesse-
 import { HotesseCadeauComponent } from './pages/client/hotesse-cadeau/hotesse-cadeau.component';
 import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point/hotesse-releve-point.component';
 
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+]);
 @NgModule({
   declarations: [
     AppComponent,
@@ -144,6 +154,7 @@ import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point
   ],
   imports: [
     BrowserModule,
+    FullCalendarModule,
     AppRoutingModule,
     IvyCarouselModule,
     HttpClientModule,

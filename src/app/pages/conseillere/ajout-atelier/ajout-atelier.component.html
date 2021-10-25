@@ -3,7 +3,7 @@
   <app-side-conseillere></app-side-conseillere>
   <div class="my-10 px-4 md:px-10 text-gray-600 w-full space-y-20">
     <div class="font-semibold text-2xl">Ajout d’un atelier</div>
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <form action="" [formGroup]="atelierForm" (ngSubmit)="onSubmit()">
         <div class="flex flex-col gap-8">
           <div>
@@ -56,7 +56,7 @@
           <div>
             <input
               placeholder=""
-              type="date"
+              type="text"
               name=""
               class="rounded h-10 px-2 w-full"
               id=""
@@ -133,6 +133,10 @@
           Valider l’événement
         </button>
       </form>
+      <div class="col-span-1">
+        <full-calendar [options]="calendarOptions"></full-calendar>
+        <!-- <button (click)="toggleWeekends()">toggle weekends</button> -->
+      </div>
     </div>
   </div>
 </div>
