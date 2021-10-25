@@ -49,6 +49,8 @@
       items-center
       md:w-7/12 md:h-full
     "
+    [formGroup]="updateForm"
+    (ngSubmit)="onUpdate()"
     style="border-color: #ff3e79"
     *ngIf="page1"
   >
@@ -61,7 +63,8 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.nom"
+          [placeholder]="userData.nom"
+          formControlName="nom"
         />
       </div>
       <div>
@@ -72,7 +75,8 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.prenom"
+          [placeholder]="userData.prenom"
+          formControlName="prenom"
         />
       </div>
       <div class="col-span-2">
@@ -83,7 +87,8 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.email"
+          [placeholder]="userData.email"
+          formControlName="email"
         />
       </div>
       <div class="col-span-2">
@@ -94,7 +99,8 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.nom"
+          [placeholder]="userData.adresse"
+          formControlName="adresse"
         />
       </div>
       <div>
@@ -105,7 +111,8 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.ville"
+          [placeholder]="userData.ville"
+          formControlName="ville"
         />
       </div>
       <div>
@@ -116,7 +123,8 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.postal"
+          [placeholder]="userData.postal"
+          formControlName="code"
         />
       </div>
       <div class="col-span-2">
@@ -127,18 +135,20 @@
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.numero"
+          [placeholder]="userData.numero"
+          formControlName="tel"
         />
       </div>
       <div class="col-span-2">
         <label for="">Mot de passe</label>
         <input
-          type="text"
+          type="password"
           name=""
           id=""
           class="border-2 w-full opacity-70 rounded-md pl-2"
           style="border-color: #ff3e79"
-          [value]="userData.nom"
+          [placeholder]="userData.nom"
+          formControlName="pwd"
         />
       </div>
     </div>
@@ -245,8 +255,8 @@
         >
           <optgroup>
             <option value="">cheveux court</option>
-            <option value="">cheveux secs</option>
-            <option value="">cheveux gras</option>
+            <option value="">cheveux mi-long</option>
+            <option value="">cheveux long</option>
           </optgroup>
         </select>
       </div>
@@ -337,13 +347,6 @@
       style="border-color: #ff3e79"
       *ngIf="recommendation"
     ></div>
-  </div>
-  <div
-    class="flex flex-row cursor-pointer rounded-md w-44 md:w-48 h-10"
-    style="background-color: #ff3e79; color: #fff"
-  >
-    <img src="assets/deconnecter.svg" alt="" class="py-2 pl-2" />
-    <h1 class="pl-2 py-2">se déconnecter</h1>
   </div>
 </div>
 <app-footer></app-footer>
