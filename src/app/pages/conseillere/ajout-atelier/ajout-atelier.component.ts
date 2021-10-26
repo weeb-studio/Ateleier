@@ -4,6 +4,7 @@ import { Atelier } from 'src/app/interfaces/atelier';
 import { AtelierService } from 'src/app/services/atelier.service';
 import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
 import frLocale from '@fullcalendar/core/locales/fr';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-atelier',
@@ -13,22 +14,13 @@ import frLocale from '@fullcalendar/core/locales/fr';
 export class AjoutAtelierComponent implements OnInit {
   atelierForm: FormGroup;
   atelier: Atelier | undefined;
+  event: any = [];
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
 
     selectable: true,
     dateClick: this.handleDateClick.bind(this), // bind is important!
-    events: [
-      { title: 'event 1', date: '2021-10-25', backgroundColor: '#ff3fa2' },
-      { title: 'event 1', date: '2021-10-25' },
-      { title: 'event 1', date: '2021-10-25' },
-      { title: 'event 2', date: '2021-10-26' },
-      {
-        title: 'test',
-        start: '2021-10-28',
-        end: '2021-10-29',
-      },
-    ],
+    events: this.event,
     eventColor: '#ff3e79',
     locales: [frLocale],
 
@@ -54,7 +46,8 @@ export class AjoutAtelierComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private atelierService: AtelierService
+    private atelierService: AtelierService,
+    private route: ActivatedRoute
   ) {
     this.atelierForm = this.formBuilder.group({
       participants: formBuilder.control('', [Validators.required]),
@@ -71,7 +64,23 @@ export class AjoutAtelierComponent implements OnInit {
     this.atelierForm.controls.date.disable();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.snapshot.data['event'].forEach((element: any) => {
+      if (element.date < new Date(Date.now()).toISOString()) {
+        this.event.push({
+          title: element.theme,
+          date: element.date.split('T')[0],
+          backgroundColor: '#4c566c',
+        });
+      } else {
+        this.event.push({
+          title: element.theme,
+          date: element.date.split('T')[0],
+        });
+      }
+    });
+    console.log(this.event);
+  }
 
   onSubmit() {
     console.log(this.atelierForm.value.place);

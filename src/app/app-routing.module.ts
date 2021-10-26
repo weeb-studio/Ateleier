@@ -23,6 +23,7 @@ import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
+import { PlanningComponent } from './pages/conseillere/planning/planning.component';
 import { ProfileComponent } from './pages/conseillere/profile/profile.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
@@ -54,6 +55,7 @@ import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheve
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
+import { PlanningResolver } from './resolver/planning.resolver';
 import { AdminGuard } from './shared/admin.guard';
 import { AuthGuard } from './shared/auth.guard';
 import { ConseillereGuard } from './shared/conseillere.guard';
@@ -251,6 +253,9 @@ const routes: Routes = [
       },
       {
         path: 'ajout-atelier',
+        resolve: {
+          event: PlanningResolver,
+        },
         component: AjoutAtelierComponent,
       },
       {
@@ -260,6 +265,13 @@ const routes: Routes = [
       {
         path: 'profile',
         component: ProfileComponent,
+      },
+      {
+        path: 'planning',
+        resolve: {
+          event: PlanningResolver,
+        },
+        component: PlanningComponent,
       },
     ],
   },

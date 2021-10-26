@@ -80,6 +80,7 @@ import { ProfileComponent } from './pages/conseillere/profile/profile.component'
 import { HotesseAtelierComponent } from './pages/client/hotesse-atelier/hotesse-atelier.component';
 import { HotesseCadeauComponent } from './pages/client/hotesse-cadeau/hotesse-cadeau.component';
 import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point/hotesse-releve-point.component';
+import { PlanningComponent } from './pages/conseillere/planning/planning.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -151,6 +152,7 @@ FullCalendarModule.registerPlugins([
     HotesseAtelierComponent,
     HotesseCadeauComponent,
     HotesseRelevePointComponent,
+    PlanningComponent,
   ],
   imports: [
     BrowserModule,

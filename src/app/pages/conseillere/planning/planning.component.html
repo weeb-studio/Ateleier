@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
+  <app-side-conseillere></app-side-conseillere>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full space-y-20">
+    <div class="font-semibold text-2xl">Mon planning</div>
+    <div class="grid grid-cols-1 gap-4">
+      <div class="col-span-1">
+        <full-calendar [options]="calendarOptions"></full-calendar>
+        <!-- <button (click)="toggleWeekends()">toggle weekends</button> -->
+      </div>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="font-semibold text-2xl mb-10">Vos rendez-vous</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="
+              flex flex-col
+              gap-1
+              border-primary border-l-8
+              rounded-lg
+              py-2
+              pl-5
+              shadow-lg
+              items-center
+            "
+            *ngFor="let item of atelier"
+          >
+            <div class="font-semibold text-xl">{{ item.hotesse.prenom }}</div>
+            <div class="flex flex-row gap-2 text-gray-400">
+              <img src="assets/pin.svg" alt="" srcset="" />
+              {{ item.villeHotesse }}
+            </div>
+            <div class="font-semibold text-xl">{{ item.time }}h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
