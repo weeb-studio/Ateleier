@@ -27,7 +27,7 @@ export class RoutineCapillaireComponent implements OnInit {
   }
   remoter() {
     window.scrollTo({
-      top: 500,
+      top: 100,
     });
   }
   user = {
