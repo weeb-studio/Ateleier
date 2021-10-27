@@ -294,7 +294,7 @@
     </div>
   </div>
   <div
-    class="flex flex-col md:flex-row-reverse md:justify-around"
+    class="hidden md:flex flex-col md:flex-row-reverse md:justify-around"
     *ngIf="page2"
   >
     <div class="flex flex-col items-center my-10">
@@ -327,6 +327,42 @@
           Je souhaite déterminer ma routine capillaire
         </button>
       </div>
+    </div>
+  </div>
+  <div
+    class="flex md:hidden flex-col md:flex-row-reverse md:justify-around"
+    *ngIf="page2"
+  >
+    <div
+      class="flex flex-col space-y-12 md:w-1/2 md:justify-items-center md:pt-52"
+    >
+      <div class="cursor-pointer" (click)="getUser()">
+        <button
+          class="
+            text-center
+            py-2
+            whitespace-nowrap
+            px-2
+            rounded-lg
+            w-full
+            mb-10
+          "
+          style="background-color: #ff3e79; color: #fff"
+        >
+          Je souhaite déterminer ma routine capillaire
+        </button>
+      </div>
+      <div class="">
+        Il est primordial de de construire une routine capillaire de vous
+        corresponde, car le mode vie, les besoins et les exigences chacun sont
+        différents. Cette routine doit pouvoir terminer une période donnée, elle
+        doit être complète et surtout être en phase avec vos besoins réels pour
+        vous aider à déterminer la routine capillaire qu’il vous faut, nous
+        avons besoin des informations suivantes :
+      </div>
+    </div>
+    <div class="flex flex-col items-center my-10">
+      <img src="assets/routine-choisie.svg" alt="" class="h-10/12" />
     </div>
   </div>
   <div
@@ -700,7 +736,7 @@
     id="modal1"
     *ngIf="show1"
   >
-    <div
+    <form
       class="
         bg-white
         h-2/5
@@ -709,6 +745,8 @@
         rounded-lg
         md:h-1/2 md:w-8/12 md:px-32
       "
+      [formGroup]="question1"
+      (ngSubmit)="next1()"
     >
       <div
         class="absolute right-0 pr-2 pt-2 cursor-pointer"
@@ -732,21 +770,34 @@
         <br />
         <div class="md:flex flex-col justify-center">
           <div class="space-x-3">
-            <input type="radio" id="html" name="fav_language" value="HTML" />
-            <label for="html">Moins de 3 produits </label><br />
+            <input
+              type="radio"
+              id="test"
+              name="fav_language"
+              value="1"
+              formControlName="q1"
+            />
+            <label for="test">Moins de 3 produits </label><br />
           </div>
           <div class="space-x-3">
-            <input type="radio" id="css" name="fav_language" value="CSS" />
-            <label for="css">Entre 3 et 5 produits </label><br />
+            <input
+              type="radio"
+              id="test1"
+              name="fav_language"
+              value="2"
+              formControlName="q1"
+            />
+            <label for="test1">Entre 3 et 5 produits </label><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="radio"
-              id="javascript"
+              id="test2"
               name="fav_language"
-              value="JavaScript"
+              value="3"
+              formControlName="q1"
             />
-            <label for="javascript">Plus de 5 produits</label>
+            <label for="test2">Plus de 5 produits</label>
           </div>
         </div>
       </div>
@@ -770,20 +821,20 @@
             bottom-0
             absolute
           "
-          (click)="show2 = true; show1 = false; remoter()"
+          (click)="next1(); remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
         </div>
       </div>
-    </div>
+    </form>
   </div>
   <div
     class="h-full w-screen z-40 absolute flex justify-center items-center"
     style="background-color: rgba(0, 0, 0, 0.5)"
     *ngIf="show2"
   >
-    <div
+    <form
       class="
         bg-white
         h-1/2
@@ -792,6 +843,8 @@
         rounded-lg
         md:h-2/3 md:w-8/12 md:px-32
       "
+      [formGroup]="question2"
+      (ngSubmit)="next2()"
     >
       <div
         class="absolute right-0 pr-2 pt-2 cursor-pointer"
@@ -813,51 +866,84 @@
         <br />
         <div class="md:flex flex-col justify-center">
           <div class="space-x-3">
-            <input type="checkbox" id="html" name="fav_language" value="HTML" />
-            <label for="html">Shampoing</label><br />
+            <input
+              type="checkbox"
+              id="1"
+              name="fav_language"
+              value="1"
+              formControlName="q2_1"
+            />
+            <label for="1">Shampoing</label><br />
           </div>
           <div class="space-x-3">
-            <input type="checkbox" id="css" name="fav_language" value="CSS" />
-            <label for="css">Masque</label><br />
+            <input
+              type="checkbox"
+              id="2"
+              name="fav_language"
+              value="2"
+              formControlName="q2_2"
+            />
+            <label for="2">Masque</label><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="checkbox"
-              id="javascript"
+              id="3"
               name="fav_language"
-              value="JavaScript"
+              value="3"
+              formControlName="q2_3"
             />
-            <label for="javascript">Après-shampoing</label>
+            <label for="3">Après-shampoing</label>
           </div>
           <div class="space-x-3">
-            <input type="checkbox" id="html" name="fav_language" value="HTML" />
-            <label for="html">Huile</label><br />
+            <input
+              type="checkbox"
+              id="4"
+              name="fav_language"
+              value="4"
+              formControlName="q2_4"
+            />
+            <label for="4">Huile</label><br />
           </div>
           <div class="space-x-3">
-            <input type="checkbox" id="css" name="fav_language" value="CSS" />
-            <label for="css">Créme capillaire</label><br />
+            <input
+              type="checkbox"
+              id="5"
+              name="fav_language"
+              value="5"
+              formControlName="q2_5"
+            />
+            <label for="5">Créme capillaire</label><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="checkbox"
-              id="javascript"
+              id="6"
               name="fav_language"
-              value="JavaScript"
+              value="6"
+              formControlName="q2_6"
             />
-            <label for="javascript">Lait capillaire</label>
+            <label for="6">Lait capillaire</label>
           </div>
           <div class="space-x-3">
-            <input type="checkbox" id="css" name="fav_language" value="CSS" />
-            <label for="css">Gel coiffant</label><br />
+            <input
+              type="checkbox"
+              id="7"
+              name="fav_language"
+              value="7"
+              formControlName="q2_7"
+            />
+            <label for="7">Gel coiffant</label><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="checkbox"
-              id="javascript"
+              id="8"
               name="fav_language"
-              value="JavaScript"
+              value="8"
+              formControlName="q2_8"
             />
-            <label for="javascript">Sérum pousse cheveux</label>
+            <label for="8">Sérum pousse cheveux</label>
           </div>
         </div>
       </div>
@@ -893,20 +979,20 @@
             bottom-0
             absolute
           "
-          (click)="show3 = true; show2 = false; remoter()"
+          (click)="next2(); remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
         </div>
       </div>
-    </div>
+    </form>
   </div>
   <div
     class="h-full w-screen z-40 absolute flex justify-center items-center"
     style="background-color: rgba(0, 0, 0, 0.5)"
     *ngIf="show3"
   >
-    <div
+    <form
       class="
         bg-white
         h-2/5
@@ -915,6 +1001,8 @@
         rounded-lg
         md:h-1/2 md:w-8/12 md:px-32
       "
+      [formGroup]="question3"
+      (ngSubmit)="next3()"
     >
       <div
         class="absolute right-0 pr-2 pt-2 cursor-pointer"
@@ -938,21 +1026,34 @@
         <br />
         <div class="md:flex flex-col justify-center">
           <div class="space-x-3">
-            <input type="radio" id="html" name="fav_language" value="HTML" />
-            <label for="html">Moins d’1H par semaine</label><br />
+            <input
+              type="radio"
+              id="q3_1"
+              name="fav_language"
+              value="1"
+              formControlName="q3"
+            />
+            <label for="q3_1">Moins d’1H par semaine</label><br />
           </div>
           <div class="space-x-3">
-            <input type="radio" id="css" name="fav_language" value="CSS" />
-            <label for="css">Entre 1H et 2H par semaine </label><br />
+            <input
+              type="radio"
+              id="q3_2"
+              name="fav_language"
+              value="2"
+              formControlName="q3"
+            />
+            <label for="q3_2">Entre 1H et 2H par semaine </label><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="radio"
-              id="javascript"
+              id="q3_3"
               name="fav_language"
-              value="JavaScript"
+              value="3"
+              formControlName="q3"
             />
-            <label for="javascript">Plus de 2H par semaine </label>
+            <label for="q3_3">Plus de 2H par semaine </label>
           </div>
         </div>
       </div>
@@ -988,20 +1089,20 @@
             bottom-0
             absolute
           "
-          (click)="show4 = true; show3 = false; remoter()"
+          (click)="next3(); remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
         </div>
       </div>
-    </div>
+    </form>
   </div>
   <div
     class="h-full w-screen z-40 absolute flex justify-center items-center"
     style="background-color: rgba(0, 0, 0, 0.5)"
     *ngIf="show4"
   >
-    <div
+    <form
       class="
         bg-white
         h-2/5
@@ -1010,6 +1111,8 @@
         rounded-lg
         md:h-1/2 md:w-8/12 md:px-32
       "
+      [formGroup]="question4"
+      (ngSubmit)="next4()"
     >
       <div
         class="absolute right-0 pr-2 pt-2 cursor-pointer"
@@ -1033,21 +1136,34 @@
         <br />
         <div class="md:flex flex-col justify-center">
           <div class="space-x-3">
-            <input type="radio" id="html" name="fav_language" value="HTML" />
-            <label for="html">Moins de 50€ par mois</label><br />
+            <input
+              type="radio"
+              id="q4_1"
+              name="fav_language"
+              value="1"
+              formControlName="q4"
+            />
+            <label for="q4_1">Moins de 50€ par mois</label><br />
           </div>
           <div class="space-x-3">
-            <input type="radio" id="css" name="fav_language" value="CSS" />
-            <label for="css">Entre 50€ et 100€ par mois</label><br />
+            <input
+              type="radio"
+              id="q4_2"
+              name="fav_language"
+              value="2"
+              formControlName="q4"
+            />
+            <label for="q4_2">Entre 50€ et 100€ par mois</label><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="radio"
-              id="javascript"
+              id="q4_3"
               name="fav_language"
-              value="JavaScript"
+              value="3"
+              formControlName="q4"
             />
-            <label for="javascript">Plus de 100€ par mois</label>
+            <label for="q4_3">Plus de 100€ par mois</label>
           </div>
         </div>
       </div>
@@ -1083,13 +1199,13 @@
             bottom-0
             absolute
           "
-          (click)="show5 = true; show4 = false; remoter()"
+          (click)="next4(); remoter()"
         >
           <div class="text-primary font-bold">Suivant</div>
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
   <div
@@ -1097,7 +1213,7 @@
     style="background-color: rgba(0, 0, 0, 0.5)"
     *ngIf="show5"
   >
-    <div
+    <form
       class="
         bg-white
         h-auto
@@ -1107,6 +1223,8 @@
         w-11/12
         md:w-8/12 md:px-32
       "
+      [formGroup]="question5"
+      (ngSubmit)="next5()"
     >
       <div
         class="absolute right-0 pr-2 pt-2 cursor-pointer"
@@ -1131,25 +1249,38 @@
 
         <div class="md:flex flex-col justify-center">
           <div class="space-x-3">
-            <input type="radio" id="html" name="fav_language" value="HTML" />
-            <label for="html"
+            <input
+              type="radio"
+              id="q5_3"
+              name="fav_language"
+              value="1"
+              formControlName="q5"
+            />
+            <label for="q5_3"
               >Une bonne routine uniquement à base de produits naturels ?</label
             ><br />
           </div>
           <div class="space-x-3">
-            <input type="radio" id="css" name="fav_language" value="CSS" />
-            <label for="css"
+            <input
+              type="radio"
+              id="q5_1"
+              name="fav_language"
+              value="2"
+              formControlName="q5"
+            />
+            <label for="q5_1"
               >Une bonne routine simplifiée, qui va droit au but ?</label
             ><br />
           </div>
           <div class="space-x-3 pr-2">
             <input
               type="radio"
-              id="javascript"
+              id="q5_2"
               name="fav_language"
-              value="JavaScript"
+              value="3"
+              formControlName="q5"
             />
-            <label for="javascript"
+            <label for="q5_2"
               >Une routine qui répond à l’ensemble des problématiques capillaire
               ?</label
             >
@@ -1191,7 +1322,7 @@
             absolute
           "
           style="background-color: #ff3e79; color: #fff"
-          (click)="show5 = false"
+          (click)="next5()"
         >
           Valider
         </div>
@@ -1214,7 +1345,7 @@
           <img src="assets/arrow_sm.svg" class="h-10" alt="" srcset="" />
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
   <div

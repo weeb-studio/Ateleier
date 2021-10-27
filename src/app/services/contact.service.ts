@@ -46,4 +46,82 @@ export class ContactService {
     });
     return this.httpClient.delete(API_URL, { headers: headers });
   }
+
+  algoRoutine(res1: string, res3: string, res4: string, res5: string): string {
+    var URL = '';
+    if (res5 == '1') {
+      URL = '/';
+    } else if (res5 == '2') {
+      URL = '/programmes/routine-simple';
+    } else if (res5 == '3') {
+      if (res3 == '1') {
+        if (res4 == '1') {
+          URL = '/';
+        } else {
+          URL = '/programmes/routine-simple';
+        }
+      } else {
+        URL = 'structuree';
+      }
+    }
+
+    console.log(URL);
+    return URL;
+
+    // var a = 0,
+    //   b = 0,
+    //   c = 0;
+    // const A1 = ['1', '2', '3'];
+    // const A3 = ['1'];
+    // const A4 = ['1', '2'];
+    // const A5 = ['2'];
+    // const B1 = ['2', '3'];
+    // const B3 = ['2', '3'];
+    // const B4 = ['1', '2', '3'];
+    // const B5 = ['3'];
+    // const C1 = ['1', '2', '3'];
+    // const C3 = ['1', '2', '3'];
+    // const C4 = ['1', '2', '3'];
+    // const C5 = ['1'];
+    // if (A5.includes(res5)) {
+    //   a = a + 3;
+    // }
+    // if (B5.includes(res5)) {
+    //   b = b + 3;
+    // }
+    // if (C5.includes(res5)) {
+    //   c = c + 3;
+    // }
+    // // serie 1
+    // if (A1.includes(res1)) {
+    //   a = a + 1;
+    // }
+    // if (B1.includes(res1)) {
+    //   b = b + 1;
+    // }
+    // if (C1.includes(res1)) {
+    //   c = c + 1;
+    // }
+    // //serie 2
+    // if (A1.includes(res1)) {
+    //   a = a + 1;
+    // }
+    // if (B1.includes(res1)) {
+    //   b = b + 1;
+    // }
+    // if (C1.includes(res1)) {
+    //   c = c + 1;
+    // }
+    // //serie 3
+    // if (A1.includes(res1)) {
+    //   a = a + 1;
+    // }
+    // if (B1.includes(res1)) {
+    //   b = b + 1;
+    // }
+    // if (C1.includes(res1)) {
+    //   c = c + 1;
+    // }
+    // console.log(A1.includes(res1));
+  }
 }

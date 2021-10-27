@@ -11,6 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./routine-capillaire.component.scss'],
 })
 export class RoutineCapillaireComponent implements OnInit {
+  name: string = '';
   page: boolean = true;
   connexion: boolean = false;
   show1: boolean = false;
@@ -38,6 +39,7 @@ export class RoutineCapillaireComponent implements OnInit {
   mail: String = '';
   loginForm: FormGroup;
   registerForm: FormGroup;
+
   pass: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
@@ -70,6 +72,71 @@ export class RoutineCapillaireComponent implements OnInit {
     });
   }
 
+  question1 = this.formBuilder.group({
+    q1: [''],
+  });
+  question2 = this.formBuilder.group({
+    q2_1: [''],
+    q2_2: [''],
+    q2_3: [''],
+    q2_4: [''],
+    q2_5: [''],
+    q2_6: [''],
+    q2_7: [''],
+    q2_8: [''],
+  });
+  question3 = this.formBuilder.group({
+    q3: [''],
+  });
+  question4 = this.formBuilder.group({
+    q4: [''],
+  });
+  question5 = this.formBuilder.group({
+    q5: [''],
+  });
+
+  next1() {
+    if (this.question1.value.q1 != '') {
+      console.log(this.question1.value.q1);
+      this.show2 = true;
+      this.show1 = false;
+    }
+  }
+  next2() {
+    if (
+      this.question2.value.q2_1 != '' ||
+      this.question2.value.q2_2 != '' ||
+      this.question2.value.q2_3 != '' ||
+      this.question2.value.q2_4 != '' ||
+      this.question2.value.q2_5 != '' ||
+      this.question2.value.q2_6 != '' ||
+      this.question2.value.q2_7 != '' ||
+      this.question2.value.q2_8 != ''
+    ) {
+      this.show3 = true;
+      this.show2 = false;
+    }
+  }
+  next3() {
+    if (this.question3.value.q3 != '') {
+      console.log(this.question3.value.q3);
+      this.show4 = true;
+      this.show3 = false;
+    }
+  }
+  next4() {
+    if (this.question4.value.q4 != '') {
+      console.log(this.question4.value.q4);
+      this.show5 = true;
+      this.show4 = false;
+    }
+  }
+  next5() {
+    if (this.question5.value.q5 != '') {
+      console.log(this.question5.value.q5);
+      this.show5 = false;
+    }
+  }
   showPass() {
     this.pass = !this.pass;
   }
