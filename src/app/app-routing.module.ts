@@ -52,6 +52,9 @@ import { SoinsCapillaireComponent } from './pages/programmes/recette/soins-capil
 import { CheveuxAvecPelliculeComponent } from './pages/programmes/routine-capillaire/cheveux-avec-pellicule/cheveux-avec-pellicule.component';
 import { CheveuxPeuPoreuxComponent } from './pages/programmes/routine-capillaire/cheveux-peu-poreux/cheveux-peu-poreux.component';
 import { CheveuxSecComponent } from './pages/programmes/routine-capillaire/cheveux-sec/cheveux-sec.component';
+import { ResRoutineNaturelleComponent } from './pages/programmes/routine-capillaire/res-routine-naturelle/res-routine-naturelle.component';
+import { ResRoutineSimpleComponent } from './pages/programmes/routine-capillaire/res-routine-simple/res-routine-simple.component';
+import { ResRoutineStructureeComponent } from './pages/programmes/routine-capillaire/res-routine-structuree/res-routine-structuree.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
@@ -161,6 +164,18 @@ const routes: Routes = [
   {
     path: 'programmes/diverses-influences',
     component: DiversesInfluencesComponent,
+  },
+  {
+    path: 'programmes/res/routine-simple',
+    component: ResRoutineSimpleComponent,
+  },
+  {
+    path: 'programmes/res/routine-structuree',
+    component: ResRoutineStructureeComponent,
+  },
+  {
+    path: 'programmes/res/routine-naturelle',
+    component: ResRoutineNaturelleComponent,
   },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'dash/cliente', component: DashClienteComponent },

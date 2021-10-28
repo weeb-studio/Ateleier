@@ -46,22 +46,25 @@ export class ContactService {
     });
     return this.httpClient.delete(API_URL, { headers: headers });
   }
+  // programmes/res/routine-naturelle
+  // programmes/res/routine-structuree
+  // programmes/res/routine-simple
 
   algoRoutine(res1: string, res3: string, res4: string, res5: string): string {
     var URL = '';
     if (res5 == '1') {
-      URL = '/';
+      URL = '/programmes/res/routine-naturelle';
     } else if (res5 == '2') {
-      URL = '/programmes/routine-simple';
+      URL = '/programmes/res/routine-simple';
     } else if (res5 == '3') {
       if (res3 == '1') {
         if (res4 == '1') {
-          URL = '/';
+          URL = '/programmes/res/routine-naturelle';
         } else {
-          URL = '/programmes/routine-simple';
+          URL = '/programmes/res/routine-simple';
         }
       } else {
-        URL = 'structuree';
+        URL = '/programmes/res/routine-structuree';
       }
     }
 

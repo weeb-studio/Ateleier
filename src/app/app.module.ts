@@ -81,6 +81,9 @@ import { HotesseAtelierComponent } from './pages/client/hotesse-atelier/hotesse-
 import { HotesseCadeauComponent } from './pages/client/hotesse-cadeau/hotesse-cadeau.component';
 import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point/hotesse-releve-point.component';
 import { PlanningComponent } from './pages/conseillere/planning/planning.component';
+import { ResRoutineSimpleComponent } from './pages/programmes/routine-capillaire/res-routine-simple/res-routine-simple.component';
+import { ResRoutineStructureeComponent } from './pages/programmes/routine-capillaire/res-routine-structuree/res-routine-structuree.component';
+import { ResRoutineNaturelleComponent } from './pages/programmes/routine-capillaire/res-routine-naturelle/res-routine-naturelle.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -153,6 +156,9 @@ FullCalendarModule.registerPlugins([
     HotesseCadeauComponent,
     HotesseRelevePointComponent,
     PlanningComponent,
+    ResRoutineSimpleComponent,
+    ResRoutineStructureeComponent,
+    ResRoutineNaturelleComponent,
   ],
   imports: [
     BrowserModule,

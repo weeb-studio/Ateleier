@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ContactService } from 'src/app/services/contact.service';
 import { JWTokenService } from 'src/app/services/jwtoken.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { UserService } from 'src/app/services/user.service';
@@ -44,6 +45,7 @@ export class RoutineCapillaireComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private UserService: UserService,
+    private contactService: ContactService,
     private localStorage: LocalStorageService,
     private jwt: JWTokenService,
     private router: Router
@@ -134,7 +136,16 @@ export class RoutineCapillaireComponent implements OnInit {
   next5() {
     if (this.question5.value.q5 != '') {
       console.log(this.question5.value.q5);
+
       this.show5 = false;
+      this.router.navigate([
+        this.contactService.algoRoutine(
+          this.question1.value.q1,
+          this.question3.value.q3,
+          this.question4.value.q4,
+          this.question5.value.q5
+        ),
+      ]);
     }
   }
   showPass() {
