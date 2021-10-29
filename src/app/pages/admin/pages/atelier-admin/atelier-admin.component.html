@@ -2,54 +2,38 @@
 <div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
   <app-side-bar></app-side-bar>
   <div class="my-10 px-4 md:px-10 text-gray-600 w-full">
-    <h1 class="text-xl font-bold text-gray-600">Utilisateurs</h1>
+    <h1 class="text-xl font-bold text-gray-600">Ateliers</h1>
     <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-20 mb-20">
-      <div
-        class="py-2 hover cursor-pointer"
+      <!-- <div
+        class="py-2 border-b-2 border-primary text-gray-400 cursor-pointer"
         routerLink="/admin/utilisateur/conseillere"
       >
-        Conseillères
-      </div>
-      <div
-        class="py-2 hover cursor-pointer"
-        routerLink="/admin/utilisateur/hotesse"
-      >
-        Hôtesses
-      </div>
-      <div
-        class="py-2 hover cursor-pointer"
-        routerLink="/admin/utilisateur/cliente"
-      >
-        Clientes
-      </div>
-      <div
-        class="py-2 border-b-2 border-primary text-gray-400 cursor-pointer"
-        routerLink="/admin/utilisateur"
-      >
-        En cours de validation
+        Atelier du jour
+      </div> -->
+      <div class="py-2 border-b-2 border-primary text-gray-400 cursor-pointer">
+        Atelier à venir
       </div>
     </div>
-    <div class="pl-5 text-lg mb-10 font-bold">Rechercher</div>
     <div class="w-full overflow-x-scroll">
       <table class="min-w-full table-auto">
         <thead class="justify-between">
           <tr class="bg-white text-primary text-center border-2 border-primary">
             <th class="px16 py-2">
-              <span class="text-primary text-center">Nom et prenom</span>
+              <span class="text-primary text-center">Hôte</span>
             </th>
-            <th class="px16 py-2">
-              <span class="text-primary">Mail</span>
-            </th>
-
             <th class="px16 py-2">
               <span class="text-primary">Ville</span>
             </th>
 
             <th class="px16 py-2">
-              <span class="text-primary">Utilisateur</span>
+              <span class="text-primary">Date</span>
+            </th>
+
+            <th class="px16 py-2">
+              <span class="text-primary">Thème</span>
             </th>
             <th class="px16 py-2">
-              <span class="text-primary">&nbsp;</span>
+              <span class="text-primary">Statut</span>
             </th>
           </tr>
         </thead>
@@ -57,26 +41,26 @@
           <tr *ngFor="let item of items" class="bg-white border border-primary">
             <td class="">
               <span class="text-center ml-2 font-semibold"
-                >{{ item.prenom }} {{ item.nom }}</span
+                >{{ item.hotesse.prenom }} {{ item.hotesse.nom }}</span
               >
             </td>
             <td>
               <span class="text-center ml-2 font-semibold">{{
-                item.email
+                item.villeHotesse
               }}</span>
             </td>
-            <td class="px16 py-2">{{ item.ville }}</td>
+            <td class="px16 py-2">{{ item.date | date: "yyyy/MM/dd" }}</td>
 
             <td class="px16 py-2">
-              <span>{{ item.role.nom }}</span>
+              <span>{{ item.theme }}</span>
             </td>
 
             <td class="px16 py-2">
               <button
-                class="text-white px-2 py-2 border rounded-md btn"
+                class="text-white px-2 py-2 border bg-white rounded-md btn"
                 (click)="validate(item._id)"
               >
-                Valider
+                En cours
               </button>
             </td>
           </tr>

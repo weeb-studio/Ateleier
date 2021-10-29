@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
+  test: boolean = true;
   userData: any = {
     createdAt: '',
     email: '',
@@ -86,6 +87,7 @@ export class ProfileComponent implements OnInit {
       .subscribe((res: any) => {
         console.log(res);
         this.getUser();
+        this.test = true;
       });
   }
   setData() {
@@ -109,5 +111,6 @@ export class ProfileComponent implements OnInit {
         Validators.minLength(1),
       ]),
     });
+    this.test = false;
   }
 }

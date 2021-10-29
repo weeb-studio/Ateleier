@@ -1,0 +1,159 @@
+<app-header></app-header>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
+  <app-side-conseillere></app-side-conseillere>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full">
+    <h1 class="text-xl font-bold text-gray-600">Catalogue</h1>
+    <div class="flex flex-col">
+      <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-10 mb-">
+        <div
+          class=""
+          [ngClass]="
+            tab
+              ? 'pt-2 hover cursor-pointer border-b-2 text-gray-400 border-primary'
+              : 'pt-2 hover cursor-pointer'
+          "
+          (click)="changeTab(true)"
+        >
+          Soins capillaires
+        </div>
+        <div
+          class=""
+          [ngClass]="
+            tab
+              ? 'pt-2 hover cursor-pointer'
+              : 'pt-2 hover cursor-pointer text-gray-400 border-b-2 border-primary'
+          "
+          (click)="changeTab(false)"
+        >
+          Coiffures
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+      <div
+        *ngFor="let item of items"
+        class="rounded-lg flex flex-col shadow-lg pb-1"
+      >
+        <div
+          class="
+            whitespace-nowrap
+            bg-primary
+            text-center
+            rounded-t-lg
+            text-white text-sm
+            font-semibold
+            py-1
+          "
+        >
+          {{ item.produit.nom }} {{ item.produit.prix | currency: "EUR":true }}
+        </div>
+        <div class="h-28 flex justify-center">
+          <img
+            [src]="'http://93.90.207.75:3000/' + item.produit.imageURL"
+            class="w-auto h-full"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <!-- <div class="flex justify-end">
+          <img
+            src="assets/trash.svg"
+            class="w-6 pr-2"
+            alt=""
+            srcset=""
+            (click)="removeFromCatalogue(item._id)"
+          />
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- <div
+    *ngIf="dialog"
+    class="absolute top-0 bottom-0 left-0 right-0"
+    style="background-color: rgba(0, 0, 0, 0.6)"
+  >
+    <div
+      class="
+        absolute
+        top-40
+        bottom-40
+        right-5
+        left-5
+        md:top-20 md:bottom-20 md:left-20 md:right-20
+        bg-white
+        rounded-lg
+        flex flex-col
+        items-center
+        justify-cente
+        space-y-10
+      "
+    >
+      <div
+        class="absolute top-2 right-2"
+        (click)="dialog = false; product = []"
+      >
+        <img src="assets/close.svg" alt="" srcset="" />
+      </div>
+
+      <div class="whitespace-nowrap font-bold text-lg">Ajoutez un produit</div>
+      <div class="w-3/4 flex flex-col justify-center items-center">
+        <input
+          type="search"
+          class="rounded-full px-5 py-2 w-full bg-gray-50"
+          value=""
+          (keyup)="search($event)"
+        />
+        <div class="h-80 md:h-96 w-11/12 overflow-hidden overflow-y-scroll">
+          <div
+            class="
+              border-dashed border-b-2 border-l-2 border-r-2 border-primary
+              py-2
+              px-5
+              flex flex-row
+              justify-between
+              items-center
+              w-full
+            "
+            *ngFor="let item of product"
+          >
+            <div class="flex flex-row gap-4 items-center">
+              <div class="w-32 h-20 hidden sm:flex justify-center rounded">
+                <img
+                  [src]="'http://93.90.207.75:3000/' + item.imageURL"
+                  class="h-full w-auto"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+              <div class="flex flex-col text-xs font-semibold">
+                <div>{{ item.nom }}</div>
+                <div>{{ item.categorie }}</div>
+                <div>{{ item.capacite }} {{ item.unite }}</div>
+              </div>
+            </div>
+            <div class="flex flex-col text-xs items-center font-semibold">
+              <div>{{ item.prix | currency: "EUR":true }}</div>
+              <div class="flex flex-row gap-4">
+                <div (click)="moins()">
+                  <img src="assets/moins.svg" alt="" srcset="" />
+                </div>
+                {{ qte }}
+                <div (click)="plus()">
+                  <img src="assets/plus.svg" alt="" srcset="" />
+                </div>
+              </div>
+              <div
+                class="text-primary hover:underline cursor-pointer"
+                (click)="addToCatalogue(item._id, qte, item.categorie)"
+              >
+                ajouter
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+<app-footer></app-footer>

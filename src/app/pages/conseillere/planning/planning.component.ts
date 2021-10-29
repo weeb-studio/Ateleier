@@ -83,13 +83,16 @@ export class PlanningComponent implements OnInit {
     this.selectedDate = arg.dateStr;
     this.getConseillereEvent();
   }
+  today: any;
 
   constructor(
     private atelierService: AtelierService,
     private route: ActivatedRoute
   ) {
+    this.today = new Date(Date.now()).toISOString().split('T')[0];
+    this.selectedDate = new Date(Date.now()).toISOString().split('T')[0];
     console.log(this.event);
-    // this.geCnseillereEvent();
+    this.getConseillereEvent();
   }
 
   getConseillereEvent() {
@@ -133,11 +136,23 @@ export class PlanningComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.snapshot.data['event'].forEach((element: any) => {
-      if (element.date < new Date(Date.now()).toISOString()) {
+      if (
+        element.date.split('T')[0] <
+        new Date(Date.now()).toISOString().split('T')[0]
+      ) {
         this.event.push({
           title: element.theme,
           date: element.date.split('T')[0],
           backgroundColor: '#4c566c',
+        });
+      } else if (
+        element.date.split('T')[0] ==
+        new Date(Date.now()).toISOString().split('T')[0]
+      ) {
+        this.event.push({
+          title: element.theme,
+          date: element.date.split('T')[0],
+          backgroundColor: '#00ff00',
         });
       } else {
         this.event.push({

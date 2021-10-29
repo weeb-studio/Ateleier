@@ -66,11 +66,25 @@ export class AjoutAtelierComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.snapshot.data['event'].forEach((element: any) => {
-      if (element.date < new Date(Date.now()).toISOString()) {
+      // console.log(element.date.split('T')[0]);
+      // console.warn(new Date(Date.now()).toISOString().split('T')[0]);
+      if (
+        element.date.split('T')[0] <
+        new Date(Date.now()).toISOString().split('T')[0]
+      ) {
         this.event.push({
           title: element.theme,
           date: element.date.split('T')[0],
           backgroundColor: '#4c566c',
+        });
+      } else if (
+        element.date.split('T')[0] ==
+        new Date(Date.now()).toISOString().split('T')[0]
+      ) {
+        this.event.push({
+          title: element.theme,
+          date: element.date.split('T')[0],
+          backgroundColor: '#00ff00',
         });
       } else {
         this.event.push({

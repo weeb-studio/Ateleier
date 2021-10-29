@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AtelierAdminComponent } from './pages/admin/pages/atelier-admin/atelier-admin.component';
 import { CatalogueComponent } from './pages/admin/pages/catalogue/catalogue.component';
 import { DashboardComponent } from './pages/admin/pages/dashboard/dashboard.component';
 import { ContactComponent } from './pages/admin/pages/discussions/contact/contact.component';
@@ -21,6 +22,7 @@ import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.c
 import { HotesseCadeauComponent } from './pages/client/hotesse-cadeau/hotesse-cadeau.component';
 import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point/hotesse-releve-point.component';
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
+import { CatalogueProduitComponent } from './pages/conseillere/catalogue-produit/catalogue-produit.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
 import { PlanningComponent } from './pages/conseillere/planning/planning.component';
@@ -56,6 +58,7 @@ import { ResRoutineNaturelleComponent } from './pages/programmes/routine-capilla
 import { ResRoutineSimpleComponent } from './pages/programmes/routine-capillaire/res-routine-simple/res-routine-simple.component';
 import { ResRoutineStructureeComponent } from './pages/programmes/routine-capillaire/res-routine-structuree/res-routine-structuree.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
+import { RoutineNaturelleComponent } from './pages/programmes/routine-capillaire/routine-naturelle/routine-naturelle.component';
 import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { PlanningResolver } from './resolver/planning.resolver';
@@ -160,7 +163,7 @@ const routes: Routes = [
     path: 'programmes/ingredients-à-éviter',
     component: IngredientsAEviterComponent,
   },
-
+  { path: 'programme/routine-naturelle', component: RoutineNaturelleComponent },
   {
     path: 'programmes/diverses-influences',
     component: DiversesInfluencesComponent,
@@ -236,6 +239,10 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'atelier',
+        component: AtelierAdminComponent,
+      },
     ],
   },
   {
@@ -287,6 +294,10 @@ const routes: Routes = [
           event: PlanningResolver,
         },
         component: PlanningComponent,
+      },
+      {
+        path: 'catalogue',
+        component: CatalogueProduitComponent,
       },
     ],
   },
