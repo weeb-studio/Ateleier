@@ -19,13 +19,16 @@ import { AtelierComponent } from './pages/ateliers/atelier/atelier.component';
 import { DevenirConseillereComponent } from './pages/ateliers/devenir-conseillere/devenir-conseillere.component';
 import { DevenirHotesseComponent } from './pages/ateliers/devenir-hotesse/devenir-hotesse.component';
 import { DashClienteComponent } from './pages/client/dash-cliente/dash-cliente.component';
+import { HotesseAtelierComponent } from './pages/client/hotesse-atelier/hotesse-atelier.component';
 import { HotesseCadeauComponent } from './pages/client/hotesse-cadeau/hotesse-cadeau.component';
 import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point/hotesse-releve-point.component';
 import { AjoutAtelierComponent } from './pages/conseillere/ajout-atelier/ajout-atelier.component';
 import { CatalogueProduitComponent } from './pages/conseillere/catalogue-produit/catalogue-produit.component';
 import { CommandeComponent } from './pages/conseillere/commande/commande.component';
 import { DashConseillereComponent } from './pages/conseillere/dash-conseillere/dash-conseillere.component';
+import { FormationComponent } from './pages/conseillere/formation/formation.component';
 import { PlanningComponent } from './pages/conseillere/planning/planning.component';
+import { PorteMonnaieComponent } from './pages/conseillere/porte-monnaie/porte-monnaie.component';
 import { ProfileComponent } from './pages/conseillere/profile/profile.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
@@ -184,6 +187,7 @@ const routes: Routes = [
   { path: 'dash/cliente', component: DashClienteComponent },
   { path: 'hotesse-cadeau', component: HotesseCadeauComponent },
   { path: 'hotesse-releve-point', component: HotesseRelevePointComponent },
+  { path: 'hotesse-atelier', component: HotesseAtelierComponent },
 
   // Admin
 
@@ -298,6 +302,14 @@ const routes: Routes = [
       {
         path: 'catalogue',
         component: CatalogueProduitComponent,
+      },
+      {
+        path: 'porte-monnaie',
+        component: PorteMonnaieComponent,
+      },
+      {
+        path: 'formation',
+        component: FormationComponent,
       },
     ],
   },

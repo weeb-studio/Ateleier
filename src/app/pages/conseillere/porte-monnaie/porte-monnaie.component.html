@@ -1,0 +1,107 @@
+<app-header></app-header>
+<div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
+  <app-side-conseillere></app-side-conseillere>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full">
+    <h1 class="text-xl font-bold text-gray-600">porte-monnaie</h1>
+    <div class="flex flex-row gap-5 mt-8 ml-5 md:gap-20 mb-20">
+      <div
+        [ngClass]="
+          !dialog
+            ? 'py-2 border-b-2 border-primary text-gray-400 cursor-pointer'
+            : 'py-2 hover cursor-pointer'
+        "
+        (click)="dialog = false"
+      >
+        porte-monnaie
+      </div>
+      <div
+        [ngClass]="
+          dialog
+            ? 'py-2 border-b-2 border-primary text-gray-400 cursor-pointer'
+            : 'py-2 hover cursor-pointer'
+        "
+        (click)="dialog = true"
+      >
+        Informations bancaires
+      </div>
+    </div>
+    <div>
+      <div
+        class="
+          md:w-10/12
+          rounded-2xl
+          shadow-2xl
+          flex flex-col
+          justify-center
+          font-bold
+          text-lg
+        "
+        *ngIf="!dialog"
+      >
+        <div class="bg-white flex justify-center items-center pb-2 pt-5">
+          Cette semaine
+        </div>
+        <div class="bg-pink-100 flex justify-center items-center py-2">
+          617 €
+        </div>
+        <div class="bg-white flex justify-center items-center pb-2 pt-5">
+          Ce mois-ci
+        </div>
+        <div class="bg-pink-100 flex justify-center items-center py-2">
+          1620 €
+        </div>
+        <div class="bg-white flex justify-center items-center pb-2 pt-5">
+          Cette année
+        </div>
+        <div class="bg-pink-100 flex justify-center items-center py-2">
+          20400 €
+        </div>
+        <div class="bg-white flex justify-center items-center pb-2 pt-5">
+          En attente de vivrement
+        </div>
+        <div class="bg-pink-100 flex justify-center items-center py-2">
+          15000 €
+        </div>
+        <div class="bg-white flex justify-center items-center py-8"></div>
+      </div>
+      <div
+        class="flex flex-col space-y-10 justify- md:items-center"
+        *ngIf="dialog"
+      >
+        <div
+          class="
+            md:w-10/12
+            rounded-2xl
+            shadow-2xl
+            flex flex-col
+            justify-center
+            font-bold
+            text-lg
+            px-8
+          "
+        >
+          <div class="py-5 border-b flex flex-row justify-between">
+            <div>IBAN</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="py-5 border-b flex flex-row justify-between">
+            <div>Nom de la banque</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="py-5 border-b flex flex-row justify-between">
+            <div>BIC</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="py-5 border-b flex flex-row justify-between">
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+          </div>
+        </div>
+        <button class="py-3 px-10 bg-primary rounded-lg text-white font-bold">
+          ENREIGISTRER
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

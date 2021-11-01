@@ -1,6 +1,76 @@
 <app-header></app-header>
 <div class="md:flex flex-col md:flex-row md:min-h-screen w-full bg-white">
   <app-side-conseillere></app-side-conseillere>
-  <div class="my-10 px-4 md:px-10 text-gray-600 w-full space-y-20"></div>
+  <div class="my-10 px-4 md:px-10 text-gray-600 w-full space-y-10">
+    <h1 class="text-xl font-bold text-gray-600">Tableau de bord</h1>
+    <h2 class="text-md font-bold text-gray-600">Nombre d’atelier</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
+      <div
+        class="
+          relative
+          rounded-md
+          shadow-xl
+          flex flex-col
+          justify-center
+          items-center
+          py-20
+        "
+        *ngFor="let item of items"
+      >
+        <p class="font-extrabold text-4xl">{{ item.value }}</p>
+        <div
+          class="
+            absolute
+            bottom-0
+            w-full
+            bg-primary
+            rounded-b-md
+            text-white
+            flex
+            whitespace-nowrap
+            justify-center
+            py-1
+          "
+        >
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+    <h2 class="text-md font-bold text-gray-600">Chiffre d’affaire</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 md:gap-8 gap-4">
+      <div
+        class="
+          relative
+          rounded-md
+          shadow-xl
+          flex flex-col
+          justify-center
+          items-center
+          py-20
+        "
+        *ngFor="let item of CA"
+      >
+        <p class="font-extrabold text-xl">
+          {{ item.value | currency: "EUR" }}
+        </p>
+        <div
+          class="
+            absolute
+            bottom-0
+            w-full
+            bg-primary
+            rounded-b-md
+            text-white
+            flex
+            whitespace-nowrap
+            justify-center
+            py-1
+          "
+        >
+          {{ item.text }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

@@ -53,7 +53,7 @@ export class AjoutAtelierComponent implements OnInit {
       participants: formBuilder.control('', [Validators.required]),
       place: formBuilder.control('', [Validators.required]),
       theme: formBuilder.control(''),
-      nomHotesse: formBuilder.control(''),
+      nomHotesse: formBuilder.control('test'),
       prenomHotesse: formBuilder.control(''),
       adresse: formBuilder.control(''),
       postal: formBuilder.control(''),
@@ -97,26 +97,27 @@ export class AjoutAtelierComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.atelierForm.value.place);
-    this.atelierService
-      .createAtelier(
-        this.atelierForm.value.place,
-        this.atelierForm.value.theme,
-        this.atelierForm.value.participants,
-        this.atelierForm.value.date,
-        // this.atelierForm.value.nomHotesse,
-        // this.atelierForm.value.prenomHotesse,
-        // this.atelierForm.value.adresse,
-        this.atelierForm.value.postal,
-        this.atelierForm.value.ville,
-        // this.atelierForm.value,
-        this.atelierForm.value.heure
-        // 'ouvert',
-        // true
-      )
-      .subscribe((test) => {
-        console.log(test);
-      });
+    console.log(this.atelierForm.value);
+    // this.atelierService
+    //   .createAtelier(
+    //     this.atelierForm.value.place,
+    //     this.atelierForm.value.theme,
+    //     this.atelierForm.value.participants,
+    //     this.atelierForm.value.date,
+    //     // this.atelierForm.value.nomHotesse,
+    //     // this.atelierForm.value.prenomHotesse,
+    //     // this.atelierForm.value.adresse,
+    //     this.atelierForm.value.postal,
+    //     this.atelierForm.value.ville,
+    //     // this.atelierForm.value,
+    //     this.atelierForm.value.heure
+    //     // 'ouvert',
+    //     // true
+    //   )
+    //   .subscribe((test) => {
+    //     console.log(test);
+    //   });
+
     // this.atelier.place = this.atelierForm.value.place;
     // this.atelier.theme = this.atelierForm.value.theme;
     // this.atelier.hotesse = this.atelierForm.value; //=========

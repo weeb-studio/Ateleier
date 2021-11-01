@@ -87,6 +87,9 @@ import { ResRoutineNaturelleComponent } from './pages/programmes/routine-capilla
 import { CatalogueProduitComponent } from './pages/conseillere/catalogue-produit/catalogue-produit.component';
 import { AtelierAdminComponent } from './pages/admin/pages/atelier-admin/atelier-admin.component';
 import { RoutineNaturelleComponent } from './pages/programmes/routine-capillaire/routine-naturelle/routine-naturelle.component';
+import { PorteMonnaieComponent } from './pages/conseillere/porte-monnaie/porte-monnaie.component';
+import { FormationComponent } from './pages/conseillere/formation/formation.component';
+import { ConsDashComponent } from './pages/conseillere/cons-dash/cons-dash.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -165,6 +168,9 @@ FullCalendarModule.registerPlugins([
     CatalogueProduitComponent,
     AtelierAdminComponent,
     RoutineNaturelleComponent,
+    PorteMonnaieComponent,
+    FormationComponent,
+    ConsDashComponent,
   ],
   imports: [
     BrowserModule,
