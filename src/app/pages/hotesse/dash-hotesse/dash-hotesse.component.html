@@ -5,7 +5,7 @@
   style="color: #ff3e79"
 >
   <div class="cursor-pointer hover" routerLink="/hotesse">Accueil</div>
-  <div class="cursor-pointer hover">Mes ateliers</div>
+  <div class="cursor-pointer hover" routerLink="/hotesse-atelier">Mes ateliers</div>
   <div class="cursor-pointer hover" routerLink="/hotesse-cadeau">
     Choisir mon cadeau
   </div>
@@ -52,7 +52,7 @@
       <img src="assets/cadeau.svg" alt="" />
       <div class="">Hôtesse</div>
     </div>
-    <div class="font-bold mt-5 md:mt-16 text-2xl">Bonjour Sophie</div>
+    <div class="font-bold mt-5 md:mt-16 text-2xl">Salut {{ utilisateur.prenom }} </div>
     <div class="flex items-center my-20 space-x-2" style="color: #ff3e79">
       <div class="text-3xl">200 Points</div>
       <img src="assets/cadeauPink.svg" alt="" class="h-8" />

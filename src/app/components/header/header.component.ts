@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
   user: Boolean = false;
   subMenu: Boolean = false;
   subMenu1: Boolean = false;
+  hotesseDash: boolean = false;
   utilisateur: any;
   ngOnInit(): void {}
 
@@ -89,7 +90,8 @@ export class HeaderComponent implements OnInit {
     }
 
     if (this.utilisateur.role.nom == 'hotesse') {
-      this, this.router.navigate(['/hotesse']);
+      // this, this.router.navigate(['/hotesse']);
+      this.hotesseDash = !this.hotesseDash;
     }
   }
 }

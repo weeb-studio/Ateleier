@@ -375,12 +375,32 @@
   </div>
 
   <div class="flex flex-col w-full grid-cols-2" *ngIf="utilisateur != null">
-    <div class="flex flex-row items-center" (click)="redirect()">
+    <div class="flex flex-row items-center cursor-pointer" (click)="redirect()">
       <div class="px-5 py-4">
         <img src="assets/user.svg" alt="" srcset="" />
       </div>
       <div class="text-xl whitespace-nowrap" style="color: #475168">
         {{ "tableau de bord" | uppercase }}
+      </div>
+    </div>
+    <div class="flex flex-col space-y-3 py-5 pl-20" *ngIf="hotesseDash">
+      <div
+        class="text-primary uppercase"
+        (click)="go('/hotesse')"
+      >
+        Accueil
+      </div>
+      <div
+        class="text-primary uppercase"
+        (click)="go('/hotesse-atelier')"
+      >
+        Mes ateliers
+      </div>
+      <div class="text-primary uppercase" (click)="go('/hotesse-cadeau')">
+        Choisir mon cadeau
+      </div>
+      <div class="text-primary uppercase" (click)="go('/hotesse-releve-point')">
+        Mon relevé de points
       </div>
     </div>
     <div class="w-full">

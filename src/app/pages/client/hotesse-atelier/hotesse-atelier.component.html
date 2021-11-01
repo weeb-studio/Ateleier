@@ -1,1 +1,59 @@
-<p>hotesse-atelier works!</p>
+<app-header></app-header>
+<div
+  class="hidden md:flex md:flex-row justify-between my-10 md:px-32"
+  style="color: #ff3e79"
+>
+  <div class="cursor-pointer hover" routerLink="/hotesse">Accueil</div>
+  <div class="cursor-pointer hover" routerLink="/hotesse-atelier">Mes ateliers</div>
+  <div class="cursor-pointer hover" routerLink="/hotesse-cadeau">
+    Choisir mon cadeau
+  </div>
+  <div class="cursor-pointer hover" routerLink="/hotesse-releve-point">
+    Mon relevé de points
+  </div>
+</div>
+<div class="text-gray-600 hidden px-10 md:flex flex-col items-center space-y-5 mb-10">
+    <div class="absolute left-5 top-10 cursor-pointer md:hidden">
+      <img src="assets/flechePink.svg" alt="" class="" />
+    </div>
+    <div class="font-bold text-2xl" style="color: #ff3e79">
+        Mes ateliers
+    </div>
+</div>
+<div class="px-10 md:px-24 my-10">
+    <fieldset class="flex flex-col items-center md:border-2 border-primary pt-5">
+        <legend class="flex flex-col items-center text-center border-2 rounded-full h-28 w-28 py-5 top-10">
+            <div class="">
+                <img src="assets/calendar.svg" alt="" class="w-8">
+            </div>
+            <div class="">Mes ateliers</div>
+        </legend>
+        <div class="border-2 border-primary p-1 shadow-lg mb-2">
+            <full-calendar [options]="calendarOptions"></full-calendar>
+        </div>
+        <div class="flex flex-col items-end mb-5">
+            <div class="flex flex-row items-center">
+                <div class="w-7 h-2 bg-primary pr-2"></div>
+                <div>Je reçois un atelier le : 22 Juin 2019</div>   
+            </div>
+            <div class="">de 14h à 16h</div>
+        </div>
+        <div class="flex flex-col md:flex-row md:space-x-5 my-10">
+            <div class="flex flex-row shadow-md rounded-lg">
+                <div class="w-5 h-full bg-primary rounded-l-lg"></div>
+                <div class="p-5 font-bold space-y-3">
+                    <div class="text-center">23 Novembre 2019</div>
+                    <div class="text-center"> 14h-18h</div>
+                </div>
+            </div>
+            <div class="flex flex-row shadow-md rounded-lg">
+                <div class="w-5 h-full bg-primary rounded-l-lg"></div>
+                <div class="p-5 font-bold space-y-3">
+                    <div class="text-center">23 Novembre 2019</div>
+                    <div class="text-center"> 14h-18h</div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+<app-footer></app-footer>
