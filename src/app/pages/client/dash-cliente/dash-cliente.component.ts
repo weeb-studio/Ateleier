@@ -9,6 +9,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./dash-cliente.component.scss'],
 })
 export class DashClienteComponent implements OnInit {
+  public selectedFile: any;
+  public choix: string = '';
   page1: boolean = true;
   page2: boolean = false;
   page3: boolean = false;
@@ -16,7 +18,12 @@ export class DashClienteComponent implements OnInit {
   recommendation: boolean = false;
   userData: any;
   updateForm: FormGroup;
-
+  show1: boolean = false;
+  show2: boolean = false;
+  show3: boolean = false;
+  show4: boolean = false;
+  show5: boolean = false;
+  submit: boolean = false;
   showMawishlist() {
     this.Mawishlist = true;
     this.recommendation = false;
@@ -79,8 +86,15 @@ export class DashClienteComponent implements OnInit {
       tel: formBuilder.control(''),
       pwd: formBuilder.control(''),
     });
-    // this.updateForm.controls.pwd.disable();
+    this.updateForm.disable();
     this.updateForm.controls.email.disable();
+    this.updateForm.controls.pwd.disable();
+  }
+  update() {
+    this.submit = true;
+    this.updateForm.enable();
+    this.updateForm.controls.email.disable();
+    this.updateForm.controls.pwd.disable();
   }
   onUpdate() {
     console.log(this.updateForm.value);
@@ -96,6 +110,22 @@ export class DashClienteComponent implements OnInit {
       .subscribe((res: any) => {
         console.log(res);
       });
+  }
+  getUser() {
+    this.userservices.getUser().subscribe((res: any) => {
+      this.userData = res;
+      console.warn(this.userData);
+    });
+  }
+  profileImage(event: any) {
+    this.selectedFile = <File>event.target.files[0];
+
+    this.userservices
+      .imageSet(<File>this.selectedFile, this.selectedFile.name)
+      .subscribe((res) => {
+        console.log(res);
+      });
+    this.getUser();
   }
 
   ngOnInit(): void {}

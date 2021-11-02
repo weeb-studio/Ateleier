@@ -38,7 +38,7 @@ import { RoutineCapillaireComponent } from './pages/programmes/routine-capillair
 import { ConceptComponent } from './pages/programmes/concept/concept.component';
 import { SideBarComponent } from './pages/admin/components/side-bar/side-bar.component';
 import { DashboardComponent } from './pages/admin/pages/dashboard/dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FaqHotesseComponent } from './pages/faq-hotesse/faq-hotesse.component';
 import { FaqConseillereComponent } from './pages/faq-conseillere/faq-conseillere.component';
 import { MentionLegaleComponent } from './pages/mention-legale/mention-legale.component';
@@ -179,6 +179,7 @@ FullCalendarModule.registerPlugins([
     IvyCarouselModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

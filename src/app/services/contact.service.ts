@@ -55,11 +55,15 @@ export class ContactService {
     if (res5 == '1') {
       URL = '/programmes/res/routine-naturelle';
     } else if (res5 == '2') {
-      URL = '/programmes/res/routine-simple';
+      if (res4 == '3' && res3 == '3' && res1 == '3') {
+        URL = '/programmes/res/routine-structuree';
+      } else {
+        URL = '/programmes/res/routine-simple';
+      }
     } else if (res5 == '3') {
       if (res3 == '1') {
         if (res4 == '1') {
-          URL = '/programmes/res/routine-naturelle';
+          URL = '/programmes/res/routine-simple';
         } else {
           URL = '/programmes/res/routine-simple';
         }
