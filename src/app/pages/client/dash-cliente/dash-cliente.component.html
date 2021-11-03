@@ -217,219 +217,50 @@
       <p>nous avons besoin des informations suivantes :</p>
     </div>
     <div class="grid grid-cols-2 gap-4 items-center">
-      <div class="w-full flex flex-col relative">
+      <div class="w-full flex flex-col">
         <label for="" class="w-full">Nature des cheveux</label>
-        <input
-          type="text"
-          name=""
-          id=""
-          class="rounded-md"
-          [value]="choix"
-          (click)="
-            show1 = true;
-            show2 = false;
-            show3 = false;
-            show4 = false;
-            show5 = false
-          "
-        />
-        <div
-          class="
-            bg-white
-            text-primary
-            absolute
-            top-16
-            md:top-10
-            shadow-md
-            z-50
-            w-full
-          "
-          *ngIf="show1"
-        >
-          <div
-            class="border-b-2 cursor-pointer"
-            [ngModel]="choix"
-            (ngModelChange)="choix = $event.inneHtml"
-            (click)="show1 = false"
-          >
-            cheveux normaux
-          </div>
-          <div class="border-b-2 cursor-pointer" (click)="show1 = false">
-            cheveux secs
-          </div>
-          <div class="cursor-pointer" (click)="show1 = false">cheveux gras</div>
-        </div>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux normaux</option>
+          <option value="">cheveux secs</option>
+          <option value="">cheveux gras</option>
+        </select>
       </div>
-      <div class="w-full flex flex-col relative">
+      <div class="w-full flex flex-col">
         <label for="" class="w-full">Problématique de cheveux</label>
-        <input
-          type="text"
-          name=""
-          id=""
-          class="rounded-md"
-          [value]="choix"
-          (click)="
-            show1 = false;
-            show2 = true;
-            show3 = false;
-            show4 = false;
-            show5 = false
-          "
-        />
-        <div
-          class="
-            bg-white
-            text-primary
-            absolute
-            top-16
-            md:top-10
-            shadow-md
-            z-50
-            w-full
-          "
-          *ngIf="show2"
-        >
-          <div class="cursor-pointer border-b-2" (click)="show2 = false">
-            cheveux peu poreux
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show2 = false">
-            cheveux très poreux
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show2 = false">
-            cheveux gras
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show2 = false">
-            cheveux abimés ou cassants
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show2 = false">
-            cheveux en transition
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show2 = false">
-            cheveux défrises ou lissés
-          </div>
-          <div class="cursor-pointer" (click)="show2 = false">pellicules</div>
-        </div>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux peu poreux</option>
+          <option value="">cheveux très poreux</option>
+          <option value="">cheveux gras</option>
+          <option value="">cheveux abimés ou cassants</option>
+          <option value="">cheveux en transition</option>
+          <option value="">cheveux défrises ou lissés</option>
+          <option value="">pellicules</option>
+        </select>
       </div>
-      <div class="w-full flex flex-col relative">
+      <div class="w-full flex flex-col">
         <label for="" class="w-full">Texture de cheveux</label>
-        <input
-          type="text"
-          name=""
-          id=""
-          class="rounded-md"
-          [value]="choix"
-          (click)="
-            show1 = false;
-            show2 = false;
-            show3 = true;
-            show4 = false;
-            show5 = false
-          "
-        />
-        <div
-          class="
-            bg-white
-            text-primary
-            absolute
-            top-16
-            md:top-10
-            shadow-md
-            z-50
-            w-full
-          "
-          *ngIf="show3"
-        >
-          <div class="cursor-pointer border-b-2" (click)="show3 = false">
-            cheveux épais
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show3 = false">
-            cheveux fins
-          </div>
-          <div class="cursor-pointer" (click)="show3 = false">
-            cheveux soyeux
-          </div>
-        </div>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux épais</option>
+          <option value="">cheveux fins</option>
+          <option value="">cheveux soyeux</option>
+        </select>
       </div>
-      <div class="w-full flex flex-col relative pt-5 md:pt-0">
+      <div class="w-full flex flex-col pt-5 md:pt-0">
         <label for="" class="w-full">Type de cheveux</label>
-        <input
-          type="text"
-          name=""
-          id=""
-          class="rounded-md"
-          [value]="choix"
-          (click)="
-            show1 = false;
-            show2 = false;
-            show3 = false;
-            show4 = true;
-            show5 = false
-          "
-        />
-        <div
-          class="
-            bg-white
-            text-primary
-            absolute
-            top-16
-            md:top-10
-            shadow-md
-            z-50
-            w-full
-          "
-          *ngIf="show4"
-        >
-          <div class="cursor-pointer border-b-2" (click)="show4 = false">
-            cheveux bouclés
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show4 = false">
-            cheveux crépus
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show4 = false">
-            cheveux frisés
-          </div>
-          <div class="cursor-pointer" (click)="show4 = false">
-            cheveux lisses
-          </div>
-        </div>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux bouclés</option>
+          <option value="">cheveux crépus</option>
+          <option value="">cheveux frisés</option>
+          <option value="">cheveux lisse</option>
+        </select>
       </div>
-      <div class="w-full flex flex-col relative">
+      <div class="w-full flex flex-col">
         <label for="" class="w-full">Longueur des cheveux</label>
-        <input
-          type="text"
-          name=""
-          id=""
-          class="rounded-md"
-          [value]="choix"
-          (click)="
-            show1 = false;
-            show2 = false;
-            show3 = false;
-            show4 = false;
-            show5 = true
-          "
-        />
-        <div
-          class="
-            bg-white
-            text-primary
-            absolute
-            top-16
-            md:top-10
-            shadow-md
-            z-50
-            w-full
-          "
-          *ngIf="show5"
-        >
-          <div class="cursor-pointer border-b-2" (click)="show5 = false">
-            cheveux court
-          </div>
-          <div class="cursor-pointer border-b-2" (click)="show5 = false">
-            cheveux mi-long
-          </div>
-          <div class="cursor-pointer" (click)="show5 = false">cheveux long</div>
-        </div>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux court</option>
+          <option value="">cheveux mi-long</option>
+          <option value="">cheveux long</option>
+        </select>
       </div>
     </div>
     <button
@@ -473,11 +304,11 @@
         "
         (click)="showMawishlist()"
       >
-        <img src="assets/coeur.svg" alt="" class="h-5" />
-        <div class="">Ma wishlist</div>
+        <img src="assets/panier.svg" alt="" class="h-5" />
+        <div class="">Mon panier</div>
       </div>
       <div
-        class="cursor-pointer flex justify-center py-3"
+        class="cursor-pointer flex justify-center py-3 text-center"
         (click)="showRecommendation()"
         id="recommandations"
         style="border-color: #ff3e79"
@@ -503,39 +334,15 @@
       *ngIf="Mawishlist"
     >
       <div class="grid grid-cols-6 w-full">
-        <div class="col-span-2 text-primary text-center">Produit</div>
-        <div class="col-span-1 text-primary text-center">Prix</div>
-        <div class="col-span-1 text-primary text-center">Quantité</div>
-        <div class="col-span-2 text-primary text-center">&nbsp;</div>
+        <div class="hidden col-span-2 text-primary text-center">Produit</div>
+        <div class="hidden col-span-1 text-primary text-center">Prix</div>
+        <div class="hidden col-span-1 text-primary text-center">Quantité</div>
+        <div class="hidden col-span-2 text-primary text-center">&nbsp;</div>
       </div>
       <div
         class="grid grid-cols-6 w-full items-center justify-center"
         *ngFor="let item of items"
-      >
-        <div class="col-span-2 text-primary flex justify-center items-center">
-          <img [src]="item.img" alt="" class="w-12 h-12" />
-        </div>
-        <div class="col-span-1 text-primary text-center">{{ item.prix }}</div>
-        <div class="col-span-1 text-primary text-center">
-          <input
-            list="number"
-            id="ice-cream-choice"
-            name="ice-cream-choice"
-            class="w-12 rounded-md pl-2 pb-1 pr-1"
-            style="color: #ff3e79"
-          />
-          <datalist id="number"> </datalist>
-        </div>
-        <div class="col-span-2 text-primary text-center pr-2">
-          <button
-            type="submit"
-            class="text-xs rounded-md py-1 px-2"
-            style="background-color: #ff3e79; color: #fff"
-          >
-            AJOUTER AU PANIER
-          </button>
-        </div>
-      </div>
+      ></div>
       <!-- <div class="space-y-3">
         <div class="hidden md:block" style="color: #ff3e79">Produit</div>
         <div class="w-12 h-12" *ngFor="let item of items">
@@ -600,20 +407,29 @@
         *ngFor="let item of items"
       >
         <div class="col-span-2 text-primary flex justify-center items-center">
-          <img [src]="item.img" alt="" class="w-12 h-12" />
+          <input type="checkbox" name="" id="" />
+          <img
+            [src]="server + item.produit.imageURL"
+            alt=""
+            class="w-12 h-12"
+          />
         </div>
-        <div class="col-span-1 text-primary text-center">{{ item.prix }}</div>
-        <div class="col-span-1 text-primary text-center px-3">
+        <div class="col-span-1 text-primary text-center">
+          {{ item.produit.prix }}
+        </div>
+        <div class="col-span-1 text-primary text-center pr-1">
           <input
             list="number"
             id="ice-cream-choice"
             name="ice-cream-choice"
             class="w-12 rounded-md pl-2 pb-1 pr-1"
             style="color: #ff3e79"
+            [ngModel]="qte"
+            (ngModelChange)="qte = $event"
           />
           <datalist id="number"> </datalist>
         </div>
-        <div class="col-span-2 text-primary text-center pr-2">
+        <div class="col-span-2 text-primary text-center">
           <button
             type="submit"
             class="text-xs rounded-md py-1 px-2"

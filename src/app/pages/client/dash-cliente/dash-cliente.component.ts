@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CatalogueService } from 'src/app/services/catalogue.service';
 import { UserService } from 'src/app/services/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dash-cliente',
@@ -10,13 +12,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class DashClienteComponent implements OnInit {
   public selectedFile: any;
-  public choix: string = '';
+  public qte: string = '';
   page1: boolean = true;
   page2: boolean = false;
   page3: boolean = false;
   Mawishlist: boolean = true;
   recommendation: boolean = false;
   userData: any;
+  productData: any;
   updateForm: FormGroup;
   show1: boolean = false;
   show2: boolean = false;
@@ -24,13 +27,14 @@ export class DashClienteComponent implements OnInit {
   show4: boolean = false;
   show5: boolean = false;
   submit: boolean = false;
+  server = environment.SERVER_URL + '/';
   showMawishlist() {
     this.Mawishlist = true;
     this.recommendation = false;
   }
   showRecommendation() {
-    this.recommendation = !this.recommendation;
-    this.Mawishlist = !this.Mawishlist;
+    this.recommendation = true;
+    this.Mawishlist = false;
   }
   items: any = [
     {
@@ -39,7 +43,7 @@ export class DashClienteComponent implements OnInit {
     },
     {
       img: 'assets/prod2.svg',
-      prix: '120,00€',
+      prix: '12,00€',
     },
     {
       img: 'assets/prod3.svg',
@@ -47,34 +51,28 @@ export class DashClienteComponent implements OnInit {
     },
     {
       img: 'assets/prod1.svg',
-      prix: '145,00€',
+      prix: '14,00€',
     },
     {
       img: 'assets/prod3.svg',
       prix: '8,00€',
     },
   ];
-  // async initiateur(){
-  //   this.updateForm = this.formBuilder.group({
-  //     nom: formBuilder.control(''),
-  //     prenom: formBuilder.control('test'),
-  //     email: formBuilder.control(''),
-  //     adresse: formBuilder.control(''),
-  //     code: formBuilder.control(''),
-  //     ville: formBuilder.control(''),
-  //     tel: formBuilder.control(''),
-  //     pwd: formBuilder.control(''),
-  //   });
-  // }
   constructor(
     private userservices: UserService,
     private formBuilder: FormBuilder,
-    private route: Router
+    private route: Router,
+    // private panierservice: PanierService,
+    private catalogue: CatalogueService
   ) {
     this.userservices.getUser().subscribe((res: any) => {
       // console.log(res);
       this.userData = res;
       console.log(this.userData);
+    });
+    this.catalogue.getCatalogueProduct().subscribe((test: any) => {
+      this.items = test;
+      console.log(this.productData);
     });
     this.updateForm = this.formBuilder.group({
       nom: formBuilder.control(''),
@@ -90,12 +88,14 @@ export class DashClienteComponent implements OnInit {
     this.updateForm.controls.email.disable();
     this.updateForm.controls.pwd.disable();
   }
+
   update() {
     this.submit = true;
     this.updateForm.enable();
     this.updateForm.controls.email.disable();
     this.updateForm.controls.pwd.disable();
   }
+
   onUpdate() {
     console.log(this.updateForm.value);
     this.userservices
@@ -111,12 +111,14 @@ export class DashClienteComponent implements OnInit {
         console.log(res);
       });
   }
+
   getUser() {
     this.userservices.getUser().subscribe((res: any) => {
       this.userData = res;
       console.warn(this.userData);
     });
   }
+
   profileImage(event: any) {
     this.selectedFile = <File>event.target.files[0];
 

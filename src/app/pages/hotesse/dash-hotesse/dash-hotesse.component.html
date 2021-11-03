@@ -55,10 +55,14 @@
       <div class="">Hôtesse</div>
     </div>
     <div class="font-bold mt-5 md:mt-16 text-2xl">
-      Salut {{ utilisateur.prenom }}
+      Bonjour {{ utilisateur.prenom }}
     </div>
-    <div class="flex items-center my-20 space-x-2" style="color: #ff3e79">
-      <div class="text-3xl">200 Points</div>
+    <div
+      class="flex items-center my-20 space-x-2"
+      style="color: #ff3e79"
+      *ngIf="point.nombre != null"
+    >
+      <div class="text-3xl">{{ point.nombre }} Points</div>
       <img src="assets/cadeauPink.svg" alt="" class="h-8" />
     </div>
     <div class="text-center font-semibold mb-10">

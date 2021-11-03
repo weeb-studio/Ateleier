@@ -27,7 +27,10 @@
   <div class="mt-5" style="color: #ff3e79">
     Tous les cadeaux que je peux recevoir
   </div>
-  <div class="">Vos points expireront le 19/11/19</div>
+  <div class="">
+    Il vous reste
+    <span class="text-2xl font-semibold">{{ point.nombre }}</span> points
+  </div>
   <div class="">
     <img src="assets/jaugePoint.svg" alt="" />
   </div>
@@ -40,94 +43,46 @@
 </div>
 <div class="px-10 flex flex-col items-center mb-10">
   <div class="grid grid-cols-2 gap-10 md:grid-cols-3 md:gap-24 mt-10">
-    <div class="flex flex-col items-center text-center shadow-lg md:w-80">
+    <div
+      class="flex flex-col items-center text-center shadow-lg md:w-80"
+      *ngFor="let item of items"
+    >
+      <!-- createdAt: "2021-10-15T10:11:13.165Z"
+produit:
+capacite: 15
+categorie: "COIFFURES"
+createdAt: "2021-10-15T10:10:23.355Z"
+description: "test"
+imageURL: "uploads/2021-10-15T10-10-22.835ZRectangle 51 (1).png"
+nom: "Perruque"
+prix: 45
+unite: "taille"
+updatedAt: "2021-10-15T10:10:23.355Z"
+__v: 0
+_id: "6169538fedcd35fbd1d2765c"
+[[Prototype]]: Object
+qte: 3
+updatedAt: "2021-10-15T10:11:13.165Z"
+__v: 0
+_id: "616953c1edcd35fbd1d2767b" -->
+
       <div
         class="w-full rounded-t-lg"
         style="background-color: #333e57e5; color: #fff"
       >
-        Crème boucles
+        {{ item.produit.nom }}
       </div>
-      <img src="assets/creme.svg" alt="" class="h-32" />
+      <img
+        [src]="serverURL + '/' + item.produit.imageURL"
+        alt=""
+        class="h-32"
+      />
       <div
         class="w-full cursor-pointer rounded-b-lg"
         style="background-color: #ff3e79; color: #fff"
+        (click)="removePoint(item.produit.prix)"
       >
-        Ajouter
-      </div>
-    </div>
-    <div class="flex flex-col items-center text-center shadow-lg rounded-lg">
-      <div
-        class="w-full rounded-t-lg"
-        style="background-color: #333e57e5; color: #fff"
-      >
-        Crème boucles
-      </div>
-      <img src="assets/lotion.svg" alt="" class="h-32" />
-      <div
-        class="w-full cursor-pointer rounded-b-lg"
-        style="background-color: #ff3e79; color: #fff"
-      >
-        Ajouter
-      </div>
-    </div>
-    <div class="flex flex-col items-center text-center shadow-lg">
-      <div
-        class="w-full rounded-t-lg"
-        style="background-color: #333e57e5; color: #fff"
-      >
-        Crème boucles
-      </div>
-      <img src="assets/edge.svg" alt="" class="h-32" />
-      <div
-        class="w-full cursor-pointer rounded-b-lg"
-        style="background-color: #ff3e79; color: #fff"
-      >
-        Ajouter
-      </div>
-    </div>
-    <div class="flex flex-col items-center text-center shadow-lg">
-      <div
-        class="w-full rounded-t-lg"
-        style="background-color: #333e57e5; color: #fff"
-      >
-        Crème boucles
-      </div>
-      <img src="assets/perruque.svg" alt="" class="h-32" />
-      <div
-        class="w-full cursor-pointer rounded-b-lg"
-        style="background-color: #ff3e79; color: #fff"
-      >
-        Ajouter
-      </div>
-    </div>
-    <div class="md:flex flex-col items-center hidden text-center shadow-lg">
-      <div
-        class="w-full rounded-t-lg"
-        style="background-color: #333e57e5; color: #fff"
-      >
-        Crème boucles
-      </div>
-      <img src="assets/lotion.svg" alt="" class="h-32" />
-      <div
-        class="w-full cursor-pointer rounded-b-lg"
-        style="background-color: #ff3e79; color: #fff"
-      >
-        Ajouter
-      </div>
-    </div>
-    <div class="hidden md:flex flex-col items-center text-center shadow-lg">
-      <div
-        class="w-full rounded-t-lg"
-        style="background-color: #333e57e5; color: #fff"
-      >
-        Crème boucles
-      </div>
-      <img src="assets/creme.svg" alt="" class="h-32" />
-      <div
-        class="w-full cursor-pointer rounded-b-lg"
-        style="background-color: #ff3e79; color: #fff"
-      >
-        Ajouter
+        Ajouter -{{ item.produit.prix }} points
       </div>
     </div>
   </div>
