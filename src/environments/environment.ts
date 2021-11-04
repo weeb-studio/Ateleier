@@ -5,7 +5,9 @@
 export const environment = {
   SERVER_URL: 'http://93.90.207.75:3000', //'http://localhost:8080',
   production: false,
+  SERVER_URLL:'http://localhost:3000'
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

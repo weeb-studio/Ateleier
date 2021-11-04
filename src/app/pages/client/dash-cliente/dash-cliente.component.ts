@@ -14,11 +14,12 @@ import { environment } from 'src/environments/environment';
 export class DashClienteComponent implements OnInit {
   public selectedFile: any;
   public qte: string ="";
+  public quantite : number = 4;
   page1: boolean = true;
   page2: boolean = false;
   page3: boolean = false;
-  Mawishlist: boolean = true;
-  recommendation: boolean = false;
+  monPanier: boolean = false;
+  recommendation: boolean = true;
   userData: any;
   productData: any
   updateForm: FormGroup;
@@ -28,37 +29,28 @@ export class DashClienteComponent implements OnInit {
   show4: boolean = false;
   show5: boolean = false;
   submit: boolean = false;
-  server = environment.SERVER_URL+"/"
+  server = environment.SERVER_URL+"/";
+  resultats: any = [{produit:{imageURL:""}}];
+  panier : boolean = false;
+  livraison : boolean = false;
+  livraison1 : boolean =false;
+  livraison2 : boolean =false;
+  part1 : boolean = false;
   showMawishlist() {
-    this.Mawishlist = true;
+    this.part1= true;
+    this.monPanier = true;
     this.recommendation = false;
+    this.livraison=false;
+    this.panier=false;
   }
   showRecommendation() {
+    this.part1= false;
     this.recommendation = true;
-    this.Mawishlist = false;
+    this.monPanier = false;
+    this.livraison=false;
+    this.panier=false;
   }
-  items: any = [
-    {
-      img: 'assets/prod1.svg',
-      prix: '12,00€',
-    },
-    {
-      img: 'assets/prod2.svg',
-      prix: '12,00€',
-    },
-    {
-      img: 'assets/prod3.svg',
-      prix: '55,00€',
-    },
-    {
-      img: 'assets/prod1.svg',
-      prix: '14,00€',
-    },
-    {
-      img: 'assets/prod3.svg',
-      prix: '8,00€',
-    },
-  ];
+  items: any;
   constructor(
     private userservices: UserService,
     private formBuilder: FormBuilder,
@@ -73,7 +65,7 @@ export class DashClienteComponent implements OnInit {
     });
     this.catalogue.getCatalogueProduct().subscribe((test: any) => {
       this.items = test;
-      console.log(this.productData);
+      console.log(this.items);
     })
     this.updateForm = this.formBuilder.group({
       nom: formBuilder.control(''),
@@ -88,6 +80,7 @@ export class DashClienteComponent implements OnInit {
     this.updateForm.disable();
     this.updateForm.controls.email.disable();
     this.updateForm.controls.pwd.disable();
+    this.getpanier();
   }
 
   update(){
@@ -129,6 +122,20 @@ export class DashClienteComponent implements OnInit {
         console.log(res);
       });
     this.getUser();
+  }
+
+  addPanier(id:string){
+    console.log(this.quantite);
+    this.panierservice.addProductToPanier(id, 5).subscribe((res:any)=>{
+        console.log(res);
+      });
+  }
+
+  getpanier(){
+    this.panierservice.getProductToPanier().subscribe((rres:any)=>{
+      console.log(rres);
+      this.resultats = rres;
+    });
   }
 
   ngOnInit(): void {}

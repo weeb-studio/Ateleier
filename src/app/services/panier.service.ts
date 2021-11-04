@@ -8,13 +8,13 @@ import { LocalStorageService } from './local-storage.service';
   providedIn: 'root'
 })
 export class PanierService {
-  private SERVER_URL: String = environment.SERVER_URL;
+  private SERVER_URL: String = environment.SERVER_URLL;
   constructor(
     private httpClient: HttpClient,
     private localStorage: LocalStorageService
   ) { }
 
-  addProductToPanier(clientId:string, productId: String, quantite: Number) {
+  addProductToPanier(produitId: String, quantite: Number) {
     const token = this.localStorage.get('x-access-token');
     const API_URL = this.SERVER_URL + '/panier';
     const headers = new HttpHeaders({
@@ -22,11 +22,20 @@ export class PanierService {
       'x-access-token': `${token}`,
     });
     const data = {
-      role: clientId,
-      produit: productId,
-      quantite: quantite,
+      produitId: produitId,
+      quantite: quantite
     };
     return this.httpClient.post(API_URL, data, { headers: headers });
+  }
+
+  getProductToPanier() {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/panier';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    return this.httpClient.get(API_URL, { headers: headers });
   }
 
 }
