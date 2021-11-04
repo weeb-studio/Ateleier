@@ -6,40 +6,34 @@ import { LocalStorageService } from './local-storage.service';
 @Injectable({
   providedIn: 'root',
 })
-export class PointService {
+export class PanierService {
   private SERVER_URL: String = environment.SERVER_URL;
   constructor(
     private httpClient: HttpClient,
     private localStorage: LocalStorageService
   ) {}
 
-  getHotessePoint() {
+  addProductToPanier(produitId: String, quantite: Number) {
     const token = this.localStorage.get('x-access-token');
-    const API_URL = this.SERVER_URL + '/point';
+    const API_URL = this.SERVER_URL + '/panier';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    const data = {
+      produitId: produitId,
+      quantite: quantite,
+    };
+    return this.httpClient.post(API_URL, data, { headers: headers });
+  }
+
+  getProductToPanier() {
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/panier';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': `${token}`,
     });
     return this.httpClient.get(API_URL, { headers: headers });
-  }
-
-  addHotessePoint(point: Number) {
-    const token = this.localStorage.get('x-access-token');
-    const API_URL = this.SERVER_URL + '/point/add';
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'x-access-token': `${token}`,
-    });
-    return this.httpClient.put(API_URL, { point: point }, { headers: headers });
-  }
-
-  removeHotessePoint(point: Number) {
-    const token = this.localStorage.get('x-access-token');
-    const API_URL = this.SERVER_URL + '/point/remove';
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'x-access-token': `${token}`,
-    });
-    return this.httpClient.put(API_URL, { point: point }, { headers: headers });
   }
 }

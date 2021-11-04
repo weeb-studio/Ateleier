@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CadeauService } from 'src/app/services/cadeau.service';
 import { CatalogueService } from 'src/app/services/catalogue.service';
 import { PointService } from 'src/app/services/point.service';
 import { UserService } from 'src/app/services/user.service';
@@ -14,13 +15,16 @@ export class HotesseCadeauComponent implements OnInit {
   utilisateur: any = { prenom: '' };
   point: any = { nombre: null };
   items: any = [];
+  cadeau: any = [];
   constructor(
     private UserService: UserService,
     private PointService: PointService,
-    private CatalogueSerice: CatalogueService
+    private CatalogueSerice: CatalogueService,
+    private CadeauService: CadeauService
   ) {
     this.getPoint();
     this.getCatalogue();
+    this.getAwaitCadeau();
   }
 
   ngOnInit(): void {}
@@ -37,13 +41,34 @@ export class HotesseCadeauComponent implements OnInit {
     });
   }
 
-  removePoint(point: number) {
+  removePoint(point: number, idProduit: string) {
     if (point > this.point.nombre) {
       alert('Pas assez de point pour vos Cadeau');
     } else {
       this.PointService.removeHotessePoint(point).subscribe((res) => {
         this.point = res;
+        this.CadeauService.addHotesseCadeau(idProduit).subscribe((res: any) => {
+          console.log(res);
+          this.getAwaitCadeau();
+        });
       });
     }
+  }
+
+  getAwaitCadeau() {
+    this.CadeauService.getHotesseCadeau().subscribe((res: any) => {
+      this.cadeau = res;
+      console.log(this.cadeau);
+    });
+  }
+
+  removeCadeau(id: string, qte: number, prix: number) {
+    this.CadeauService.deleteCadeau(id).subscribe((res: any) => {
+      this.PointService.addHotessePoint(qte * prix).subscribe((result: any) => {
+        console.log(result);
+        this.point = result;
+        this.getAwaitCadeau();
+      });
+    });
   }
 }

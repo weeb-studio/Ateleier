@@ -298,9 +298,7 @@
         class="cursor-pointer flex flex-row space-x-2 justify-center py-3"
         style="border-color: #ff3e79"
         [ngClass]="
-          Mawishlist
-            ? 'border-2 border-b-0 rounded-t-md'
-            : 'border-0 border-b-2'
+          monPanier ? 'border-2 border-b-0 rounded-t-md' : 'border-0 border-b-2'
         "
         (click)="showMawishlist()"
       >
@@ -331,56 +329,212 @@
         rounded-b-md
       "
       style="border-color: #ff3e79"
-      *ngIf="Mawishlist"
+      *ngIf="part1"
     >
-      <div class="grid grid-cols-6 w-full">
-        <div class="hidden col-span-2 text-primary text-center">Produit</div>
-        <div class="hidden col-span-1 text-primary text-center">Prix</div>
-        <div class="hidden col-span-1 text-primary text-center">Quantité</div>
-        <div class="hidden col-span-2 text-primary text-center">&nbsp;</div>
-      </div>
-      <div
-        class="grid grid-cols-6 w-full items-center justify-center"
-        *ngFor="let item of items"
-      ></div>
-      <!-- <div class="space-y-3">
-        <div class="hidden md:block" style="color: #ff3e79">Produit</div>
-        <div class="w-12 h-12" *ngFor="let item of items">
-          <img [src]="item.img" alt="" class="" />
+      <div class="space-y-5" *ngIf="monPanier">
+        <div class="grid grid-cols-6 w-full">
+          <div class="col-span-2 text-primary text-center">Produit</div>
+          <div class="col-span-2 text-primary text-center">Quantité</div>
+          <div class="col-span-2 text-primary text-center">Prix</div>
         </div>
-      </div>
-      <div class="space-y-5">
-        <div class="hidden md:block" style="color: #ff3e79">Prix</div>
-        <div class="space-y-10">
-          <p class="text-center" *ngFor="let item of items">{{ item.prix }}</p>
+        <div
+          class="grid grid-cols-6 w-full items-center justify-center"
+          *ngFor="let item of resultats"
+        >
+          <div class="col-span-2 text-primary flex justify-center items-center">
+            <label for="">
+              <img
+                [src]="server + item.produit.imageURL"
+                alt=""
+                class="w-12 h-12"
+              />
+            </label>
+          </div>
+          <div class="col-span-2 text-primary text-center">
+            <input
+              type="text"
+              name=""
+              id=""
+              [placeholder]="item.qte"
+              class="w-12"
+            />
+          </div>
+          <div class="col-span-2 text-primary text-center">
+            {{ item.produit.prix }}
+          </div>
         </div>
-      </div>
-      <div class="space-y-7">
-        <div class="hidden md:block" style="color: #ff3e79">Quantité</div>
-        <div class="flex flex-row space-x-1" *ngFor="let item of items">
-          <input
-            list="number"
-            id="ice-cream-choice"
-            name="ice-cream-choice"
-            class="w-12 rounded-md pl-2 pb-1 pr-1"
-            style="color: #ff3e79"
-          />
-          <datalist id="number">
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
-            <option value="5"></option>
-          </datalist>
+        <div class="grid grid-cols-6 w-full">
+          <div class="col-span-4 pl-5">
+            <select name="" id="" class="w-full">
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
+          <div class="col-span-2 text-primary text-center">66</div>
+        </div>
+        <div class="grid grid-cols-3 w-full">
+          <div class="col-span-2 pl-5">Total commande</div>
+          <div class="col-span-1 text-primary text-center">55</div>
+        </div>
+        <div class="flex flex-col items-center">
           <button
             type="submit"
-            class="text-xs rounded-md py-1 px-2"
-            style="background-color: #ff3e79; color: #fff"
+            class="btn rounded-md h-12 w-36"
+            (click)="panier = true; monPanier = false"
           >
-            AJOUTER AU PANIER
+            Passer la comande
           </button>
         </div>
-      </div> -->
+      </div>
+      <div class="space-y-5 px-5" *ngIf="panier">
+        <div class="grid grid-cols-6 w-full">
+          <div class="col-span-2 text-primary text-center">Panier</div>
+          <div class="col-span-2 text-primary text-center">Livraison</div>
+          <div class="col-span-2 text-primary text-center">Paiement</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="assets/progress1.svg" alt="" class="" />
+        </div>
+        <div
+          class="grid grid-cols-6 w-full items-center justify-center"
+          *ngFor="let item of resultats"
+        >
+          <div class="col-span-2 text-primary flex justify-center items-center">
+            <label for="">
+              <img
+                [src]="server + item.produit.imageURL"
+                alt=""
+                class="w-12 h-12"
+              />
+            </label>
+          </div>
+          <div class="col-span-2 text-primary text-center">
+            <input
+              type="text"
+              name=""
+              id=""
+              [placeholder]="item.qte"
+              class="w-12 rounded-md"
+            />
+          </div>
+          <div class="col-span-2 text-primary text-center">
+            {{ item.produit.prix }}
+          </div>
+        </div>
+        <div
+          class="
+            border-2 border-primary
+            rounded-md
+            flex flex-row
+            justify-center
+            space-x-5
+          "
+        >
+          <div class="text-primary text-lg font-bold">37,90 €</div>
+          <div
+            class="cursor-pointer justify-center py-2"
+            (click)="
+              livraison = true;
+              livraison1 = true;
+              livraison2 = false;
+              panier = false
+            "
+          >
+            <button type="submit" class="btn rounded-md h-6 w-24">
+              Suivant
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="" *ngIf="livraison">
+        <div class="" *ngIf="livraison1">
+          <div class="grid grid-cols-6 w-full">
+            <div class="col-span-2 text-primary text-center">Panier</div>
+            <div class="col-span-2 text-primary text-center">Livraison</div>
+            <div class="col-span-2 text-primary text-center">Paiement</div>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="assets/progress2.svg" alt="" class="" />
+          </div>
+          <form action="" class="px-5">
+            <div class="text-primary text-center">
+              Votre adresse de livraison
+            </div>
+            <div class="space-y-5">
+              <div class="flex flex-col w-full">
+                <label for="">Prenom</label>
+                <input type="text" name="" id="" class="w-full" />
+              </div>
+              <div class="flex flex-col">
+                <label for="">Nom</label>
+                <input type="text" name="" id="" />
+              </div>
+              <div class="flex flex-col">
+                <label for="">Adresse</label>
+                <input type="text" name="" id="" />
+              </div>
+              <div class="flex flex-col">
+                <label for="">Code postal</label>
+                <input type="text" name="" id="" />
+              </div>
+              <div class="flex flex-col">
+                <label for="">Ville</label>
+                <input type="text" name="" id="" />
+              </div>
+              <div class="flex flex-col items-center">
+                <button
+                  type="submit"
+                  class="btn rounded-md w-36 h-10"
+                  (click)="livraison2 = true; livraison1 = false"
+                >
+                  enregistrer
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="" *ngIf="livraison2">
+          <div class="">
+            <div class="grid grid-cols-6 w-full">
+              <div class="col-span-2 text-primary text-center">Panier</div>
+              <div class="col-span-2 text-primary text-center">Livraison</div>
+              <div class="col-span-2 text-primary text-center">Paiement</div>
+            </div>
+            <div class="">
+              <img src="assets/progress2.svg" alt="" class="" />
+            </div>
+            <div class="text-primary">Choix de la methode de livraison</div>
+            <div class="">
+              <div class="flex flex-row">
+                <input type="checkbox" name="" id="" />
+                <div>Livraison domicile France</div>
+                <div class="text-primary">4,95 €</div>
+              </div>
+              <div class="flex flex-row content-center space-x-2">
+                <input type="checkbox" name="" id="" />
+                <div>Livraison chronopost</div>
+                <div class="text-primary">9,90 €</div>
+              </div>
+              <div class="flex flex-row">
+                <input type="checkbox" name="" id="" />
+                <div class="flex flex-col items-center">
+                  <div>Livraison Point Relais</div>
+                  <div class="border-2 border-primary"></div>
+                </div>
+                <div class="text-primary">4,95 €</div>
+              </div>
+            </div>
+            <div class="flex flex-row border-2 border-primary justify-center">
+              <div class="text-primary">Total 37,90 €</div>
+              <div>
+                <button type="submit" class="btn">Suivant</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
     </div>
     <div
       class="
@@ -408,11 +562,13 @@
       >
         <div class="col-span-2 text-primary flex justify-center items-center">
           <input type="checkbox" name="" id="" />
-          <img
-            [src]="server + item.produit.imageURL"
-            alt=""
-            class="w-12 h-12"
-          />
+          <label for="">
+            <img
+              [src]="server + item.produit.imageURL"
+              alt=""
+              class="w-12 h-12"
+            />
+          </label>
         </div>
         <div class="col-span-1 text-primary text-center">
           {{ item.produit.prix }}
@@ -424,16 +580,16 @@
             name="ice-cream-choice"
             class="w-12 rounded-md pl-2 pb-1 pr-1"
             style="color: #ff3e79"
-            [ngModel]="qte"
-            (ngModelChange)="qte = $event"
           />
-          <datalist id="number"> </datalist>
+          <datalist id="number" [ngModel]="qte" (ngModelChange)="qte = $event">
+          </datalist>
         </div>
         <div class="col-span-2 text-primary text-center">
           <button
             type="submit"
             class="text-xs rounded-md py-1 px-2"
             style="background-color: #ff3e79; color: #fff"
+            (click)="addPanier(item.produit._id)"
           >
             AJOUTER AU PANIER
           </button>

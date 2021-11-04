@@ -47,25 +47,6 @@
       class="flex flex-col items-center text-center shadow-lg md:w-80"
       *ngFor="let item of items"
     >
-      <!-- createdAt: "2021-10-15T10:11:13.165Z"
-produit:
-capacite: 15
-categorie: "COIFFURES"
-createdAt: "2021-10-15T10:10:23.355Z"
-description: "test"
-imageURL: "uploads/2021-10-15T10-10-22.835ZRectangle 51 (1).png"
-nom: "Perruque"
-prix: 45
-unite: "taille"
-updatedAt: "2021-10-15T10:10:23.355Z"
-__v: 0
-_id: "6169538fedcd35fbd1d2765c"
-[[Prototype]]: Object
-qte: 3
-updatedAt: "2021-10-15T10:11:13.165Z"
-__v: 0
-_id: "616953c1edcd35fbd1d2767b" -->
-
       <div
         class="w-full rounded-t-lg"
         style="background-color: #333e57e5; color: #fff"
@@ -80,11 +61,60 @@ _id: "616953c1edcd35fbd1d2767b" -->
       <div
         class="w-full cursor-pointer rounded-b-lg"
         style="background-color: #ff3e79; color: #fff"
-        (click)="removePoint(item.produit.prix)"
+        (click)="removePoint(item.produit.prix, item.produit._id)"
       >
         Ajouter -{{ item.produit.prix }} points
       </div>
     </div>
   </div>
 </div>
+<div
+  class="border-2 w-full text-center my-5 px-12 text-2xl"
+  style="background-color: #f2f2f2"
+>
+  Mes cadeaux commandés
+</div>
+
+<div class="px-10 flex flex-col items-cente mb-10">
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-5 mt-10">
+    <div
+      class="
+        border border-gray-400
+        rounded-xl
+        py-2
+        px-2
+        border-l-8
+        flex flex-row
+        gap-4
+        items-center
+        justify-between
+      "
+      *ngFor="let item of cadeau"
+    >
+      <div class="flex flex-row gap-4 items-center">
+        <div class="">
+          <img
+            class="h-24 w-auto"
+            [src]="serverURL + '/' + item.produit.imageURL"
+            alt=""
+            srcset=""
+          />
+        </div>
+        <div class="flex flex-col">
+          <div class="text-gray-500">{{ item.produit.nom }}</div>
+          <div class="text-gray-500">{{ item.produit.prix }}pts</div>
+        </div>
+        <div class="text-4xl text-gray-500 font-bold">X</div>
+        <div class="text-4xl text-gray-500 font-bold">{{ item.qte }}</div>
+      </div>
+      <div
+        class="cursor-pointer hover"
+        (click)="removeCadeau(item._id, item.qte, item.produit.prix)"
+      >
+        <img src="assets/trash.svg" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-footer></app-footer>
