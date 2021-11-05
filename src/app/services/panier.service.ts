@@ -38,4 +38,14 @@ export class PanierService {
     return this.httpClient.get(API_URL, { headers: headers });
   }
 
+  removeProductToPanier(id:string){
+    const token = this.localStorage.get('x-access-token');
+    const API_URL = this.SERVER_URL + '/panier/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    return this.httpClient.delete(API_URL, { headers: headers });
+  }
+
 }

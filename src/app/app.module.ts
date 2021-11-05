@@ -83,6 +83,8 @@ import { HotesseRelevePointComponent } from './pages/client/hotesse-releve-point
 import { PlanningComponent } from './pages/conseillere/planning/planning.component';
 import { ResRoutineStructureeComponent } from './pages/programmes/routine-capillaire/res-routine-structuree/res-routine-structuree.component';
 import { ResRoutineSimpleComponent } from './pages/programmes/routine-capillaire/res-routine-simple/res-routine-simple.component';
+import { ProfilBeauteComponent } from './pages/client/profil-beaute/profil-beaute.component';
+import { MesProduitsComponent } from './pages/client/mes-produits/mes-produits.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -157,6 +159,8 @@ FullCalendarModule.registerPlugins([
     PlanningComponent,
     ResRoutineStructureeComponent,
     ResRoutineSimpleComponent,
+    ProfilBeauteComponent,
+    MesProduitsComponent,
   ],
   imports: [
     BrowserModule,
