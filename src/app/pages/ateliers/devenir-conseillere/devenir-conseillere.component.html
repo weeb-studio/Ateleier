@@ -348,7 +348,7 @@
               "
               style="background-color: #ff3e79"
             >
-              {{ item.place }} places
+              {{ remening(item.participant.length, item.place) }}
             </span>
             <div class="w-full">
               <div class="w-full">
@@ -375,7 +375,7 @@
                     </div>
                   </div>
                   <div class="text-primary text-xs md:text-base">
-                    Atelier capillaire | Chez julianne
+                    Atelier capillaire | Chez {{ item.hotesse.prenom }}
                   </div>
                 </div>
               </div>
@@ -385,7 +385,18 @@
             <div class="inline" style="color: #ff3e79">ATELIER À DOMICILE</div>
             | {{ item.date | date: "dd" }} {{ item.date | date: "MMMM" }}
           </div>
-          <button class="px-10 my-10 py-2 btn text-white rounded-lg">
+          <button
+            *ngIf="check(item.participant)"
+            class="px-10 my-10 py-2 btn text-white rounded-lg"
+            (click)="reservation(item.participant, item._id)"
+          >
+            Je laisse ma place
+          </button>
+          <button
+            *ngIf="!check(item.participant)"
+            class="px-10 my-10 py-2 btn text-white rounded-lg"
+            (click)="reservation(item.participant, item._id)"
+          >
             Je reserve ma place
           </button>
         </div>
@@ -408,7 +419,7 @@
               "
               style="background-color: #ff3e79"
             >
-              {{ item.place }} places
+              {{ remening(item.participant.length, item.place) }}
             </span>
             <div class="w-full">
               <div class="w-full">
@@ -420,7 +431,18 @@
             <div class="inline" style="color: #ff3e79">ATELIER EN LIGNE</div>
             | {{ item.date | date: "dd" }} {{ item.date | date: "MMMM" }}
           </div>
-          <button class="px-10 my-10 py-2 btn text-white rounded-lg">
+          <button
+            *ngIf="check(item.participant)"
+            class="px-10 my-10 py-2 btn text-white rounded-lg"
+            (click)="reservation(item.participant, item._id)"
+          >
+            Je laisse ma place
+          </button>
+          <button
+            *ngIf="!check(item.participant)"
+            class="px-10 my-10 py-2 btn text-white rounded-lg"
+            (click)="reservation(item.participant, item._id)"
+          >
             Je reserve ma place
           </button>
         </div>

@@ -23,6 +23,17 @@ export class AtelierService {
     return this.httpClient.get(API_URL, { headers: headers });
   }
 
+  inscriptionAtelier(id: string) {
+    const token = this.localStorage.get('x-access-token');
+    console.log(token);
+    const API_URL = this.SERVER_URL + '/atelier/inscription/' + id;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-access-token': `${token}`,
+    });
+    return this.httpClient.put(API_URL, {}, { headers: headers });
+  }
+
   getAtelier(value?: String) {
     const token = this.localStorage.get('x-access-token');
     let API_URL: string;

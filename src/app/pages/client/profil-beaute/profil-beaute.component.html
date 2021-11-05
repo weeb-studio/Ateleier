@@ -1,0 +1,167 @@
+<app-header></app-header>
+<div
+  class="
+    flex flex-col
+    items-center
+    px-5
+    space-y-10
+    my-10
+    md:space-y-0
+    md:px-32
+    md:flex-row
+    md:justify-between
+    md:gap-10
+    md:items-start
+  "
+>
+  <div class="space-y-5 w-36 md:w-48">
+    <div class="flex flex-col items-center justify-center">
+      <!-- <img  src="assets/profil.svg" alt="" /> -->
+      <img
+        class="w-40 rounded-full"
+        [src]="
+          userData.imageURL
+            ? 'http://93.90.207.75:3000/' + userData.imageURL
+            : 'assets/profil.svg'
+        "
+        alt=""
+        srcset=""
+      />
+      <div class="flex flex-col items-center">
+        <div class="flex flex-row gap-2">
+          Modifier mon profil
+          <div class="cursor-pointer hover">
+            <img src="assets/edit.svg" alt="" srcset="" />
+          </div>
+        </div>
+        <input
+          type="file"
+          name=""
+          (change)="profileImage($event)"
+          id=""
+          style="border: none !important"
+        />
+      </div>
+    </div>
+    <div
+      class="cursor-pointer text-center w-full rounded-md h-10 pt-2"
+      style="background-color: #ff3e79; color: #fff"
+      [ngClass]="page1 ? 'opacity-60' : 'opacity-100'"
+      routerLink="/dash/cliente"
+    >
+      Mon compte
+    </div>
+    <div
+      class="cursor-pointer text-center w-full rounded-md h-10 pt-2"
+      style="background-color: #ff3e79; color: #fff"
+      routerLink="/profil-beaute"
+      [ngClass]="page2 ? 'opacity-60' : 'opacity-100'"
+    >
+      Mon profil beauté
+    </div>
+    <div
+      class="cursor-pointer text-center w-full rounded-md h-10 pt-2"
+      style="background-color: #ff3e79; color: #fff"
+      routerLink="/mes-produits"
+      [ngClass]="page3 ? 'opacity-60' : 'opacity-100'"
+    >
+      <button>Mes produits</button>
+    </div>
+  </div>
+  <div
+    class="
+      flex flex-col
+      items-center
+      rounded-lg
+      md:9/12
+      border-2
+      px-5
+      py-5
+      space-y-10
+    "
+    style="border-color: #ff3e79"
+    *ngIf="page2"
+  >
+    <div class="text-center">
+      <p>Pour recevoir des recommandations de produits adaptés,</p>
+      <p>pour vous aider à réaliser vos programmes capillaires,</p>
+      <p>nous avons besoin des informations suivantes :</p>
+    </div>
+    <div class="grid grid-cols-2 gap-4 items-center">
+      <div class="w-full flex flex-col">
+        <label for="" class="w-full">Nature des cheveux</label>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux normaux</option>
+          <option value="">cheveux secs</option>
+          <option value="">cheveux gras</option>
+        </select>
+      </div>
+      <div class="w-full flex flex-col">
+        <label for="" class="w-full">Problématique de cheveux</label>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux peu poreux</option>
+          <option value="">cheveux très poreux</option>
+          <option value="">cheveux gras</option>
+          <option value="">cheveux abimés ou cassants</option>
+          <option value="">cheveux en transition</option>
+          <option value="">cheveux défrises ou lissés</option>
+          <option value="">pellicules</option>
+        </select>
+      </div>
+      <div class="w-full flex flex-col">
+        <label for="" class="w-full">Texture de cheveux</label>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux épais</option>
+          <option value="">cheveux fins</option>
+          <option value="">cheveux soyeux</option>
+        </select>
+      </div>
+      <div class="w-full flex flex-col pt-5 md:pt-0">
+        <label for="" class="w-full">Type de cheveux</label>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux bouclés</option>
+          <option value="">cheveux crépus</option>
+          <option value="">cheveux frisés</option>
+          <option value="">cheveux lisse</option>
+        </select>
+      </div>
+      <div class="w-full flex flex-col">
+        <label for="" class="w-full">Longueur des cheveux</label>
+        <select name="" id="" class="rounded-md text-primary">
+          <option value="">cheveux court</option>
+          <option value="">cheveux mi-long</option>
+          <option value="">cheveux long</option>
+        </select>
+      </div>
+    </div>
+    <button
+      type="submit"
+      class="rounded-md w-40 h-10"
+      style="background-color: #ff3e79; color: #fff"
+    >
+      Enregistrer
+    </button>
+  </div>
+  <div class="hidden border-2 rounded-md border-primary space-y-5 px-5">
+    <div class="text-2xl">
+      Quels sont les objectifs capillaires que cous souhaiteriez atteindre ?
+    </div>
+    <div class="">*choisissez-en autant que vous voulez</div>
+    <div class="">
+      <div class="cursor-pointer">Réparer vos cheveux très secs et abîmés</div>
+      <div class="cursor-pointer">Eliminer vos pellicules durablement</div>
+      <div class="cursor-pointer">Lutter contre la chute des cheveux</div>
+      <div class="cursor-pointer">
+        Définir vos boucles, les renforcer, les ressérer
+      </div>
+      <div class="cursor-pointer">
+        Cheveux plus long et sains, stimuler la pousse
+      </div>
+      <div class="cursor-pointer">Densifier votre chevelure</div>
+      <div class="cursor-pointer">Apaiser votre cuir chevelu sensible</div>
+      <div class="cursor-pointer">Apporter du volume à vos cheveux</div>
+      <div class="cursor-pointer">Revenir au naturel</div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -90,6 +90,8 @@ import { RoutineNaturelleComponent } from './pages/programmes/routine-capillaire
 import { PorteMonnaieComponent } from './pages/conseillere/porte-monnaie/porte-monnaie.component';
 import { FormationComponent } from './pages/conseillere/formation/formation.component';
 import { ConsDashComponent } from './pages/conseillere/cons-dash/cons-dash.component';
+import { MesProduitsComponent } from './pages/client/mes-produits/mes-produits.component';
+import { ProfilBeauteComponent } from './pages/client/profil-beaute/profil-beaute.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -171,6 +173,8 @@ FullCalendarModule.registerPlugins([
     PorteMonnaieComponent,
     FormationComponent,
     ConsDashComponent,
+    MesProduitsComponent,
+    ProfilBeauteComponent,
   ],
   imports: [
     BrowserModule,
