@@ -12,6 +12,7 @@
     md:justify-between
     md:gap-10
     md:items-start
+    md:space-x-20
   "
 >
   <div class="space-y-5 w-36 md:w-48">
@@ -68,17 +69,19 @@
       <button>Mes produits</button>
     </div>
   </div>
-  <div
+  <form
     class="
       flex flex-col
       items-center
       rounded-lg
-      md:9/12
+      md:w-9/12
       border-2
-      px-5
       py-5
+      px-2
       space-y-10
     "
+    [formGroup]="algo"
+    (ngSubmit)="ans()"
     style="border-color: #ff3e79"
     *ngIf="page2"
   >
@@ -90,47 +93,47 @@
     <div class="grid grid-cols-2 gap-4 items-center">
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Nature des cheveux</label>
-        <select name="" id="" class="rounded-md text-primary">
-          <option value="">cheveux normaux</option>
-          <option value="">cheveux secs</option>
-          <option value="">cheveux gras</option>
+        <select name="" id="" class="rounded-md text-primary" formControlName="title1">
+          <option value="1">cheveux normaux</option>
+          <option value="2">cheveux secs</option>
+          <option value="3">cheveux gras</option>
         </select>
       </div>
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Problématique de cheveux</label>
-        <select name="" id="" class="rounded-md text-primary">
-          <option value="">cheveux peu poreux</option>
-          <option value="">cheveux très poreux</option>
-          <option value="">cheveux gras</option>
-          <option value="">cheveux abimés ou cassants</option>
-          <option value="">cheveux en transition</option>
-          <option value="">cheveux défrises ou lissés</option>
-          <option value="">pellicules</option>
+        <select name="" id="" class="rounded-md text-primary" formControlName="title2">
+          <option value="1">cheveux peu poreux</option>
+          <option value="2">cheveux très poreux</option>
+          <option value="3">cheveux gras</option>
+          <option value="4">cheveux abimés ou cassants</option>
+          <option value="5">cheveux en transition</option>
+          <option value="6">cheveux défrises ou lissés</option>
+          <option value="7">pellicules</option>
         </select>
       </div>
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Texture de cheveux</label>
-        <select name="" id="" class="rounded-md text-primary">
-          <option value="">cheveux épais</option>
-          <option value="">cheveux fins</option>
-          <option value="">cheveux soyeux</option>
+        <select name="" id="" class="rounded-md text-primary" formControlName="title3">
+          <option value="1">cheveux épais</option>
+          <option value="2">cheveux fins</option>
+          <option value="3">cheveux soyeux</option>
         </select>
       </div>
       <div class="w-full flex flex-col pt-5 md:pt-0">
         <label for="" class="w-full">Type de cheveux</label>
-        <select name="" id="" class="rounded-md text-primary">
-          <option value="">cheveux bouclés</option>
-          <option value="">cheveux crépus</option>
-          <option value="">cheveux frisés</option>
-          <option value="">cheveux lisse</option>
+        <select name="" id="" class="rounded-md text-primary" formControlName="title4">
+          <option value="1">cheveux bouclés</option>
+          <option value="2">cheveux crépus</option>
+          <option value="3">cheveux frisés</option>
+          <option value="4">cheveux lisse</option>
         </select>
       </div>
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Longueur des cheveux</label>
-        <select name="" id="" class="rounded-md text-primary">
-          <option value="">cheveux court</option>
-          <option value="">cheveux mi-long</option>
-          <option value="">cheveux long</option>
+        <select name="" id="" class="rounded-md text-primary" formControlName="title5">
+          <option value="1">cheveux court</option>
+          <option value="2">cheveux mi-long</option>
+          <option value="3">cheveux long</option>
         </select>
       </div>
     </div>
@@ -141,27 +144,76 @@
     >
       Enregistrer
     </button>
-  </div>
-  <div class="hidden border-2 rounded-md border-primary space-y-5 px-5">
+  </form>
+  <div class=" border-2 rounded-md border-primary space-y-5 px-5 md:w-9/12 py-3" *ngIf="objectif">
     <div class="text-2xl">
       Quels sont les objectifs capillaires que cous souhaiteriez atteindre ?
     </div>
     <div class="">*choisissez-en autant que vous voulez</div>
-    <div class="">
-      <div class="cursor-pointer">Réparer vos cheveux très secs et abîmés</div>
-      <div class="cursor-pointer">Eliminer vos pellicules durablement</div>
-      <div class="cursor-pointer">Lutter contre la chute des cheveux</div>
-      <div class="cursor-pointer">
+    <div class="pl-10">
+      <div class="cursor-pointer hove">Réparer vos cheveux très secs et abîmés</div>
+      <div class="cursor-pointer hove">Eliminer vos pellicules durablement</div>
+      <div class="cursor-pointer hove">Lutter contre la chute des cheveux</div>
+      <div class="cursor-pointer hove">
         Définir vos boucles, les renforcer, les ressérer
       </div>
-      <div class="cursor-pointer">
+      <div class="cursor-pointer hove">
         Cheveux plus long et sains, stimuler la pousse
       </div>
-      <div class="cursor-pointer">Densifier votre chevelure</div>
-      <div class="cursor-pointer">Apaiser votre cuir chevelu sensible</div>
-      <div class="cursor-pointer">Apporter du volume à vos cheveux</div>
-      <div class="cursor-pointer">Revenir au naturel</div>
+      <div class="cursor-pointer hove">Densifier votre chevelure</div>
+      <div class="cursor-pointer hove">Apaiser votre cuir chevelu sensible</div>
+      <div class="cursor-pointer hove">Apporter du volume à vos cheveux</div>
+      <div class="cursor-pointer hove">Revenir au naturel</div>
     </div>
+  </div>
+  <div class="space-y-5 border-2 border-primary rounded-md px-3 py-2 md:w-9/12" *ngIf="answer">
+    <div class="text-center">
+      Félicitation ! Nous avons enregistré vos 
+      informations capillaire, d’après ce que 
+      vous nous avez indiqué. 
+      votre profil beauté est disponible. 
+      Celui-ci vous permettra d’obtenir  des 
+      recommandations de produits adaptés 
+      à vos cheveux, de réaliser vos programmes 
+      capillaires…
+    </div>
+    <div class="flex flex-col items-center">
+      <div class="cursor-pointer">
+        <button class="btn rounded-md h-10 w-56 mb-5" (click)="final=true; answer=false; page2=false; objectif=false">Découvrir votre profil beauté</button>
+      </div>
+    </div>
+  </div>
+  <div class="md:w-9/12" *ngIf="final">
+    <fieldset class="border-2 border-primary rounded-md px-3 py-2 space-y-5 md:w-full">
+      <legend class="text-center px-5 font-bold">Votre profil beauté</legend>
+      <div class="text-center">
+        Sarah d’après ce que nous vous avons indiqué,
+        les besoins de vos cheveux correspondent à
+        ce type de cheveux : cheveux fins en manque
+        de densité et de volume peut laisser le cuir
+        chevelu visible par endroit. Le problème peut 
+        apparaitre progressivement ou être plus 
+        permanent. 
+        Les besoins de votre cuir chevelu correspondent
+        à cette situation : <span class="text-primary cursor-pointer">régénération</span>
+      </div>
+      <div class="flex flex-col items-center space-y-3">
+        <div class="cursor-pointer">
+          <button class="w-64 h-10 btn rounded-md text-center">
+            Découvrir votre routine sur mesure
+          </button>
+        </div>
+        <fieldset class="border-2">
+          <legend class="px-3 text-center">Ou</legend>
+        </fieldset>
+        <div class="cursor-pointer" (click)="page2=false; answer=false; final=false; objectif=true">
+          <button class="w-64 h-10 bg-white text-primary text-center rounded-md border-2 border-primary">
+            Atteindre un objectif capillaire
+          </button>
+        </div>
+        <div class="cursor-pointer underline text-primary text-center text-sm" (click)="page2=true; answer=false; final=false; objectif=false">Modifier son profil beauté</div>
+      </div>
+    </fieldset>
   </div>
 </div>
 <app-footer></app-footer>

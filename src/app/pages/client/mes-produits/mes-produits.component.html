@@ -115,7 +115,7 @@
           </div>
           <div
             class="grid grid-cols-6 w-full items-center justify-center"
-            *ngFor="let item of resultats"
+            *ngFor="let item of resultats; index as i"
           >
             <div
               class="col-span-2 text-primary flex justify-center items-center"
@@ -140,7 +140,7 @@
               <input
                 type="text"
                 name=""
-                id=""
+                id={{i}}
                 [placeholder]="item.qte"
                 class="w-12 text-center text-primary"
               />
@@ -292,7 +292,7 @@
                   <button
                     type="submit"
                     class="btn rounded-md w-36 h-10"
-                    (click)="livraison2 = true; livraison1 = false"
+                    (click)="paiement = true; livraison1 = false"
                   >
                     enregistrer
                   </button>
@@ -436,7 +436,7 @@
         </div>
         <div
           class="grid grid-cols-6 w-full items-center justify-center"
-          *ngFor="let item of items"
+          *ngFor="let item of items; index as j"
         >
           <div class="col-span-2 text-primary flex justify-center items-center">
             <input type="checkbox" name="" id="" />
@@ -451,18 +451,9 @@
           <div class="col-span-1 text-primary text-center">
             {{ item.produit.prix }} €
           </div>
-          <div class="col-span-1 text-primary text-center pr-1">
-            <input
-              list="number"
-              id="ice-cream-choice"
-              name="ice-cream-choice"
-              class="w-12 rounded-md pl-2 pb-1 pr-1"
-              style="color: #ff3e79"
-              [ngModel]="qte"
-              (ngModelChange)="qte = $event"
-            />
-            <datalist id="number"> </datalist>
-          </div>
+          <form class="col-span-1 text-primary text-center pr-1" [formGroup]="addForm">
+            <input type="number" name="" id={{j}} class="w-12 text-center" formControlName="qte">
+          </form>
           <div class="col-span-2 text-primary text-center">
             <button
               type="submit"

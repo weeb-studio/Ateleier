@@ -107,6 +107,18 @@ select:focus {
   transform: scale(1.1);
 }
 
+.hove{
+  transition: transform 0.2s;
+}
+
+.hove:hover{
+  transform: scale(1.1);
+  background-color: #ff3e79;
+  border-radius: 50px;
+  width: 400px;
+  padding-left: 10px;
+}
+
 .box {
   transition: transform 0.2s;
 }

@@ -131,4 +131,14 @@ export class ContactService {
     // }
     // console.log(A1.includes(res1));
   }
+  
+  algoProfil(res1: string, res2:string, res3: string, res4: string) : string{
+    var URL = '';
+    if(res1=='2' && res2=='4' && res3=='2'){
+      if(res4=='2' || res4=='3'){
+        URL = '/profil-beaute';
+      }
+    }
+    return URL;
+  }
 }

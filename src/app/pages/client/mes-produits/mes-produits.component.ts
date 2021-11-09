@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MesProduitsComponent implements OnInit {
   public selectedFile: any;
-  public qte: number = NaN;
+  // quantite : number = this.qte;
   page1: boolean = false;
   page2: boolean = false;
   page3: boolean = true;
@@ -29,6 +29,7 @@ export class MesProduitsComponent implements OnInit {
   livraison2: boolean = false;
   paiement: boolean = false;
   part1: boolean = false;
+  addForm: FormGroup;
   showMawishlist() {
     this.part1 = true;
     this.monPanier = true;
@@ -62,7 +63,10 @@ export class MesProduitsComponent implements OnInit {
       this.items = test;
       console.log(this.items);
     });
-    this.getpanier();
+    this.addForm = this.formBuilder.group({
+      qte : formBuilder.control('')
+    })
+    // this.getpanier();
   }
 
   getUser() {
@@ -84,16 +88,17 @@ export class MesProduitsComponent implements OnInit {
   }
 
   addPanier(id: string) {
-    this.panierservice.addProductToPanier(id, 5).subscribe((res: any) => {
+    this.panierservice.addProductToPanier(id, this.addForm.value.qte).subscribe((res: any) => {
       console.log(res);
     });
-    console.log(this.qte);
+    this.getpanier();
+    console.log(this.addForm.value.qte)
   }
 
   getpanier() {
-    this.panierservice.getProductToPanier().subscribe((rres: any) => {
-      console.log(rres);
-      this.resultats = rres;
+    this.panierservice.getProductToPanier().subscribe((res: any) => {
+      console.log(res);
+      this.resultats = res;
     });
   }
 
@@ -104,5 +109,6 @@ export class MesProduitsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }
