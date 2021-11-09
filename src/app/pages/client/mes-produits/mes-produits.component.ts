@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { bindCallback } from 'rxjs';
 import { CatalogueService } from 'src/app/services/catalogue.service';
 import { PanierService } from 'src/app/services/panier.service';
 import { UserService } from 'src/app/services/user.service';
@@ -30,6 +31,7 @@ export class MesProduitsComponent implements OnInit {
   paiement: boolean = false;
   part1: boolean = false;
   addForm: FormGroup;
+  
   showMawishlist() {
     this.part1 = true;
     this.monPanier = true;
@@ -66,7 +68,8 @@ export class MesProduitsComponent implements OnInit {
     this.addForm = this.formBuilder.group({
       qte : formBuilder.control('')
     })
-    // this.getpanier();
+    this.getpanier();
+    this.bill();
   }
 
   getUser() {
@@ -101,6 +104,20 @@ export class MesProduitsComponent implements OnInit {
       this.resultats = res;
     });
   }
+  bill() : number{
+    var facture : number
+    facture=0;
+    for(var items of this.resultats){
+      var a = parseInt(items.qte)
+      console.log(a);
+      var b = parseInt(items.produit.prix)
+      console.log(b);
+      facture = facture + (a * b);
+      console.log(facture);
+    }
+    return facture;
+  }
+  Facture : number = this.bill()
 
   remove(id: string) {
     this.panierservice.removeProductToPanier(id).subscribe((res: any) => {
