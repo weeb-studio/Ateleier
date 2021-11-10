@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CatalogueService } from 'src/app/services/catalogue.service';
 import { ContactService } from 'src/app/services/contact.service';
 import { PanierService } from 'src/app/services/panier.service';
+import { ProfilBeauteService } from 'src/app/services/profil-beaute.service';
 import { UserService } from 'src/app/services/user.service';
 import { environment } from 'src/environments/environment';
 
@@ -25,16 +26,19 @@ export class ProfilBeauteComponent implements OnInit {
   choix : boolean = false;
   final : boolean =false;
   objectif : boolean =false;
+  profil : boolean =true;
+  resultat : any;
+  submit : boolean = false;
   constructor(
     private userservices: UserService,
     private formBuilder: FormBuilder,
     private route: Router,
     private panierservice: PanierService,
     private catalogue: CatalogueService,
-    private contactservice: ContactService
+    private contactservice: ContactService,
+    private profilBeaute: ProfilBeauteService
   ) {
     this.userservices.getUser().subscribe((res: any) => {
-      // console.log(res);
       this.userData = res;
       console.log(this.userData);
     });
@@ -44,17 +48,22 @@ export class ProfilBeauteComponent implements OnInit {
       title3: formBuilder.control(''),
       title4: formBuilder.control(''),
       title5: formBuilder.control('')
-    })
+    });
+    
   }
-  
-  // res1 = this.algo.value.title1;
-  // res2 = this.algo.value.title2;
-  // res3 = this.algo.value.title3;
-  // res4 = this.algo.value.title4;
-  // res5 = this.algo.value.title5;
-
+  respond : any;
   answer : boolean = false;
   ans(){
+    this.profilBeaute.addProfil(
+      this.algo.value.title1,
+      this.algo.value.title2,
+      this.algo.value.title3,
+      this.algo.value.title4,
+      this.algo.value.title5,
+    ).subscribe((res:any) => {
+      this.respond = res;
+      console.log(this.respond);
+    });
     this.route.navigate([
       this.contactservice.algoProfil(
         this.algo.value.title1,
@@ -64,11 +73,18 @@ export class ProfilBeauteComponent implements OnInit {
       )
     ]);
     this.answer = true;
-    this.page2 = false;
+    this.profil = false;
     this.final = false;
     this.objectif = false;
     console.log('reussie')
   }
+
+  // getprofil() {
+  //   this.profilBeaute.getProfil().subscribe((res: any) => {
+  //     this.resultat = res;
+  //     console.log(this.resultat)
+  //   });
+  // }
 
   goTo(){
     
@@ -92,5 +108,16 @@ export class ProfilBeauteComponent implements OnInit {
     this.getUser();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.profilBeaute.getProfil().subscribe((res:any) => {
+      this.resultat = res;
+      console.log(this.resultat);
+      if(this.resultat.length == 0){
+        this.submit = true;
+      }
+      else{
+        this.submit = false ;
+      }
+    });
+  }
 }

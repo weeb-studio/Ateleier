@@ -4,32 +4,35 @@ import { environment } from 'src/environments/environment';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class PanierService {
-  private SERVER_URL: String = environment.SERVER_URLL;
+export class ProfilBeauteService {
+  private SERVER_URL: String = environment.SERVER_URL;
   constructor(
     private httpClient: HttpClient,
     private localStorage: LocalStorageService
-  ) {}
+  ) { }
 
-  addProductToPanier(produitId: String, quantite: Number) {
+  addProfil(natureCheveux: String, problematiqueCheveux: String, textureCheveux: String, typeCheveux: String, longueurCheveux: String) {
     const token = this.localStorage.get('x-access-token');
-    const API_URL = this.SERVER_URL + '/panier';
+    const API_URL = this.SERVER_URL + '/profilBeaute';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': `${token}`,
     });
     const data = {
-      produitId: produitId,
-      quantite: quantite,
+        natureCheveux: natureCheveux,
+        problematiqueCheveux: problematiqueCheveux,
+        textureCheveux: textureCheveux,
+        typeCheveux: typeCheveux,
+        longueurCheveux: longueurCheveux,
     };
     return this.httpClient.post(API_URL, data, { headers: headers });
   }
 
-  getProductToPanier() {
+  getProfil() {
     const token = this.localStorage.get('x-access-token');
-    const API_URL = this.SERVER_URL + '/panier';
+    const API_URL = this.SERVER_URL + '/profilBeaute';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'x-access-token': `${token}`,
@@ -37,13 +40,4 @@ export class PanierService {
     return this.httpClient.get(API_URL, { headers: headers });
   }
 
-  removeProductToPanier(id: string) {
-    const token = this.localStorage.get('x-access-token');
-    const API_URL = this.SERVER_URL + '/panier/' + id;
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'x-access-token': `${token}`,
-    });
-    return this.httpClient.delete(API_URL, { headers: headers });
-  }
 }

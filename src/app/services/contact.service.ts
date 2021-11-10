@@ -134,8 +134,8 @@ export class ContactService {
   
   algoProfil(res1: string, res2:string, res3: string, res4: string) : string{
     var URL = '';
-    if(res1=='2' && res2=='4' && res3=='2'){
-      if(res4=='2' || res4=='3'){
+    if(res1=='cheveux secs' && res2=='cheveux abimés ou cassants' && res3=='cheveux fins'){
+      if(res4=='cheveux crépus' || res4=='cheveux frisés'){
         URL = '/profil-beaute';
       }
     }
