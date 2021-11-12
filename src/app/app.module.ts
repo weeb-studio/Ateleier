@@ -92,6 +92,8 @@ import { FormationComponent } from './pages/conseillere/formation/formation.comp
 import { ConsDashComponent } from './pages/conseillere/cons-dash/cons-dash.component';
 import { MesProduitsComponent } from './pages/client/mes-produits/mes-produits.component';
 import { ProfilBeauteComponent } from './pages/client/profil-beaute/profil-beaute.component';
+import { RoutineObjectifAtteindreComponent } from './pages/programmes/routine-capillaire/routine-objectif-atteindre/routine-objectif-atteindre.component';
+import { TypeDeRoutineChoisiComponent } from './pages/programmes/routine-capillaire/type-de-routine-choisi/type-de-routine-choisi.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -175,6 +177,8 @@ FullCalendarModule.registerPlugins([
     ConsDashComponent,
     MesProduitsComponent,
     ProfilBeauteComponent,
+    RoutineObjectifAtteindreComponent,
+    TypeDeRoutineChoisiComponent,
   ],
   imports: [
     BrowserModule,

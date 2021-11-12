@@ -64,7 +64,9 @@ import { ResRoutineSimpleComponent } from './pages/programmes/routine-capillaire
 import { ResRoutineStructureeComponent } from './pages/programmes/routine-capillaire/res-routine-structuree/res-routine-structuree.component';
 import { RoutineCapillaireComponent } from './pages/programmes/routine-capillaire/routine-capillaire.component';
 import { RoutineNaturelleComponent } from './pages/programmes/routine-capillaire/routine-naturelle/routine-naturelle.component';
+import { RoutineObjectifAtteindreComponent } from './pages/programmes/routine-capillaire/routine-objectif-atteindre/routine-objectif-atteindre.component';
 import { RoutineSimpleComponent } from './pages/programmes/routine-capillaire/routine-simple/routine-simple.component';
+import { TypeDeRoutineChoisiComponent } from './pages/programmes/routine-capillaire/type-de-routine-choisi/type-de-routine-choisi.component';
 import { QuiSommesNousComponent } from './pages/qui-sommes-nous/qui-sommes-nous.component';
 import { PlanningResolver } from './resolver/planning.resolver';
 import { AdminGuard } from './shared/admin.guard';
@@ -185,6 +187,8 @@ const routes: Routes = [
     path: 'programmes/res/routine-naturelle',
     component: ResRoutineNaturelleComponent,
   },
+  { path: 'programmes/routine-capillaire-avec-objectif-à-atteindre', component: RoutineObjectifAtteindreComponent},
+  { path: 'programmes/quel-type-de-routine-choisir', component: TypeDeRoutineChoisiComponent},
   { path: 'inscription', component: InscriptionComponent },
   { path: 'dash/cliente', component: DashClienteComponent },
   { path: 'hotesse-cadeau', component: HotesseCadeauComponent },

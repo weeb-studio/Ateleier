@@ -54,16 +54,6 @@ export class ProfilBeauteComponent implements OnInit {
   respond : any;
   answer : boolean = false;
   ans(){
-    this.profilBeaute.addProfil(
-      this.algo.value.title1,
-      this.algo.value.title2,
-      this.algo.value.title3,
-      this.algo.value.title4,
-      this.algo.value.title5,
-    ).subscribe((res:any) => {
-      this.respond = res;
-      console.log(this.respond);
-    });
     this.route.navigate([
       this.contactservice.algoProfil(
         this.algo.value.title1,
@@ -77,6 +67,18 @@ export class ProfilBeauteComponent implements OnInit {
     this.final = false;
     this.objectif = false;
     console.log('reussie')
+  }
+  register(){
+    this.profilBeaute.addProfil(
+      this.algo.value.title1,
+      this.algo.value.title2,
+      this.algo.value.title3,
+      this.algo.value.title4,
+      this.algo.value.title5,
+    ).subscribe((res:any) => {
+      this.respond = res;
+      console.log(this.respond);
+    });
   }
 
   // getprofil() {

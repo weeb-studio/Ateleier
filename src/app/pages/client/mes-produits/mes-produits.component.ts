@@ -69,7 +69,6 @@ export class MesProduitsComponent implements OnInit {
       qte : formBuilder.control('')
     })
     this.getpanier();
-    this.bill();
   }
 
   getUser() {
@@ -104,20 +103,6 @@ export class MesProduitsComponent implements OnInit {
       this.resultats = res;
     });
   }
-  bill() : number{
-    var facture : number
-    facture=0;
-    for(var items of this.resultats){
-      var a = parseInt(items.qte)
-      console.log(a);
-      var b = parseInt(items.produit.prix)
-      console.log(b);
-      facture = facture + (a * b);
-      console.log(facture);
-    }
-    return facture;
-  }
-  Facture : number = this.bill()
 
   remove(id: string) {
     this.panierservice.removeProductToPanier(id).subscribe((res: any) => {

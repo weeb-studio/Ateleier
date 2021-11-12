@@ -7,7 +7,7 @@ import { LocalStorageService } from './local-storage.service';
   providedIn: 'root'
 })
 export class ProfilBeauteService {
-  private SERVER_URL: String = environment.SERVER_URL;
+  private SERVER_URL: String = environment.SERVER_URLL;
   constructor(
     private httpClient: HttpClient,
     private localStorage: LocalStorageService
