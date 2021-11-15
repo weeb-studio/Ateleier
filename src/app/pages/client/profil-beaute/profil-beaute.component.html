@@ -70,7 +70,7 @@
       <button>Mes produits</button>
     </div>
   </div>
-  <form
+  <div
     class="
       flex flex-col
       items-center
@@ -81,8 +81,7 @@
       px-2
       space-y-10
     "
-    [formGroup]="algo"
-    (ngSubmit)="register"
+    
     style="border-color: #ff3e79"
     *ngIf="profil"
   >
@@ -91,11 +90,10 @@
       <p>pour vous aider à réaliser vos programmes capillaires,</p>
       <p>nous avons besoin des informations suivantes :</p>
     </div>
-    <div class="grid grid-cols-2 gap-4 items-center">
+    <form class="grid grid-cols-2 gap-4 items-center place-items-center" [formGroup]="algo" (ngSubmit)="register()">
       <div class="w-full flex flex-col pt-6 md:pt-0">
         <label for="" class="w-full">Nature des cheveux</label>
         <select name="" id="1" class="rounded-md text-primary" formControlName="title1">
-          <option value={{resultat[1].natureCheveux}} selected>{{resultat[1].natureCheveux}}</option>
           <option value="cheveux normaux">cheveux normaux</option>
           <option value="cheveux secs">cheveux secs</option>
           <option value="cheveux gras">cheveux gras</option>
@@ -104,7 +102,6 @@
       <div class="w-full flex flex-col">
         <label for="" class="w-full whitespace-pre-line">Problématique de cheveux</label>
         <select name="" id="" class="rounded-md text-primary" formControlName="title2">
-          <option value={{resultat[1].problematiqueCheveux}} selected>{{resultat[1].problematiqueCheveux}}</option>
           <option value="cheveux peu poreux">cheveux peu poreux</option>
           <option value="cheveux très poreux">cheveux très poreux</option>
           <option value="cheveux gras">cheveux gras</option>
@@ -117,7 +114,6 @@
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Texture de cheveux</label>
         <select name="" id="" class="rounded-md text-primary" formControlName="title3">
-          <option value={{resultat[1].textureCheveux}} selected>{{resultat[1].textureCheveux}}</option>
           <option value="cheveux épais">cheveux épais</option>
           <option value="cheveux fins">cheveux fins</option>
           <option value="cheveux soyeux">cheveux soyeux</option>
@@ -126,7 +122,6 @@
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Type de cheveux</label>
         <select name="" id="" class="rounded-md text-primary" formControlName="title4">
-          <option value={{resultat[1].typeCheveux}} selected>{{resultat[1].typeCheveux}}</option>
           <option value="cheveux bouclés">cheveux bouclés</option>
           <option value="cheveux crépus">cheveux crépus</option>
           <option value="cheveux frisés">cheveux frisés</option>
@@ -136,43 +131,22 @@
       <div class="w-full flex flex-col">
         <label for="" class="w-full">Longueur des cheveux</label>
         <select name="" id="" class="rounded-md text-primary" formControlName="title5">
-          <option value={{resultat[1].longueurCheveux}} selected>{{resultat[1].longueurCheveux}}</option>
           <option value="cheveux court">cheveux court</option>
           <option value="cheveux mi-long">cheveux mi-long</option>
           <option value="cheveux long">cheveux long</option>
         </select>
       </div>
-    </div>
-    <div class="" *ngIf="submit">
-      <div class="">
+      <div class="col-span-2 w-40 h-10 cursor-pointer">
         <button
           type="submit"
-          class="rounded-md w-40 h-10"
+          class="btn rounded-md w-full h-full"
           style="background-color: #ff3e79; color: #fff"
         >
-          Modifier votre profil beaute
+          Enregistrer
         </button>
       </div>
-      <div class="">
-        <button
-          class="rounded-md w-40 h-10"
-          style="background-color: #ff3e79; color: #fff"
-          (click)="profil = false; final = true"
-        >
-          Continuer
-        </button>
-      </div>
-    </div>
-    <button
-      type="submit"
-      class="rounded-md w-40 h-10"
-      style="background-color: #ff3e79; color: #fff"
-      [ngClass]="submit ? 'hidden' : 'block'"
-      (click)="ans()"
-    >
-      Enregistrer
-    </button>
-  </form>
+    </form>
+  </div>
   <div class=" border-2 rounded-md border-primary space-y-5 px-5 md:w-9/12 py-3" *ngIf="objectif">
     <div class="text-2xl text-center">
       Quels sont les objectifs capillaires que cous souhaiteriez atteindre ?

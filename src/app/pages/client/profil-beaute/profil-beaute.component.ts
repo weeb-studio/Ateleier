@@ -28,7 +28,7 @@ export class ProfilBeauteComponent implements OnInit {
   objectif : boolean =false;
   profil : boolean =true;
   resultat : any;
-  submit : boolean = false;
+
   constructor(
     private userservices: UserService,
     private formBuilder: FormBuilder,
@@ -47,9 +47,9 @@ export class ProfilBeauteComponent implements OnInit {
       title2: formBuilder.control(''),
       title3: formBuilder.control(''),
       title4: formBuilder.control(''),
-      title5: formBuilder.control('')
+      title5: formBuilder.control(''),
     });
-    
+    this.getprofil();
   }
   respond : any;
   answer : boolean = false;
@@ -68,7 +68,9 @@ export class ProfilBeauteComponent implements OnInit {
     this.objectif = false;
     console.log('reussie')
   }
+
   register(){
+    this.ans();
     this.profilBeaute.addProfil(
       this.algo.value.title1,
       this.algo.value.title2,
@@ -81,12 +83,12 @@ export class ProfilBeauteComponent implements OnInit {
     });
   }
 
-  // getprofil() {
-  //   this.profilBeaute.getProfil().subscribe((res: any) => {
-  //     this.resultat = res;
-  //     console.log(this.resultat)
-  //   });
-  // }
+  getprofil() {
+    this.profilBeaute.getProfil().subscribe((res: any) => {
+      this.resultat = res;
+      console.log(this.resultat)
+    });
+  }
 
   goTo(){
     
@@ -111,15 +113,6 @@ export class ProfilBeauteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.profilBeaute.getProfil().subscribe((res:any) => {
-      this.resultat = res;
-      console.log(this.resultat);
-      if(this.resultat.length == 0){
-        this.submit = true;
-      }
-      else{
-        this.submit = false ;
-      }
-    });
+    
   }
 }
